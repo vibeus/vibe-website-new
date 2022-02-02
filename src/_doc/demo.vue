@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import { Button } from 'vibe';
+import { Button } from 'single';
 import { ref } from 'vue';
 
 const count = ref(0);

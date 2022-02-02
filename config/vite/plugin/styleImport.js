@@ -1,7 +1,6 @@
 import styleImport from 'vite-plugin-style-import';
 
-export function configStyleImportPlugin(isBuild) {
-  // const path = isBuild ? 
+export function configStyleImportPlugin() {
   const styleImportPlugin = styleImport({
     resolves: [],
     libs: [
@@ -9,6 +8,7 @@ export function configStyleImportPlugin(isBuild) {
         libraryName: 'element-plus',
         esModule: true,
         resolveStyle: (name) => {
+          console.log('name: ', name);
           name = name.replace('el-', '');
 
           // 这里是需要额外引入样式的子组件列表

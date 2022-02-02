@@ -24,5 +24,5 @@ yarn add single
 ## 使用
 
 ```
-import single from 'vibe';
+import single from 'single';
 ```

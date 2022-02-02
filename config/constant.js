@@ -22,7 +22,7 @@ export const MOCK_API_TARGET_URL = 'http://localhost:3000';
 // export const ICONFONTURL = '//at.alicdn.com/t/font_3004192_9jmc1z9neiw.js'; // 去色版
 
 // 包依赖分析
-export const ANALYSIS = true;
+export const ANALYSIS = false;
 
 // 代码压缩
 export const COMPRESSION = true;
