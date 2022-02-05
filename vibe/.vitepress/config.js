@@ -21,7 +21,9 @@ module.exports = (async () => {
         alias: {
           '@src': path.join(__dirname, '../../src')
         }
-      }
+      },
+      hot: true,
+      hotOnly: false,
     },
 
     lang: 'en-US',

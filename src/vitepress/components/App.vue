@@ -1,11 +1,19 @@
+<template>
+  <div class="VPApp">
+    1354asd
+    <el-button @click="a++" type="primary">test</el-button>
+    a: {{a}}
+  </div>
+</template>
+
 <script setup>
 // import { useSidebar } from '../composables/sidebar';
 // import VPNav from './VPNav.vue'
 // import VPLocalNav from './VPLocalNav.vue'
 // import VPSidebar from './VPSidebar.vue'
 // import VPContent from './VPContent.vue'
-import { onMounted, onUnmounted, provide, watchEffect } from 'vue';
 
+const a = ref(0);
 // const {
 //   isOpen: isSidebarOpen,
 //   open: openSidebar,
@@ -38,12 +46,7 @@ onUnmounted(() => {
 // provide('close-sidebar', closeSidebar);
 </script>
 
-<template>
-  <div class="VPApp">
-    1354asd
-    <el-button type="primary">test</el-button>
-  </div>
-</template>
+
 
 <style scoped>
 .VPApp {
