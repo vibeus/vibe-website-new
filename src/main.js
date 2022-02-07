@@ -1,5 +1,4 @@
-import './styles/index.sass';
-import App from './components/App.vue';
+import App from './App.vue';
 import NotFound from './components/NotFound.vue';
 import { withConfigProvider } from './composables/config';
 

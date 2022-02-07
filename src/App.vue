@@ -1,14 +1,14 @@
 <template>
   <div class="App">
-    <Navbar />
+    <Layout />
     <el-button @click="a++" type="primary">test</el-button>
     a: {{a}}
   </div>
 </template>
 
 <script setup>
+import Layout from '/@/layout/Layout.vue';
 // import { useSidebar } from '../composables/sidebar';
-import Navbar from './Navbar.vue';
 // import VPLocalNav from './VPLocalNav.vue'
 // import VPSidebar from './VPSidebar.vue'
 // import VPContent from './VPContent.vue'
@@ -48,12 +48,12 @@ onUnmounted(() => {
 
 
 
-<style lang="sass" scoped>
+<style lang="sass">
+@import '/@/assets/styles/index.sass'
+
 .App
   display: flex
   flex-direction: column
   min-height: 100vh
   transition: background-color 0.5s
-
-
 </style>

@@ -1,7 +1,6 @@
-import { VBTheme } from '/@'
+import { VBTheme } from '/@/main'
 import { h } from 'vue'
 // uncomment to test CSS variables override
-import './override.css'
 
 export default {
   ...VBTheme,

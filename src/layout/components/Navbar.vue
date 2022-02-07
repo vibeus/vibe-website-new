@@ -31,14 +31,14 @@
 
 <style lang="sass" scoped>
 .nav
-  position: relative
+  position: sticky
   top: 0
   left: 0
   z-index: var(--vp-z-index-nav)
 
 @media (min-width: 960px)
   .nav
-    position: fixed
+    position: sticky
     top: var(--vt-banner-height, 0px)
     width: 100%
 </style>

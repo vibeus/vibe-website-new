@@ -1,4 +1,3 @@
-// const getBase = require('../../src/vitepress/config/baseConfig')
 const { resolve } = require('path')
 const { createVitePlugins } = require('../../vite/plugin');
 
@@ -9,6 +8,7 @@ function pathResolve(dir) {
 module.exports = (async () => {
   // const base = await getBase()
   const base = process.env.BASE || '/'
+  console.log('base: ', base);
 
   return {
     // ...base,
