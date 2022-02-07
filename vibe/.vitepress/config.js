@@ -1,7 +1,10 @@
 // const getBase = require('../../src/vitepress/config/baseConfig')
-const path = require('path')
-const { createVitePlugins } = require('../../config/vite/plugin');
-console.log('createVitePlugins: ', createVitePlugins);
+const { resolve } = require('path')
+const { createVitePlugins } = require('../../vite/plugin');
+
+function pathResolve(dir) {
+  return resolve(__dirname, ".", dir);
+}
 
 module.exports = (async () => {
   // const base = await getBase()
@@ -19,7 +22,7 @@ module.exports = (async () => {
       },
       resolve: {
         alias: {
-          '@src': path.join(__dirname, '../../src')
+          '/@': pathResolve('../../src')
         }
       },
       hot: true,

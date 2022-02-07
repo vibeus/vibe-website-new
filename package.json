@@ -5,7 +5,7 @@
     "dev": "vitepress dev vibe",
     "build": "vitepress build vibe",
     "serve": "yarn build && vitepress serve vibe",
-    "lint": "eslint  src/**/*.{vue,js}"
+    "lint": "eslint  src/**/*.{vue,js} --fix"
   },
   "dependencies": {
     "@docsearch/css": "^3.0.0-alpha.41",
@@ -23,6 +23,7 @@
     "unplugin-auto-import": "^0.5.11",
     "unplugin-vue-components": "^0.17.2",
     "vite": "^2.6.13",
+    "vite-babel-plugin": "^0.0.2",
     "vite-plugin-style-import": "^1.4.1",
     "vitepress": "^0.20.9",
     "vitepress-for-component": "^0.16.9",

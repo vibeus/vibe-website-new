@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { useData, useRoute } from 'vitepress';
 
 const { theme } = useData();
