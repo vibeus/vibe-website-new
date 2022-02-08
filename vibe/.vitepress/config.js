@@ -30,20 +30,21 @@ module.exports = (async () => {
         },
       },
       resolve: {
-        alias: {
-          '/@': pathResolve('../../src')
-        }
+        alias: [
+          { find: '/@', replacement: pathResolve('../../src') },
+          { find: '/@mytheme', replacement: pathResolve('../../src/theme-vibe') }
+        ]
       },
       hot: true,
       hotOnly: false,
     },
 
     lang: 'en-US',
-    title: 'Vue.js',
-    description: 'Vue.js - The Progressive JavaScript Framework',
+    title: 'Vibe Website',
+    description: 'Vibe product',
 
     themeConfig: {
-      logo: '/img/logo-vue.svg',
+      logo: '/vibe-icon.svg',
 
       algolia: {
         indexName: 'vuejs-v3',
