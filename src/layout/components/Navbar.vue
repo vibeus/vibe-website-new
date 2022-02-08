@@ -1,10 +1,8 @@
 <template>
   <header class="nav nav-bar">
     <el-menu
-      :default-active="activeIndex"
       class="el-menu"
       mode="horizontal"
-      @select="handleSelect"
     >
       <el-menu-item index="1">Processing Center</el-menu-item>
       <el-sub-menu index="2">

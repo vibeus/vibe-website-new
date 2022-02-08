@@ -1,5 +1,6 @@
 const { resolve } = require('path')
 const { createVitePlugins } = require('../../vite/plugin');
+const nav = require('./configs/nav')
 
 function pathResolve(dir) {
   return resolve(__dirname, ".", dir);
@@ -61,24 +62,7 @@ module.exports = (async () => {
         { icon: 'discord', link: 'https://discord.com/invite/HBherRA' }
       ],
 
-      nav: [
-        {
-          text: 'Docs',
-          activeMatch: `^/(blog|examples)/`,
-          items: [
-            {
-              items: [
-                { text: 'Guide', link: '/guide/introduction' },
-                { text: 'Installtion', link: '/guide/installation' }
-              ]
-            }
-          ]
-        },
-        {
-          text: 'Website',
-          link: '/website/'
-        }
-      ],
+      nav,
 
       sidebar: {
         '/blog/': [
