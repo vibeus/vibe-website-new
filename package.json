@@ -2,22 +2,24 @@
   "name": "vibe-website-new",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vitepress dev vibe",
-    "build": "vitepress build vibe",
-    "serve": "yarn build && vitepress serve vibe",
-    "lint": "eslint  src/**/*.{vue,js} --fix"
+    "dev": "yarn lint && vitepress dev vibe",
+    "build": "yarn lint && vitepress build vibe",
+    "serve": "yarn lint && yarn build && vitepress serve vibe",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@docsearch/css": "^3.0.0-alpha.50",
     "@docsearch/js": "^3.0.0-alpha.50",
     "@vueuse/core": "^7.5.5",
-    "element-plus": "^2.0.0",
+    "element-plus": "^2.0.1",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
-    "eslint": "^8.8.0",
+    "@vue/cli-service": "^4.5.15",
+    "@vue/cli-plugin-eslint": "~4.5.15",
+    "eslint": "^7.x",
     "eslint-plugin-vue": "^8.4.1",
+    "cross-env": "^7.0.3",
     "rollup-plugin-visualizer": "^5.5.4",
     "sass": "^1.49.7",
     "unplugin-auto-import": "^0.5.11",
@@ -39,6 +41,7 @@
       "eslint:recommended"
     ],
     "rules": {
+      "vue/multi-word-component-names": 0,
       "jsx-quotes": 2,
       "arrow-parens": 0,
       "generator-star-spacing": 0,
