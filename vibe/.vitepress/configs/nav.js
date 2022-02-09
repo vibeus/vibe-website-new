@@ -1,14 +1,10 @@
 module.exports = [
   {
-    text: 'Docs',
+    text: 'Blog',
     activeMatch: `^/(blog|examples)/`,
     items: [
-      {
-        items: [
-          { text: 'Guide', link: '/guide/introduction' },
-          { text: 'Installtion', link: '/guide/installation' }
-        ]
-      }
+      { text: 'Guide', link: '/blog/guide' },
+      { text: 'Test', link: '/blog/test' }
     ]
   },
   {
