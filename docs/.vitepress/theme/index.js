@@ -1,6 +1,6 @@
 import DefaultTheme from "/@mytheme";
-// import SvgIcon from './components/SvgIcon.vue'; // svg component
-// console.log('SvgIcon: ', SvgIcon);
+import SvgIcon from '/@mytheme/components/SvgIcon.vue'; // svg component
+console.log('SvgIcon: ', SvgIcon);
 
 export default {
   ...DefaultTheme,

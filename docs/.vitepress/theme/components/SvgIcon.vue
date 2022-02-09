@@ -6,8 +6,7 @@
 </template>
 
 <script setup>
-
-import { isExternal } from '/@/utils/validate';
+const isExternal = (path) => /^(https?:|mailto:|tel:)/.test(path);
 
 const props = defineProps({
   iconName: {
