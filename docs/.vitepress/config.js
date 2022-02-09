@@ -44,7 +44,7 @@ module.exports = (async () => {
     description: 'Vibe product',
 
     themeConfig: {
-      logo: '/vibe-icon.svg',
+      logoName: 'vibe',
       docsDir: "/",
 
       // algolia: {

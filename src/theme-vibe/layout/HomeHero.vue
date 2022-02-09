@@ -20,9 +20,9 @@ const tagline = computed(
 <template>
   <header v-if="showHero" class="home-hero">
     <figure v-if="frontmatter.heroImage" class="figure">
-      <img
+      <svg-icon
         class="image"
-        :src="withBase(frontmatter.heroImage)"
+        name="website-logo"
         :alt="frontmatter.heroAlt"
       />
     </figure>

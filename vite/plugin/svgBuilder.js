@@ -62,6 +62,7 @@ export const svgBuilder = (path, perfix = 'icon') => {
   return {
     name: 'svg-transform',
     transformIndexHtml(html) {
+      console.log('html: ', 123);
       return html.replace(
         '<body>',
         `

@@ -15,22 +15,24 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "@vue/cli-service": "^4.5.15",
+    "@vue/cli-plugin-babel": "~4.5.15",
     "@vue/cli-plugin-eslint": "~4.5.15",
-    "eslint": "^7.x",
-    "eslint-plugin-vue": "^8.4.1",
+    "@vue/cli-service": "^4.5.15",
     "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.3",
+    "eslint": "^7.x",
+    "eslint-plugin-vue": "^8.4.1",
+    "rollup-plugin-svg-sprites": "^1.2.3",
     "rollup-plugin-visualizer": "^5.5.4",
     "sass": "^1.49.7",
     "unplugin-auto-import": "^0.5.11",
     "unplugin-vue-components": "^0.17.17",
     "vite": "^2.7.13",
-    "vite-babel-plugin": "^0.0.2",
     "vite-plugin-style-import": "^1.4.1",
+    "vite-plugin-svg-icons": "^2.0.1",
     "vitepress": "^0.21.6",
     "vitepress-for-component": "^0.16.9",
-    "vue": "^3.2.29"
+    "vue": "^3.2.30"
   },
   "eslintConfig": {
     "root": true,
@@ -49,7 +51,10 @@
       "jsx-quotes": 2,
       "arrow-parens": 0,
       "generator-star-spacing": 0,
-      "quotes": [2, "single"],
+      "quotes": [
+        2,
+        "single"
+      ],
       "semi": [
         "error",
         "always",

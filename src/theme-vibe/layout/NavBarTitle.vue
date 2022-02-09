@@ -9,34 +9,30 @@ const { site, theme, localePath } = useData();
     :href="localePath"
     :aria-label="`${site.title}, back to home`"
   >
-    <img
-      v-if="theme.logo"
+    <svg-icon
+      v-if="theme.logoName"
       class="logo"
-      :src="withBase(theme.logo)"
+      :name="theme.logoName"
       alt="Logo"
     />
-    <svg-icon icon-name="vibe-icon" />
-    {{ site.title }}
   </a>
 </template>
 
-<style scoped>
-.nav-bar-title {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--c-text);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+<style lang="sass" scoped>
+.nav-bar-title
+  width: 100px
+  font-size: 1.3rem
+  font-weight: 600
+  color: var(--c-text)
+  display: flex
+  justify-content: center
+  align-items: center
 
-.nav-bar-title:hover {
-  text-decoration: none;
-}
+.nav-bar-title:hover
+  text-decoration: none
 
-.logo {
-  margin-right: 0.75rem;
-  height: 1.3rem;
-  vertical-align: bottom;
-}
+.logo
+  margin-right: 0.75rem
+  height: 1.3rem
+  vertical-align: bottom
 </style>

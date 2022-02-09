@@ -3,15 +3,13 @@ import { useRoute, withBase } from 'vitepress';
 import { isExternal as isExternalCheck } from '../utils';
 export function useNavLink(item) {
   const route = useRoute();
-  console.log('route: ', route);
   const isExternal = isExternalCheck(item.value.link);
   const props = computed(() => {
     const routePath = normalizePath(`/${route.data?.path}`);
     let active = false;
     if (item.value.activeMatch) {
       active = new RegExp(item.value.activeMatch).test(routePath);
-    }
-    else {
+    } else {
       const itemPath = normalizePath(item.value.link);
       active =
                 itemPath === '/'
