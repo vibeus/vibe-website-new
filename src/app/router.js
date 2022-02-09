@@ -3,7 +3,7 @@ import { inBrowser } from './utils';
 export const RouterSymbol = Symbol();
 // we are just using URL to parse the pathname and hash - the base doesn't
 // matter and is only passed to support same-host hrefs.
-const fakeHost = `http://a.com`;
+const fakeHost = 'http://a.com';
 const getDefaultRoute = () => ({
   path: '/',
   component: null,
@@ -93,7 +93,7 @@ export function createRouter(loadPageModule, fallbackComponent) {
                     !e.shiftKey &&
                     !e.altKey &&
                     !e.metaKey &&
-                    target !== `_blank` &&
+                    target !== '_blank' &&
                     protocol === currentUrl.protocol &&
                     hostname === currentUrl.hostname &&
                     !(extMatch && extMatch[0] !== '.html')) {

@@ -7,7 +7,7 @@ const hasFetched = new Set();
 const createLink = () => document.createElement('link');
 const viaDOM = (url) => {
   const link = createLink();
-  link.rel = `prefetch`;
+  link.rel = 'prefetch';
   link.href = url;
   document.head.appendChild(link);
 };
@@ -67,7 +67,7 @@ export function usePrefetch() {
         if (
         // only prefetch same tab navigation, since a new tab will load
         // the lean js chunk instead.
-          target !== `_blank` &&
+          target !== '_blank' &&
                     // only prefetch inbound links
                     hostname === location.hostname) {
           if (pathname !== location.pathname) {

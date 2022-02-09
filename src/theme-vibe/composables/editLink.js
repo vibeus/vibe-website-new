@@ -33,7 +33,7 @@ function createGitHubUrl(repo, docsRepo, docsDir, docsBranch, path) {
     ? docsRepo
     : `https://github.com/${docsRepo}`;
   return (base.replace(endingSlashRE, '') +
-        `/edit` +
+        '/edit' +
         `/${docsBranch}/` +
         (docsDir ? docsDir.replace(endingSlashRE, '') + '/' : '') +
         path);
@@ -41,7 +41,7 @@ function createGitHubUrl(repo, docsRepo, docsDir, docsBranch, path) {
 function createBitbucketUrl(repo, docsRepo, docsDir, docsBranch, path) {
   const base = isExternal(docsRepo) ? docsRepo : repo;
   return (base.replace(endingSlashRE, '') +
-        `/src` +
+        '/src' +
         `/${docsBranch}/` +
         (docsDir ? docsDir.replace(endingSlashRE, '') + '/' : '') +
         path +

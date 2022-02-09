@@ -54,9 +54,9 @@ export function useUpdateHead(route, siteDataByRouteRef) {
     const pageDescription = pageData && pageData.description;
     const frontmatterHead = pageData && pageData.frontmatter.head;
     // update title and description
-    document.title = (pageTitle ? pageTitle + ` | ` : ``) + siteData.title;
+    document.title = (pageTitle ? pageTitle + ' | ' : '') + siteData.title;
     document
-      .querySelector(`meta[name=description]`)
+      .querySelector('meta[name=description]')
       .setAttribute('content', pageDescription || siteData.description);
     updateHeadTags([
       // site head can only change during dev
