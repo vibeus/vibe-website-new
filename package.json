@@ -2,9 +2,9 @@
   "name": "vibe-website-new",
   "version": "0.0.0",
   "scripts": {
-    "dev": "yarn lint && vitepress dev vibe",
-    "build": "yarn lint && vitepress build vibe",
-    "serve": "yarn lint && yarn build && vitepress serve vibe",
+    "dev": "yarn lint && vitepress dev docs",
+    "build": "yarn lint && vitepress build docs",
+    "serve": "yarn lint && yarn build && vitepress serve docs",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
