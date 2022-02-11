@@ -1,28 +1,10 @@
-<script setup>
-import { computed } from 'vue';
-import { useData, withBase } from 'vitepress';
-import NavLink from './NavLink.vue';
-
-const { site, frontmatter: page } = useData();
-
-const showHero = computed(() => {
-  const { heroImage, heroText, tagline, actionLink, actionText } = page.value;
-  return heroImage || heroText || tagline || (actionLink && actionText);
-});
-
-const heroText = computed(() => page.value.heroText || site.value.title);
-const tagline = computed(
-  () => page.value.tagline || site.value.description
-);
-</script>
-
 <template>
   <header v-if="showHero" class="home-hero">
-    <figure v-if="page.heroImage" class="figure">
+    <figure v-if="frontmatter.heroImage" class="figure">
       <svg-icon
         class="image"
         name="website-logo"
-        :alt="page.heroAlt"
+        :alt="frontmatter.heroAlt"
       />
     </figure>
 
@@ -30,21 +12,41 @@ const tagline = computed(
     <p v-if="tagline" class="tagline">{{ tagline }}</p>
 
     <NavLink
-      v-if="page.actionLink && page.actionText"
-      :item="{ link: page.actionLink, text: page.actionText }"
+      v-if="frontmatter.actionLink && frontmatter.actionText"
+      :item="{ link: frontmatter.actionLink, text: frontmatter.actionText }"
       class="action"
     />
 
     <NavLink
-      v-if="page.altActionLink && page.altActionText"
+      v-if="frontmatter.altActionLink && frontmatter.altActionText"
       :item="{
-        link: page.altActionLink,
-        text: page.altActionText
+        link: frontmatter.altActionLink,
+        text: frontmatter.altActionText
       }"
       class="action alt"
     />
   </header>
 </template>
+
+<script setup>
+import { computed } from 'vue';
+import { useData, withBase } from 'vitepress';
+import NavLink from './NavLink.vue';
+
+const { site, frontmatter } = useData();
+
+const showHero = computed(() => {
+  const { heroImage, heroText, tagline, actionLink, actionText } =
+    frontmatter.value;
+  return heroImage || heroText || tagline || (actionLink && actionText);
+});
+
+const heroText = computed(() => frontmatter.value.heroText || site.value.title);
+const tagline = computed(
+  () => frontmatter.value.tagline || site.value.description
+);
+</script>
+
 
 <style scoped>
 .home-hero {

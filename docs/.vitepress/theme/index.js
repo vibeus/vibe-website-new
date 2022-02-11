@@ -1,12 +1,15 @@
 import DefaultTheme from "/@/layout";
-import SvgIcon from '/@/components/SvgIcon.vue'; // svg component
-import 'virtual:svg-icons-register';
+import Test from '/@/views/Test.vue';
+import SvgIcon from '/@/components/SvgIcon.vue';
+import 'virtual:svg-icons-register'; // Important
 
 export default {
   ...DefaultTheme,
   enhanceApp({ app, router, siteData }) {
-    app.component('svg-icon', SvgIcon);
     // register global components
+    app.component('Layout', DefaultTheme);
+    app.component('Test', Test);
+    app.component('svg-icon', SvgIcon);
     // app is the Vue 3 app instance from createApp()
     // router is VitePress' custom router (see `lib/app/router.js`)
     // siteData is a ref of current site-level metadata.

@@ -1,9 +1,5 @@
-<script setup>
-import PageFooter from './PageFooter.vue';
-import NextAndPrevLinks from './NextAndPrevLinks.vue';
-</script>
-
 <template>
+  <slot name="custom-page" />
   <main class="page">
     <div class="container">
       <slot name="top" />
@@ -16,6 +12,11 @@ import NextAndPrevLinks from './NextAndPrevLinks.vue';
     </div>
   </main>
 </template>
+
+<script setup>
+import PageFooter from './PageFooter.vue';
+import NextAndPrevLinks from './NextAndPrevLinks.vue';
+</script>
 
 <style scoped>
 .page {

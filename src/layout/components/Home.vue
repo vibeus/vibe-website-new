@@ -1,9 +1,3 @@
-<script setup>
-import HomeHero from './HomeHero.vue';
-import HomeFeatures from './HomeFeatures.vue';
-import HomeFooter from './HomeFooter.vue';
-</script>
-
 <template>
   <main class="home" aria-labelledby="main-title">
     <HomeHero />
@@ -17,6 +11,12 @@ import HomeFooter from './HomeFooter.vue';
     <slot name="footer" />
   </main>
 </template>
+
+<script setup>
+import HomeHero from './HomeHero.vue';
+import HomeFeatures from './HomeFeatures.vue';
+import HomeFooter from './HomeFooter.vue';
+</script>
 
 <style scoped>
 .home {
