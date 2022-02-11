@@ -10,7 +10,7 @@ export function createVitePlugins() {
   const vitePlugins = [
     AutoImportDeps(), // 自动按需引入依赖
     createSvgIconsPlugin({
-      iconDirs: [resolve(process.cwd(), './src/theme-vibe/icons/svg')],
+      iconDirs: [resolve(process.cwd(), './src/icons/svg')],
     }),
     Components({
       resolvers: [ElementPlusResolver({importStyle: 'sass'})]
