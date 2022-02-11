@@ -3,27 +3,26 @@ import { computed } from 'vue';
 import { useData, withBase } from 'vitepress';
 import NavLink from './NavLink.vue';
 
-const { site, frontmatter } = useData();
+const { site, frontmatter: page } = useData();
 
 const showHero = computed(() => {
-  const { heroImage, heroText, tagline, actionLink, actionText } =
-    frontmatter.value;
+  const { heroImage, heroText, tagline, actionLink, actionText } = page.value;
   return heroImage || heroText || tagline || (actionLink && actionText);
 });
 
-const heroText = computed(() => frontmatter.value.heroText || site.value.title);
+const heroText = computed(() => page.value.heroText || site.value.title);
 const tagline = computed(
-  () => frontmatter.value.tagline || site.value.description
+  () => page.value.tagline || site.value.description
 );
 </script>
 
 <template>
   <header v-if="showHero" class="home-hero">
-    <figure v-if="frontmatter.heroImage" class="figure">
+    <figure v-if="page.heroImage" class="figure">
       <svg-icon
         class="image"
         name="website-logo"
-        :alt="frontmatter.heroAlt"
+        :alt="page.heroAlt"
       />
     </figure>
 
@@ -31,16 +30,16 @@ const tagline = computed(
     <p v-if="tagline" class="tagline">{{ tagline }}</p>
 
     <NavLink
-      v-if="frontmatter.actionLink && frontmatter.actionText"
-      :item="{ link: frontmatter.actionLink, text: frontmatter.actionText }"
+      v-if="page.actionLink && page.actionText"
+      :item="{ link: page.actionLink, text: page.actionText }"
       class="action"
     />
 
     <NavLink
-      v-if="frontmatter.altActionLink && frontmatter.altActionText"
+      v-if="page.altActionLink && page.altActionText"
       :item="{
-        link: frontmatter.altActionLink,
-        text: frontmatter.altActionText
+        link: page.altActionLink,
+        text: page.altActionText
       }"
       class="action alt"
     />

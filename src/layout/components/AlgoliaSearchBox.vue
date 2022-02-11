@@ -11,7 +11,7 @@ const props = defineProps({
   },
   multilang: {
     type: Boolean,
-  }
+  },
 });
 
 const vm = getCurrentInstance();
@@ -31,11 +31,7 @@ onMounted(() => {
 
 function isSpecialClick(event) {
   return (
-    event.button === 1 ||
-    event.altKey ||
-    event.ctrlKey ||
-    event.metaKey ||
-    event.shiftKey
+    event.button === 1 || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey
   );
 }
 
@@ -47,8 +43,7 @@ function getRelativePath(absoluteUrl) {
 
 function update(options) {
   if (vm && vm.vnode.el) {
-    vm.vnode.el.innerHTML =
-      '<div class="algolia-search-box" id="docsearch"></div>';
+    vm.vnode.el.innerHTML = '<div class="algolia-search-box" id="docsearch"></div>';
     initialize(options);
   }
 }
@@ -57,25 +52,18 @@ const { lang } = useData();
 
 // if the user has multiple locales, the search results should be filtered
 // based on the language
-const facetFilters = props.multilang
-  ? ['lang:' + lang.value]
-  : [];
+const facetFilters = props.multilang ? ['lang:' + lang.value] : [];
 
 if (props.options.searchParameters?.facetFilters) {
   facetFilters.push(...props.options.searchParameters.facetFilters);
 }
 
-watch(
-  lang,
-  (newLang, oldLang) => {
-    const index = facetFilters.findIndex(
-      (filter) => filter === 'lang:' + oldLang
-    );
-    if (index > -1) {
-      facetFilters.splice(index, 1, 'lang:' + newLang);
-    }
+watch(lang, (newLang, oldLang) => {
+  const index = facetFilters.findIndex((filter) => filter === 'lang:' + oldLang);
+  if (index > -1) {
+    facetFilters.splice(index, 1, 'lang:' + newLang);
   }
-);
+});
 
 function initialize(userOptions) {
   docsearch(
@@ -85,14 +73,12 @@ function initialize(userOptions) {
       searchParameters: Object.assign({}, userOptions.searchParameters, {
         // pass a custom lang facetFilter to allow multiple language search
         // https://github.com/algolia/docsearch-configs/pull/3942
-        facetFilters
+        facetFilters,
       }),
 
       navigator: {
         navigate: ({ itemUrl }) => {
-          const { pathname: hitPathname } = new URL(
-            window.location.origin + itemUrl
-          );
+          const { pathname: hitPathname } = new URL(window.location.origin + itemUrl);
 
           // Router doesn't handle same-page navigation so we use the native
           // browser location API for anchor navigation
@@ -101,13 +87,13 @@ function initialize(userOptions) {
           } else {
             router.go(itemUrl);
           }
-        }
+        },
       },
 
       transformItems: (items) => {
         return items.map((item) => {
           return Object.assign({}, item, {
-            url: getRelativePath(item.url)
+            url: getRelativePath(item.url),
           });
         });
       },
@@ -144,11 +130,11 @@ function initialize(userOptions) {
 
               router.go(relativeHit);
             },
-            children
+            children,
           },
-          __v: null
+          __v: null,
         };
-      }
+      },
     })
   );
 }

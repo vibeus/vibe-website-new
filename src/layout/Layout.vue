@@ -80,22 +80,22 @@ import { useRoute, useData } from 'vitepress';
 import { isSideBarEmpty, getSideBarConfig } from './support/sideBar';
 
 // components
-import NavBar from './layout/NavBar.vue';
-import SideBar from './layout/SideBar.vue';
-import Page from './layout/Page.vue';
+import NavBar from './components/NavBar.vue';
+import SideBar from './components/SideBar.vue';
+import Page from './components/Page.vue';
 
-const Home = defineAsyncComponent(() => import('./layout/Home.vue'));
+const Home = defineAsyncComponent(() => import('./components/Home.vue'));
 
 const NoopComponent = () => null;
 
 const CarbonAds = __CARBON__
-  ? defineAsyncComponent(() => import('./layout/CarbonAds.vue'))
+  ? defineAsyncComponent(() => import('./components/CarbonAds.vue'))
   : NoopComponent;
 const BuySellAds = __BSA__
-  ? defineAsyncComponent(() => import('./layout/BuySellAds.vue'))
+  ? defineAsyncComponent(() => import('./components/BuySellAds.vue'))
   : NoopComponent;
 const AlgoliaSearchBox = __ALGOLIA__
-  ? defineAsyncComponent(() => import('./layout/AlgoliaSearchBox.vue'))
+  ? defineAsyncComponent(() => import('./components/AlgoliaSearchBox.vue'))
   : NoopComponent;
 
 // generic state

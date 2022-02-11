@@ -1,5 +1,5 @@
-import DefaultTheme from "/@mytheme";
-import SvgIcon from './components/SvgIcon.vue'; // svg component
+import DefaultTheme from "/@/layout";
+import SvgIcon from '/@/components/SvgIcon.vue'; // svg component
 import 'virtual:svg-icons-register';
 
 export default {
