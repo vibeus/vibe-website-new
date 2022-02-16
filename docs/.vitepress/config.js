@@ -1,5 +1,5 @@
 const { resolve } = require('path')
-const { createVitePlugins } = require('../../vite/plugin');
+const { createVitePlugins } = require('../../vite-config/plugin');
 const nav = require('./configs/nav')
 
 function pathResolve(dir) {
