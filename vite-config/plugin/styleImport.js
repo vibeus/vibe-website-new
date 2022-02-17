@@ -1,6 +1,6 @@
-import styleImport from 'vite-plugin-style-import';
+const styleImport = require('vite-plugin-style-import');
 
-export function configStyleImportPlugin() {
+module.exports = function configStyleImportPlugin() {
   const styleImportPlugin = styleImport({
     resolves: [],
     libs: [

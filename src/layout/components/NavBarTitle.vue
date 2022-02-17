@@ -15,6 +15,7 @@ const { site, theme, localePath } = useData();
       :icon-name="theme.logoName"
       alt="Logo"
     />
+    123
   </a>
 </template>
 

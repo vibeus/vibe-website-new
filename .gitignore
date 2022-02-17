@@ -1,6 +1,8 @@
 node_modules
 .temp
 yarn-error.log
+.yarn
+.cache
 dist/
 yarn.lock
 .DS_Store

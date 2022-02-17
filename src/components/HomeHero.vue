@@ -7,7 +7,7 @@
         :alt="frontmatter.heroAlt"
       />
     </figure>
-
+1243
     <h1 v-if="heroText" id="main-title" class="title">{{ heroText }}</h1>
     <p v-if="tagline" class="tagline">{{ tagline }}</p>
 

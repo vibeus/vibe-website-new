@@ -1,10 +1,10 @@
 /**
  * Package file volume analysis
  */
-import visualizer from 'rollup-plugin-visualizer';
-import { ANALYSIS } from '../constant';
+const visualizer = require('rollup-plugin-visualizer');
+const { ANALYSIS } = require('../constant');
 
-export function configVisualizerConfig() {
+module.exports = function configVisualizerConfig() {
   if (ANALYSIS) {
     return visualizer({
       filename: './node_modules/.cache/visualizer/stats.html',

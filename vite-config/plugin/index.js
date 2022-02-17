@@ -1,21 +1,21 @@
-import { resolve } from 'path';
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
-import Components from 'unplugin-vue-components/vite';
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons';
-import { AutoImportDeps } from './autoImport';
-import { configVisualizerConfig } from './visualizer';
-import { configStyleImportPlugin } from './styleImport';
+const { resolve } = require('path');
+const { ElementPlusResolver } = require('unplugin-vue-components/resolvers');
+const Components = require('unplugin-vue-components/vite');
+const { createSvgIconsPlugin } = require('vite-plugin-svg-icons');
+// const AutoImportDeps = require('./autoImport');
+const configVisualizerConfig = require('./visualizer');
+// const { configStyleImportPlugin } = require('./styleImport');
 
-export function createVitePlugins() {
+module.exports =  function createVitePlugins() {
   const vitePlugins = [
-    AutoImportDeps(), // 自动按需引入依赖
+    // AutoImportDeps(), // 自动按需引入依赖
     createSvgIconsPlugin({
       iconDirs: [resolve(process.cwd(), './src/icons/svg')],
     }),
     Components({
-      resolvers: [ElementPlusResolver({importStyle: 'sass'})]
+      resolvers: [ElementPlusResolver({constStyle: 'sass'})]
     }),
-    configStyleImportPlugin(),
+    // configStyleImportPlugin(),
     configVisualizerConfig(),
   ];
 
