@@ -1,6 +1,6 @@
 <script setup>
 import { withBase } from 'vitepress';
-import { useNextAndPrevLinks } from '../composables/nextAndPrevLinks';
+import { useNextAndPrevLinks } from '/@/composables/nextAndPrevLinks';
 import ArrowLeft from './icons/ArrowLeft.vue';
 import ArrowRight from './icons/ArrowRight.vue';
 

@@ -1,4 +1,4 @@
-import { isArray, ensureStartingSlash, removeExtention } from '../utils';
+import { isArray, ensureStartingSlash, removeExtention } from '/@/utils/layout';
 export function isSideBarConfig(sidebar) {
   return sidebar === false || sidebar === 'auto' || isArray(sidebar);
 }

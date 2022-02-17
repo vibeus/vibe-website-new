@@ -10,7 +10,7 @@
 
 <script setup>
 import { toRefs } from 'vue';
-import { useNavLink } from '../composables/navLink';
+import { useNavLink } from '/@/composables/navLink';
 import OutboundLink from './icons/OutboundLink.vue';
 
 const props = defineProps({

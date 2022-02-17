@@ -1,5 +1,5 @@
 import { siteDataRef } from './data';
-import { inBrowser, EXTERNAL_URL_RE } from '../shared';
+import { inBrowser, EXTERNAL_URL_RE } from '/@/utils/shared';
 export { inBrowser };
 /**
  * Join two paths by resolving the slash collision.

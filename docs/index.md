@@ -22,3 +22,4 @@ features:
     details: Flexible programmatic APIs with full TypeScript typing.
 footer: © Copyright 2022 Vibe, Inc. All rights reserved.
 ---
+<Home />

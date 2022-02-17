@@ -32,7 +32,7 @@ module.exports = (async () => {
       resolve: {
         alias: [
           { find: '/@', replacement: pathResolve('../../src') },
-          { find: '/@mytheme', replacement: pathResolve('../../src/theme-vibe') }
+          { find: '/@vcomp', replacement: pathResolve('../../src/components') }
         ]
       },
       hot: true,
@@ -52,11 +52,6 @@ module.exports = (async () => {
       //   appId: 'BH4D9OD16A',
       //   apiKey: 'bc6e8acb44ed4179c30d0a45d6140d3f'
       // },
-
-      carbonAds: {
-        code: 'CEBDT27Y',
-        placement: 'vuejsorg'
-      },
 
       socialLinks: [
         { icon: 'github', link: 'https://github.com/vuejs/vue' },

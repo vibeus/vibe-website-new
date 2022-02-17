@@ -2,7 +2,7 @@
 // https://github.com/GoogleChromeLabs/quicklink
 import { useRoute } from '../router';
 import { onMounted, onUnmounted, watch } from 'vue';
-import { inBrowser, pathToFile } from '../utils';
+import { inBrowser, pathToFile } from '/@/utils/layout';
 const hasFetched = new Set();
 const createLink = () => document.createElement('link');
 const viaDOM = (url) => {

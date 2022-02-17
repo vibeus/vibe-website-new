@@ -25,49 +25,12 @@
 
     <Content v-if="isCustomLayout" />
 
-    <template v-else-if="enableHome">
-      <!-- A slot for customizing the entire homepage easily -->
-      <slot name="home">
-        <Home>
-          <template #hero>
-            <slot name="home-hero" />
-          </template>
-          <template #features>
-            <slot name="home-features" />
-          </template>
-          <template #footer>
-            <slot name="home-footer" />
-          </template>
-        </Home>
-      </slot>
-    </template>
-
     <Page v-else>
       <template #top>
-        <slot name="page-top-ads">
-          <div
-            id="ads-container"
-            v-if="theme.carbonAds && theme.carbonAds.carbon"
-          >
-            <CarbonAds
-              :key="'carbon' + page.relativePath"
-              :code="theme.carbonAds.carbon"
-              :placement="theme.carbonAds.placement"
-            />
-          </div>
-        </slot>
         <slot name="page-top" />
       </template>
       <template #bottom>
         <slot name="page-bottom" />
-        <slot name="page-bottom-ads">
-          <BuySellAds
-            v-if="theme.carbonAds && theme.carbonAds.custom"
-            :key="'custom' + page.relativePath"
-            :code="theme.carbonAds.custom"
-            :placement="theme.carbonAds.placement"
-          />
-        </slot>
       </template>
     </Page>
   </div>
@@ -84,16 +47,8 @@ import NavBar from './components/NavBar.vue';
 import SideBar from './components/SideBar.vue';
 import Page from './components/Page.vue';
 
-const Home = defineAsyncComponent(() => import('./components/Home.vue'));
-
 const NoopComponent = () => null;
 
-const CarbonAds = __CARBON__
-  ? defineAsyncComponent(() => import('./components/CarbonAds.vue'))
-  : NoopComponent;
-const BuySellAds = __BSA__
-  ? defineAsyncComponent(() => import('./components/BuySellAds.vue'))
-  : NoopComponent;
 const AlgoliaSearchBox = __ALGOLIA__
   ? defineAsyncComponent(() => import('./components/AlgoliaSearchBox.vue'))
   : NoopComponent;
@@ -104,8 +59,6 @@ const { site, page, theme, frontmatter } = useData();
 
 // custom layout
 const isCustomLayout = computed(() => !!frontmatter.value.customLayout);
-// home
-const enableHome = computed(() => !!frontmatter.value.home);
 
 // automatic multilang check for AlgoliaSearchBox
 const isMultiLang = computed(() => Object.keys(site.value.langs).length > 1);

@@ -1,7 +1,6 @@
 <script setup>
 import { toRefs } from 'vue';
-import { useNavLink } from '../composables/navLink';
-import OutboundLink from './icons/OutboundLink.vue';
+import { useNavLink } from '/@/composables/navLink';
 
 const props = defineProps({
   item: {
@@ -18,7 +17,7 @@ const { props: linkProps, isExternal } = useNavLink(propsRefs.item);
 <template>
   <div class="nav-link">
     <a class="item" v-bind="linkProps">
-      {{ item.text }} <OutboundLink v-if="isExternal" />
+      {{ item.text }}
     </a>
   </div>
 </template>

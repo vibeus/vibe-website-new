@@ -1,10 +1,10 @@
 import { createApp as createClientApp, createSSRApp, defineAsyncComponent, h, onMounted, watch } from 'vue';
-import { inBrowser, pathToFile } from './utils';
+import { inBrowser, pathToFile } from '/@/utils/app';
 import { RouterSymbol, createRouter } from './router';
 import { siteDataRef, useData } from './data';
-import { useUpdateHead } from './composables/head';
+import { useUpdateHead } from '/@/composables/head';
 import Theme from '/@mytheme';
-import { usePrefetch } from './composables/preFetch';
+import { usePrefetch } from '/@/composables/preFetch';
 import { dataSymbol, initData } from './data';
 import { Content } from './components/Content';
 import { ClientOnly } from './components/ClientOnly';

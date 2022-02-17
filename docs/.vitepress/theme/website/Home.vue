@@ -13,9 +13,9 @@
 </template>
 
 <script setup>
-import HomeHero from './HomeHero.vue';
-import HomeFeatures from './HomeFeatures.vue';
-import HomeFooter from './HomeFooter.vue';
+import HomeHero from '/@vcomp/HomeHero.vue';
+import HomeFeatures from '/@vcomp/HomeFeatures.vue';
+import HomeFooter from '/@vcomp/HomeFooter.vue';
 </script>
 
 <style scoped>

@@ -3,7 +3,7 @@
     <figure v-if="frontmatter.heroImage" class="figure">
       <svg-icon
         class="image"
-        name="website-logo"
+        icon-name="website-logo"
         :alt="frontmatter.heroAlt"
       />
     </figure>

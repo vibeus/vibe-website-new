@@ -1,7 +1,7 @@
 import { shallowRef, readonly, computed, inject } from 'vue';
 import serializedSiteData from '@siteData';
-import { resolveSiteDataByRoute } from '../shared';
-import { withBase } from './utils';
+import { resolveSiteDataByRoute } from '/@/utils/shared';
+import { withBase } from '/@/utils/app';
 export const dataSymbol = Symbol();
 export const siteDataRef = shallowRef(parse(serializedSiteData));
 function parse(data) {

@@ -1,5 +1,5 @@
 import { reactive, inject, markRaw, nextTick, readonly } from 'vue';
-import { inBrowser } from './utils';
+import { inBrowser } from '/@/utils/app';
 export const RouterSymbol = Symbol();
 // we are just using URL to parse the pathname and hash - the base doesn't
 // matter and is only passed to support same-host hrefs.

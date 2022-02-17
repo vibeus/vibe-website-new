@@ -1,5 +1,5 @@
 <script setup>
-import { useEditLink } from '../composables/editLink';
+import { useEditLink } from '/@/composables/editLink';
 import OutboundLink from './icons/OutboundLink.vue';
 
 const { url, text } = useEditLink();

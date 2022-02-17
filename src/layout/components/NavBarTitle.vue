@@ -12,7 +12,7 @@ const { site, theme, localePath } = useData();
     <svg-icon
       v-if="theme.logoName"
       class="logo"
-      :name="theme.logoName"
+      :icon-name="theme.logoName"
       alt="Logo"
     />
   </a>

@@ -1,35 +1,39 @@
 <template>
-  <svg aria-hidden="true">
-    <use :href="symbolId" :fill="color" />
+  <svg :class="svgClass" aria-hidden="true">
+    <use width=100% height=100% :href="symbolId" :fill="color" />
   </svg>
 </template>
 
-<script>
-import { defineComponent, computed } from 'vue';
+<script setup>
 
-export default defineComponent({
-  name: 'SvgIcon',
-  props: {
-    prefix: {
-      type: String,
-      default: 'icon',
-    },
-    name: {
-      type: String,
-      required: true,
-    },
-    alt: {
-      type: String,
-    },
-    color: {
-      type: String,
-      default: '#333',
-    },
+const props = defineProps({
+  prefix: {
+    type: String,
+    default: 'icon',
   },
-  setup(props) {
-    const symbolId = computed(() => `#${props.prefix}-${props.name}`);
-    return { symbolId };
+  iconName: {
+    type: String,
+    required: true,
   },
+  alt: {
+    type: String,
+  },
+  color: {
+    type: String,
+    default: '#333',
+  },
+}); 
+
+const symbolId = computed(() => `#${props.prefix}-${props.iconName}`);
+const svgClass = computed(() => {
+  if (props.iconClass) {
+    return 'svg-icon ' + props.iconClass;
+  } else {
+    return 'svg-icon';
+  }
 });
 </script>
 
+<style lang="sass" scoped>
+
+</style>

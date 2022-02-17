@@ -1,3 +1,13 @@
+---
+sidebar: false
+customLayout: true
+---
+1234
+<div class="sidebar">
+132
+<Test />
+</div>
+
 # Button 按钮
 12412
 常用的操作按钮。
