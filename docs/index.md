@@ -1,5 +1,6 @@
 ---
-home: true
+layout: Home
+sidebar: false
 heroImage: /logo.svg
 actionText: Get Started
 actionLink: /guide/
@@ -22,4 +23,3 @@ features:
     details: Flexible programmatic APIs with full TypeScript typing.
 footer: © Copyright 2022 Vibe, Inc. All rights reserved.
 ---
-<Home />

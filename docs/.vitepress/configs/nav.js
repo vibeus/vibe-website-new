@@ -1,10 +1,10 @@
 module.exports = [
   {
-    text: 'Blog',
-    activeMatch: `^/(blog|examples)/`,
+    text: 'Solutions',
+    activeMatch: `^/(lp|examples)/`,
     items: [
-      { text: 'Guide', link: '/blog/guide' },
-      { text: 'Test', link: '/blog/test' }
+      { text: 'Education', link: '/lp/scenario-education' },
+      { text: 'Business', link: '/lp/scenario-business' }
     ]
   },
   {

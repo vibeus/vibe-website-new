@@ -23,7 +23,7 @@
     <!-- TODO: make this button accessible -->
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
-    <Content v-if="isCustomLayout" />
+    <CustomLayout v-if="isCustomLayout" />
 
     <Page v-else>
       <template #top>
@@ -55,10 +55,14 @@ const AlgoliaSearchBox = __ALGOLIA__
 
 // generic state
 const route = useRoute();
-const { site, page, theme, frontmatter } = useData();
+const { site, page, theme, frontmatter: fm } = useData();
+
+const CustomLayout = fm.value.isLP
+  ? defineAsyncComponent(() => import('../views/lp/' + fm.value.layout + '.vue'))
+  : defineAsyncComponent(() => import('../views/' + fm.value.layout + '.vue'));
 
 // custom layout
-const isCustomLayout = computed(() => !!frontmatter.value.customLayout);
+const isCustomLayout = computed(() => !!fm.value.layout);
 
 // automatic multilang check for AlgoliaSearchBox
 const isMultiLang = computed(() => Object.keys(site.value.langs).length > 1);
@@ -66,7 +70,7 @@ const isMultiLang = computed(() => Object.keys(site.value.langs).length > 1);
 // navbar
 const showNavbar = computed(() => {
   const themeConfig = theme.value;
-  if (frontmatter.value.navbar === false || themeConfig.navbar === false) {
+  if (fm.value.navbar === false || themeConfig.navbar === false) {
     return false;
   }
   return (
@@ -78,7 +82,7 @@ const showNavbar = computed(() => {
 const openSideBar = ref(false);
 
 const showSidebar = computed(() => {
-  if (frontmatter.value.home || frontmatter.value.sidebar === false) {
+  if (fm.value.home || fm.value.sidebar === false) {
     return false;
   }
 

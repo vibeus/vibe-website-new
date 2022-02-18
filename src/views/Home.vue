@@ -3,9 +3,6 @@
     <HomeHero />
     <slot name="hero" />
     <HomeFeatures />
-    <div class="home-content">
-      <Content />
-    </div>
     <slot name="features" />
     <HomeFooter />
     <slot name="footer" />

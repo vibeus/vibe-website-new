@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-  test
+    lp test education
   </div>
 </template>
 
