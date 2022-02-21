@@ -17,6 +17,7 @@ import HomeFooter from '/@vcomp/HomeFooter.vue';
 </script>
 
 <style lang="sass" scoped>
+@import "/@/assets/css/main.sass"
 .home
   padding-top: var(--header-height)
 
@@ -24,4 +25,8 @@ import HomeFooter from '/@vcomp/HomeFooter.vue';
   max-width: 960px
   margin: 0px auto
   padding: 0 1.5rem
+
+img
+  +mobile
+    width: 200px
 </style>

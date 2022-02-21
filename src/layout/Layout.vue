@@ -113,34 +113,34 @@ const pageClasses = computed(() => {
 });
 </script>
 
-<style>
-#ads-container {
-  margin: 0 auto;
-}
+<style lang="sass">
+#ads-container
+  margin: 0 auto
 
-@media (min-width: 420px) {
-  #ads-container {
-    position: relative;
-    right: 0;
-    float: right;
-    margin: -8px -8px 24px 24px;
-    width: 146px;
-  }
-}
 
-@media (max-width: 420px) {
-  #ads-container {
+@media (min-width: 420px)
+  #ads-container
+    position: relative
+    right: 0
+    float: right
+    margin: -8px -8px 24px 24px
+    width: 146px
+  
+
+
+@media (max-width: 420px)
+  #ads-container
     /* Avoid layout shift */
-    height: 105px;
-    margin: 1.75rem 0;
-  }
-}
+    height: 105px
+    margin: 1.75rem 0
+  
 
-@media (min-width: 1400px) {
-  #ads-container {
-    position: fixed;
-    right: 8px;
-    bottom: 8px;
-  }
-}
+
+@media (min-width: 1400px)
+  #ads-container
+    position: fixed
+    right: 8px
+    bottom: 8px
+  
+
 </style>
