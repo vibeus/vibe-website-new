@@ -1,5 +1,6 @@
 import DefaultTheme from "/@/layout";
 import SvgIcon from '/@/components/SvgIcon.vue';
+import LazyImg from '/@/components/LazyImg.vue';
 import 'virtual:svg-icons-register'; // Important
 
 export default {
@@ -8,6 +9,7 @@ export default {
     // register global components
     app.component('Layout', DefaultTheme);
     app.component('svg-icon', SvgIcon);
+    app.component('lazy-img', LazyImg);
 
     // register website and lp page components
 
