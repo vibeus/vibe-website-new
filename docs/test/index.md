@@ -1,5 +1,5 @@
 ---
-layout: Test
+layout: test
 sidebar: false
 ---
 
