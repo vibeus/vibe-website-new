@@ -5,7 +5,7 @@
     <slot name="hero" />
     <HomeFeatures />
     <slot name="features" />
-    <HomeFooter />
+    <HomeFooter @consoleTest="consoleT" />
     <slot name="footer" />
   </main>
 </template>
@@ -14,6 +14,15 @@
 import HomeHero from '/@vcomp/HomeHero.vue';
 import HomeFeatures from '/@vcomp/HomeFeatures.vue';
 import HomeFooter from '/@vcomp/HomeFooter.vue';
+
+const testInfo = ref({user: 'abc'});
+/* Start Data */
+provide('testInfo', testInfo);
+/* End Data */
+
+const consoleT = () => {
+  console.log(123);
+};
 </script>
 
 <style lang="sass" scoped>

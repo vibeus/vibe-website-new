@@ -1,16 +1,32 @@
-<script setup>
-import { useData } from 'vitepress';
-
-const { frontmatter } = useData();
-</script>
-
 <template>
   <footer v-if="frontmatter.footer" class="footer">
     <div class="container">
       <p class="text">{{ frontmatter.footer }}</p>
     </div>
   </footer>
+  <div @click="consoleTT">
+    {{ testInfo.user }}
+  </div>
 </template>
+
+<script setup>
+import { useData } from 'vitepress';
+
+const { frontmatter } = useData();
+
+const emit = defineEmits(['consoleTest']);
+
+/* Start Data */
+const testInfo = inject('testInfo');
+
+
+provide('test', '123');
+/* End Data */
+
+const consoleTT = () => {
+  emit('consoleTest');
+};
+</script>
 
 <style scoped>
 .footer {

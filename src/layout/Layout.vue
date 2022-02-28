@@ -58,8 +58,8 @@ const route = useRoute();
 const { site, page, theme, frontmatter: fm } = useData();
 
 const CustomLayout = fm.value.isLP
-  ? defineAsyncComponent(() => import('../views/lp/' + fm.value.layout + '/Index.vue'))
-  : defineAsyncComponent(() => import('../views/website/' + fm.value.layout + '/Index.vue'));
+  ? defineAsyncComponent(() => import('../pageLp/' + fm.value.layout + '/Index.vue'))
+  : defineAsyncComponent(() => import('../pageWebsite/' + fm.value.layout + '/Index.vue'));
 
 // custom layout
 const isCustomLayout = computed(() => !!fm.value.layout);
