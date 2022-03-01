@@ -1,5 +1,4 @@
 ---
-sidebar: false
 customLayout: true
 ---
 1234

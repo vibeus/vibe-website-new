@@ -1,6 +1,5 @@
 ---
 layout: test
-sidebar: false
 ---
 
 

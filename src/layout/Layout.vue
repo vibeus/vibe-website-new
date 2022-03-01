@@ -82,9 +82,8 @@ const showNavbar = computed(() => {
 const openSideBar = ref(false);
 
 const showSidebar = computed(() => {
-  if (fm.value.home || fm.value.sidebar === false) {
+  if (fm.value.sidebar !== true)
     return false;
-  }
 
   return !isSideBarEmpty(
     getSideBarConfig(theme.value.sidebar, route.data.relativePath)

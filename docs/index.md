@@ -1,6 +1,5 @@
 ---
 layout: home
-sidebar: false
 heroImage: /logo.svg
 actionText: Get Started
 actionLink: /guide/

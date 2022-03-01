@@ -1,8 +1,3 @@
-<script setup>
-import { withBase, useData } from 'vitepress';
-const { site, theme, localePath } = useData();
-</script>
-
 <template>
   <a
     class="nav-bar-title"
@@ -17,6 +12,11 @@ const { site, theme, localePath } = useData();
     />
   </a>
 </template>
+
+<script setup>
+import { withBase, useData } from 'vitepress';
+const { site, theme, localePath } = useData();
+</script>
 
 <style lang="sass" scoped>
 .nav-bar-title
