@@ -4,6 +4,7 @@
       <div class="title">{{hero.title}}</div>
       <Form
         :form="hero.form"
+        @msgSuccess="elMsgSuccess"
       />
     </div>
   </section>
@@ -11,6 +12,7 @@
 
 <script setup>
 import Form from '/@vcomp/Form.vue';
+import { ElMessage } from 'element-plus';
 
 const props = defineProps({
   hero: {
@@ -19,6 +21,9 @@ const props = defineProps({
   }
 });
 
+const elMsgSuccess = msg => {
+  ElMessage.success(msg, 3);
+};
 </script>
 
 <style lang="sass" scoped>

@@ -44,9 +44,12 @@ const props = defineProps({
   }
 });
 
+const emit = defineEmits(['msgSuccess']);
+
 const { action, buttons, controls } = Object.assign({}, props.form);
 
 /* Start Data */
+const { proxy } = getCurrentInstance();
 const formData = ref({});
 
 (function initFormData() {
@@ -63,11 +66,11 @@ const rules = {
 /* End Data */
 
 const submitForm = () => {
-  proxy.$refs.loginForm.validate(valid => {
+  proxy.$refs.form.validate(valid => {
     if (valid) {
-      console.log('valid: ', valid);
-    }
-    console.log('invalid');
+      emit('msgSuccess', 'Submitted successfully');
+    } else
+      console.log('invalid');
   });
 };
 </script>
