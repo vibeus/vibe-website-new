@@ -20,19 +20,17 @@
         <slot name="sidebar-bottom" />
       </template>
     </SideBar>
-    <!-- TODO: make this button accessible -->
-    <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
-    <Content v-if="isCustomLayout" />
+    <CustomLayout v-if="isCustomLayout" />
 
-    <Page v-else>
+    <Blog v-else>
       <template #top>
         <slot name="page-top" />
       </template>
       <template #bottom>
         <slot name="page-bottom" />
       </template>
-    </Page>
+    </Blog>
   </div>
 
   <Debug />
@@ -45,7 +43,7 @@ import { isSideBarEmpty, getSideBarConfig } from './support/sideBar';
 // components
 import NavBar from './components/NavBar.vue';
 import SideBar from './components/SideBar.vue';
-import Page from './components/Page.vue';
+import Blog from './components/Blog.vue';
 
 const NoopComponent = () => null;
 

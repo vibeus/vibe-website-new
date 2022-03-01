@@ -1,11 +1,11 @@
 <template>
   <slot name="custom-page" />
-  <main class="page">
+  <main class="blog">
     <div class="container">
       <slot name="top" />
 
       <Content class="content" />
-      <PageFooter />
+      <BlogFooter />
       <NextAndPrevLinks />
 
       <slot name="bottom" />
@@ -14,23 +14,23 @@
 </template>
 
 <script setup>
-import PageFooter from './PageFooter.vue';
+import BlogFooter from './BlogFooter.vue';
 import NextAndPrevLinks from './NextAndPrevLinks.vue';
 </script>
 
 <style scoped>
-.page {
+.blog {
   padding-top: var(--header-height);
 }
 
 @media (min-width: 720px) {
-  .page {
+  .blog {
     margin-left: 16.4rem;
   }
 }
 
 @media (min-width: 960px) {
-  .page {
+  .blog {
     margin-left: 20rem;
   }
 }
