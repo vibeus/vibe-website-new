@@ -4,7 +4,28 @@
     :model="formData"
     :rules="rules"
   >
-    
+    <template v-for="(row, idx) in controls" :key="idx">
+      <el-row>
+        <template v-for="item in row" :key="item.name">
+          <el-form-item :label="item.placeholder">
+            <el-select
+              v-if="item.dropdown"
+              placeholder="Please select"
+              :required="item.required"
+            >
+              <el-option v-for="option in item.dropdown" :key="option" :label="option" :value="option" />
+            </el-select>
+            <el-input v-else
+              v-model="formData[item.name]"
+              :required="item.required"
+              :type="item.type"
+              :autosize="item.type==='textarea'"
+            />
+          </el-form-item>
+        </template>
+      </el-row>
+      
+    </template>
     <template v-for="item in buttons" :key="item.title">
       <el-button class="button {{item.class}}" @click="submitForm">
         {{item.title}}
@@ -26,14 +47,17 @@ const props = defineProps({
 const { action, buttons, controls } = Object.assign({}, props.form);
 
 /* Start Data */
-const formData = ref(null);
+const formData = ref({});
 
 (function initFormData() {
-  
+  controls.forEach(item => {
+    formData.value[item.name] = null;
+  });
+  console.log('formData.value: ', formData.value);
 })();
 
 const rules = {
-  email: [{ required: true, trigger: 'blur', validator: validEmail }],
+  // email: [{ required: true, trigger: 'blur', validator: validEmail }],
 };
 
 /* End Data */

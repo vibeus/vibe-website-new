@@ -17,7 +17,7 @@ hero:
       - - name: zipcode
           placeholder: Shipping ZIP code*
           required: true
-      - - name: company_size_classification
+        - name: company_size_classification
           placeholder: Company size*
           required: true
           dropdown:
