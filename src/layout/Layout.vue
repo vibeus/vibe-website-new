@@ -23,7 +23,7 @@
     <!-- TODO: make this button accessible -->
     <div class="sidebar-mask" @click="toggleSidebar(false)" />
 
-    <CustomLayout v-if="isCustomLayout" />
+    <Content v-if="isCustomLayout" />
 
     <Page v-else>
       <template #top>
@@ -57,6 +57,7 @@ const AlgoliaSearchBox = __ALGOLIA__
 const route = useRoute();
 const { site, page, theme, frontmatter: fm } = useData();
 
+// TODO: err router Maximum call stack size exceeded
 const CustomLayout = fm.value.isLP
   ? defineAsyncComponent(() => import('../pageLp/' + fm.value.layout + '/Index.vue'))
   : defineAsyncComponent(() => import('../pageWebsite/' + fm.value.layout + '/Index.vue'));
