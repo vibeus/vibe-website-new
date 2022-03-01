@@ -29,9 +29,8 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
 import { useData, withBase } from 'vitepress';
-import NavLink from './NavLink.vue';
+import NavLink from '/@vcomp/NavLink.vue';
 
 const { site, frontmatter } = useData();
 

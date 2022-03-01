@@ -1,7 +1,5 @@
 <template>
   <header class="nav-bar">
-    <ToggleSideBarButton @toggle="$emit('toggle')" />
-
     <NavBarTitle />
 
     <div class="flex-grow" />
@@ -17,7 +15,6 @@
 <script setup>
 import NavBarTitle from './NavBarTitle.vue';
 import NavLinks from './NavLinks.vue';
-import ToggleSideBarButton from './ToggleSideBarButton.vue';
 
 defineEmits(['toggle']);
 </script>

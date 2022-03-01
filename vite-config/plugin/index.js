@@ -13,7 +13,7 @@ export function createVitePlugins() {
       iconDirs: [resolve(process.cwd(), './src/icons/svg')],
     }),
     Components({
-      resolvers: [ElementPlusResolver({importStyle: 'sass'})]
+      resolvers: [ElementPlusResolver({importStyle: 'sass'})],
     }),
     configStyleImportPlugin(),
     configVisualizerConfig(),

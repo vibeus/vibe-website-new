@@ -1,8 +1,6 @@
 <script setup>
 import { withBase } from 'vitepress';
 import { useNextAndPrevLinks } from '/@/composables/nextAndPrevLinks';
-import ArrowLeft from './icons/ArrowLeft.vue';
-import ArrowRight from './icons/ArrowRight.vue';
 
 const { hasLinks, prev, next } = useNextAndPrevLinks();
 </script>
@@ -12,14 +10,14 @@ const { hasLinks, prev, next } = useNextAndPrevLinks();
     <div class="container">
       <div class="prev">
         <a v-if="prev" class="link" :href="withBase(prev.link)">
-          <ArrowLeft class="icon icon-prev" />
+          <svg-icon class="icon icon-prev" icon-name="blog-arrowLeft" alt="arrow-left icon" />
           <span class="text">{{ prev.text }}</span>
         </a>
       </div>
       <div class="next">
         <a v-if="next" class="link" :href="withBase(next.link)">
           <span class="text">{{ next.text }}</span>
-          <ArrowRight class="icon icon-next" />
+          <svg-icon class="icon icon-next" icon-name="blog-arrowLeft" alt="arrow-left icon" />
         </a>
       </div>
     </div>

@@ -1,16 +1,9 @@
 <script setup>
-import EditLink from './EditLink.vue';
-import LastUpdated from './LastUpdated.vue';
 </script>
 
 <template>
   <footer class="page-footer">
-    <div class="edit">
-      <EditLink />
-    </div>
-    <div class="updated">
-      <LastUpdated />
-    </div>
+    page footer
   </footer>
 </template>
 
@@ -29,13 +22,4 @@ import LastUpdated from './LastUpdated.vue';
   }
 }
 
-.updated {
-  padding-top: 4px;
-}
-
-@media (min-width: 960px) {
-  .updated {
-    padding-top: 0;
-  }
-}
 </style>

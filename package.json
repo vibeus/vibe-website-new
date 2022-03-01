@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "clean": "rimraf .yarn node_modules dist",
-    "dev": "yarn lint && vitepress dev docs",
+    "dev": "yarn lint && vitepress dev docs --port=3010",
     "build": "yarn lint && vitepress build docs",
     "serve": "yarn lint && yarn build && vitepress serve docs",
     "lint": "vue-cli-service lint"

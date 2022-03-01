@@ -11,9 +11,9 @@
 </template>
 
 <script setup>
-import HomeHero from '/@vcomp/HomeHero.vue';
-import HomeFeatures from '/@vcomp/HomeFeatures.vue';
-import HomeFooter from '/@vcomp/HomeFooter.vue';
+import HomeHero from './components/HomeHero.vue';
+import HomeFeatures from './components/HomeFeatures.vue';
+import HomeFooter from './components/HomeFooter.vue';
 
 const testInfo = ref({user: 'abc'});
 /* Start Data */

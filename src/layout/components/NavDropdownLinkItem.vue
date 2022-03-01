@@ -3,15 +3,15 @@
     <a class="item" v-bind="linkProps">
       <span class="arrow" />
       <span class="text">{{ item.text }}</span>
-      <span class="icon"><OutboundLink v-if="isExternal" /></span>
+      <span class="icon">
+        <svg-icon v-if="isExternal" class="icon" icon-name="blog-outboundLink" alt="Outbound link icon" />
+      </span>
     </a>
   </div>
 </template>
 
 <script setup>
-import { toRefs } from 'vue';
 import { useNavLink } from '/@/composables/navLink';
-import OutboundLink from './icons/OutboundLink.vue';
 
 const props = defineProps({
   item: {
@@ -73,5 +73,13 @@ const { props: linkProps, isExternal } = useNavLink(propsRefs.item);
     opacity: 0;
     transform: translateY(-2px) rotate(-90deg);
   }
+}
+
+.icon.outbound {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  vertical-align: middle;
+  color: var(--c-text-lighter);
 }
 </style>
