@@ -1,6 +1,6 @@
 import { computed } from 'vue';
 import { useData } from 'vitepress';
-import { EXTERNAL_URL_RE } from '/@/utils/shared';
+import { EXTERNAL_URL_RE } from './shared';
 export const platforms = ['GitHub', 'GitLab', 'Bitbucket'].map((platform) => {
   return [platform, new RegExp(platform, 'i')];
 });

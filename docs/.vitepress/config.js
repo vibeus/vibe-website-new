@@ -1,6 +1,7 @@
-const { resolve } = require('path')
+const { resolve } = require('path');
 const { createVitePlugins } = require('../../vite-config/plugin');
-const nav = require('./configs/nav')
+const nav = require('./configs/nav');
+const sidebar = require('./configs/sidebar');
 
 function pathResolve(dir) {
   return resolve(__dirname, ".", dir);
@@ -16,6 +17,12 @@ module.exports = (async () => {
     base: base,
 
     vite: {
+      // ssr: {
+      //   noExternal: deps
+      // },
+      // optimizeDeps: {
+      //   exclude: deps
+      // },
       base: '/',
       plugins: createVitePlugins(),
       build: {
@@ -47,31 +54,9 @@ module.exports = (async () => {
       logoName: 'vibe',
       docsDir: "/",
 
-      // algolia: {
-      //   indexName: 'vuejs-v3',
-      //   appId: 'BH4D9OD16A',
-      //   apiKey: 'bc6e8acb44ed4179c30d0a45d6140d3f'
-      // },
-
-      socialLinks: [
-        { icon: 'github', link: 'https://github.com/vuejs/vue' },
-        { icon: 'twitter', link: 'https://twitter.com/vuejs' },
-        { icon: 'discord', link: 'https://discord.com/invite/HBherRA' }
-      ],
-
       nav,
 
-      sidebar: {
-        '/blog/': [
-          {
-            text: 'Essentials',
-            items: [
-              { text: 'Introduction', link: '/blog/guide' },
-              { text: 'Installation', link: '/blog/test' },
-            ]
-          },
-        ],
-      }
+      sidebar,
     }
   }
 })()

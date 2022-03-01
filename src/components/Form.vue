@@ -56,7 +56,6 @@ const formData = ref({});
   controls.forEach(item => {
     formData.value[item.name] = null;
   });
-  console.log('formData.value: ', formData.value);
 })();
 
 const rules = {

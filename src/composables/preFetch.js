@@ -5,6 +5,7 @@ import { onMounted, onUnmounted, watch } from 'vue';
 import { inBrowser, pathToFile } from '/@/utils/layout';
 const hasFetched = new Set();
 const createLink = () => document.createElement('link');
+
 const viaDOM = (url) => {
   const link = createLink();
   link.rel = 'prefetch';
