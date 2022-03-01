@@ -9,6 +9,7 @@ import { dataSymbol, initData } from './data';
 import { Content } from './components/Content';
 import { ClientOnly } from './components/ClientOnly';
 const NotFound = Theme.NotFound || (() => '404 Not Found');
+console.log('NotFound: ', NotFound);
 const VitePressApp = {
   name: 'VitePressApp',
   setup() {

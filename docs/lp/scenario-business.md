@@ -1,4 +1,0 @@
----
-isLP: true
-layout: ScenarioBusiness
----
