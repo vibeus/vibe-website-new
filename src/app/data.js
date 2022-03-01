@@ -1,4 +1,3 @@
-import { shallowRef, readonly, computed, inject } from 'vue';
 import serializedSiteData from '@siteData';
 import { resolveSiteDataByRoute } from '/@/utils/shared';
 import { withBase } from '/@/utils/app';

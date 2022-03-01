@@ -1,4 +1,3 @@
-import { computed } from 'vue';
 import { useData } from 'vitepress';
 import { endingSlashRE, isExternal } from '/@/utils/layout';
 const bitbucketRE = /bitbucket.org/;

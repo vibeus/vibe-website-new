@@ -1,12 +1,21 @@
 <template>
   <main class="order-status">
-    order status page
-    <Hero />
+    <Hero
+      :hero="fm.hero"
+    />
   </main>
 </template>
 
 <script setup>
+import { useData } from 'vitepress';
 import Hero from './sections/Hero.vue';
+
+
+/* Start Data */
+const { frontmatter: fm } = useData();
+console.log(fm.value);
+
+/* End Data */
 </script>
 
 <style lang="sass" scoped>
