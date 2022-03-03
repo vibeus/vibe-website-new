@@ -1,7 +1,7 @@
 <template>
   <el-form
     ref="form"
-    :model="formData"
+    :model="formItem"
     :rules="rules"
   >
     <template v-for="(row, idx) in controls" :key="idx">
@@ -16,7 +16,7 @@
               <el-option v-for="option in item.dropdown" :key="option" :label="option" :value="option" />
             </el-select>
             <el-input v-else
-              v-model="formData[item.name]"
+              v-model="formItem[item.name]"
               :required="item.required"
               :type="item.type"
               :autosize="item.type==='textarea'"
@@ -24,7 +24,6 @@
           </el-form-item>
         </template>
       </el-row>
-      
     </template>
     <template v-for="item in buttons" :key="item.title">
       <el-button class="button {{item.class}}" @click="submitForm">
@@ -38,7 +37,7 @@
 import { validEmail } from '/@/utils/validate';
 
 const props = defineProps({
-  form: {
+  formData: {
     type: Object,
     required: true
   }
@@ -46,15 +45,15 @@ const props = defineProps({
 
 const emit = defineEmits(['msgSuccess']);
 
-const { action, buttons, controls } = Object.assign({}, props.form);
+const { action, buttons, controls } = Object.assign({}, props.formData);
 
 /* Start Data */
 const { proxy } = getCurrentInstance();
-const formData = ref({});
+const formItem = ref({});
 
 (function initFormData() {
   controls.forEach(item => {
-    formData.value[item.name] = null;
+    formItem.value[item.name] = null;
   });
 })();
 

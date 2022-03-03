@@ -30,3 +30,9 @@ hero:
         title: Track
         class: button is-not-uniform is-rounded is-black is-fullwidth
 ---
+
+<Page />
+
+<script setup>
+import Page from '/@/views/order/status/Index.vue'
+</script>

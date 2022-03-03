@@ -2,8 +2,8 @@
   <section class="hero" id="hero">
     <div class="form-container">
       <div class="title">{{hero.title}}</div>
-      <Form
-        :form="hero.form"
+      <VForm
+        :formData="hero.form"
         @msgSuccess="elMsgSuccess"
       />
     </div>
@@ -11,7 +11,7 @@
 </template>
 
 <script setup>
-import Form from '/@vcomp/Form.vue';
+import VForm from '/@/components/Form.vue';
 import { ElMessage } from 'element-plus';
 
 const props = defineProps({

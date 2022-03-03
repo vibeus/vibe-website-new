@@ -1,11 +1,8 @@
 ---
-layout: home
 heroImage: /logo.svg
 actionText: Get Started
-actionLink: /guide/
 
 altActionText: Learn More
-altActionLink: /guide/
 
 features:
   - title: 💡 Instant Server Start
@@ -22,3 +19,8 @@ features:
     details: Flexible programmatic APIs with full TypeScript typing.
 footer: © Copyright 2022 Vibe, Inc. All rights reserved.
 ---
+<Page />
+
+<script setup>
+import Page from '/@/views/home/Index.vue'
+</script>

@@ -1,13 +1,13 @@
-const { resolve } = require('path');
-const { createVitePlugins } = require('../../vite-config/plugin');
-const nav = require('./configs/nav');
-const sidebar = require('./configs/sidebar');
+import { resolve } from 'path';
+import { createVitePlugins } from '../../vite-config/plugin';
+import nav from './configs/nav';
+import sidebar from './configs/sidebar';
 
 function pathResolve(dir) {
   return resolve(__dirname, ".", dir);
 }
 
-module.exports = (async () => {
+async function config() {
   // const base = await getBase()
   const base = process.env.BASE || '/'
   console.log('base: ', base);
@@ -17,12 +17,6 @@ module.exports = (async () => {
     base: base,
 
     vite: {
-      // ssr: {
-      //   noExternal: deps
-      // },
-      // optimizeDeps: {
-      //   exclude: deps
-      // },
       base: '/',
       plugins: createVitePlugins(),
       build: {
@@ -59,4 +53,6 @@ module.exports = (async () => {
       sidebar,
     }
   }
-})()
+}
+
+export default config();

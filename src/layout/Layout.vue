@@ -21,7 +21,7 @@
       </template>
     </SideBar>
 
-    <CustomLayout v-if="isCustomLayout" />
+    <Content v-if="isCustomLayout" />
 
     <Blog v-else>
       <template #top>
@@ -56,9 +56,9 @@ const route = useRoute();
 const { site, page, theme, frontmatter: fm } = useData();
 
 // TODO: err router Maximum call stack size exceeded
-const CustomLayout = fm.value.isLP
-  ? defineAsyncComponent(() => import('../pageLp/' + fm.value.layout + '/Index.vue'))
-  : defineAsyncComponent(() => import('../pageWebsite/' + fm.value.layout + '/Index.vue'));
+// CustomLayout = import('/@/views/' + fm.value.layout + '/Index.vue');
+// ? 
+// : defineAsyncComponent(() => import('../pageWebsite/' + fm.value.layout + '/Index.vue'));
 
 // custom layout
 const isCustomLayout = computed(() => !!fm.value.layout);
