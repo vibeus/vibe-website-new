@@ -13,7 +13,6 @@
 </template>
 
 <script setup>
-import { useData } from 'vitepress';
 import Hero from './sections/Hero.vue';
 import Resources from './sections/Resources.vue';
 import BottomCta from './sections/BottomCta.vue';

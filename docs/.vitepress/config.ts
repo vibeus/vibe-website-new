@@ -18,6 +18,9 @@ async function config() {
 
     vite: {
       base: '/',
+      // optimizeDeps: {
+      //   include: ['element-plus'],
+      // },
       plugins: createVitePlugins(),
       build: {
         target: 'modules',

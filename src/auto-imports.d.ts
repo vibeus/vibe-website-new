@@ -45,10 +45,12 @@ declare global {
   const useAttrs: typeof import('vue')['useAttrs']
   const useCssModule: typeof import('vue')['useCssModule']
   const useCssVars: typeof import('vue')['useCssVars']
-  const useRoute: typeof import('vue-router')['useRoute']
-  const useRouter: typeof import('vue-router')['useRouter']
+  const useData: typeof import('vitepress')['useData']
+  const useRoute: typeof import('vitepress')['useRoute']
+  const useRouter: typeof import('vitepress')['useRouter']
   const useSlots: typeof import('vue')['useSlots']
   const watch: typeof import('vue')['watch']
   const watchEffect: typeof import('vue')['watchEffect']
+  const withBase: typeof import('vitepress')['withBase']
 }
 export {}

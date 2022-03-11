@@ -1,5 +1,4 @@
 import { computed } from 'vue';
-import { useData, useRoute } from 'vitepress';
 export function useLanguageLinks() {
   const { site, localePath, theme } = useData();
   return computed(() => {

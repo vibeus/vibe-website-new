@@ -1,6 +1,6 @@
 <template>
   <section class="hero" id="hero">
-    <lazy-img class="hero-image" :src="heroImg" alt="" ></lazy-img>
+    <lazy-img class="hero-image" :src="hero.background" alt="" />
     <div class="hero-body">
       <div class="container">
       <div class="form-container">
@@ -19,7 +19,6 @@
 <script setup>
 import VForm from '/@/components/Form.vue';
 import { ElMessage } from 'element-plus';
-import heroImg from '/@img/order/status/hero.jpg';
 const props = defineProps({
   hero: {
     type: Object,

@@ -10,8 +10,6 @@
 </template>
 
 <script setup>
-import { useData } from 'vitepress';
-
 const { frontmatter } = useData();
 
 const emit = defineEmits(['consoleTest']);

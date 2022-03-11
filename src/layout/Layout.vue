@@ -21,7 +21,7 @@
       </template>
     </SideBar>
 
-    <Content v-if="isCustomLayout" />
+      <Content v-if="isCustomLayout" />
 
     <Blog v-else>
       <template #top>
@@ -37,7 +37,6 @@
 </template>
 
 <script setup>
-import { useRoute, useData } from 'vitepress';
 import { isSideBarEmpty, getSideBarConfig } from './support/sideBar';
 
 // components

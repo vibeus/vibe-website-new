@@ -14,7 +14,6 @@
 </template>
 
 <script setup>
-import { withBase, useData } from 'vitepress';
 const { site, theme, localePath } = useData();
 </script>
 

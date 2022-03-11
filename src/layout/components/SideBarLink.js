@@ -1,5 +1,4 @@
 import { h } from 'vue';
-import { useRoute, useData } from 'vitepress';
 import { joinUrl, isActive } from '/@/utils/layout';
 export const SideBarLink = (props) => {
   const route = useRoute();

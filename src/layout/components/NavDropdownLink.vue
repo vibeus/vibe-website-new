@@ -1,6 +1,5 @@
 <script setup>
 import { ref, watch } from 'vue';
-import { useRoute } from 'vitepress';
 import NavDropdownLinkItem from './NavDropdownLinkItem.vue';
 
 
