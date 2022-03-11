@@ -7,7 +7,6 @@
 </template>
 
 <script setup>
-import { useData } from 'vitepress';
 import Hero from './sections/Hero.vue';
 
 /* Start Data */

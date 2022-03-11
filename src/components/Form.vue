@@ -34,6 +34,7 @@
 </template>
 
 <script setup>
+import { ElInput, ElRow, ElButton, ElMessage, ElForm, ElFormItem, ElSelect, ElOption } from 'element-plus';
 import { validEmail } from '/@/utils/validate';
 
 const props = defineProps({

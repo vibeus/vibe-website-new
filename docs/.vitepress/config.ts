@@ -18,6 +18,9 @@ async function config() {
 
     vite: {
       base: '/',
+      // optimizeDeps: {
+      //   include: ['element-plus'],
+      // },
       plugins: createVitePlugins(),
       build: {
         target: 'modules',
@@ -33,7 +36,8 @@ async function config() {
       resolve: {
         alias: [
           { find: '/@', replacement: pathResolve('../../src') },
-          { find: '/@vcomp', replacement: pathResolve('../../src/components') }
+          { find: '/@vcomp', replacement: pathResolve('../../src/components') },
+          { find: '/@img', replacement: pathResolve('../../src/assets/img') }
         ]
       },
       hot: true,

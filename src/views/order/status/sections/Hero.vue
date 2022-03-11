@@ -1,5 +1,6 @@
 <template>
   <section class="hero" id="hero">
+    <lazy-img :src="hero.background" alt="test"></lazy-img>
     <div class="form-container">
       <div class="title">{{hero.title}}</div>
       <VForm

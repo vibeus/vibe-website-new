@@ -1,7 +1,6 @@
 <script setup>
 import '@docsearch/css';
 import docsearch from '@docsearch/js';
-import { useRoute, useRouter, useData } from 'vitepress';
 import { getCurrentInstance, onMounted, watch } from 'vue';
 
 const props = defineProps({

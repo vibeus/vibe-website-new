@@ -3,6 +3,7 @@ layout: order/status
 
 hero:
   title: Track Your Order Status
+  background: order/status/logo.svg
   form:
     action: /api/order/status
     controls:

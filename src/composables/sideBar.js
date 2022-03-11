@@ -1,5 +1,4 @@
 import { computed } from 'vue';
-import { useRoute, useData } from 'vitepress';
 import { useActiveSidebarLinks } from '/@/composables/activeSidebarLink';
 import { getSideBarConfig } from '../layout/support/sideBar';
 export function useSideBar() {

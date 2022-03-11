@@ -1,6 +1,5 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue';
-import { useData } from 'vitepress';
 
 const { theme, page } = useData();
 
