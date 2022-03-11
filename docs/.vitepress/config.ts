@@ -33,7 +33,8 @@ async function config() {
       resolve: {
         alias: [
           { find: '/@', replacement: pathResolve('../../src') },
-          { find: '/@vcomp', replacement: pathResolve('../../src/components') }
+          { find: '/@vcomp', replacement: pathResolve('../../src/components') },
+          { find: '/@img', replacement: pathResolve('../../src/assets/img') }
         ]
       },
       hot: true,

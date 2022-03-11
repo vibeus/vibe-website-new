@@ -3,6 +3,7 @@ layout: order/status
 
 hero:
   title: Track Your Order Status
+  background: order/status/hero.jpg
   form:
     action: /api/order/status
     controls:
@@ -29,6 +30,27 @@ hero:
       - type: submit
         title: Track
         class: button is-not-uniform is-rounded is-black is-fullwidth
+        
+resources:
+  title: Other Resources
+  links:
+    - title: Get Started
+      icon: img/order/status/get-started.svg
+      url: /onboarding/
+    - title: Video Tutorials
+      icon: img/order/status/video-tutorials.svg
+      url: /video-tutorial/
+    - title: Book a Live Training
+      icon: img/order/status/book-training.svg
+      url: https://us02web.zoom.us/webinar/register/WN_oSFgELtCTj67ZgnGfdJ1wg
+
+bottom_cta:
+  title: "Can’t find what your’re looking for?"
+  cta:
+    buttons:
+      - title: Contact Support
+        class: button is-rounded is-black
+        url: https://knowledge.vibe.us/kb-tickets/new
 ---
 
 <Page />
