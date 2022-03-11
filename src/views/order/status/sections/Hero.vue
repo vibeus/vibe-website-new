@@ -1,24 +1,26 @@
 <template>
   <section class="hero" id="hero">
-    <lazy-img class="hero-image" :src="hero.background" alt="" />
+    <div class="hero-bg">
+      <lazy-img class="hero-image is-hidden-mobile" :src="hero.background" alt="" />
+      <lazy-img class="hero-image is-hidden-tablet" :src="hero.background_mobile" alt="" />
+    </div>    
     <div class="hero-body">
       <div class="container">
-      <div class="form-container">
-        <div class="title">{{hero.title}}</div>
-        <VForm
+        <div class="form-container">
+          <div class="title">{{hero.title}}</div>
+          <VForm
         :formData="hero.form"
         @msgSuccess="elMsgSuccess"
-      />
-    </div>
+         />
+          <div class="error-message">The information you provided does not match our records.</div>
+        </div>
       </div>
     </div>
-
   </section>
 </template>
 
 <script setup>
 import VForm from '/@/components/Form.vue';
-import { ElMessage } from 'element-plus';
 const props = defineProps({
   hero: {
     type: Object,
@@ -33,22 +35,34 @@ const elMsgSuccess = msg => {
 
 <style lang="sass" scoped>
 .hero
-    align-items: stretch
+  height: 657px
+  overflow: hidden
+  position: relative
+  .hero-body
+    height: 657px
     display: flex
-    flex-direction: column
-    justify-content: space-between
-.hero-image
+    align-items: center
+    flex-grow: 1
+    flex-shrink: 0
+    padding: 3rem 1.5rem
+    .container
+      max-width: 960px
+      flex-grow: 1
+      margin: 0 auto
+      position: relative
+      width: auto
+  .hero-bg
     position: absolute
-    top: 0
-    left: 0
-    right: 0
-    bottom: 0
-
+    .hero-image
+      height:100%
+      width: 100%
+      object-fit: cover
+      object-position: center top
 .form-container
     max-width: 493px
     padding: 16px 24px
     background: rgba(255,255,255,0.9)
-    box-shadow: 4px 4px 20px rgb(0 0 0 / 11%)
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.11)
     border-radius: 8px
     padding: 48px
     backdrop-filter: blur(6px)

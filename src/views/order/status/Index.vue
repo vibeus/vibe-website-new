@@ -24,6 +24,7 @@ console.log('fm: ', fm.value);
 /* End Data */
 </script>
 
-<style lang="sass" scoped>
-
+<style lang="sass">
+.container
+  max-width: 1440px
 </style>

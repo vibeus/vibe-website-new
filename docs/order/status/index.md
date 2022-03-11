@@ -2,6 +2,7 @@
 hero:
   title: Track Your Order Status
   background: order/status/hero.jpg
+  background_mobile: order/status/hero-mobile.jpg
   form:
     action: /api/order/status
     controls:

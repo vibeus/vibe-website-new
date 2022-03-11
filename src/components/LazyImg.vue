@@ -6,6 +6,7 @@
 </template>
 
 <script setup>
+import { imageModule } from '/@/utils/global';
 const props = defineProps({
   src: {
     type: String,
@@ -18,7 +19,9 @@ const props = defineProps({
 // import img from '/@img/order/status/logo.svg';
 // console.log('img: ', img);
 
-const imageUrl = new URL(`../assets/img/${props.src}`, import.meta.url).href;
+// const imageUrl = new URL(`../assets/img/${props.src}`, import.meta.url).href;
+const path = `../assets/img/${props.src}`;
+const imageUrl = imageModule[path].default;
 console.log('imageUrl: ', imageUrl);
 </script>
 

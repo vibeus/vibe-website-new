@@ -1,32 +1,23 @@
 <template>
-  <el-form ref="form" :model="formItem" :rules="rules">
+  <form class="form" ref="form" :model="formItem" :rules="rules">
     <template v-for="(row, idx) in controls" :key="idx">
-      <el-row>
-        <template v-for="item in row" :key="item.name">
-          <el-form-item :label="item.placeholder">
-            <el-select v-if="item.dropdown" placeholder="Please select" :required="item.required">
-              <el-option
+         <template v-for="item in row" :key="item.name">
+          <label class="form-label" style="margin-left: 0px;">{{item.placeholder}}</label>
+            <select v-if="item.dropdown" placeholder="Please select" :required="item.required">
+              <option
                 v-for="option in item.dropdown"
                 :key="option"
                 :label="option"
                 :value="option"
               />
-            </el-select>
-            <el-input
-              v-else
-              v-model="formItem[item.name]"
-              :required="item.required"
-              :type="item.type"
-              :autosize="item.type==='textarea'"
-            />
-          </el-form-item>
+            </select>
+           <input v-else :name="item.name" class="form-control input" :type="item.type" :required="item.required">
         </template>
-      </el-row>
     </template>
     <template v-for="item in buttons" :key="item.title">
-      <a href class="button {{item.class}}" @click="submitForm">{{item.title}}</a>
+      <a href="" :class="item.class" @click="submitForm">{{item.title}}</a>
     </template>
-  </el-form>
+  </form>
 </template>
 
 <script setup>
@@ -70,18 +61,24 @@ const submitForm = () => {
 </script>
 
 <style lang="sass" scoped>
-.button
-  background-color: #fff
-  border-color: #dbdbdb
-  border-width: 1px
-  color: #111
-  cursor: pointer
-  font-family: Stratos,BlinkMacSystemFont,-apple-system,"Microsoft YaHei","Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Droid Sans","Helvetica Neue","Helvetica","Arial",sans-serif
-  justify-content: center
-  padding-bottom: calc(0.5em - 1px)
-  padding-left: 1em
-  padding-right: 1em
-  padding-top: calc(0.5em - 1px)
-  text-align: center
-  white-space: nowrap
+@import "/@/assets/css/_common.sass"
+.form
+  input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
+    -webkit-appearance: none
+    margin: 0
+  input[type=number]
+    -moz-appearance: textfield
+  .button
+    height: 50px
+    font-size: 20px
+    font-weight: $vibe-bold
+    background-color: #0a0a0a
+    color: #fff
+    text-decoration: none
+    font-family: Stratos,BlinkMacSystemFont,-apple-system,microsoft yahei,segoe ui,roboto,oxygen,ubuntu,cantarell,droid sans,helvetica neue,helvetica,arial,sans-serif
+  .button.is-rounded 
+    border-radius: 290486px
+    padding-left: calc(1em + 0.25em)
+    padding-right: calc(1em + 0.25em)
+
 </style>

@@ -21,9 +21,7 @@
       </template>
     </SideBar>
 
-      <Content v-if="isCustomLayout" />
-
-    <Blog v-else>
+    <Blog v-if="isBlog">
       <template #top>
         <slot name="page-top" />
       </template>
@@ -31,6 +29,8 @@
         <slot name="page-bottom" />
       </template>
     </Blog>
+
+    <Content v-else />
   </div>
 
   <Debug />
@@ -60,7 +60,7 @@ const { site, page, theme, frontmatter: fm } = useData();
 // : defineAsyncComponent(() => import('../pageWebsite/' + fm.value.layout + '/Index.vue'));
 
 // custom layout
-const isCustomLayout = computed(() => !!fm.value.layout);
+const isBlog = computed(() => !!fm.value.isBlog);
 
 // automatic multilang check for AlgoliaSearchBox
 const isMultiLang = computed(() => Object.keys(site.value.langs).length > 1);
