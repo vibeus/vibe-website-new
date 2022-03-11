@@ -35,5 +35,7 @@ const svgClass = computed(() => {
 </script>
 
 <style lang="sass" scoped>
-
+.svg-icon
+  min-width: 16px
+  min-height: 16px
 </style>

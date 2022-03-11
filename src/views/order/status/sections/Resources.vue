@@ -5,8 +5,7 @@
       <div class="link-list">
         <a v-for="item in resources.links" :key="item.title" class="link-item" :herf="item.url">
           <span class="item-icon">
-            <svg-icon :alt="item.icon" title/>
-            <lazy-img :src="item.icon" alt="test image" />
+            <svg-icon :icon-name="item.icon" :alt="item.alt" />
           </span>
           <div class="item-title">{{item.title}}</div>
         </a>
@@ -15,9 +14,6 @@
   </section>
 </template>
 <script setup>
-import getStarted from '/@img/order/status/get-started.svg';
-import videoTutorials from '/@img/order/status/video-tutorials.svg';
-import bookTraining from '/@img/order/status/book-training.svg';
 const props = defineProps({
   resources: {
     type: Object,

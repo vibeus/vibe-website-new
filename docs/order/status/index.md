@@ -1,6 +1,4 @@
 ---
-layout: order/status
-
 hero:
   title: Track Your Order Status
   background: order/status/hero.jpg
@@ -35,13 +33,13 @@ resources:
   title: Other Resources
   links:
     - title: Get Started
-      icon: img/order/status/get-started.svg
+      icon: order-status-get-started
       url: /onboarding/
     - title: Video Tutorials
-      icon: img/order/status/video-tutorials.svg
+      icon: order-status-video-tutorials
       url: /video-tutorial/
     - title: Book a Live Training
-      icon: img/order/status/book-training.svg
+      icon: order-status-book-training
       url: https://us02web.zoom.us/webinar/register/WN_oSFgELtCTj67ZgnGfdJ1wg
 
 bottom_cta:
