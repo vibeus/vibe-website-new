@@ -11,14 +11,14 @@
         <div class="column">
           <div class="columns is-links is-mobile is-multiline">
             <template v-for="(item, idx) in sections" :key="idx">
-              <div :class="'column is-half-touch is-foot-section ' + item.class">
+              <div :class="'column is-half-touch is-foot-section ' + item.class || ''">
                 <h2 class="is-vibe-heading">{{ item.heading }}</h2>
                 <template v-for="(link, idx) in item.links" :key="idx">
                   <div class="foot-link">
                     <a
                       :href="link.url + '?from=foot'"
                       :target="link.target"
-                      :class="link.class"
+                      :class="link.class || ''"
                       :rel="item.nofollow ? 'nofollow' : ''"
                     >
                       {{ link.title }}
