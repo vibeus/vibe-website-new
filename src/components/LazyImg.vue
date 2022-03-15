@@ -16,13 +16,12 @@ const props = defineProps({
     type: String,
   },
 });
-// import img from '/@img/order/status/logo.svg';
-// console.log('img: ', img);
 
-// const imageUrl = new URL(`../assets/img/${props.src}`, import.meta.url).href;
+// const imgModule = import.meta.glob('../assets/img/**/**');
+
 const path = `../assets/img/${props.src}`;
 const imageUrl = imageModule[path].default;
-console.log('imageUrl: ', imageUrl);
+// const imageUrl = new URL(`../assets/img/${props.src}`, import.meta.url).href;
 </script>
 
 <style lang="sass" scoped>

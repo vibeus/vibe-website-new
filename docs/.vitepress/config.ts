@@ -10,7 +10,6 @@ function pathResolve(dir) {
 async function config() {
   // const base = await getBase()
   const base = process.env.BASE || '/'
-  console.log('base: ', base);
 
   return {
     // ...base,
