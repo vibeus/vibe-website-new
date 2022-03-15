@@ -36,6 +36,11 @@ const svgClass = computed(() => {
 
 <style lang="sass" scoped>
 .svg-icon
+  width: 100%
+  height: 100%
   min-width: 16px
   min-height: 16px
+  fill: inherit
+  use
+    fill: inherit
 </style>

@@ -15,7 +15,7 @@
 <script setup>
 import Hero from './sections/Hero.vue';
 import Resources from './sections/Resources.vue';
-import BottomCta from './sections/BottomCta.vue';
+import BottomCta from '/@vcomp/BottomCta.vue';
 
 /* Start Data */
 const { frontmatter: fm } = useData();

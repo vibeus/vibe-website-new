@@ -2,6 +2,7 @@ import { resolve } from 'path';
 import { createVitePlugins } from '../../vite-config/plugin';
 import nav from './configs/nav';
 import sidebar from './configs/sidebar';
+import footer from './configs/footer';
 
 function pathResolve(dir) {
   return resolve(__dirname, ".", dir);
@@ -55,6 +56,8 @@ async function config() {
       nav,
 
       sidebar,
+
+      footer,
     }
   }
 }

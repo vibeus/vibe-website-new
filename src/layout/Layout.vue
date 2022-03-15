@@ -31,6 +31,8 @@
     </Blog>
 
     <Content v-else />
+
+    <VFooter />
   </div>
 
   <Debug />
@@ -42,6 +44,7 @@ import { isSideBarEmpty, getSideBarConfig } from './support/sideBar';
 // components
 import NavBar from './components/NavBar.vue';
 import SideBar from './components/SideBar.vue';
+import VFooter from './components/footer/Index.vue';
 import Blog from './components/Blog.vue';
 
 const NoopComponent = () => null;
