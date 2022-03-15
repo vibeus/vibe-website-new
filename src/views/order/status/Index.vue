@@ -24,7 +24,35 @@ console.log('fm: ', fm.value);
 /* End Data */
 </script>
 
-<style lang="sass">
-.container
-  max-width: 1440px
+<style>
+main section{ overflow: hidden}
+
+.container {
+  flex-grow: 1;
+  margin: 0 auto;
+  position: relative;
+  width: auto;
+}
+
+@media screen and (min-width: 1024px){
+.container {
+    max-width: 960px
+  }
+}
+@media screen and (min-width: 1216px){
+.container {
+    max-width: 1152px
+  }
+}
+
+
+@media screen and (min-width: 1408px){
+.container {
+    max-width: 1344px
+  }
+}
+
+
+
+
 </style>

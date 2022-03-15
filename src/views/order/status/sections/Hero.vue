@@ -45,16 +45,10 @@ const elMsgSuccess = msg => {
     flex-grow: 1
     flex-shrink: 0
     padding: 3rem 1.5rem
-    .container
-      max-width: 960px
-      flex-grow: 1
-      margin: 0 auto
-      position: relative
-      width: auto
   .hero-bg
     position: absolute
     .hero-image
-      height:100%
+      min-height:657px
       width: 100%
       object-fit: cover
       object-position: center top
