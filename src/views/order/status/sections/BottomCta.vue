@@ -4,9 +4,16 @@
     <div class="bottom-bg">
       <svg-icon icon-name="shared-what-bg" />
     </div>
-      <h1 class="title">{{bottomcta.title}}</h1>
+      <h1 class="title">{{ bottomCta.title }}</h1>
       <div class="cta">
-       <a class="button" :herf="bottomcta.cta.buttons[0].url">{{bottomcta.cta.buttons[0].title}}</a>
+        <template v-for="(item, idx) in bottomCta.cta.buttons" :key="idx">
+          <a
+            :class="'button ' + item.class"
+            :herf="item.url"
+          >
+            {{ item.title }}
+          </a>
+        </template>
       </div>
     </div>
   </section>
@@ -14,16 +21,16 @@
 
 <script setup>
 const props = defineProps({
-  bottomcta: {
+  bottomCta: {
     type: Object,
     required: true
   }
 });
-console.log('resources: ', props.bottomcta);
+console.log('resources: ', props.bottomCta);
 
 </script>
 <style lang="sass" scoped>
-@import "/@/assets/css/_common.sass"
+@import "/@css/base"
 a
   color: $vibe-black
   cursor: pointer
@@ -50,18 +57,18 @@ section.bottom-cta
     font-size: 36px
     font-weight: 500
     line-height: 1.4
-  .button
-    display: inline-block
-    padding: 12px 40px
-    width: auto
-    min-width: unset
-    height: 50px
-    border-width: 2px
-    border-color: transparent
-    border-radius: 290486px
-    background-color: #0a0a0a
-    color: #fff
-    font-size: 20px
-    font-weight: 500
-    line-height: 25px
+  // .button
+  //   display: inline-block
+  //   padding: 12px 40px
+  //   width: auto
+  //   min-width: unset
+  //   height: 50px
+  //   border-width: 2px
+  //   border-color: transparent
+  //   border-radius: 290486px
+  //   background-color: #0a0a0a
+  //   color: #fff
+  //   font-size: 20px
+  //   font-weight: 500
+  //   line-height: 25px
 </style>

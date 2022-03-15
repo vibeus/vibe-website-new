@@ -61,7 +61,7 @@ const submitForm = () => {
 </script>
 
 <style lang="sass" scoped>
-@import "/@/assets/css/_common.sass"
+@import '/@css/base'
 .form
   input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
     -webkit-appearance: none

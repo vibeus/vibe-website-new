@@ -26,7 +26,7 @@ const consoleT = () => {
 </script>
 
 <style lang="sass" scoped>
-@import "/@/assets/css/main.sass"
+@import '/@css/base'
 .home
   padding-top: var(--header-height)
 

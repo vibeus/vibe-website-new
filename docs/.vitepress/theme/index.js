@@ -2,6 +2,7 @@ import DefaultTheme from "/@/layout";
 import SvgIcon from '/@/components/SvgIcon.vue';
 import LazyImg from '/@/components/LazyImg.vue';
 import 'virtual:svg-icons-register'; // Important
+import '/@css/vibe.sass';
 
 export default {
   ...DefaultTheme,

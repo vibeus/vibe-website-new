@@ -7,7 +7,7 @@
      :resources="fm.resources"
     />
     <BottomCta
-     :bottomcta="fm.bottom_cta"
+     :bottomCta="fm.bottom_cta"
     />
   </main>
 </template>
@@ -24,35 +24,25 @@ console.log('fm: ', fm.value);
 /* End Data */
 </script>
 
-<style>
-main section{ overflow: hidden}
+<style lang="sass">
+main section
+  overflow: hidden
 
-.container {
-  flex-grow: 1;
-  margin: 0 auto;
-  position: relative;
-  width: auto;
-}
+.container
+  flex-grow: 1
+  margin: 0 auto
+  position: relative
+  width: auto
 
-@media screen and (min-width: 1024px){
-.container {
+@media screen and (min-width: 1024px)
+.container
     max-width: 960px
-  }
-}
-@media screen and (min-width: 1216px){
-.container {
+@media screen and (min-width: 1216px)
+.container
     max-width: 1152px
-  }
-}
 
 
-@media screen and (min-width: 1408px){
-.container {
+@media screen and (min-width: 1408px)
+.container
     max-width: 1344px
-  }
-}
-
-
-
-
 </style>
