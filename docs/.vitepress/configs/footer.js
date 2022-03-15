@@ -1,55 +1,55 @@
 export default {
   "sections": [
     {
-      "heading": "i18n-data-common-foot-base-sections-i_0-heading",
+      "heading": "Product",
       "links": [
         {
-          "title": "i18n-data-common-foot-base-sections-i_0-links-i_0-title",
-          "url": "/products/vibe-smartboard-55/"
+          "title": "Vibe Smartboard 55″",
+          "url": "https://vibe.us/products/vibe-smartboard-55/"
         },
         {
-          "title": "i18n-data-common-foot-base-sections-i_0-links-i_1-title",
-          "url": "/products/vibe-smartboard-pro-75/"
+          "title": "Vibe Smartboard Pro 75″",
+          "url": "https://vibe.us/products/vibe-smartboard-pro-75/"
         },
         {
-          "title": "i18n-data-common-foot-base-sections-i_0-links-i_2-title",
-          "url": "/software/"
+          "title": "Vibe Software",
+          "url": "https://vibe.us/software/"
         },
         {
-          "title": "i18n-data-common-foot-base-sections-i_0-links-i_3-title",
-          "url": "/android-app-store/"
+          "title": "App Integrations",
+          "url": "https://vibe.us/android-app-store/"
         },
         {
           "target": "_blank",
-          "title": "i18n-data-common-foot-base-sections-i_0-links-i_4-title",
+          "title": "Join a Canvas",
           "url": "https://app.vibe.us"
         },
         {
-          "title": "i18n-data-common-foot-base-sections-i_0-links-i_5-title",
-          "url": "/security/",
+          "title": "Security",
+          "url": "https://vibe.us/security/",
           "nofollow": true
         },
         {
-          "title": "i18n-data-common-foot-base-sections-i_0-links-i_6-title",
-          "url": "/customer/"
+          "title": "Customer Testimonials",
+          "url": "https://vibe.us/customer/"
         },
         {
-          "title": "i18n-data-common-foot-base-sections-i_0-links-i_7-title",
-          "url": "/demo/"
+          "title": "Vibe Demo",
+          "url": "https://vibe.us/demo/"
         }
       ]
     },
     {
-      "heading": "i18n-data-common-foot-base-sections-i_1-heading",
+      "heading": "Resources",
       "links": [
         {
           "title": "i18n-data-common-foot-base-sections-i_1-links-i_0-title",
-          "url": "/buyer-faq/",
+          "url": "https://vibe.us/buyer-faq/",
           "target": "_blank"
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_1-links-i_1-title",
-          "url": "/blog/"
+          "url": "https://vibe.us/blog/"
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_1-links-i_2-title",
@@ -59,32 +59,32 @@ export default {
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_1-links-i_3-title",
-          "url": "/privacy/",
+          "url": "https://vibe.us/privacy/",
           "nofollow": true
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_1-links-i_4-title",
-          "url": "/warranty/",
+          "url": "https://vibe.us/warranty/",
           "nofollow": true
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_1-links-i_5-title",
-          "url": "/refund/",
+          "url": "https://vibe.us/refund/",
           "nofollow": true
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_1-links-i_6-title",
-          "url": "/shipping/",
+          "url": "https://vibe.us/shipping/",
           "nofollow": true
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_1-links-i_7-title",
-          "url": "/video-tutorial/",
+          "url": "https://vibe.us/video-tutorial/",
           "target": "_blank"
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_1-links-i_8-title",
-          "url": "/resources/Vibe_Smartboard_55″_Brochure.pdf"
+          "url": "https://vibe.us/resources/Vibe_Smartboard_55″_Brochure.pdf"
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_1-links-i_9-title",
@@ -97,23 +97,23 @@ export default {
       "links": [
         {
           "title": "i18n-data-common-foot-base-sections-i_2-links-i_0-title",
-          "url": "/comparison/vibe-vs-microsoft-surface-hub/"
+          "url": "https://vibe.us/comparison/vibe-vs-microsoft-surface-hub/"
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_2-links-i_1-title",
-          "url": "/comparison/vibe-vs-google-jamboard/"
+          "url": "https://vibe.us/comparison/vibe-vs-google-jamboard/"
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_2-links-i_2-title",
-          "url": "/comparison/vibe-vs-samsung-flip/"
+          "url": "https://vibe.us/comparison/vibe-vs-samsung-flip/"
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_2-links-i_3-title",
-          "url": "/comparison/vibe-vs-cisco-webex-board/"
+          "url": "https://vibe.us/comparison/vibe-vs-cisco-webex-board/"
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_2-links-i_4-title",
-          "url": "/comparison/vibe-vs-smart-board/"
+          "url": "https://vibe.us/comparison/vibe-vs-smart-board/"
         }
       ]
     },
@@ -122,17 +122,17 @@ export default {
       "links": [
         {
           "title": "i18n-data-common-foot-base-sections-i_3-links-i_0-title",
-          "url": "/about/",
+          "url": "https://vibe.us/about/",
           "nofollow": true
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_3-links-i_1-title",
-          "url": "/reseller/",
+          "url": "https://vibe.us/reseller/",
           "nofollow": true
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_3-links-i_2-title",
-          "url": "/contact/",
+          "url": "https://vibe.us/contact/",
           "nofollow": true
         },
         {
@@ -142,17 +142,17 @@ export default {
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_3-links-i_4-title",
-          "url": "/contact/request-a-quote/",
+          "url": "https://vibe.us/contact/request-a-quote/",
           "nofollow": true
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_3-links-i_5-title",
-          "url": "/career/",
+          "url": "https://vibe.us/career/",
           "nofollow": true
         },
         {
           "title": "i18n-data-common-foot-base-sections-i_3-links-i_6-title",
-          "url": "/terms-of-service/",
+          "url": "https://vibe.us/terms-of-service/",
           "nofollow": true
         }
       ]
@@ -160,7 +160,7 @@ export default {
   ],
   "contact": {
     "content": "Contact Us",
-    "url": "/contact/"
+    "url": "https://vibe.us/contact/"
   },
   "copyright": [
     "© Copyright 2022 Vibe, Inc. All rights reserved."
