@@ -4,6 +4,10 @@ actionText: Get Started
 
 altActionText: Learn More
 
+nav:
+  - cartSvg: global-cart
+  - userSvg: global-user
+  
 features:
   - title: 💡 Instant Server Start
     details: On demand file serving over native ESM, no bundling required!

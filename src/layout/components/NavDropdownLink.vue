@@ -42,13 +42,18 @@ function toggle() {
 </template>
 
 <style scoped>
+a {
+   text-decoration: none
+}
 .nav-dropdown-link {
   position: relative;
   height: 36px;
   overflow: hidden;
   cursor: pointer;
 }
-
+.button-text {
+  font-size: 16px
+}
 @media (min-width: 720px) {
   .nav-dropdown-link {
     height: auto;

@@ -19,13 +19,17 @@ const { site, theme, localePath } = useData();
 
 <style lang="sass" scoped>
 .nav-bar-title
-  width: 100px
+  padding: 8px 12px
   font-size: 1.3rem
   font-weight: 600
   color: var(--c-text)
   display: flex
   justify-content: center
   align-items: center
+  svg
+    width: 131px
+    height: 38px
+    margin-right:0
 
 .nav-bar-title:hover
   text-decoration: none

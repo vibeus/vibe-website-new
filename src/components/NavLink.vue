@@ -36,7 +36,8 @@ const { props: linkProps, isExternal } = useNavLink(propsRefs.item);
 .item:hover,
 .item.active {
   text-decoration: none;
-  color: var(--c-brand);
+  border-bottom-color: transparent !important;
+  color: #f66 !important;
 }
 
 .item.external:hover {

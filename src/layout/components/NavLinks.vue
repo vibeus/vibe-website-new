@@ -32,20 +32,18 @@ const show = computed(() => theme.value.nav || repo.value || localeLinks.value);
 
 <style scoped>
 .nav-links {
-  padding: 0.75rem 0;
   border-bottom: 1px solid var(--c-divider);
 }
 
 @media (min-width: 720px) {
   .nav-links {
     display: flex;
-    padding: 6px 0 0;
     align-items: center;
     border-bottom: 0;
   }
 
   .item + .item {
-    padding-left: 24px;
+    margin-left: 18px;
   }
 }
 </style>

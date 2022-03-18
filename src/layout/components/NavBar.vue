@@ -2,10 +2,11 @@
   <header class="nav-bar">
     <NavBarTitle />
 
-    <div class="flex-grow" />
+   <!--<div class="flex-grow" />-->
 
     <div class="nav">
       <NavLinks />
+      <NavBtn />
     </div>
 
     <slot name="search" />
@@ -15,6 +16,7 @@
 <script setup>
 import NavBarTitle from './NavBarTitle.vue';
 import NavLinks from './NavLinks.vue';
+import NavBtn from './NavBtn.vue';
 
 defineEmits(['toggle']);
 </script>
@@ -31,12 +33,11 @@ defineEmits(['toggle']);
   align-items: center
   border-bottom: 1px solid var(--c-divider)
   padding: 0.7rem 1.5rem 0.7rem 4rem
-  height: var(--header-height)
   background-color: var(--c-bg)
 
 @media (min-width: 720px)
   .nav-bar
-    padding: 0.7rem 1.5rem
+    padding: 0px 40px
 
 .flex-grow
   flex-grow: 1
@@ -46,6 +47,9 @@ defineEmits(['toggle']);
 
 @media (min-width: 720px)
   .nav
-    display: block
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-grow: 1
   
 </style>
