@@ -23,13 +23,15 @@ const { props: linkProps, isExternal } = useNavLink(propsRefs.item);
 </template>
 
 <style scoped>
+.nav-link {
+  padding: .5rem 0.75rem;
+}
 .item {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 0 1.5rem;
   line-height: 36px;
   font-size: 1rem;
-  font-weight: 600;
-  color: var(--c-text);
   white-space: nowrap;
 }
 
@@ -47,11 +49,9 @@ const { props: linkProps, isExternal } = useNavLink(propsRefs.item);
 
 @media (min-width: 720px) {
   .item {
-    border-bottom: 2px solid transparent;
     padding: 0;
-    line-height: 24px;
-    font-size: 0.9rem;
     font-weight: 500;
+    position: relative;
   }
 
   .item:hover,

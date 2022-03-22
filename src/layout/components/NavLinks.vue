@@ -32,7 +32,10 @@ const show = computed(() => theme.value.nav || repo.value || localeLinks.value);
 
 <style scoped>
 .nav-links {
+  height: 66px;
   border-bottom: 1px solid var(--c-divider);
+  font-size: 16px;
+  color: #111
 }
 
 @media (min-width: 720px) {
@@ -40,8 +43,11 @@ const show = computed(() => theme.value.nav || repo.value || localeLinks.value);
     display: flex;
     align-items: center;
     border-bottom: 0;
+    font-size: 16px;
   }
+}
 
+@media (min-width: 1200px) {
   .item + .item {
     margin-left: 18px;
   }

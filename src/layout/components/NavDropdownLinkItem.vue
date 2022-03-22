@@ -31,7 +31,7 @@ const { props: linkProps, isExternal } = useNavLink(propsRefs.item);
   line-height: 32px;
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--c-text);
+  color: #111;
   white-space: nowrap;
 }
 
@@ -41,7 +41,6 @@ const { props: linkProps, isExternal } = useNavLink(propsRefs.item);
     line-height: 32px;
     font-size: 0.85rem;
     font-weight: 500;
-    color: var(--c-text);
     white-space: nowrap;
   }
 

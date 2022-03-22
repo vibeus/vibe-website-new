@@ -23,19 +23,22 @@ defineEmits(['toggle']);
 
 <style lang="sass" scoped>
 .nav-bar
-  position: sticky
-  top: 0
-  right: 0
-  left: 0
-  z-index: var(--z-index-navbar)
   display: flex
-  justify-content: space-between
   align-items: center
   border-bottom: 1px solid var(--c-divider)
-  padding: 0.7rem 1.5rem 0.7rem 4rem
-  background-color: var(--c-bg)
+  min-height: 66px
+  @media (min-width:1080px) 
+    position: sticky
+    top: 0
+    right: 0
+    left: 0
+    z-index: var(--z-index-navbar)
+    justify-content: space-between
+    align-items: center
+    border-bottom: 1px solid var(--c-divider)
+    background-color: var(--c-bg)
 
-@media (min-width: 720px)
+@media (min-width: 1080px)
   .nav-bar
     padding: 0px 40px
 
@@ -45,11 +48,14 @@ defineEmits(['toggle']);
 .nav
   display: none
 
-@media (min-width: 720px)
+@media (min-width: 1080px)
   .nav
     display: flex
     align-items: center
     justify-content: space-between
     flex-grow: 1
-  
+
+@media (min-width: 1200px)
+  .nav
+    margin-left: 16px
 </style>

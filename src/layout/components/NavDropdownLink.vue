@@ -2,12 +2,11 @@
 import { ref, watch } from 'vue';
 import NavDropdownLinkItem from './NavDropdownLinkItem.vue';
 
-
 const props = defineProps({
   item: {
     type: Object,
-    required: true
-  }
+    required: true,
+  },
 });
 
 const route = useRoute();
@@ -43,7 +42,7 @@ function toggle() {
 
 <style scoped>
 a {
-   text-decoration: none
+  text-decoration: none;
 }
 .nav-dropdown-link {
   position: relative;
@@ -52,7 +51,7 @@ a {
   cursor: pointer;
 }
 .button-text {
-  font-size: 16px
+  font-size: 16px;
 }
 @media (min-width: 720px) {
   .nav-dropdown-link {
@@ -69,20 +68,22 @@ a {
   height: auto;
 }
 
-.button {
+.nav-dropdown-link .button {
   display: block;
+  height: 66px;
   border: 0;
-  padding: 0 1.5rem;
+  padding: 8px 40px 8px 12px;
   width: 100%;
   text-align: left;
   line-height: 36px;
   font-family: var(--font-family-base);
   font-size: 1rem;
-  font-weight: 600;
-  color: var(--c-text);
   white-space: nowrap;
   background-color: transparent;
   cursor: pointer;
+}
+.nav-dropdown-link .button:hover {
+  color: #f66;
 }
 
 .button:focus {
@@ -100,14 +101,30 @@ a {
 }
 
 .button-arrow {
-  display: inline-block;
+  /** display: inline-block;
   margin-top: -1px;
-  margin-left: 8px;
+
   border-top: 6px solid #ccc;
   border-right: 4px solid transparent;
   border-bottom: 0;
   border-left: 4px solid transparent;
-  vertical-align: middle;
+  vertical-align: middle;**/
+  border: 3px solid rgba(0, 0, 0, 0);
+  border-radius: 2px;
+  border-right: 0;
+  border-top: 0;
+  display: block;
+  height: 0.625em;
+  margin-top: -0.4375em;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  transform: rotate(-45deg);
+  transform-origin: center;
+  width: 0.625em;
+  border-color: #111;
+  margin-top: -0.375em;
+  right: 1.125em;
 }
 
 .button-arrow.right {
@@ -116,7 +133,8 @@ a {
 
 @media (min-width: 720px) {
   .button-arrow.right {
-    transform: rotate(0);
+    /** transform: rotate(0);**/
+    transform: rotate(-45deg);
   }
 }
 
@@ -130,8 +148,8 @@ a {
   .dialog {
     display: none;
     position: absolute;
-    top: 26px;
-    right: -8px;
+    top: 46px;
+    right: -40px;
     border-radius: 6px;
     padding: 12px 0;
     min-width: 128px;
