@@ -20,8 +20,6 @@ const { site, theme, localePath } = useData();
 <style lang="sass" scoped>
 .nav-bar-title
   padding: 8px 12px
-  font-size: 1.3rem
-  font-weight: 600
   color: var(--c-text)
   display: flex
   justify-content: center

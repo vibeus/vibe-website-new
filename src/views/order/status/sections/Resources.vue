@@ -58,7 +58,7 @@ section.resources
     .item-title
       flex: 1
       font-size: 24px
-      font-family: $vibe-family-heading
+      font-family: $family-head
       font-weight: $vibe-bold
       color: $vibe-black
     .item-icon, .item-arrow

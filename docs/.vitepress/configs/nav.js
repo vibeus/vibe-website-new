@@ -13,7 +13,7 @@ export default [
     ]
   },
   {
-    text: 'Partners',
+    text: 'Solutions',
     // activeMatch: `^/(product)/`,
     items: [ // TODO: column_submenu
       { text: 'Scenario', link: '' }, // title

@@ -28,10 +28,10 @@ function toggle() {
 
 <template>
   <div class="nav-dropdown-link" :class="{ open }">
-    <button class="button" :aria-label="item.ariaLabel" @click="toggle">
+    <div class="navbar-item" :aria-label="item.ariaLabel" @click="toggle">
       <span class="button-text">{{ item.text }}</span>
       <span class="button-arrow" :class="open ? 'down' : 'right'" />
-    </button>
+    </div>
 
     <ul class="dialog">
       <li v-for="item in item.items" :key="item.text" class="dialog-item">
@@ -69,34 +69,21 @@ a {
   height: auto;
 }
 
-.button {
+.navbar-item {
   display: block;
   border: 0;
   padding: 0 1.5rem;
   width: 100%;
   text-align: left;
   line-height: 36px;
-  font-family: var(--font-family-base);
-  font-size: 1rem;
-  font-weight: 600;
   color: var(--c-text);
   white-space: nowrap;
   background-color: transparent;
   cursor: pointer;
 }
 
-.button:focus {
+.navbar-item:focus {
   outline: 0;
-}
-
-@media (min-width: 720px) {
-  .button {
-    border-bottom: 2px solid transparent;
-    padding: 0;
-    line-height: 24px;
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
 }
 
 .button-arrow {

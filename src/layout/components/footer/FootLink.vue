@@ -88,7 +88,7 @@ const props = defineProps({
       +mobile
         font-size: 14px
     h2
-      font-family: $vibe-family-heading
+      font-family: $family-head
       font-weight: $vibe-bold
       margin-bottom: 2rem
       +mobile

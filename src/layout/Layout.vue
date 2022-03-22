@@ -12,14 +12,14 @@
       </template>
     </NavBar>
 
-    <SideBar :open="openSideBar">
+    <!-- <SideBar :open="openSideBar">
       <template #sidebar-top>
         <slot name="sidebar-top" />
       </template>
       <template #sidebar-bottom>
         <slot name="sidebar-bottom" />
       </template>
-    </SideBar>
+    </SideBar> -->
 
     <Blog v-if="isBlog">
       <template #top>
@@ -42,8 +42,8 @@
 import { isSideBarEmpty, getSideBarConfig } from './support/sideBar';
 
 // components
-import NavBar from './components/NavBar.vue';
-import SideBar from './components/SideBar.vue';
+import NavBar from './components/navbar/Index.vue';
+// import SideBar from './components/SideBar.vue';
 import VFooter from './components/footer/Index.vue';
 import Blog from './components/Blog.vue';
 
@@ -80,24 +80,24 @@ const showNavbar = computed(() => {
 });
 
 // sidebar
-const openSideBar = ref(false);
+// const openSideBar = ref(false);
 
-const showSidebar = computed(() => {
-  if (fm.value.sidebar !== true)
-    return false;
+// const showSidebar = computed(() => {
+//   if (fm.value.sidebar !== true)
+//     return false;
 
-  return !isSideBarEmpty(
-    getSideBarConfig(theme.value.sidebar, route.data.relativePath)
-  );
-});
+//   return !isSideBarEmpty(
+//     getSideBarConfig(theme.value.sidebar, route.data.relativePath)
+//   );
+// });
 
-const toggleSidebar = (to) => {
-  openSideBar.value = typeof to === 'boolean' ? to : !openSideBar.value;
-};
+// const toggleSidebar = (to) => {
+//   openSideBar.value = typeof to === 'boolean' ? to : !openSideBar.value;
+// };
 
-const hideSidebar = toggleSidebar.bind(null, false);
+// const hideSidebar = toggleSidebar.bind(null, false);
 // close the sidebar when navigating to a different location
-watch(route, hideSidebar);
+// watch(route, hideSidebar);
 // TODO: route only changes when the pathname changes
 // listening to hashchange does nothing because it's prevented in router
 
@@ -106,8 +106,8 @@ const pageClasses = computed(() => {
   return [
     {
       'no-navbar': !showNavbar.value,
-      'sidebar-open': openSideBar.value,
-      'no-sidebar': !showSidebar.value
+      // 'sidebar-open': openSideBar.value,
+      // 'no-sidebar': !showSidebar.value
     }
   ];
 });

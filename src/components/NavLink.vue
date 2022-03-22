@@ -26,9 +26,6 @@ const { props: linkProps, isExternal } = useNavLink(propsRefs.item);
 .item {
   display: block;
   padding: 0 1.5rem;
-  line-height: 36px;
-  font-size: 1rem;
-  font-weight: 600;
   color: var(--c-text);
   white-space: nowrap;
 }
@@ -49,9 +46,6 @@ const { props: linkProps, isExternal } = useNavLink(propsRefs.item);
   .item {
     border-bottom: 2px solid transparent;
     padding: 0;
-    line-height: 24px;
-    font-size: 0.9rem;
-    font-weight: 500;
   }
 
   .item:hover,

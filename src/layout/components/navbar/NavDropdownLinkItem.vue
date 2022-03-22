@@ -28,9 +28,6 @@ const { props: linkProps, isExternal } = useNavLink(propsRefs.item);
 .item {
   display: block;
   padding: 0 1.5rem 0 2.5rem;
-  line-height: 32px;
-  font-size: 0.9rem;
-  font-weight: 500;
   color: var(--c-text);
   white-space: nowrap;
 }
