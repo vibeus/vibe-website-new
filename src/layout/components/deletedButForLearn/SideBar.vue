@@ -58,6 +58,7 @@ const props = defineProps({
   display: block;
 }
 
+
 @media (min-width: 720px) {
   .nav {
     display: none;
