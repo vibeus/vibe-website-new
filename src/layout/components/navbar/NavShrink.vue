@@ -1,12 +1,13 @@
 <template>
-  <div class="buttons">
-    <a class="button is-primary is-rounded is-in-brand" href="/demo/">
-      See a Demo
+  <div class="nav-shrink buttons">
+    <a class="button is-primary is-rounded" href="/demo/">
+      <span>See a Demo</span>
     </a>
-    <button class="nav-cart-icon">
+    <div class="nav-divider is-hidden-mobile" data-v-00cdf7b5=""></div>
+    <button class="nav-cart-icon mgl-8">
       <svg-icon class="nav-icon" icon-name="global-cart-cart" alt="cart icon" />
     </button>
-    <button class="nav-user-icon">
+    <button class="nav-user-icon is-hidden-mobile">
       <svg-icon class="nav-icon" icon-name="global-cart-user" alt="user icon" />
     </button>
     <a href="" class="navbar-burger">
@@ -18,11 +19,15 @@
 </template>
 <script setup>
 const { frontmatter: fm } = useData();
-console.log('fm: ', fm);
 
 </script>
 <style lang="sass" scoped>
-.buttons
+@import '/@css/base'
+.nav-shrink.buttons
+  display: none
+  +until(1080px)
+    display: flex
+    align-items: center
   button
     display: block
     position: relative
@@ -34,11 +39,6 @@ console.log('fm: ', fm);
     border-color: transparent
     color: #fff
     font-weight: 500
-    @media (max-width: 699px)
-      display: none
-  .nav-user-icon
-    @media (max-width: 699px)
-      display: none
   .nav-icon
     width: 45px
     height: 45px

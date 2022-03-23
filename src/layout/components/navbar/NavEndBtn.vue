@@ -1,10 +1,10 @@
 <template>
   <div class="navbar-end">
     <a class="button is-primary is-rounded is-in-brand" href="/demo/">
-      See a Demo
+      <span>See a Demo</span>
     </a>
     <div class="nav-divider"></div>
-    <button class="nav-cart-icon">
+    <button class="mgr-8">
       <svg-icon class="nav-icon" icon-name="global-cart-cart" alt="cart icon" />
     </button>
     <button>
@@ -15,12 +15,10 @@
 
 <script setup>
 const { frontmatter: fm } = useData();
-console.log('fm: ', fm);
 </script>
 
 <style lang="sass" scoped>
-a
-   text-decoration: none
+@import '/@css/base'
 .navbar-end
    display: flex
    align-items: center
@@ -36,22 +34,12 @@ a
       padding: 0
       border: none
       background: 0 0
+      cursor: pointer
    .nav-icon
       width: 45px
       height: 45px
       color: #f66
-   .nav-cart-icon
-      margin-right: .5rem
-   .nav-divider
-      width: 0
-      height: 26px
-      margin: 0 1.75rem 0 3rem
-      border: 1px solid #e0e0e0
-   @media (max-width: 1079px)
-      .nav-cart-icon
-         display: none
+   +touch
       .button
          display: none
-
-
 </style>
