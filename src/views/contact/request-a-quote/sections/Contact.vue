@@ -20,7 +20,9 @@
               </div>
               <CartCount/>
             </div>
-            <!--<lazy-img class="hero-image is-hidden-mobile" :src="item.figure" alt="" />  -->
+            <div class="image">
+              <lazy-img class="hero-image is-hidden-tablet" :src="item.figure" alt="" />
+            </div>
             <div class="divider is-hidden-mobile"></div>
             <div class="includes" id="includes">
               <strong>Includes:</strong>
@@ -48,8 +50,9 @@
             </div>
           </div>
         </div>
+        <div class="divider-mobile is-hidden-tablet"></div>
       </div>
-      <div class="divider-mobile is-hidden-tablet"></div>
+
       <div class="disable-input-mask"></div>
       <div class="form-check">
         <input
@@ -122,6 +125,12 @@ console.log('contactSection: ', props.contactSection);
   padding-bottom: 80px
   background: linear-gradient(to bottom,#fc0 220px,#F4F4F4 220px)
   color: $vibe-black
+  overflow: hidden
+  .divider-mobile 
+    width: 100vw
+    margin: 2rem 0 2rem -0.5rem
+    border: 1px solid #ededed
+
   .title
     text-align: center
     font-size: 24px
@@ -288,4 +297,42 @@ console.log('contactSection: ', props.contactSection);
       .content.form-check-label
         margin: 0 0 0 0.5rem
         font-size: 16px
+@media screen and (max-width: 699px)
+  .contact
+    margin-bottom: -2rem
+    padding: 0
+    box-shadow: 0 3px 17px rgb(0 0 0 / 3%)
+    border-radius: 32px 32px 0 0
+    transform: translateY(-2rem)
+    background: linear-gradient(to bottom,#fc0 200px,#F4F4F4 200px)
+    .container.is-form 
+      padding: 32px 8px
+    .product-title 
+      margin-top: 1.5rem
+      margin-bottom: 1.5rem
+      font-size: 20px
+      line-height: 25px
+      text-align: center
+    .product-box 
+      align-items: center
+    .is-accessories 
+      flex-direction: column
+      margin: 2rem -1.5rem 0
+      .accessory 
+        justify-content: space-between
+        width: 100%
+        padding: 1.5rem 1rem
+        background: rgba(244,244,244,.5)
+        border-radius: 8px
+        margin-top: 0.5rem
+        .image
+          width: 136px
+    .form-check+.image 
+      width: 296px
+      margin: 0 auto
+
+
+
+
+
 </style>
