@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar-end">
+  <div class="nav-end-btn">
     <a class="button is-primary is-rounded is-in-brand" href="/demo/">
       <span>See a Demo</span>
     </a>
@@ -19,10 +19,12 @@ const { frontmatter: fm } = useData();
 
 <style lang="sass" scoped>
 @import '/@css/base'
-.navbar-end
+.nav-end-btn
    display: flex
    align-items: center
    padding: 8px 0
+   +until(1080px)
+      display: none
    .button.is-primary
       background-color: #f66
       border-color: transparent

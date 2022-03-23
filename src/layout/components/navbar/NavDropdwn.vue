@@ -1,5 +1,5 @@
 <template>
-  <div v-if="nav" class="navbar-start">
+  <div v-if="nav" class="nav-dropdown-box">
     <template v-for="menu in theme.nav" :key="menu.title">
       <NavDropdownLink v-if="menu.submenu || menu.columnSubmenu" :menu="menu" />
       <NavLink v-else :menu="menu" />
@@ -17,9 +17,14 @@ const nav = computed(() => theme.value.nav);
 
 
 <style lang="sass" scoped>
-.navbar-start
+@import '/@css/base'
+.nav-dropdown-box
   display: flex
   justify-content: flex-start
   align-items: stretch
   margin-right: auto
+  +until(1080)
+    display: block
+    width: 100vw
+    background-color: #fff
 </style>

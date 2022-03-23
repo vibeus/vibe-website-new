@@ -1,12 +1,12 @@
 <template>
-  <div class="navbar-item">
-    <span class="navbar-link" :aria-label="menu.ariaLabel" @click="toggle">
+  <div class="nav-item">
+    <span class="nav-link" :aria-label="menu.ariaLabel" @click="toggle">
       {{ menu.title }}
     </span>
-    <div class="navbar-dropdown is-boxed">
+    <div class="nav-dropdown is-boxed">
       <template v-if="menu.submenu">
         <template v-for="item in menu.submenu" :key="item.title">
-          <a class="dropdown-item" :href="item.link">
+          <a class="nav-dropdown-item" :href="item.link">
             {{ item.text }}
           </a>
         </template>
@@ -14,9 +14,9 @@
       <template v-else>
         <div class="f-row">
           <div class="f-col" v-for="submenu in menu.columnSubmenu" :key="submenu.title">
-            <span class="dropdown-item is-column-title">{{submenu.title}}</span>
+            <span class="nav-dropdown-item is-column-title">{{submenu.title}}</span>
             <template v-for="item in submenu.items" :key="item.text">
-              <a class="dropdown-item" :href="item.link">
+              <a class="nav-dropdown-item" :href="item.link">
                 {{ item.text }}
               </a>
             </template>
@@ -43,18 +43,7 @@ const route = useRoute();
 
 <style lang="sass" scoped>
 @import '/@css/base'
-.navbar-link
-  position: relative
-  z-index: 999
-  display: flex
-  align-items: center
-  padding: 0.5rem 0.75rem
-  color: #111
-  line-height: 1.5
-  cursor: pointer
-  &:hover
-    color: #f66
-    text-decoration: none
+.nav-link
   &:not(.is-arrowless)
     padding-right: 2.5em
   &::after
@@ -65,7 +54,7 @@ const route = useRoute();
     width: 0.625em
     height: 0.625em
     margin-top: -0.375em
-    right: 1.125em
+    right: 18px
     transform: rotate(-45deg)
     transform-origin: center
     border: 3px solid transparent
@@ -73,12 +62,12 @@ const route = useRoute();
     border-radius: 2px
     border-right: 0
     border-color: #111
-  &:hover + .navbar-dropdown
+  &:hover + .nav-dropdown
     display: flex
     flex-direction: column
     opacity: 1
 
-.navbar-dropdown
+.nav-dropdown
   position: absolute
   top: 50px
   left: -24px
@@ -101,7 +90,7 @@ const route = useRoute();
     pointer-events: auto
     transform: translateY(0)
     
-  .dropdown-item
+  .nav-dropdown-item
     white-space: nowrap
     padding: .75rem 76px .75rem 38px
     &:hover

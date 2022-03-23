@@ -10,7 +10,7 @@
     <button class="nav-user-icon is-hidden-mobile">
       <svg-icon class="nav-icon" icon-name="global-cart-user" alt="user icon" />
     </button>
-    <a href="" class="navbar-burger">
+    <a href="" class="nav-burger">
       <span></span>
       <span></span>
       <span></span>
@@ -43,7 +43,7 @@ const { frontmatter: fm } = useData();
     width: 45px
     height: 45px
     color: #f66
-.navbar-burger
+.nav-burger
   display: block
   position: relative
   width: 48px

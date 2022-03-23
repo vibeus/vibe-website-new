@@ -2,13 +2,12 @@
   <nav class="navbar">
     <div class="container">
       <NavBarLogo />
+      <NavShrink />
 
       <div class="nav-menu">
         <NavDropdwn />
         <NavEndBtn />
       </div>
-
-      <NavShrink />
     </div>
 
     <slot name="search" />
@@ -27,6 +26,7 @@ defineEmits(['toggle']);
 <style lang="sass" scoped>
 @import '/@css/base'
 .navbar
+  position: relative
   font-family: $family-head
   font-size: 16px
   box-shadow: 0px -1px 10px rgba(55, 55, 55, 0.1)
@@ -49,7 +49,4 @@ defineEmits(['toggle']);
   align-items: center
   justify-content: space-between
   flex-grow: 1
-  +until(1080px)
-    display: none
-
 </style>
