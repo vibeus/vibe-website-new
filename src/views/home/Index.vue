@@ -1,6 +1,5 @@
 <template>
   <main class="home" aria-labelledby="main-title">
-    <lazy-img src="logo.svg" alt="test image" />
     <HomeHero />
     <slot name="hero" />
     <HomeFeatures />

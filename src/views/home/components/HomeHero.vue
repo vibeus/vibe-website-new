@@ -10,27 +10,10 @@
 
     <h1 v-if="heroText" id="main-title" class="title">{{ heroText }}</h1>
     <p v-if="tagline" class="tagline">{{ tagline }}</p>
-
-    <NavLink
-      v-if="frontmatter.actionLink && frontmatter.actionText"
-      :item="{ link: frontmatter.actionLink, text: frontmatter.actionText }"
-      class="action"
-    />
-
-    <NavLink
-      v-if="frontmatter.altActionLink && frontmatter.altActionText"
-      :item="{
-        link: frontmatter.altActionLink,
-        text: frontmatter.altActionText
-      }"
-      class="action alt"
-    />
   </header>
 </template>
 
 <script setup>
-import NavLink from '/@vcomp/NavLink.vue';
-
 const { site, frontmatter } = useData();
 
 const showHero = computed(() => {

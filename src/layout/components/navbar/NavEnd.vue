@@ -1,5 +1,5 @@
 <template>
-  <div class="buttons">
+  <div class="navbar-end">
     <a class="button is-primary is-rounded is-in-brand" href="/demo/">
       See a Demo
     </a>
@@ -21,7 +21,7 @@ console.log('fm: ', fm);
 <style lang="sass" scoped>
 a
    text-decoration: none
-.buttons
+.navbar-end
    display: flex
    align-items: center
    padding: 8px 0

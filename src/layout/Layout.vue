@@ -1,6 +1,6 @@
 <template>
   <div class="theme" :class="pageClasses">
-    <NavBar v-if="showNavbar" @toggle="toggleSidebar">
+    <NavBar v-if="showNavbar">
       <template #search>
         <slot name="navbar-search">
           <AlgoliaSearchBox
@@ -11,15 +11,6 @@
         </slot>
       </template>
     </NavBar>
-
-    <!-- <SideBar :open="openSideBar">
-      <template #sidebar-top>
-        <slot name="sidebar-top" />
-      </template>
-      <template #sidebar-bottom>
-        <slot name="sidebar-bottom" />
-      </template>
-    </SideBar> -->
 
     <Blog v-if="isBlog">
       <template #top>
@@ -90,10 +81,6 @@ const showNavbar = computed(() => {
 //     getSideBarConfig(theme.value.sidebar, route.data.relativePath)
 //   );
 // });
-
-// const toggleSidebar = (to) => {
-//   openSideBar.value = typeof to === 'boolean' ? to : !openSideBar.value;
-// };
 
 // const hideSidebar = toggleSidebar.bind(null, false);
 // close the sidebar when navigating to a different location
