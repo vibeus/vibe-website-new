@@ -9,7 +9,7 @@
           </figure>
         </div>
         <div class="column">
-          <div class="columns is-links is-mobile is-multiline">
+          <div class="columns is-links is-mobile">
             <template v-for="(item, idx) in sections" :key="idx">
               <div :class="'column is-half-touch is-foot-section ' + item.class || ''">
                 <h2 class="is-vibe-heading">{{ item.heading }}</h2>
@@ -84,9 +84,13 @@ const props = defineProps({
   .column.is-foot-section
     min-width: 140px
     .foot-link
+      width: 180px
       margin-bottom: 1.2rem
       +mobile
+        width: 150px
         font-size: 14px
+      a
+        color: $vibe-white
     h2
       font-family: $family-head
       font-weight: $vibe-bold
