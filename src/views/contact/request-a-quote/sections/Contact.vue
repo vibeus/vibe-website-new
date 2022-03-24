@@ -9,7 +9,7 @@
         class="f-col product-box"
       >
         <div class="is-product">
-          <div class="is-image is-hidden-mobile" id="image-box-{{ item.id }}">
+          <div class="is-image is-hidden-mobile" :id="item.id">
             <lazy-img class="image" :src="item.figure" alt="" />
           </div>
           <div class="is-text">
@@ -107,12 +107,18 @@ const props = defineProps({
   },
 });
 console.log('contactSection: ', props.contactSection);
+const double = computed(()=>{
+      return count.value* 2;
+    })
+
 </script>
 <style lang="sass" scoped>
 @import '/@css/base'
 *
   margin: 0
   padding: 0
+p
+  line-height: unset
 .title 
   color: $vibe-black
   font-family: $vibe-family-heading
@@ -270,6 +276,11 @@ console.log('contactSection: ', props.contactSection);
         height: 151px
         max-width: 100%
         max-height: 179px
+        flex-shrink:0
+        img
+          display: block
+          height: auto
+          width: 100%
       .is-text
         width: 100%
         margin: 0.75rem 0 1rem 1.5rem
@@ -330,6 +341,16 @@ console.log('contactSection: ', props.contactSection);
     .form-check+.image 
       width: 296px
       margin: 0 auto
+    .official-quote-check 
+      padding: 0 34px
+      margin-bottom: 80px
+      .check-container 
+        .quote-check 
+          width: 2.3rem
+        .content-check 
+          font-size: 14px
+          line-height: 21px
+
 
 
 

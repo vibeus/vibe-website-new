@@ -18,7 +18,7 @@ contact_section:
         id: number-of-55-board
         name: number_of_boards
         required: true
-      id: contact-checkbox-55
+      id: image-box-contact-checkbox-55
       value: contact-checkbox-55
       includes: Vibe Smartboard 55″, styluses (x2), power cord, quick start guide.
       accessories:
@@ -46,7 +46,7 @@ contact_section:
         id: number-of-75-board
         name: number_of_75__boards
         required: true
-      id: contact-checkbox-75
+      id: image-box-contact-checkbox-75
       value: contact-checkbox-75
       includes: Vibe Smartboard Pro 75″, styluses (x2), wall mount, remote controller, HDMI & USB cables, power cords (x3), quick start guide.
       accessories:
