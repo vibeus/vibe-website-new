@@ -1,6 +1,6 @@
 <template>
-  <div class="navbar-item">
-    <a class="item" v-bind="linkProps">
+  <div class="nav-item">
+    <a class="nav-link" v-bind="linkProps">
       {{ menu.title }}
     </a>
   </div>
@@ -18,5 +18,6 @@ const props = defineProps({
 
 const propsRefs = toRefs(props);
 
-const { props: linkProps, isExternal } = useNavLink(propsRefs.menu);
+const { props: linkProps } = useNavLink(propsRefs.menu);
 </script>
+

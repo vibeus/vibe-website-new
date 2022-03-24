@@ -22,6 +22,13 @@ async function config() {
       //   include: ['element-plus'],
       // },
       plugins: createVitePlugins(),
+      // css: {
+      //   preprocessorOptions: {
+      //     scss: {
+      //       additionalData: '@import "/@css/base/index.sass";'
+      //     }
+      //   }
+      // },
       build: {
         target: 'modules',
         assetsDir: 'assets', // 指定生成静态资源的存放路径

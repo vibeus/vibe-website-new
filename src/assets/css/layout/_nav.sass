@@ -1,0 +1,58 @@
+.nav-divider
+  width: 0
+  height: 26px
+  margin: 0 1.75rem 0 3rem
+  border: 1px solid #e0e0e0
+
+.nav-item
+  position: relative
+  display: flex
+  align-items: center
+  flex-grow: 0
+  flex-shrink: 0
+  &.has-dropdown
+    align-items: stretch
+    padding: 0
+
+.nav-link
+  position: relative
+  z-index: 999
+  display: flex
+  align-items: center
+  padding: 0.5rem 0.75rem
+  color: #111
+  line-height: 1.5
+  cursor: pointer
+  &:hover
+    color: #f66
+    text-decoration: none  
+
+// dropdown 逻辑比较麻烦单独拉出来
++until(1080px)
+  .nav-menu
+    position: absolute
+    top: calc($navbar-height + 1px)
+    left: 0
+    background-color: #fff
+  .nav-link
+    width: calc(100vw - 18px)
+    background-color: #fff
+  .nav-item
+    display: block
+    .nav-dropdown
+      position: relative
+      top: 0
+      display: block
+      width: calc(100vw - 18px)
+      padding: .5rem .75rem
+      box-shadow: unset
+      .nav-dropdown-item
+        display: block
+        width: calc(100vw - 18px)
+        padding: .5rem 2.5rem
+        font-size: 14px
+        &:hover
+          background-color: #fafafa
+      .f-row .nav-dropdown-item
+        width: calc(50vw - 9px)
+

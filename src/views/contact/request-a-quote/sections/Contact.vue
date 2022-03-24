@@ -107,9 +107,6 @@ const props = defineProps({
   },
 });
 console.log('contactSection: ', props.contactSection);
-const double = computed(()=>{
-      return count.value* 2;
-    })
 
 </script>
 <style lang="sass" scoped>

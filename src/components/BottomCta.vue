@@ -26,15 +26,10 @@ const props = defineProps({
     required: true
   }
 });
-console.log('resources: ', props.bottomCta);
 
 </script>
 <style lang="sass" scoped>
 @import "/@css/base"
-a
-  color: $vibe-black
-  cursor: pointer
-  text-decoration: none
 section.bottom-cta
   padding-top: 120px
   padding-bottom: 120px
@@ -57,18 +52,4 @@ section.bottom-cta
     font-size: 36px
     font-weight: 500
     line-height: 1.4
-  // .button
-  //   display: inline-block
-  //   padding: 12px 40px
-  //   width: auto
-  //   min-width: unset
-  //   height: 50px
-  //   border-width: 2px
-  //   border-color: transparent
-  //   border-radius: 290486px
-  //   background-color: #0a0a0a
-  //   color: #fff
-  //   font-size: 20px
-  //   font-weight: 500
-  //   line-height: 25px
 </style>
