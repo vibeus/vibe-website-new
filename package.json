@@ -24,6 +24,7 @@
     "eslint": "^6.x",
     "eslint-plugin-vue": "^8.4.1",
     "fast-glob": "^3.2.11",
+    "markdown-it-vue": "^1.1.7",
     "rimraf": "^3.0.2",
     "rollup-plugin-svg-sprites": "^1.2.3",
     "rollup-plugin-visualizer": "^5.5.4",

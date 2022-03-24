@@ -99,7 +99,7 @@
 </template>
 <script setup>
 import VForm from '/@/components/Form.vue';
-import CartCount from '/@/views/contact/request-a-quote/components/cartCount.vue';
+import CartCount from '../components/cartCount.vue';
 const props = defineProps({
   contactSection: {
     type: Object,

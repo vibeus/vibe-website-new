@@ -2,9 +2,9 @@
   <section class="hero">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">{{hero.title}}</h1>
+        <h1 class="title">{{contactHero.title}}</h1>
         <div class="content">
-          <span class="text">{{hero.body}}</span>
+          <span class="text" v-html="contactHero.body"></span>
         </div>
       </div>
     </div>
@@ -12,7 +12,7 @@
 </template>
 <script setup>
 const props = defineProps({
-  hero: {
+  contactHero: {
     type: Object,
     required: true
   }
@@ -40,8 +40,26 @@ const props = defineProps({
   @media screen and (min-width: 1408px)
     max-width: 1344px
 
+::v-deep .link 
+  line-height: 1em
+  text-decoration-line: underline
+  text-decoration-thickness: 2px
+  font-weight: 500
+  &:hover
+    color: #66c
 
+::v-deep .spacing-block 
+    width: 100%
+    height: 15px
 
+::v-deep .icon
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  height: 1.5rem
+  width: 1.5rem
+  margin-right: 5px
+  vertical-align: -2px
 
 .hero
   // align-items: stretch
@@ -50,6 +68,7 @@ const props = defineProps({
   // justify-content: space-between
   color: $vibe-black
   background-color: #fc0
+
   .hero-body
     padding: 80px 0 56px
     @media screen and (max-width: 699px)
@@ -73,5 +92,8 @@ const props = defineProps({
         font-size: 14px
         line-height: 152%
 
+  .spacing-block
+    width: 100%
+    height: 15px
 
 </style>
