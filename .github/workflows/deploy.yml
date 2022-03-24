@@ -25,8 +25,11 @@ jobs:
         if: (github.event_name == 'push' && github.ref == 'refs/heads/master') || (github.event_name == 'deployment' && github.event.deployment.environment == 'staging')
         run: |
           rm -rf public/
-          hugo -e staging --minify
-          hugo deploy --target aws-staging --maxDeletes -1 --invalidateCDN
+          yarn build
+          aws s3 sync --delete docs/.vitepress/dist s3://vibe-beta.com/
+          aws cloudfront create-invalidation \
+              --distribution-id xxxxxxxxx \
+              --paths "/*"
       # - name: Hugo build and deploy production
       #   if: github.event_name == 'deployment' && github.event.deployment.environment == 'production' && github.ref == 'refs/heads/master'
       #   run: |
@@ -44,14 +47,6 @@ jobs:
         with:
           role-to-assume: arn:aws-cn:iam::639040880617:role/GithubDeployWebsiteRole
           aws-region: cn-northwest-1
-      - name: Hugo build and deploy cn production
-        if: github.event_name == 'deployment' && github.event.deployment.environment == 'production' && github.ref == 'refs/heads/master'
-        run: |
-          rm -rf public/
-          hugo -e cn-production --minify
-          hugo deploy --target aws-cn-production --maxDeletes -1 --invalidateCDN
-          # additional CDN for vibe.cn, not used but just to keep it up to date until we turn it off.
-          aws cloudfront create-invalidation --distribution-id E10VE47GZ51NZB --paths "/*"
       - uses: actions/github-script@0.3.0
         if: github.event_name == 'deployment'
         with:
