@@ -1,0 +1,76 @@
+name: 'Deployment'
+on:
+  push:
+    branches:
+      - master
+  deployment:
+permissions:
+  id-token: write
+  contents: write
+  deployments: write
+  statuses: write
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Yarn install
+        run: yarn
+      - name: Configure AWS Credentials (US)
+        uses: aws-actions/configure-aws-credentials@master
+        with:
+          role-to-assume: arn:aws:iam::663354718506:role/GithubDeployWebsiteRole
+          aws-region: us-west-2
+      - name: Hugo build and deploy staging
+        if: (github.event_name == 'push' && github.ref == 'refs/heads/master') || (github.event_name == 'deployment' && github.event.deployment.environment == 'staging')
+        run: |
+          rm -rf public/
+          hugo -e staging --minify
+          hugo deploy --target aws-staging --maxDeletes -1 --invalidateCDN
+      # - name: Hugo build and deploy production
+      #   if: github.event_name == 'deployment' && github.event.deployment.environment == 'production' && github.ref == 'refs/heads/master'
+      #   run: |
+      #     rm -rf public/
+      #     hugo -e production --minify
+      #     hugo deploy --target aws-production --maxDeletes -1 --invalidateCDN
+      - name: Configure AWS Credentials (CN)
+        if: github.event_name == 'deployment' && github.event.deployment.environment == 'production' && github.ref == 'refs/heads/master'
+        uses: aws-actions/configure-aws-credentials@master
+        # Previous us-west-2 credential carry over some environment variables that needs to be cleared here...
+        env:
+          AWS_ACCESS_KEY_ID:
+          AWS_SECRET_ACCESS_KEY:
+          AWS_SESSION_TOKEN:
+        with:
+          role-to-assume: arn:aws-cn:iam::639040880617:role/GithubDeployWebsiteRole
+          aws-region: cn-northwest-1
+      - name: Hugo build and deploy cn production
+        if: github.event_name == 'deployment' && github.event.deployment.environment == 'production' && github.ref == 'refs/heads/master'
+        run: |
+          rm -rf public/
+          hugo -e cn-production --minify
+          hugo deploy --target aws-cn-production --maxDeletes -1 --invalidateCDN
+          # additional CDN for vibe.cn, not used but just to keep it up to date until we turn it off.
+          aws cloudfront create-invalidation --distribution-id E10VE47GZ51NZB --paths "/*"
+      - uses: actions/github-script@0.3.0
+        if: github.event_name == 'deployment'
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.repos.createDeploymentStatus({
+              owner: 'vibeus',
+              repo: '${{ github.event.repository.name }}',
+              deployment_id: '${{ github.event.deployment.id }}',
+              state: 'success',
+            })
+      - uses: actions/github-script@0.3.0
+        if: github.event_name == 'deployment' && (failure() || cancelled())
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            github.repos.createDeploymentStatus({
+              owner: 'vibeus',
+              repo: '${{ github.event.repository.name }}',
+              deployment_id: '${{ github.event.deployment.id }}',
+              state: 'failure',
+            })
