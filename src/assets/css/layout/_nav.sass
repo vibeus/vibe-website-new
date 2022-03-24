@@ -29,16 +29,21 @@
 
 // dropdown 逻辑比较麻烦单独拉出来
 +until(1080px)
-  .nav-menu
+  .navbar .nav-menu
     position: absolute
+    display: none
     top: calc($navbar-height + 1px)
     left: 0
     background-color: #fff
+    &.is-active
+      display: flex
   .nav-item
     display: block
     .nav-link
       width: calc(100vw - 18px)
       background-color: #fff
+      +mobile
+        width: 100vw
       & + .nav-dropdown
         display: none
       &.is-active + .nav-dropdown
@@ -58,4 +63,11 @@
           background-color: #fafafa
       .f-row .nav-dropdown-item
         width: calc(50vw - 9px)
+  .navbar .nav-shrink.buttons
+    display: flex
+    align-items: center
+    a.button.is-primary
+      height: 36px
+      line-height: 36px
+      font-size: 14px
 

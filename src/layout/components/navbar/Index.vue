@@ -4,7 +4,7 @@
       <NavBarLogo />
       <NavShrink />
 
-      <div class="nav-menu">
+      <div id="nav-menu" class="nav-menu">
         <NavDropdwn />
         <NavEndBtn />
       </div>

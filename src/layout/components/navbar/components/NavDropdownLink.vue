@@ -40,14 +40,11 @@ const props = defineProps({
 const route = useRoute();
 
 const toggleActive = el => el.classList.toggle('is-active');
-
 </script>
 
 <style lang="sass" scoped>
 @import '/@css/base'
 .nav-link
-  &:not(.is-arrowless)
-    padding-right: 2.5em
   &::after
     content: " "
     position: absolute
@@ -65,6 +62,7 @@ const toggleActive = el => el.classList.toggle('is-active');
     border-right: 0
     border-color: #111
   +from(1080px)
+    padding-right: 2.5em
     &:hover + .nav-dropdown
       display: flex
       flex-direction: column

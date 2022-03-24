@@ -4,13 +4,13 @@
       <span>See a Demo</span>
     </a>
     <div class="nav-divider is-hidden-mobile" data-v-00cdf7b5=""></div>
-    <button class="nav-cart-icon mgl-8">
+    <button class="nav-btn nav-cart-icon mgl-8">
       <svg-icon class="nav-icon" icon-name="global-cart-cart" alt="cart icon" />
     </button>
-    <button class="nav-user-icon is-hidden-mobile">
+    <button class="nav-btn nav-user-icon is-hidden-mobile">
       <svg-icon class="nav-icon" icon-name="global-cart-user" alt="user icon" />
     </button>
-    <a href="" class="nav-burger">
+    <a href="" class="nav-burger" @click="toggleMenuActive">
       <span></span>
       <span></span>
       <span></span>
@@ -20,25 +20,21 @@
 <script setup>
 const { frontmatter: fm } = useData();
 
+const toggleMenuActive = () => {
+  const menu = document.getElementById('nav-menu');
+  menu.classList.toggle('is-active');
+};
 </script>
 <style lang="sass" scoped>
 @import '/@css/base'
 .nav-shrink.buttons
   display: none
-  +until(1080px)
-    display: flex
-    align-items: center
-  button
+  .nav-btn
     display: block
     position: relative
     padding: 0
     border: none
     background: 0 0
-  .button.is-primary
-    background-color: #f66
-    border-color: transparent
-    color: #fff
-    font-weight: 500
   .nav-icon
     width: 45px
     height: 45px

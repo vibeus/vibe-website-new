@@ -3,13 +3,13 @@ export default [ // menu
     title: 'Product',
     // activeMatch: `^/(product)/`,
     submenu: [
-      { text: 'Vibe Smartboard 55″', link: '/products/vibe-smartboard-55/' },
-      { text: 'Vibe Smartboard Pro 75″', link: '/products/vibe-smartboard-pro-75/' },
-      { text: 'Vibe Software', link: '/software/' },
-      { text: 'App Integrations', link: '/android-app-store/' },
-      { text: 'Security', link: '/security/' },
-      { text: 'Product Comparison', link: '/comparison/' },
-      { text: 'Customer Testimonials', link: '/customer/' },
+      { text: 'Vibe Smartboard 55″', link: 'https://vibe.us/products/vibe-smartboard-55/' },
+      { text: 'Vibe Smartboard Pro 75″', link: 'https://vibe.us/products/vibe-smartboard-pro-75/' },
+      { text: 'Vibe Software', link: 'https://vibe.us/software/' },
+      { text: 'App Integrations', link: 'https://vibe.us/android-app-store/' },
+      { text: 'Security', link: 'https://vibe.us/security/' },
+      { text: 'Product Comparison', link: 'https://vibe.us/comparison/' },
+      { text: 'Customer Testimonials', link: 'https://vibe.us/customer/' },
     ]
   },
   {
@@ -19,23 +19,23 @@ export default [ // menu
       {
         title: 'Scenario',
         items: [ // TODO: column_submenu
-          { text: 'Brainstorming', link: '/lp/scenario-brainstorming/' },
-          { text: 'Entertainment', link: '/lp/scenario-entertainment/' },
-          { text: 'Meeting', link: '/lp/scenario-meeting/' },
-          { text: 'Presenting', link: '/lp/scenario-presenting/' },
-          { text: 'Remote Collaboration', link: '/lp/scenario-remote/' },
-          { text: 'Training', link: '/lp/scenario-training/' },
+          { text: 'Brainstorming', link: 'https://vibe.us/lp/scenario-brainstorming/' },
+          { text: 'Entertainment', link: 'https://vibe.us/lp/scenario-entertainment/' },
+          { text: 'Meeting', link: 'https://vibe.us/lp/scenario-meeting/' },
+          { text: 'Presenting', link: 'https://vibe.us/lp/scenario-presenting/' },
+          { text: 'Remote Collaboration', link: 'https://vibe.us/lp/scenario-remote/' },
+          { text: 'Training', link: 'https://vibe.us/lp/scenario-training/' },
         ]
       },
       {
         title: 'Industry',
         items: [
-          { text: 'Distance Learning', link: '/lp/scenario-distance-learning/' },
-          { text: 'Education', link: '/lp/scenario-education/' },
-          { text: 'Engineering', link: '/lp/scenario-engineering/' },
-          { text: 'Marketing', link: '/lp/scenario-marketing/' },
-          { text: 'Professional Services', link: '/lp/scenario-professional-services/' },
-          { text: 'Technology', link: '/lp/scenario-technology/' },
+          { text: 'Distance Learning', link: 'https://vibe.us/lp/scenario-distance-learning/' },
+          { text: 'Education', link: 'https://vibe.us/lp/scenario-education/' },
+          { text: 'Engineering', link: 'https://vibe.us/lp/scenario-engineering/' },
+          { text: 'Marketing', link: 'https://vibe.us/lp/scenario-marketing/' },
+          { text: 'Professional Services', link: 'https://vibe.us/lp/scenario-professional-services/' },
+          { text: 'Technology', link: 'https://vibe.us/lp/scenario-technology/' },
         ]
       }
     ]
@@ -44,13 +44,13 @@ export default [ // menu
     title: 'Resources',
     // activeMatch: `^/(product)/`,
     submenu: [
-      { text: 'Buyer\'s FAQ', link: '/buyer-faq/', nofollow: true },
-      { text: 'Blogs', link: '/blog/', nofollow: true },
-      { text: 'Product Videos', link: '/video-tutorial/', nofollow: true },
+      { text: 'Buyer\'s FAQ', link: 'https://vibe.us/buyer-faq/', nofollow: true },
+      { text: 'Blogs', link: 'https://vibe.us/blog/', nofollow: true },
+      { text: 'Product Videos', link: 'https://vibe.us/video-tutorial/', nofollow: true },
       { text: 'Help Center', link: 'https://knowledge.vibe.us', target: '_blank', nofollow: true },
-      { text: 'Contact Sales', link: '/contact/', nofollow: true },
+      { text: 'Contact Sales', link: 'https://vibe.us/contact/', nofollow: true },
       { text: 'Contact Support', link: 'https://knowledge.vibe.us/kb-tickets/new', target: '_blank', nofollow: true },
-      { text: 'Request a Quote', link: '/contact/request-a-quote/', nofollow: true },
+      { text: 'Request a Quote', link: 'https://vibe.us/contact/request-a-quote/', nofollow: true },
       { text: 'Track Your Order', link: '/order/status/', nofollow: true },
     ]
   },
