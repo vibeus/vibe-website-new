@@ -12,7 +12,8 @@
     "@docsearch/css": "^3.0.0-alpha.50",
     "@docsearch/js": "^3.0.0-alpha.50",
     "element-plus": "^1.1.0-beta.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "pinia": "^2.0.12"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",

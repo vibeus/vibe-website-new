@@ -30,6 +30,7 @@
 </template>
 
 <script setup>
+import { createPinia } from 'pinia';
 import { isSideBarEmpty, getSideBarConfig } from './support/sideBar';
 
 // components

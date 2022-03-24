@@ -34,15 +34,18 @@
     top: calc($navbar-height + 1px)
     left: 0
     background-color: #fff
-  .nav-link
-    width: calc(100vw - 18px)
-    background-color: #fff
   .nav-item
     display: block
+    .nav-link
+      width: calc(100vw - 18px)
+      background-color: #fff
+      & + .nav-dropdown
+        display: none
+      &.is-active + .nav-dropdown
+        display: block
     .nav-dropdown
       position: relative
       top: 0
-      display: block
       width: calc(100vw - 18px)
       padding: .5rem .75rem
       box-shadow: unset
