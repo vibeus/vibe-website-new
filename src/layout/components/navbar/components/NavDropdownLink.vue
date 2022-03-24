@@ -1,6 +1,6 @@
 <template>
   <div class="nav-item">
-    <span class="nav-link" :aria-label="menu.ariaLabel" @click="toggle">
+    <span class="nav-link" :aria-label="menu.ariaLabel" @click="toggleActive($event.target)">
       {{ menu.title }}
     </span>
     <div class="nav-dropdown is-boxed">
@@ -39,6 +39,8 @@ const props = defineProps({
 
 const route = useRoute();
 
+const toggleActive = el => el.classList.toggle('is-active');
+
 </script>
 
 <style lang="sass" scoped>
@@ -62,10 +64,11 @@ const route = useRoute();
     border-radius: 2px
     border-right: 0
     border-color: #111
-  &:hover + .nav-dropdown
-    display: flex
-    flex-direction: column
-    opacity: 1
+  +from(1080px)
+    &:hover + .nav-dropdown
+      display: flex
+      flex-direction: column
+      opacity: 1
 
 .nav-dropdown
   position: absolute
