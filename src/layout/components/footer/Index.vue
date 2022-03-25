@@ -22,7 +22,4 @@ const foot_contact_bar_only = fm.value.foot_contact_bar_only;
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
-
-
 </style>
