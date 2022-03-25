@@ -22,6 +22,9 @@ async function config() {
       //   include: ['element-plus'],
       // },
       plugins: createVitePlugins(),
+      css: {
+        preprocessorOptions: { scss: { charset: false } }
+      },
       // css: {
       //   preprocessorOptions: {
       //     scss: {
