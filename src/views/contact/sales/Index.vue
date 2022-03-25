@@ -19,4 +19,5 @@ console.log('fm: ', fm);
 /* End Data */
 </script>
 
-<style lang="sass"></style>
+<style lang="sass" scoped>
+</style>

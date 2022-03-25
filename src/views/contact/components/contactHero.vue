@@ -62,10 +62,6 @@ const props = defineProps({
   vertical-align: -2px
 
 .hero
-  // align-items: stretch
-  // display: flex
-  // flex-direction: column
-  // justify-content: space-between
   color: $vibe-black
   background-color: #fc0
 

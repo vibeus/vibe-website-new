@@ -5,7 +5,7 @@
     </div>
     <div class="container is-support">
       <h2 class="title">{{contactSection.support.title}}</h2>
-      <h2 class="subtitle">{{contactSection.support.subtitle}}</h2>
+      <h2 class="title">{{contactSection.support.subtitle}}</h2>
       <div class="content" v-html="contactSection.support.body"></div>
     </div>
     <GetInTouch />
@@ -27,20 +27,15 @@ console.log('contactSection: ', props.contactSection);
 *
   margin: 0
   padding: 0
-// p
-//   line-height: unset
-// .title 
-//   color: $vibe-black
-//   font-family: $vibe-family-heading
-//   font-weight: $vibe-bold
-//   line-height: 1.125
-// .title:not(:last-child)
-//   margin-bottom: 1.5rem
+
 .contact
   color: $vibe-black
   padding-top: 0
-  padding-bottom: 80px
+  padding: 0 1.5rem 80px
   background: linear-gradient(to bottom,#fc0 220px,#F4F4F4 220px)
+  +mobile
+    padding-bottom: 40px
+
   .container
     flex-grow: 1
     margin: 0 auto
@@ -54,18 +49,25 @@ console.log('contactSection: ', props.contactSection);
       padding: 8px 20px
   .container.is-support
     margin-top: 40px
-  .title
-    text-align: center
-    font-size: 24px
-    border:0
-    &:not(:last-child)
-      margin-bottom: 1.5rem
-  .subtitle
-    text-align: center
-    font-size: 24px
-    border:0
-  .title:not(.is-spaced)+.subtitle
-    margin-top: -1.25rem
+    font-family: $vibe-family-body
+    ::v-deep a
+      font-weight: 500
+      text-decoration: underline
+      &:hover
+        color: #66c
+    .title
+      color: $vibe-black
+      font-family: $vibe-family-heading
+      font-weight: $vibe-bold
+      line-height: 1.125
+      text-align: center
+      font-size: 24px
+      border:0
+      &:not(:last-child)
+        margin-bottom: 1.5rem
+      &:not(.is-spaced)+.title
+        margin-top: -1.25rem
+
   .content 
     text-align: center
 

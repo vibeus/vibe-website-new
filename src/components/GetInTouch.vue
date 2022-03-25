@@ -43,7 +43,7 @@ const city = {
   width: 100%
   padding-top: 16px
   border-top: 0.5px solid #b4b4b4
-  
+  font-family:$vibe-family-body
   .contact
     display: flex
     flex-direction: column
@@ -59,6 +59,10 @@ const city = {
       +tablet
         margin: 0 6px
         font-size: 13px
+      +mobile
+        &:not(:last-of-type) 
+          margin-bottom: 8px
+
 .icon
   align-items: center
   display: inline-flex
