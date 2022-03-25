@@ -56,12 +56,18 @@ const props = defineProps({
 .section.is-vibe-foot-contact
   border-top: 1px solid #F2F2F2
   padding: 19px 3rem
+  color: $vibe-black
+  font-family: $vibe-family-body 
   > .container
     max-width: 1200px
+    width: auto
   .level
     display: flex
     justify-content: space-between
     align-items: center
+    width: 100%
+    +mobile
+      flex-direction: column
   .level-left
     display: flex
     align-items: center
@@ -77,6 +83,8 @@ const props = defineProps({
       flex-shrink: 0
       justify-content: center
     .icon
+      width: 20px
+      height: 20px
       margin-right: 4px
   .level-item.is-copyright
     span
@@ -89,6 +97,7 @@ const props = defineProps({
         border-left: 1px solid black
     +mobile
       text-align: center
+      margin-bottom: 0.75rem
       span
         display: block
   .level-item.is-social
