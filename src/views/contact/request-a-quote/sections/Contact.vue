@@ -99,7 +99,7 @@
 </template>
 <script setup>
 import VForm from '/@/components/Form.vue';
-import CartCount from '/@/views/contact/request-a-quote/components/cartCount.vue';
+import CartCount from '../components/cartCount.vue';
 const props = defineProps({
   contactSection: {
     type: Object,
@@ -133,7 +133,7 @@ p
     width: 100vw
     margin: 2rem 0 2rem -0.5rem
     border: 1px solid #ededed
-
+  
   .title
     text-align: center
     font-size: 24px

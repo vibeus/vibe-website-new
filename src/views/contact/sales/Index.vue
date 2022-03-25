@@ -1,7 +1,7 @@
 <template>
   <main class="request-quote">
     <ContactHero :contactHero="fm.hero" />
-    <Contact :contactSection="fm.contact_section" />
+    <Contact :contactSection="fm.contact" />
     <BottomCta :bottomCta="fm.bottom_cta" />
   </main>
 </template>
@@ -20,8 +20,7 @@ console.log('fm: ', fm);
 </script>
 
 <style lang="sass" scoped>
-:deep(.hero .hero-body .title )
-  font-size: 48px
+:deep(.hero .hero-body)
   @media screen and (max-width: 699px)
-    font-size: 32px
+    padding-bottom: 28px
 </style>

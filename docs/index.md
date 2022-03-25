@@ -1,4 +1,5 @@
 ---
+path: home
 heroImage: /logo.svg
 actionText: Get Started
 

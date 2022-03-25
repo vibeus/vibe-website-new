@@ -6,8 +6,8 @@ stylesPath: css/request-a-quote.sass
 hero:
   title: Request a Quote
   body: 
-    Need a PO? Have a bulk order? Have a delivery address outside of the continental US?
-    Use this form to let us know how we can best help.
+    - text: 
+        content: Need a PO? Have a bulk order? Have a delivery address outside of the continental US?Use this form to let us know how we can best help.
 contact_section:
   title: Your Request
   choices:

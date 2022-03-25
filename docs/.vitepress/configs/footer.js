@@ -64,7 +64,7 @@ export default {
         },
         {
           "title": "Warranty",
-          "url": "https://vibe.us/warranty/",
+          "url": "/warranty/",
           "nofollow": true
         },
         {
