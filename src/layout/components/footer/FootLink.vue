@@ -2,14 +2,14 @@
   <div class="section is-vibe-foot">
     <div class="container about">
       <div class="columns">
-        <div class="column is-one-third">
+        <div class="column is-one-quarter">
           <figure class="image is-foot-logo">
             <svg-icon icon-name="footer-foot-icon" />
             <span class="logoHidden">Vibe logo</span>
           </figure>
         </div>
         <div class="column">
-          <div class="columns is-links is-mobile">
+          <div class="columns is-links is-mobile is-multiline">
             <template v-for="(item, idx) in sections" :key="idx">
               <div :class="'column is-half-touch is-foot-section ' + item.class || ''">
                 <h2 class="is-vibe-heading">{{ item.heading }}</h2>
@@ -54,19 +54,26 @@ const props = defineProps({
   background: $vibe-black
   color: $vibe-white
   padding: 7.25rem 3rem
+  .columns
+    width: 100%
+    +mobile
+      display: block
   +mobile
     padding: 5rem 1.5rem
   +widescreen
     padding: 8.75rem 3rem
   > .container
     max-width: 1200px
+    width: auto
   +mobile
     .columns.is-links
       padding-top: 1.5rem
+      display: flex
+      
   .image.is-foot-logo
     svg
       width: 80px
-      height: auto
+      height: 73px
       +mobile
         width: 60px
       +widescreen
@@ -83,6 +90,7 @@ const props = defineProps({
       width: 1px
   .column.is-foot-section
     min-width: 140px
+    padding:0 12px
     .foot-link
       width: 180px
       margin-bottom: 1.2rem
