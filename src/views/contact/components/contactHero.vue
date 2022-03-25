@@ -2,9 +2,19 @@
   <section class="hero">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">{{contactHero.title}}</h1>
+        <h1 class="title">{{ contactHero.title }}</h1>
         <div class="content">
-          <span class="text" v-html="contactHero.body"></span>
+          <template v-for="item in contactHero.body" :key="item">
+            <div class="single-content-block" :class="item.class">
+              <svg-icon v-if="item.icon" class="icon" :icon-name="item.icon.class" />
+              <span v-if="item.text" class="text" :class="item.text.class">{{
+                item.text.content
+              }}</span>
+              <a v-if="item.link" class="link" :href="item.link.url">{{
+                item.link.text
+              }}</a>
+            </div>
+          </template>
         </div>
       </div>
     </div>
@@ -14,59 +24,20 @@
 const props = defineProps({
   contactHero: {
     type: Object,
-    required: true
-  }
+    required: true,
+  },
 });
 </script>
 <style lang="sass" scoped>
 @import '/@css/base'
-.container 
-  flex-grow: 1
-  margin: 0 auto
-  position: relative
-  width: auto
-  @media screen and (min-width: 576px)
-    max-width: 540px
-  @media screen and (min-width: 768px)
-    max-width: 720px
-  @media screen and (min-width: 1024px)
-    max-width: 960px
-  @media screen and (min-width: 1200px)
-    max-width: 1140px
-  @media screen and (min-width: 1216px)
-    max-width: 1152px
-  @media screen and (min-width: 1400px)
-    max-width: 1320px
-  @media screen and (min-width: 1408px)
-    max-width: 1344px
-
-::v-deep .link 
-  line-height: 1em
-  text-decoration-line: underline
-  text-decoration-thickness: 2px
-  font-weight: 500
-  &:hover
-    color: #66c
-
-::v-deep .spacing-block 
-    width: 100%
-    height: 15px
-
-::v-deep .icon
-  display: inline-flex
-  align-items: center
-  justify-content: center
-  height: 1.5rem
-  width: 1.5rem
-  margin-right: 5px
-  vertical-align: -2px
 
 .hero
   color: $vibe-black
   background-color: #fc0
-
   .hero-body
-    padding: 80px 0 56px
+    padding: 80px 1.5rem 56px
+    flex-grow: 1
+    flex-shrink: 0
     @media screen and (max-width: 699px)
       padding-bottom: 72px
       padding-top: 40px
@@ -74,7 +45,7 @@ const props = defineProps({
       margin-top: 0
       margin-bottom: 1.5rem
       text-align: center
-      font-size: 48px
+      font-size: 64px
       font-family: $family-head
       font-weight: $vibe-bold
       @media screen and (max-width: 699px)
@@ -87,9 +58,25 @@ const props = defineProps({
       @media screen and (max-width: 699px)
         font-size: 14px
         line-height: 152%
-
-  .spacing-block
-    width: 100%
-    height: 15px
-
+    .single-content-block
+      .icon
+        display: inline-flex
+        align-items: center
+        justify-content: center
+        height: 1.5rem
+        width: 1.5rem
+        margin-right: 5px
+        vertical-align: -2px
+      .text
+        text-align: center
+      .link
+        line-height: 1em
+        text-decoration-line: underline
+        text-decoration-thickness: 2px
+        font-weight: 500
+        &:hover
+          color: #66c
+    .spacing-block
+      width: 100%
+      height: 15px
 </style>

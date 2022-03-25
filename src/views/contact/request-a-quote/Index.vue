@@ -19,4 +19,9 @@ console.log('fm: ', fm);
 /* End Data */
 </script>
 
-<style lang="sass"></style>
+<style lang="sass" scoped>
+:deep(.hero .hero-body .title )
+  font-size: 48px
+  @media screen and (max-width: 699px)
+    font-size: 32px
+</style>

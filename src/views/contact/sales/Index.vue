@@ -20,4 +20,7 @@ console.log('fm: ', fm);
 </script>
 
 <style lang="sass" scoped>
+:deep(.hero .hero-body)
+  @media screen and (max-width: 699px)
+    padding-bottom: 28px
 </style>

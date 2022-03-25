@@ -133,7 +133,7 @@ p
     width: 100vw
     margin: 2rem 0 2rem -0.5rem
     border: 1px solid #ededed
-
+  
   .title
     text-align: center
     font-size: 24px
