@@ -49,7 +49,7 @@ console.log('contactSection: ', props.contactSection);
       padding: 8px 20px
   .container.is-support
     margin-top: 40px
-    font-family: $vibe-family-body
+    font-family: $family-body
     ::v-deep a
       font-weight: 500
       text-decoration: underline
@@ -57,7 +57,7 @@ console.log('contactSection: ', props.contactSection);
         color: #66c
     .title
       color: $vibe-black
-      font-family: $vibe-family-heading
+      font-family: $family-head
       font-weight: $vibe-bold
       line-height: 1.125
       text-align: center

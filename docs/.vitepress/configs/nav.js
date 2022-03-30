@@ -50,8 +50,8 @@ export default [ // menu
       { text: 'Help Center', link: 'https://knowledge.vibe.us', target: '_blank', nofollow: true },
       { text: 'Contact Sales', link: 'https://vibe.us/contact/', nofollow: true },
       { text: 'Contact Support', link: 'https://knowledge.vibe.us/kb-tickets/new', target: '_blank', nofollow: true },
-      { text: 'Request a Quote', link: '/contact/request-a-quote/', nofollow: true },
-      { text: 'Track Your Order', link: '/order/status/', nofollow: true },
+      { text: 'Request a Quote', link: '/contact-2/request-a-quote/', nofollow: true },
+      { text: 'Track Your Order', link: '/order-2/status/', nofollow: true },
     ]
   },
   {

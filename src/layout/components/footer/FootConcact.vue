@@ -57,7 +57,7 @@ const props = defineProps({
   border-top: 1px solid #F2F2F2
   padding: 19px 3rem
   color: $vibe-black
-  font-family: $vibe-family-body 
+  font-family: $family-body 
   > .container
     max-width: 1200px
     width: auto

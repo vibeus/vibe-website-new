@@ -17,14 +17,6 @@ hero:
       - - name: zipcode
           placeholder: Shipping ZIP code*
           required: true
-        - name: company_size_classification
-          placeholder: Company size*
-          required: true
-          dropdown:
-            - 1-10
-            - 11-100
-            - 101-500
-            - 501-1000
     buttons:
       - type: submit
         title: Track

@@ -118,7 +118,7 @@ p
   line-height: unset
 .title 
   color: $vibe-black
-  font-family: $vibe-family-heading
+  font-family: $family-head
   font-weight: $vibe-bold
   line-height: 1.125
 .title:not(:last-child)
@@ -143,10 +143,10 @@ p
     max-width: 838px
     background-color: #fff
   .product-title
-    font-family: $vibe-family-heading
+    font-family: $family-head
     font-weight: $vibe-bold
   .count-title
-    font-family: $vibe-family-body
+    font-family: $family-body
     font-weight: $vibe-bold
     color: #000
   .divider
@@ -154,7 +154,7 @@ p
     border: 1px solid #f4f4f4
   .includes
     width: 100%
-    font-family: $vibe-family-body
+    font-family: $family-body
     font-size: 14px
     line-height: 144%
     color: $vibe-gray
@@ -199,7 +199,7 @@ p
     align-items: center
     width: 100%
     .count-title
-      font-family: $vibe-family-body
+      font-family: $family-body
       font-weight: $vibe-bold
       color: #000
 
@@ -208,7 +208,7 @@ p
   margin: 3rem auto 0
   max-width: 500px
   text-align: center
-  font-family: $vibe-family-body
+  font-family: $family-body
   .check-container 
     display: flex
     .quote-check 

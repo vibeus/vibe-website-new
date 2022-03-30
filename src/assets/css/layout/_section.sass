@@ -2,19 +2,15 @@
   .container
     display: flex
     margin: 0 auto
+    flex-grow: 1
+    margin: 0 auto
+    position: relative
+    width: auto
+    +until-fullhd
+      width: 94%
     +mobile
-      width: 327px
+      width: 87.5%
     +fullhd
-      max-width: 1440px
-  
-.container
-  flex-grow: 1
-  margin: 0 auto
-  position: relative
-  width: auto
-  @media screen and (min-width: 576px)
-    max-width: 94%
-  @media screen and (min-width: 1408px)
-    max-width: 1344px
+      width: 1344px
 
   

@@ -43,7 +43,7 @@ const city = {
   width: 100%
   padding-top: 16px
   border-top: 0.5px solid #b4b4b4
-  font-family:$vibe-family-body
+  font-family:$family-body
   .contact
     display: flex
     flex-direction: column
