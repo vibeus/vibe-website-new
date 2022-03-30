@@ -4,15 +4,23 @@
       <div class="f-row">
         <template v-for="item in row" :key="item.name">
           <div class="form-outline">
-            <select class="form-control select-input" v-if="item.dropdown" placeholder="Please select" :required="item.required">
-              <option
-                v-for="option in item.dropdown"
-                :key="option"
-                :label="option"
-                :value="option"
-              />
+            <select
+              v-if="item.dropdown"
+              class="form-control select-input"
+              placeholder="Please select"
+              :required="item.required"
+              @change="onFormControlChange($event.target)"
+            >
+              <option v-for="option in item.dropdown" :label="option" :value="option" :key="option" />
             </select>
-            <input v-else :name="item.name" class="form-control input" :type="item.type" :required="item.required">
+            <input
+              v-else
+              class="form-control input"
+              :name="item.name"
+              :type="item.type"
+              :required="item.required"
+              @change="onFormControlChange($event.target)"
+            >
             <label class="form-label" style="margin-left: 0px;">{{item.placeholder}}</label>
           </div>
         </template>
@@ -39,7 +47,7 @@ const props = defineProps({
 const emit = defineEmits(['msgSuccess']);
 
 const { action, buttons, controls } = Object.assign({}, props.formData);
-console.log();
+
 /* Start Data */
 const { proxy } = getCurrentInstance();
 const formItem = ref({});
@@ -54,6 +62,10 @@ const rules = {
   // email: [{ required: true, trigger: 'blur', validator: validEmail }],
 };
 
+const onFormControlChange = el => {
+  el.value ? el.classList.add('is-active'): el.classList.remove('is-active');
+};
+
 /* End Data */
 
 const submitForm = () => {
@@ -63,6 +75,13 @@ const submitForm = () => {
     } else console.log('invalid');
   });
 };
+
+onMounted(() => {
+  const form = proxy.$refs.form;
+  Array.prototype.forEach.call(form, el => {
+    el.value ? el.classList.add('is-active'): el.classList.remove('is-active');
+  });
+});
 </script>
 
 <style lang="sass" scoped>
@@ -88,6 +107,7 @@ const submitForm = () => {
   .form-outline
     position: relative
     width: 100%
+    margin: 0 .75rem
     padding: .75rem 0
     outline: none
   .form-control
@@ -122,7 +142,7 @@ const submitForm = () => {
     &:foucs
       -webkit-box-shadow: none
       box-shadow: none
-    &:focus ~ .form-label
+    &:focus ~ .form-label, &.is-active ~ .form-label
       color: #1266f1
       webkit-transform: translateY(-1rem) translateY(0.1rem) scale(.8)
       transform: translateY(-1rem) translateY(0.1rem) scale(.8)
