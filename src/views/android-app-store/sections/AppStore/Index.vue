@@ -10,8 +10,13 @@
 </template>
 
 <script setup>
-import SideBar from './components/SideBar.vue';
-import App from './components/App.vue';
+import SideBar from './SideBar.vue';
+import App from './App.vue';
+import { category, apps55, apps75 } from "/@/utils/data";
+console.log("category: ", category);
+console.log("apps75: ", apps75);
+console.log("apps55: ", apps55);
+
 </script>
 
 <style lang="sass" scoped>

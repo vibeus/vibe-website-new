@@ -12,21 +12,15 @@ import TabBar from './sections/TabBar.vue';
 import AppStore from './sections/AppStore/Index.vue';
 /* Start Data */
 const currentTab = ref('is-55');
-let state = ref({ useCase: undefined, type: 'bowser' });
+const state = ref({ useCase: undefined, type: 'bowser' });
 const searchTerm = ref('');
 const isFilter = ref(false);
-
-const { frontmatter: fm } = useData();
-console.log('fm: ', fm.value);
-
-provide('currentTab', currentTab);
-provide('state', state);
-provide('searchTerm', searchTerm);
-provide('isFilter', isFilter);
-/* End Data */
+const apps55Filter = ref({});
+const apps75Filter = ref({});
 
 const setState = ({ useCase, type }) => {
-  state = { useCase, type };
+  state.value = { useCase, type };
+
   let url = '#';
   isFilter.value = false;
   if (useCase) {
@@ -36,11 +30,20 @@ const setState = ({ useCase, type }) => {
     url = '#type=' + type;
     isFilter.value = true;
   }
-  history.pushState(state, null, url);
-  console.log('state: ', state);
-  console.log('isFilter.value: ', isFilter.value);
+  history.pushState({ useCase, type }, null, url);
 };
+
+const { frontmatter: fm } = useData();
+console.log('fm: ', fm.value);
+
+provide('currentTab', currentTab);
+provide('state', state);
 provide('setState', setState);
+provide('searchTerm', searchTerm);
+provide('isFilter', isFilter);
+provide('apps55Filter', apps55Filter);
+provide('apps75Filter', apps75Filter);
+/* End Data */
 </script>
 
 <style lang="sass"></style>

@@ -25,6 +25,7 @@ const props = defineProps({
 /* Start Data*/
 const currentTab = inject('currentTab');
 const setState = inject('setState');
+
 const changeTab = (data) => {
   currentTab.value = data;
   setState({});

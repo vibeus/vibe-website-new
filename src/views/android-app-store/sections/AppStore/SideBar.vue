@@ -20,19 +20,43 @@
   </div>
 </template>
 <script setup>
-import { category } from '/@/utils/data';
+import { category, apps55, apps75 } from '/@/utils/data';
+
+
+const currentTab = inject('currentTab');
+const apps55Filter = inject('apps55Filter');
+const apps75Filter = inject('apps75Filter');
+const state = inject('state');
 const setState = inject('setState');
 const currentItem = ref('');
+
+function setFilter (filterKey, value) {
+  if (currentTab.value === 'is-55') {
+    apps55Filter.value =
+      filterKey === 'useCase'
+        ? apps55.filter((i) => i.type === state.value.useCase)
+        : apps55.filter((i) => i.type === state.value.type);
+  } else {
+    apps75Filter.value =
+      filterKey === 'useCase'
+        ? apps75.filter((i) => i.type === state.value.useCase)
+        : apps75.filter((i) => i.type === state.value.type);
+  }
+}
+
 const changeSideBar = ({ key, value }) => {
   currentItem.value = `${key}=${value}`;
   if (key === 'category') {
     setState({ useCase: value });
+    setFilter('useCase', value);
   } else if (key === 'type') {
     setState({ type: value });
+    setFilter('type', value);
   } else {
     setState({});
   }
 };
+
 </script>
 <style lang="sass" scoped>
 @import '/@css/base'

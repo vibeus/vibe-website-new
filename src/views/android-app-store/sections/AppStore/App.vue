@@ -71,60 +71,22 @@
   </div>
 </template>
 <script setup>
-import { category, apps55, apps75 } from "/@/utils/data";
-console.log("category: ", category);
-console.log("apps75: ", apps75);
-console.log("apps55: ", apps55);
+import { category, apps55, apps75 } from '/@/utils/data';
+console.log('category: ', category);
+console.log('apps75: ', apps75);
+console.log('apps55: ', apps55);
 
 /* Start Data */
-const currentTab = inject("currentTab");
-
-const state = inject("state");
-
-const searchTerm = inject("searchTerm");
-
-const isFilter = inject("isFilter");
+const currentTab = inject('currentTab');
+const isFilter = inject('isFilter');
+const apps55Filter = inject('apps55Filter');
+const apps75Filter = inject('apps75Filter');
 
 /* End Data */
-// const isFilter = computed(() => {
-//   if (Object.keys(state.value).length === 0) {
-//     return false;
-//   } else {
-//     return true;
-//   }
-// });
+
 const apps55Featured = computed(() => apps55.filter((i) => i.featured));
 const apps75Featured = computed(() => apps75.filter((i) => i.featured));
 
-const apps55Filter = ref([]);
-watchEffect(() => {
-  console.log('state.value: ', state.value);
-  if (searchTerm) {
-    return apps55.filter(
-      (i) => i.name.toLowerCase().indexOf(searchTerm.value.toLowerCase()) >= 0
-    );
-  } else if (state.value.useCase) {
-    return apps55.filter((i) => i.type === state.value.useCase);
-  } else if (state.value.type) {
-    return apps55.filter((i) => i.type === state.value.type);
-  } else {
-    return apps55;
-  }
-});
-console.log("apps55Filter: ", apps55Filter.value);
-const apps75Filter = computed(() => {
-  if (searchTerm) {
-    return apps75.filter(
-      (i) => i.name.toLowerCase().indexOf(searchTerm.value.toLowerCase()) >= 0
-    );
-  } else if (state.value.useCase) {
-    return apps75.filter((i) => i.type === state.value.useCase);
-  } else if (state.value.type) {
-    return apps75.filter((i) => i.type === state.value.type);
-  } else {
-    return apps75;
-  }
-});
 </script>
 <style lang="sass" scoped>
 @import '/@css/base'
