@@ -20,7 +20,6 @@ export const category = [
   {
     id: 'type',
     name: 'Type of tool',
-    linkClass: 'is},{type',
     items: [
       {
         id: 'browser',

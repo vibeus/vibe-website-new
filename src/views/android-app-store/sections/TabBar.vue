@@ -22,9 +22,15 @@ const props = defineProps({
     required: true,
   },
 });
-const currentTab = ref('is-55');
+/* Start Data*/
+const currentTab = inject('currentTab');
+const setState = inject('setState');
+const changeTab = (data) => {
+  currentTab.value = data;
+  setState({});
+};
 
-const changeTab = (data) => (currentTab.value = data);
+/* End Data*/
 </script>
 
 <style lang="sass" scoped>
