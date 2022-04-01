@@ -25,8 +25,10 @@ const props = defineProps({
 /* Start Data*/
 const currentTab = inject('currentTab');
 const setState = inject('setState');
+const currentItem = inject('currentItem');
 
 const changeTab = (data) => {
+  currentItem.value = '';
   currentTab.value = data;
   setState({});
 };
@@ -36,6 +38,8 @@ const changeTab = (data) => {
 
 <style lang="sass" scoped>
 @import '/@css/base'
+a
+  text-decoration: none
 .section.is-tab-bar
     max-height: 64px
     padding: 0

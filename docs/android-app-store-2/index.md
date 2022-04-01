@@ -13,22 +13,14 @@ tab_bar:
     class: is-55
   - title: Vibe Pro 75″
     class: is-75
-
-bottom_cta:
-  title: Want Something Else?
-  body_55: i18n-content-android-app-store-_index-bottom_cta-body-55
-  body_75: i18n-content-android-app-store-_index-bottom_cta-body-75
-  cta:
-    title: Contact Us
-    url: /contact/
     
 disclaimer_info:
-  content_55: |
+  content_55: 
     Vibe may not support third-party apps that require Android 7.1 or later. You can also add apps through the Google Play store on Vibe.
   icon_55: 
     - img/android-app-store/vibe-store.svg
     - img/android-app-store/google-store.svg
-  content_75: |
+  content_75: 
     You can also download apps from the Chrome web store on the Vibe Smartboard Pro 75″.
   icon_75: 
     - img/android-app-store/vibe-store.svg

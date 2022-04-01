@@ -17,6 +17,7 @@ const searchTerm = ref('');
 const isFilter = ref(false);
 const apps55Filter = ref({});
 const apps75Filter = ref({});
+const currentItem = ref('');
 
 const setState = ({ useCase, type }) => {
   state.value = { useCase, type };
@@ -36,13 +37,14 @@ const setState = ({ useCase, type }) => {
 const { frontmatter: fm } = useData();
 console.log('fm: ', fm.value);
 
+provide('setState', setState);
 provide('currentTab', currentTab);
 provide('state', state);
-provide('setState', setState);
 provide('searchTerm', searchTerm);
 provide('isFilter', isFilter);
 provide('apps55Filter', apps55Filter);
 provide('apps75Filter', apps75Filter);
+provide('currentItem', currentItem);
 /* End Data */
 </script>
 

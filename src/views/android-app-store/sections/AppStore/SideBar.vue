@@ -28,7 +28,7 @@ const apps55Filter = inject('apps55Filter');
 const apps75Filter = inject('apps75Filter');
 const state = inject('state');
 const setState = inject('setState');
-const currentItem = ref('');
+const currentItem = inject('currentItem');
 
 function setFilter (filterKey, value) {
   if (currentTab.value === 'is-55') {

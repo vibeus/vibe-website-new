@@ -67,7 +67,9 @@
         </li>
       </ul>
     </div>
-    <div class="clear-filter" v-if="isFilter"></div>
+    <div class="clear-filter" v-if="isFilter">
+      <button class="button is-rounded is-black is-outlined" @click="setState({});">Clear Filter</button>
+    </div>
   </div>
 </template>
 <script setup>
@@ -81,9 +83,8 @@ const currentTab = inject('currentTab');
 const isFilter = inject('isFilter');
 const apps55Filter = inject('apps55Filter');
 const apps75Filter = inject('apps75Filter');
-
+const setState = inject('setState');
 /* End Data */
-
 const apps55Featured = computed(() => apps55.filter((i) => i.featured));
 const apps75Featured = computed(() => apps75.filter((i) => i.featured));
 
@@ -99,7 +100,7 @@ const apps75Featured = computed(() => apps75.filter((i) => i.featured));
   flex-basis: 0
   flex-grow: 1
   flex-shrink: 1
-  font-family-body: $vibe-family-body
+  font-family: $vibe-family-body
   .app-list-with-header:not(:first-child)
     margin-top: 40px
   .is-list-header
@@ -127,8 +128,21 @@ const apps75Featured = computed(() => apps75.filter((i) => i.featured));
         overflow: hidden
         white-space: nowrap
         text-overflow: ellipsis
+      .app-type
+        font-size: 14px
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
       .is-app-icon
         width: 60px
         +tablet
           margin-right: 1rem
+  .clear-filter
+    text-align: center
+  .button.is-black.is-outlined
+    cursor: pointer
+    &:hover
+      background-color: #0a0a0a
+      border-color: #0a0a0a
+      color: #fff
 </style>
