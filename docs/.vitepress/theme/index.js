@@ -1,3 +1,4 @@
+import { createPinia } from 'pinia';
 import DefaultTheme from "/@/layout";
 import SvgIcon from '/@/components/SvgIcon.vue';
 import LazyImg from '/@/components/LazyImg.vue';
@@ -8,6 +9,7 @@ export default {
   ...DefaultTheme,
   enhanceApp({ app, router, siteData }) {
     // register global components
+    app.use(createPinia())
     app.component('Layout', DefaultTheme);
     app.component('svg-icon', SvgIcon);
     app.component('lazy-img', LazyImg);

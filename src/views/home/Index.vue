@@ -1,5 +1,6 @@
 <template>
   <main class="home" aria-labelledby="main-title">
+    {{device}}
     <HomeHero />
     <slot name="hero" />
     <HomeFeatures />
@@ -13,6 +14,10 @@
 import HomeHero from './components/HomeHero.vue';
 import HomeFeatures from './components/HomeFeatures.vue';
 import HomeFooter from './components/HomeFooter.vue';
+import { useAppStore } from '/@/store/app';
+
+const app = useAppStore();
+const device = computed(() => app.device);
 
 const testInfo = ref({user: 'abc'});
 /* Start Data */
