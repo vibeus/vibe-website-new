@@ -26,8 +26,8 @@
   </div>
 </template>
 <script setup>
-const currentTab = inject("currentTab");
-const isDisclaimer = ref("true");
+const currentTab = inject('currentTab');
+const isDisclaimer = ref('true');
 </script>
 <style lang="sass" scoped>
 @import '/@css/base'

@@ -3,7 +3,7 @@
     <h2 class="title">Marketplace</h2>
     <div v-for="item in category" :key="item.name">
       <h3 class="subtitle">
-        <a class="side-bar-link is-all" href="#" @click="changeSideBar({})">{{
+        <a class="side-bar-link is-all" href="#" @click="chooseCate({})">{{
           item.name
         }}</a>
       </h3>
@@ -13,7 +13,7 @@
           class="side-bar-link"
           :class="currentItem == `${item.id}=${i.id}` ? 'is-active' : ''"
           href="#"
-          @click="changeSideBar({ key: item.id, value: i.id })"
+          @click="chooseCate({ key: item.id, value: i.id })"
           >{{ i.name }}</a
         >
       </div>
@@ -21,28 +21,18 @@
   </div>
 </template>
 <script setup>
-import { category, apps55, apps75 } from "/@/utils/data";
+import { category, apps55, apps75 } from '/@/utils/data';
 
-const currentTab = inject("currentTab");
-const apps55Filter = inject("apps55Filter");
-const apps75Filter = inject("apps75Filter");
-const state = inject("state");
-const currentItem = inject("currentItem");
-const setState = inject("setState");
-const setFilter = inject("setFilter");
+const currentTab = inject('currentTab');
+const apps55Filter = inject('apps55Filter');
+const apps75Filter = inject('apps75Filter');
+const state = inject('state');
+const currentItem = inject('currentItem');
+const setState = inject('setState');
+const setFilter = inject('setFilter');
+const chooseCate = inject('chooseCate');
 
-const changeSideBar = ({ key, value }) => {
-  currentItem.value = `${key}=${value}`;
-  if (key === "category") {
-    setState({ useCase: value });
-    setFilter(key);
-  } else if (key === "type") {
-    setState({ type: value });
-    setFilter(key);
-  } else {
-    setState({});
-  }
-};
+
 </script>
 <style lang="sass" scoped>
 @import '/@css/base'
@@ -63,17 +53,18 @@ a
   .subtitle
     margin-top: 58px
     margin-bottom: 35px
-    color: #66c
+    color: $vibe-purple
     font-family: $vibe-family-head
     font-size: 1.25rem
     font-weight: $vibe-bold
     line-height: 1.25
     a
-      color: #66c
+      color: $vibe-purple
   .side-bar-link.is-active
-      color: #66c
+      color: $vibe-purple
+      font-weight: $vibe-bold
   .type-item
     margin-bottom: 24px
     a:hover
-      color: #66c
+      color: $vibe-purple
 </style>

@@ -54,6 +54,7 @@
     <div v-else class="app-list">
       <ul class="app-wrapper">
         <li
+          class="column is-one-third-desktop is-half-tablet is-half-mobile"
           v-for="item in currentTab == 'is-55' ? apps55Filter : apps75Filter"
           :key="item.name"
         >
@@ -82,28 +83,28 @@
   </div>
 </template>
 <script setup>
-import { category, apps55, apps75 } from "/@/utils/data";
-import SearchBox from "./SearchBox.vue";
-import BottomCta from "./BottomCta.vue";
-console.log("category: ", category);
-console.log("apps75: ", apps75);
-console.log("apps55: ", apps55);
+import { category, apps55, apps75 } from '/@/utils/data';
+import SearchBox from './SearchBox.vue';
+import BottomCta from './BottomCta.vue';
+console.log('category: ', category);
+console.log('apps75: ', apps75);
+console.log('apps55: ', apps55);
 
 /* Start Data */
-const currentTab = inject("currentTab");
-const isFilter = inject("isFilter");
-const isSearch = inject("isSearch");
-const apps55Filter = inject("apps55Filter");
-const apps75Filter = inject("apps75Filter");
-const setState = inject("setState");
-const currentItem = inject("currentItem");
+const currentTab = inject('currentTab');
+const isFilter = inject('isFilter');
+const isSearch = inject('isSearch');
+const apps55Filter = inject('apps55Filter');
+const apps75Filter = inject('apps75Filter');
+const setState = inject('setState');
+const currentItem = inject('currentItem');
 /* End Data */
 const apps55Featured = computed(() => apps55.filter((i) => i.featured));
 const apps75Featured = computed(() => apps75.filter((i) => i.featured));
 
 const clearFilter = () => {
   setState({});
-  currentItem.value = "";
+  currentItem.value = '';
 };
 </script>
 <style lang="sass" scoped>

@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import Disclaimer from "./Disclaimer.vue"
+import Disclaimer from './Disclaimer.vue';
 import SideBar from './SideBar.vue';
 import App from './App.vue';
 import { category, apps55, apps75 } from '/@/utils/data';
