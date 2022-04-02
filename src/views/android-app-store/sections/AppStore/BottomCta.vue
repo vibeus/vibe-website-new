@@ -49,7 +49,7 @@
   </div>
 </template>
 <script setup>
-const currentTab = inject("currentTab");
+const currentTab = inject('currentTab');
 </script>
 <style lang="sass" scoped>
 @import '/@css/base'
@@ -72,4 +72,7 @@ a
   .content
     margin-bottom: 32px
     font-family: $vibe-family-body
+  .button
+    +mobile
+      display: block
 </style>

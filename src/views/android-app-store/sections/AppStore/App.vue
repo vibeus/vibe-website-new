@@ -1,10 +1,12 @@
 <template>
   <div class="column is-app-root">
-    <div v-if="!isFilter" class="default-view">
+    <SearchBox />
+    <div v-if="!isFilter && !isSearch" class="default-view">
       <div class="app-list-with-header">
         <div class="level is-list-header is-mobile">Featured Apps</div>
         <ul class="app-wrapper">
           <li
+            class="column is-one-third-desktop is-half-tablet is-half-mobile"
             v-for="item in currentTab == 'is-55' ? apps55Featured : apps75Featured"
             :key="item.name"
           >
@@ -27,7 +29,11 @@
       <div class="app-list-with-header">
         <div class="level is-list-header is-mobile">All Apps</div>
         <ul class="app-wrapper">
-          <li v-for="item in currentTab == 'is-55' ? apps55 : apps75" :key="item.name">
+          <li
+            class="column is-one-third-desktop is-half-tablet is-half-mobile"
+            v-for="item in currentTab == 'is-55' ? apps55 : apps75"
+            :key="item.name"
+          >
             <div class="app-item">
               <lazy-img
                 class="image is-app-icon"
@@ -67,27 +73,38 @@
         </li>
       </ul>
     </div>
-    <div class="clear-filter" v-if="isFilter">
-      <button class="button is-rounded is-black is-outlined" @click="setState({});">Clear Filter</button>
+    <div class="clear-filter" v-if="isFilter && !isSearch">
+      <button class="button is-rounded is-black is-outlined" @click="clearFilter">
+        Clear Filter
+      </button>
     </div>
+    <BottomCta class="bottom-cta" />
   </div>
 </template>
 <script setup>
-import { category, apps55, apps75 } from '/@/utils/data';
-console.log('category: ', category);
-console.log('apps75: ', apps75);
-console.log('apps55: ', apps55);
+import { category, apps55, apps75 } from "/@/utils/data";
+import SearchBox from "./SearchBox.vue";
+import BottomCta from "./BottomCta.vue";
+console.log("category: ", category);
+console.log("apps75: ", apps75);
+console.log("apps55: ", apps55);
 
 /* Start Data */
-const currentTab = inject('currentTab');
-const isFilter = inject('isFilter');
-const apps55Filter = inject('apps55Filter');
-const apps75Filter = inject('apps75Filter');
-const setState = inject('setState');
+const currentTab = inject("currentTab");
+const isFilter = inject("isFilter");
+const isSearch = inject("isSearch");
+const apps55Filter = inject("apps55Filter");
+const apps75Filter = inject("apps75Filter");
+const setState = inject("setState");
+const currentItem = inject("currentItem");
 /* End Data */
 const apps55Featured = computed(() => apps55.filter((i) => i.featured));
 const apps75Featured = computed(() => apps75.filter((i) => i.featured));
 
+const clearFilter = () => {
+  setState({});
+  currentItem.value = "";
+};
 </script>
 <style lang="sass" scoped>
 @import '/@css/base'
@@ -113,7 +130,6 @@ const apps75Featured = computed(() => apps75.filter((i) => i.featured));
     flex-wrap: wrap
     margin-left: -0.75rem
     li
-      width: 33.3333%
       padding:12px
       list-style: none
     .app-item
@@ -122,6 +138,9 @@ const apps75Featured = computed(() => apps75.filter((i) => i.featured));
       border-radius: 8px
       display: flex
       align-items: center
+      +mobile
+        flex-direction: column
+        text-align: center
       .app-name
         font-weight: $vibe-bold
         margin-bottom: 8px
@@ -137,6 +156,8 @@ const apps75Featured = computed(() => apps75.filter((i) => i.featured));
         width: 60px
         +tablet
           margin-right: 1rem
+        +mobile
+          margin-bottom: 0.5rem
   .clear-filter
     text-align: center
   .button.is-black.is-outlined
@@ -145,4 +166,6 @@ const apps75Featured = computed(() => apps75.filter((i) => i.featured));
       background-color: #0a0a0a
       border-color: #0a0a0a
       color: #fff
+  .bottom-cta
+    margin-top: 80px
 </style>
