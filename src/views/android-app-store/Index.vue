@@ -23,6 +23,7 @@ const currentItem = ref('');
 
 const setState = ({ useCase, type }) => {
   state.value = { useCase, type };
+  console.log('state: ', state);
 
   let url = '#';
   isFilter.value = false;

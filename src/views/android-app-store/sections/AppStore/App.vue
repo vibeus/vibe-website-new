@@ -7,19 +7,19 @@
         <ul class="app-wrapper">
           <li
             class="column is-one-third-desktop is-half-tablet is-half-mobile"
-            v-for="item in currentTab == 'is-55' ? apps55Featured : apps75Featured"
-            :key="item.name"
+            v-for="tab in currentTab == 'is-55' ? apps55Featured : apps75Featured"
+            :key="tab.name"
           >
             <div class="app-item">
               <lazy-img
                 class="image is-app-icon"
-                :src="`android-app-store/icons/${item.id}.png`"
+                :src="`android-app-store/icons/${tab.id}.png`"
                 alt=""
               />
               <div class="app-desc">
-                <p class="app-name">{{ item.name }}</p>
+                <p class="app-name">{{ tab.name }}</p>
                 <p class="app-type">
-                  {{ category[1].items.find((x) => x.id === item.type).name }}
+                  {{ getCategoryName(tab.type) }}
                 </p>
               </div>
             </div>
@@ -31,19 +31,19 @@
         <ul class="app-wrapper">
           <li
             class="column is-one-third-desktop is-half-tablet is-half-mobile"
-            v-for="item in currentTab == 'is-55' ? apps55 : apps75"
-            :key="item.name"
+            v-for="tab in currentTab == 'is-55' ? apps55 : apps75"
+            :key="tab.name"
           >
             <div class="app-item">
               <lazy-img
                 class="image is-app-icon"
-                :src="`android-app-store/icons/${item.id}.png`"
-                alt=""
+                :src="`android-app-store/icons/${tab.id}.png`"
+                alt="android-app-store icon"
               />
               <div class="app-desc">
-                <p class="app-name">{{ item.name }}</p>
+                <p class="app-name">{{ tab.name }}</p>
                 <p class="app-type">
-                  {{ category[1].items.find((x) => x.id === item.type).name }}
+                  {{ getCategoryName(tab.type) }}
                 </p>
               </div>
             </div>
@@ -55,19 +55,19 @@
       <ul class="app-wrapper">
         <li
           class="column is-one-third-desktop is-half-tablet is-half-mobile"
-          v-for="item in currentTab == 'is-55' ? apps55Filter : apps75Filter"
-          :key="item.name"
+          v-for="tab in currentTab == 'is-55' ? apps55Filter : apps75Filter"
+          :key="tab.name"
         >
           <div class="app-item">
             <lazy-img
               class="image is-app-icon"
-              :src="`android-app-store/icons/${item.id}.png`"
+              :src="`android-app-store/icons/${tab.id}.png`"
               alt=""
             />
             <div class="app-desc">
-              <p class="app-name">{{ item.name }}</p>
+              <p class="app-name">{{ tab.name }}</p>
               <p class="app-type">
-                {{ category[1].items.find((x) => x.id === item.type).name }}
+                {{ getCategoryName(tab.type) }}
               </p>
             </div>
           </div>
@@ -86,9 +86,9 @@
 import { category, apps55, apps75 } from '/@/data/app';
 import SearchBox from './SearchBox.vue';
 import BottomCta from './BottomCta.vue';
-console.log('category: ', category);
-console.log('apps75: ', apps75);
-console.log('apps55: ', apps55);
+
+const categoryItems = category[1].items;
+const getCategoryName = type => categoryItems.find((x) => x.id === type).name;
 
 /* Start Data */
 const currentTab = inject('currentTab');
