@@ -75,7 +75,7 @@ provide('currentTab', currentTab); // TabBar App BottomCta Disclaimer
 provide('state', state); // SearchBox
 provide('searchTerm', searchTerm); // SearchBox
 provide('isFilter', isFilter); // App
-provide('isSearch', isSearch);//SearchBox App
+provide('isSearch', isSearch); // SearchBox App
 provide('apps55Filter', apps55Filter); // Sidebar SearchBox App
 provide('apps75Filter', apps75Filter); // Sidebar SearchBox App
 provide('currentItem', currentItem); // TabBar Sidebar SearchBox App

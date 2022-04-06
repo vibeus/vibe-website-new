@@ -21,9 +21,6 @@ import { category, apps55, apps75 } from '/@/data/app';
 
 <style lang="sass" scoped>
 @import '/@css/base'
-*
-  margin:0
-  padding:0
 .is-app-store
   padding-top: 16px
   padding-bottom: 64px
