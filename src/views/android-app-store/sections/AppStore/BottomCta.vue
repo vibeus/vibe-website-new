@@ -44,7 +44,7 @@
       <p>Let us know if there are other apps that you need!</p>
     </div>
     <div class="cta">
-      <a class="button is-black is-rounded is-large" href="/contact/">Contact Us</a>
+      <button class="button is-black is-rounded is-large" href="/contact/">Contact Us</button>
     </div>
   </div>
 </template>
@@ -73,6 +73,8 @@ a
     margin-bottom: 32px
     font-family: $vibe-family-body
   .button
+    &:hover
+      cursor: pointer
     +mobile
       display: block
 </style>

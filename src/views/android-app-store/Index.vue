@@ -71,14 +71,14 @@ provide('chooseCate', chooseCate);
 // Tabbar, Sidebar
 provide('setState', setState);
 //
-provide('currentTab', currentTab);
-provide('state', state);
-provide('searchTerm', searchTerm);
-provide('isFilter', isFilter);
-provide('isSearch', isSearch);
-provide('apps55Filter', apps55Filter);
-provide('apps75Filter', apps75Filter);
-provide('currentItem', currentItem);
+provide('currentTab', currentTab);//TabBar App BottomCta Disclaimer
+provide('state', state);//SearchBox
+provide('searchTerm', searchTerm);//SearchBox
+provide('isFilter', isFilter);//App
+provide('isSearch', isSearch);//SearchBox App
+provide('apps55Filter', apps55Filter);//Sidebar SearchBox App
+provide('apps75Filter', apps75Filter);//Sidebar SearchBox App
+provide('currentItem', currentItem);//TabBar Sidebar SearchBox App
 /* End Data */
 </script>
 

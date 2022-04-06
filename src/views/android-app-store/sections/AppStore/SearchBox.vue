@@ -15,7 +15,7 @@
           >All Apps</a
         >
         <template v-for="item in category" :key="item.name">
-          <template v-for="i in item.items" :key="i.id" class="type-item">
+          <template v-for="i in item.items" :key="i.id">
             <a
               v-if="!i.hidden"
               class="select-link category-link"
@@ -52,22 +52,22 @@
   </div>
 </template>
 <script setup>
-import { category, apps55, apps75 } from "/@/utils/data";
-const searchTerm = inject("searchTerm");
-const apps55Filter = inject("apps55Filter");
-const apps75Filter = inject("apps75Filter");
-const state = inject("state");
-const isSearch = inject("isSearch");
-const currentItem = inject("currentItem");
+import { category, apps55, apps75 } from '/@/utils/data';
+const searchTerm = inject('searchTerm');
+const apps55Filter = inject('apps55Filter');
+const apps75Filter = inject('apps75Filter');
+const state = inject('state');
+const isSearch = inject('isSearch');
+const currentItem = inject('currentItem');
 //
-const setFilter = inject("setFilter");
-const chooseCate = inject("chooseCate");
+const setFilter = inject('setFilter');
+const chooseCate = inject('chooseCate');
 
-const currentCateName = ref("Select app category");
+const currentCateName = ref('Select app category');
 const showCate = ref(false);
 
 watchEffect(() => {
-  console.log("searchTerm: ", searchTerm.value);
+  console.log('searchTerm: ', searchTerm.value);
   apps55Filter.value = apps55.filter(
     (i) => i.name.toLowerCase().indexOf(searchTerm.value.toLowerCase()) >= 0
   );
@@ -77,9 +77,9 @@ watchEffect(() => {
   if (searchTerm.value) {
     isSearch.value = true;
   } else if (state.value.useCase) {
-    setFilter("category");
+    setFilter('category');
   } else if (state.value.type) {
-    setFilter("type");
+    setFilter('type');
   } else {
     isSearch.value = false;
   }
@@ -88,7 +88,7 @@ const changeCurrentCateName = (data) => {
   if (data) {
     currentCateName.value = data;
   } else {
-    currentCateName.value = "Select app category";
+    currentCateName.value = 'Select app category';
   }
 };
 </script>
@@ -118,6 +118,7 @@ const changeCurrentCateName = (data) => {
   position: relative
   +mobile
     display: flex
+    margin-bottom: 1.5rem
   .input
     +mobile
       max-width: 43px
@@ -175,6 +176,7 @@ const changeCurrentCateName = (data) => {
     left: 0
     width: 2.5em
     z-index: 1
+    margin-left: 2.5px
 
 .clean-button
   display: none

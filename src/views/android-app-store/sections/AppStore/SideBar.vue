@@ -23,13 +23,13 @@
 <script setup>
 import { category, apps55, apps75 } from '/@/utils/data';
 
-const currentTab = inject('currentTab');
-const apps55Filter = inject('apps55Filter');
-const apps75Filter = inject('apps75Filter');
-const state = inject('state');
+// const currentTab = inject('currentTab');
+// const apps55Filter = inject('apps55Filter');
+// const apps75Filter = inject('apps75Filter');
+// const state = inject('state');
 const currentItem = inject('currentItem');
-const setState = inject('setState');
-const setFilter = inject('setFilter');
+// const setState = inject('setState');
+// const setFilter = inject('setFilter');
 const chooseCate = inject('chooseCate');
 
 

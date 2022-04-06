@@ -32,9 +32,10 @@ console.log('apps55: ', apps55);
   padding-bottom: 64px
   .container
     display: block
+    max-width: 1200px
   .columns
     width: 100%
     justify-content: space-between
-
-
+    +tablet
+      padding-top: .75rem
 </style>

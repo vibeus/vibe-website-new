@@ -39,6 +39,7 @@ a
 .disclaimer-container
   display: flex
   justify-content: space-between
+  padding: 1rem
   background-color: #fff
   border: 1px solid #f7f7f7
   border-radius: 4px
@@ -46,6 +47,8 @@ a
   +tablet
     padding: 0.75rem 1.5rem
     margin-bottom: 2rem
+  +mobile
+    margin-bottom: 0.85rem
   .info-box
     display: flex
   .support-icons
@@ -55,21 +58,25 @@ a
       height:34px
       margin-left: 1rem
   .content
-    margin-left: 1.5rem
-    line-height: 34px
-    font-size: 14px
     color: #828282
     font-family: $vibe-family-body
     font-weight: 400
+    +tablet
+      margin-left: 1.5rem 
+      line-height: 34px
+      font-size: 14px
+    +mobile
+      font-size: 12px
+
   .disclaimer-close-button
     cursor: pointer
     display: flex
     align-items: center
+    margin-left: 0.5rem
+    color: $vibe-black
     &:hover
-      svg
-        path
-          stroke: $vibe-purple
+      color: $vibe-purple
     svg
-      width:23px
-      height:23px
+      width:24px
+      height:24px
 </style>

@@ -119,6 +119,8 @@ const clearFilter = () => {
   flex-grow: 1
   flex-shrink: 1
   font-family: $vibe-family-body
+  .app-list
+    margin-bottom: 0.75rem
   .app-list-with-header:not(:first-child)
     margin-top: 40px
   .is-list-header
@@ -130,6 +132,8 @@ const clearFilter = () => {
     display: flex
     flex-wrap: wrap
     margin-left: -0.75rem
+    margin-right: -0.75rem
+    margin-top: -0.75rem
     li
       padding:12px
       list-style: none
@@ -142,6 +146,11 @@ const clearFilter = () => {
       +mobile
         flex-direction: column
         text-align: center
+      .app-desc
+        width: 100%
+        overflow: hidden
+        white-space: nowrap
+        text-overflow: ellipsis
       .app-name
         font-weight: $vibe-bold
         margin-bottom: 8px
@@ -150,9 +159,10 @@ const clearFilter = () => {
         text-overflow: ellipsis
       .app-type
         font-size: 14px
-        overflow: hidden
         white-space: nowrap
         text-overflow: ellipsis
+        +tablet
+          overflow: hidden
       .is-app-icon
         width: 60px
         +tablet
