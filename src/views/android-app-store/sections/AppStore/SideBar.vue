@@ -21,7 +21,7 @@
   </div>
 </template>
 <script setup>
-import { category, apps55, apps75 } from '/@/utils/data';
+import { category, apps55, apps75 } from '/@/data/app';
 
 // const currentTab = inject('currentTab');
 // const apps55Filter = inject('apps55Filter');

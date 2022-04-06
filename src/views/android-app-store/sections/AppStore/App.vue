@@ -83,7 +83,7 @@
   </div>
 </template>
 <script setup>
-import { category, apps55, apps75 } from '/@/utils/data';
+import { category, apps55, apps75 } from '/@/data/app';
 import SearchBox from './SearchBox.vue';
 import BottomCta from './BottomCta.vue';
 console.log('category: ', category);

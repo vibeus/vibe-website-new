@@ -16,10 +16,7 @@
 import Disclaimer from './Disclaimer.vue';
 import SideBar from './SideBar.vue';
 import App from './App.vue';
-import { category, apps55, apps75 } from '/@/utils/data';
-console.log('category: ', category);
-console.log('apps75: ', apps75);
-console.log('apps55: ', apps55);
+import { category, apps55, apps75 } from '/@/data/app';
 </script>
 
 <style lang="sass" scoped>

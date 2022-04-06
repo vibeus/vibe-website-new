@@ -10,7 +10,7 @@
 import Hero from './sections/Hero.vue';
 import TabBar from './sections/TabBar.vue';
 import AppStore from './sections/AppStore/Index.vue';
-import { apps55, apps75 } from '/@/utils/data';
+import { apps55, apps75 } from '/@/data/app';
 /* Start Data */
 const currentTab = ref('is-55');
 const state = ref({ useCase: undefined, type: undefined });
@@ -64,21 +64,21 @@ const chooseCate = ({ key, value }) => {
 };
 
 const { frontmatter: fm } = useData();
-console.log('fm: ', fm.value);
+
 // Sidebar, SearchBox
 provide('setFilter', setFilter);
 provide('chooseCate', chooseCate);
 // Tabbar, Sidebar
 provide('setState', setState);
-//
-provide('currentTab', currentTab);//TabBar App BottomCta Disclaimer
-provide('state', state);//SearchBox
-provide('searchTerm', searchTerm);//SearchBox
-provide('isFilter', isFilter);//App
+
+provide('currentTab', currentTab); // TabBar App BottomCta Disclaimer
+provide('state', state); // SearchBox
+provide('searchTerm', searchTerm); // SearchBox
+provide('isFilter', isFilter); // App
 provide('isSearch', isSearch);//SearchBox App
-provide('apps55Filter', apps55Filter);//Sidebar SearchBox App
-provide('apps75Filter', apps75Filter);//Sidebar SearchBox App
-provide('currentItem', currentItem);//TabBar Sidebar SearchBox App
+provide('apps55Filter', apps55Filter); // Sidebar SearchBox App
+provide('apps75Filter', apps75Filter); // Sidebar SearchBox App
+provide('currentItem', currentItem); // TabBar Sidebar SearchBox App
 /* End Data */
 </script>
 

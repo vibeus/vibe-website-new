@@ -52,7 +52,7 @@
   </div>
 </template>
 <script setup>
-import { category, apps55, apps75 } from '/@/utils/data';
+import { category, apps55, apps75 } from '/@/data/app';
 const searchTerm = inject('searchTerm');
 const apps55Filter = inject('apps55Filter');
 const apps75Filter = inject('apps75Filter');
