@@ -31,9 +31,6 @@ const isDisclaimer = ref('true');
 </script>
 <style lang="sass" scoped>
 @import '/@css/base'
-*
-  margin:0
-  padding:0
 a
   text-decoration: none
 .disclaimer-container
