@@ -2,18 +2,19 @@
   "name": "vibe-website-new",
   "version": "0.0.0",
   "scripts": {
-    "clean": "rimraf .yarn node_modules dist",
-    "dev": "yarn lint && vitepress dev docs --port=3010",
-    "build": "yarn lint && vitepress build docs",
-    "serve": "yarn lint && yarn build && vitepress serve docs",
+    "clean": "rimraf node_modules dist",
+    "dev": "pnpm lint && vitepress dev docs --port=3010",
+    "build": "pnpm lint && vitepress build docs",
+    "serve": "pnpm lint && pnpm build && vitepress serve docs",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@docsearch/css": "^3.0.0-alpha.50",
-    "@docsearch/js": "^3.0.0-alpha.50",
+    "@vue/compiler-sfc": "^3.2.31",
+    "@vue/composition-api": "^1.4.9",
     "element-plus": "^1.1.0-beta.1",
     "normalize.css": "^8.0.1",
-    "pinia": "^2.0.12"
+    "pinia": "^2.0.12",
+    "rollup": "^2.70.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",
@@ -32,7 +33,8 @@
     "unplugin-auto-import": "^0.5.11",
     "vite": "^2.8.6",
     "vite-plugin-svg-icons": "^2.0.1",
-    "vitepress": "^0.22.3"
+    "vitepress": "^0.22.3",
+    "vue": "^3.2.31"
   },
   "eslintConfig": {
     "root": true,

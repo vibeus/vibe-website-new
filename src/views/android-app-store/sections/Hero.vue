@@ -27,9 +27,6 @@ const props = defineProps({
 
 <style lang="sass" scoped>
 @import '/@css/base'
-*
-  margin:0
-  padding:0
 .hero
   align-items: stretch
   display: flex

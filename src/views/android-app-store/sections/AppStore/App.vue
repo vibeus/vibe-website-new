@@ -109,9 +109,6 @@ const clearFilter = () => {
 </script>
 <style lang="sass" scoped>
 @import '/@css/base'
-*
-  margin: 0
-  padding: 0
 .is-app-root
   color: $vibe-black
   max-width: 868px
