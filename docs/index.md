@@ -5,9 +5,13 @@ actionText: Get Started
 
 altActionText: Learn More
 
-nav:
-  - cartSvg: global-cart
-  - userSvg: global-user
+navbar:
+  cart:
+    shopify_host: vibe.toyond.de
+    region: eu
+    number_format: de-DE
+    currency: EUR
+
   
 features:
   - title: 💡 Instant Server Start

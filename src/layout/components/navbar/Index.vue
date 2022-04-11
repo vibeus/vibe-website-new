@@ -16,93 +16,106 @@
 
 <script setup>
 import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink } from './components';
+import '/@js/nav';
 
-// function parseBoolean(value) {
-//   if (!value) {
-//     return false;
-//   }
+const { frontmatter: fm } = useData();
+const cart = fm.value.navbar.cart;
+console.log('cart: ', cart);
 
-//   return value === '1' || value === 'true';
-// }
+const {
+  currency = 'USD',
+  region = 'us',
+  promo_code: promoCode = '',
+  shopify_host: shopifyHost = 'order.vibe.us',
+  number_format: numberFormat = 'en-US'
+} = cart;
+const renderOffers = !!cart.render_offers;
 
-// const moneyFmt = new Intl.NumberFormat('{{ $numberFormat }}', {
-//   style: 'currency',
-//   currency: '{{ $currency }}',
-// });
+function parseBoolean(value) {
+  if (!value)
+    return false;
+  return value === '1' || value === 'true';
+}
 
-// const region = '{{ $region }}';
-// const promoCode = '{{ $promoCode }}';
-// const shopifyHost = '{{ $shopifyHost }}';
-// const renderOffers = parseBoolean('{{ $renderOffers }}');
+const moneyFmt = new Intl.NumberFormat(numberFormat, {
+  style: 'currency',
+  currency,
+});
 
-// let sidebarPromise = null;
-// function loadScript(src, integrity) {
-//   return new Promise((resolve, reject) => {
-//     const script = document.createElement('script');
-//     script.type = 'text/javascript';
-//     script.async = true;
-//     script.onload = resolve;
-//     script.onerror = reject;
-//     script.src = src;
-//     if (integrity) {
-//       script.integrity = integrity;
-//     }
-//     document.getElementsByTagName('head')[0].appendChild(script);
-//   });
-// }
+let sidebarPromise = null;
+function loadScript(src, integrity) {
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    script.onload = resolve;
+    script.onerror = reject;
+    script.src = src;
+    if (integrity) {
+      script.integrity = integrity;
+    }
+    document.getElementsByTagName('head')[0].appendChild(script);
+  });
+}
 
-// function loadSidebar() {
-//   if (!sidebarPromise) {
-//     sidebarPromise = new Promise((resolve, reject) => {
-//       const loader = async () => {
-//         // {{ range $scripts }}
-//         await loadScript('{{ .src }}', '{{ default "" .integrity }}');
-//         // {{ end }}
-//       };
+function loadSidebar() {
+  const scriptsArr = [
+    'https://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js',
+    'https://sdk.helloextend.com/extend-sdk-client/v1/extend-sdk-client.min.js',
+    'https://sdk.helloextend.com/extend-sdk-client-shopify-addon/v1/extend-sdk-client-shopify-addon.min.js',
+  ];
 
-//       loader()
-//         .then(() => {
-//           Extend.config({ storeId: '91426846-4d2c-482d-a9e9-1031f0ffb6b0' });
-//           return import('{{ $sidebarJs.RelPermalink }}');
-//         })
-//         .then((sidebar) => {
-//           const products = JSON.parse(
-//             new TextDecoder().decode(
-//               base64js.toByteArray('{{ $products | jsonify | base64Encode }}')
-//             )
-//           );
+  if (!sidebarPromise) {
+    sidebarPromise = new Promise((resolve, reject) => {
+      const loader = async () => {
+        scriptsArr.forEach(async src => await loadScript(src));
+      };
 
-//           return sidebar.initialize(products, {
-//             moneyFmt,
-//             promoCode,
-//             region,
-//             shopifyHost,
-//             renderOffers,
-//           });
-//         })
-//         .then(resolve)
-//         .catch(reject);
-//     });
-//   }
+      loader()
+        .then(() => {
+          // Extend.config({ storeId: '91426846-4d2c-482d-a9e9-1031f0ffb6b0' });
+          // return import('/@js/nav-cart-sidebar.js');
+        })
+        .then((sidebar) => {
+          const products = JSON.parse(
+            new TextDecoder().decode(
+              base64js.toByteArray('{{ $products }}')
+            )
+          );
 
-//   return sidebarPromise;
-// }
+          return sidebar.initialize(products, {
+            moneyFmt,
+            promoCode,
+            region,
+            shopifyHost,
+            renderOffers,
+          });
+        })
+        .then(resolve)
+        .catch(reject);
+    });
+  }
 
-// async function onLauncherClick(el) {
-//   const sidebar = await loadSidebar();
-//   sidebar.show();
-// }
+  return sidebarPromise;
+}
 
-// document.querySelectorAll('.button.is-nav-cart').forEach((el) => {
-//   el.addEventListener('click', () => onLauncherClick(el));
-// });
+async function onLauncherClick(el) {
+  const sidebar = await loadSidebar();
+  sidebar.show();
+}
 
-// document.querySelectorAll('.formatted-price').forEach((priceEl) => {
-//   priceEl.textContent = moneyFmt.format(parseFloat(priceEl.textContent));
-// });
+document.querySelectorAll('.button.is-nav-cart').forEach((el) => {
+  el.addEventListener('click', () => onLauncherClick(el));
+});
 
-// // Delay load sidebar after page load. If user clicks cart within the timeout period, this will be a no-op.
-// setTimeout(loadSidebar, 500);
+document.querySelectorAll('.formatted-price').forEach((priceEl) => {
+  priceEl.textContent = moneyFmt.format(parseFloat(priceEl.textContent));
+});
+
+// Delay load sidebar after page load. If user clicks cart within the timeout period, this will be a no-op.
+onMounted(() => {
+  setTimeout(loadSidebar, 500);
+});
 </script>
 
 <style lang="sass" scoped>
