@@ -110,7 +110,7 @@ const changeCurrentCateName = (data) => {
     &::-webkit-input-placeholder
       opacity:.6
   .input.is-rounded
-    border-radius: 290486px
+    border-radius: 9999px
     padding-left: calc(calc(0.75em - 1px) + 0.375em)
     padding-right: calc(calc(0.75em - 1px) + 0.375em)
 .control.is-search-box

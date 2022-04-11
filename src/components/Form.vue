@@ -101,7 +101,7 @@ onMounted(() => {
     text-decoration: none
     font-family: Stratos,BlinkMacSystemFont,-apple-system,microsoft yahei,segoe ui,roboto,oxygen,ubuntu,cantarell,droid sans,helvetica neue,helvetica,arial,sans-serif
   .button.is-rounded 
-    border-radius: 290486px
+    border-radius: 9999px
     padding-left: calc(1em + 0.25em)
     padding-right: calc(1em + 0.25em)
   .form-outline
