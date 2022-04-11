@@ -65,6 +65,10 @@ const { site } = useData();
       padding: 4rem 0 8.75rem
     +tablet
       padding: 4rem 6rem 10rem
+  .container
+    margin: 0 auto
+    +mobile
+      width: 84%
   .title
     font-size: 64px
     margin-bottom: 24px

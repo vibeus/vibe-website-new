@@ -11,7 +11,7 @@
         var results = new RegExp('[?&]' + name + '=([^&#]*)').exec(
           self.searchString
         );
-        if (results == null) {
+        if (results === null) {
           return null;
         } else {
           return decodeURI(results[1]) || 0;
