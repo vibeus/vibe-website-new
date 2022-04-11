@@ -35,6 +35,7 @@ section.bottom-cta
   padding-bottom: 120px
   background-color: $vibe-teal
   text-align: center
+  overflow: hidden
   .container
     position: relative
   .bottom-bg
