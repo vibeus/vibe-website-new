@@ -48,7 +48,8 @@ async function config() {
           { find: '/@', replacement: pathResolve('../../src') },
           { find: '/@vcomp', replacement: pathResolve('../../src/components') },
           { find: '/@img', replacement: pathResolve('../../src/assets/img') },
-          { find: '/@css', replacement: pathResolve('../../src/assets/css') }
+          { find: '/@css', replacement: pathResolve('../../src/assets/css') },
+          { find: '/@js', replacement: pathResolve('../../src/assets/js') }
         ]
       },
       hot: true,

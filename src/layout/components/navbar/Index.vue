@@ -5,7 +5,7 @@
       <NavShrink />
 
       <div id="nav-menu" class="nav-menu">
-        <NavDropdwn />
+        <NavDropdown />
         <NavEndBtn />
       </div>
     </div>
@@ -15,12 +15,94 @@
 </template>
 
 <script setup>
-import NavBarLogo from './NavBarLogo.vue';
-import NavDropdwn from './NavDropdwn.vue';
-import NavEndBtn from './NavEndBtn.vue';
-import NavShrink from './NavShrink.vue';
+import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink } from './components';
 
-defineEmits(['toggle']);
+// function parseBoolean(value) {
+//   if (!value) {
+//     return false;
+//   }
+
+//   return value === '1' || value === 'true';
+// }
+
+// const moneyFmt = new Intl.NumberFormat('{{ $numberFormat }}', {
+//   style: 'currency',
+//   currency: '{{ $currency }}',
+// });
+
+// const region = '{{ $region }}';
+// const promoCode = '{{ $promoCode }}';
+// const shopifyHost = '{{ $shopifyHost }}';
+// const renderOffers = parseBoolean('{{ $renderOffers }}');
+
+// let sidebarPromise = null;
+// function loadScript(src, integrity) {
+//   return new Promise((resolve, reject) => {
+//     const script = document.createElement('script');
+//     script.type = 'text/javascript';
+//     script.async = true;
+//     script.onload = resolve;
+//     script.onerror = reject;
+//     script.src = src;
+//     if (integrity) {
+//       script.integrity = integrity;
+//     }
+//     document.getElementsByTagName('head')[0].appendChild(script);
+//   });
+// }
+
+// function loadSidebar() {
+//   if (!sidebarPromise) {
+//     sidebarPromise = new Promise((resolve, reject) => {
+//       const loader = async () => {
+//         // {{ range $scripts }}
+//         await loadScript('{{ .src }}', '{{ default "" .integrity }}');
+//         // {{ end }}
+//       };
+
+//       loader()
+//         .then(() => {
+//           Extend.config({ storeId: '91426846-4d2c-482d-a9e9-1031f0ffb6b0' });
+//           return import('{{ $sidebarJs.RelPermalink }}');
+//         })
+//         .then((sidebar) => {
+//           const products = JSON.parse(
+//             new TextDecoder().decode(
+//               base64js.toByteArray('{{ $products | jsonify | base64Encode }}')
+//             )
+//           );
+
+//           return sidebar.initialize(products, {
+//             moneyFmt,
+//             promoCode,
+//             region,
+//             shopifyHost,
+//             renderOffers,
+//           });
+//         })
+//         .then(resolve)
+//         .catch(reject);
+//     });
+//   }
+
+//   return sidebarPromise;
+// }
+
+// async function onLauncherClick(el) {
+//   const sidebar = await loadSidebar();
+//   sidebar.show();
+// }
+
+// document.querySelectorAll('.button.is-nav-cart').forEach((el) => {
+//   el.addEventListener('click', () => onLauncherClick(el));
+// });
+
+// document.querySelectorAll('.formatted-price').forEach((priceEl) => {
+//   priceEl.textContent = moneyFmt.format(parseFloat(priceEl.textContent));
+// });
+
+// // Delay load sidebar after page load. If user clicks cart within the timeout period, this will be a no-op.
+// setTimeout(loadSidebar, 500);
 </script>
 
 <style lang="sass" scoped>

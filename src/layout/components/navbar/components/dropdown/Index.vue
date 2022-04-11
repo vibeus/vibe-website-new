@@ -1,15 +1,15 @@
 <template>
   <div v-if="nav" class="nav-dropdown-box">
     <template v-for="menu in theme.nav" :key="menu.title">
-      <NavDropdownLink v-if="menu.submenu || menu.columnSubmenu" :menu="menu" />
-      <NavLink v-else :menu="menu" />
+      <Box v-if="menu.submenu || menu.columnSubmenu" :menu="menu" />
+      <Link v-else :menu="menu" />
     </template>
   </div>
 </template>
 
 <script setup>
-import NavLink from './components/NavLink.vue';
-import NavDropdownLink from './components/NavDropdownLink.vue';
+import Link from './Link.vue';
+import Box from './Box.vue';
 
 const { theme } = useData();
 const nav = computed(() => theme.value.nav);
