@@ -42,10 +42,7 @@ window.addEventListener('resize', function() {
 });
 
 // components
-import NavBar from './components/navbar/Index.vue';
-// import SideBar from './components/SideBar.vue';
-import VFooter from './components/footer/Index.vue';
-import Blog from './components/Blog.vue';
+import { NavBar, VFooter, Blog } from './components';
 
 const NoopComponent = () => null;
 
