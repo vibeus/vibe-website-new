@@ -8,7 +8,7 @@
         <h1 class="title">{{ title }}</h1>
         <div class="content">
           <!-- Font issue ? font-weight seems is little bit large -->
-          <p>{{ body }}</p>
+          <p v-html="body"></p>
         </div>
       </div>
     </div>
