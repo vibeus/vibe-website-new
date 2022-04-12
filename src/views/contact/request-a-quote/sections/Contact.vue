@@ -18,7 +18,7 @@
               <div class="count-title board-title is-hidden-tablet">
                 {{ item.title_mobile }}
               </div>
-              <CartCount/>
+              <CartCount :cartCount="cartCount" />
             </div>
             <div class="image">
               <lazy-img class="hero-image is-hidden-tablet" :src="item.figure" alt="" />
@@ -46,7 +46,7 @@
             </div>
             <div class="f-col">
               <div class="count-title is-hidden-mobile">{{ i.title }}</div>
-              <CartCount/>
+              <CartCount :cartCount="cartCount" />
             </div>
           </div>
         </div>
@@ -69,15 +69,9 @@
     </div>
     <div class="official-quote-check" id="official-quote">
       <div class="check-container">
-        <input
-          id="official-check"
-          type="checkbox"
-          class="quote-check form-check-input"
-        />
+        <input id="official-check" type="checkbox" class="quote-check form-check-input" />
         <label for="official-check"></label>
-        <span class="content-check">{{
-          contactSection.official_quote_check.title
-        }}</span>
+        <span class="content-check">{{ contactSection.official_quote_check.title }}</span>
       </div>
       <button
         :id="contactSection.official_quote_check.button.id"
@@ -98,16 +92,16 @@
   </section>
 </template>
 <script setup>
-import VForm from '/@/components/Form.vue';
-import CartCount from '../components/cartCount.vue';
+import VForm from "/@/components/Form.vue";
+import CartCount from "/@/components/cartCount.vue";
 const props = defineProps({
   contactSection: {
     type: Object,
     required: true,
   },
 });
-console.log('contactSection: ', props.contactSection);
-
+console.log("contactSection: ", props.contactSection);
+const cartCount = ref({ class: "is-medium is-rounded is-gray", count: 0 });
 </script>
 <style lang="sass" scoped>
 @import '/@css/base'
@@ -116,7 +110,7 @@ console.log('contactSection: ', props.contactSection);
   padding: 0
 p
   line-height: unset
-.title 
+.title
   color: $vibe-black
   font-family: $family-head
   font-weight: $vibe-bold
@@ -129,11 +123,11 @@ p
   background: linear-gradient(to bottom,#fc0 220px,#F4F4F4 220px)
   color: $vibe-black
   overflow: hidden
-  .divider-mobile 
+  .divider-mobile
     width: 100vw
     margin: 2rem 0 2rem -0.5rem
     border: 1px solid #ededed
-  
+
   .title
     text-align: center
     font-size: 24px
@@ -203,19 +197,19 @@ p
       font-weight: $vibe-bold
       color: #000
 
-.official-quote-check 
+.official-quote-check
   /* display: none; */
   margin: 3rem auto 0
   max-width: 500px
   text-align: center
   font-family: $family-body
-  .check-container 
+  .check-container
     display: flex
-    .quote-check 
+    .quote-check
       width: 1.8rem
       height: 1rem
       margin-top: .3rem
-    .content-check 
+    .content-check
       margin-left: 1rem
       font-size: 18px
       font-weight: 400
@@ -240,11 +234,11 @@ p
       margin-top: -1px
       border: 0.125rem solid #000
       border-top: 0
-      border-left: 0 
+      border-left: 0
       transform: rotate(45deg)
-         
 
-  .button 
+
+  .button
     margin-top: 1.5rem
 
 
@@ -313,20 +307,20 @@ p
     border-radius: 32px 32px 0 0
     transform: translateY(-2rem)
     background: linear-gradient(to bottom,#fc0 200px,#F4F4F4 200px)
-    .container.is-form 
+    .container.is-form
       padding: 32px 8px
-    .product-title 
+    .product-title
       margin-top: 1.5rem
       margin-bottom: 1.5rem
       font-size: 20px
       line-height: 25px
       text-align: center
-    .product-box 
+    .product-box
       align-items: center
-    .is-accessories 
+    .is-accessories
       flex-direction: column
       margin: 2rem -1.5rem 0
-      .accessory 
+      .accessory
         justify-content: space-between
         width: 100%
         padding: 1.5rem 1rem
@@ -335,22 +329,16 @@ p
         margin-top: 0.5rem
         .image
           width: 136px
-    .form-check+.image 
+    .form-check+.image
       width: 296px
       margin: 0 auto
-    .official-quote-check 
+    .official-quote-check
       padding: 0 34px
       margin-bottom: 80px
-      .check-container 
-        .quote-check 
+      .check-container
+        .quote-check
           width: 2.3rem
-        .content-check 
+        .content-check
           font-size: 14px
           line-height: 21px
-
-
-
-
-
-
 </style>

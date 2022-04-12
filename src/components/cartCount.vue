@@ -1,12 +1,6 @@
-
 <template>
   <div class="cart-count">
-    <input
-      id=""
-      name=""
-      class="input is-medium is-rounded is-black"
-      :value="count"
-    >
+    <input id="" name="" :class="`input ${cartCount.class}`" :value="count" />
     <span class="icon is-small is-left" @click="minus">
       <svg-icon icon-name="cart-count-minus" />
     </span>
@@ -17,34 +11,45 @@
 </template>
 
 <script setup>
-const count = ref(0);
-function minus(){
-  if(count.value>0){
+const props = defineProps({
+  cartCount: {
+    type: Object,
+    required: true,
+  },
+});
+const count = ref(props.cartCount.count);
+function minus() {
+  if (count.value > 0) {
     count.value--;
   }
 }
-function plus(){
+function plus() {
   count.value++;
 }
 </script>
 
 <style lang="sass">
+@import '/@css/base'
 .cart-count
+  display: flex
+  align-items: center
   position: relative
   width: 128px
   height: 37px
   .input
-    width: 128px
-    height: 37px
+    width: 100%
+    height: 100%
     padding: 0
-    text-align: center
-    border: 1px solid #E6E6E6
+    text-align: center   
     border-radius: 8px
     font-size: 16px
     line-height: 134%
+    &.is-gray
+      border: 1px solid #E6E6E6
+    &.is-black
+      border: 1px solid $vibe-black
   .icon
     position: absolute
-    top: 0
     display: flex
     width: 37px
     height: 37px

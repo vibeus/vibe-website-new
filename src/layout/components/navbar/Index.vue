@@ -7,6 +7,7 @@
       <div id="nav-menu" class="nav-menu">
         <NavDropdown />
         <NavEndBtn />
+        <CartDialog v-if="isCartDialog" />
       </div>
     </div>
 
@@ -15,8 +16,11 @@
 </template>
 
 <script setup>
-import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink } from './components';
+import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink, CartDialog } from './components';
 const { frontmatter: fm } = useData();
+//cart dialog 
+const isCartDialog = ref(false);
+provide('isCartDialog', isCartDialog); //NavEndBtn CartDialog
 
 const cart = fm.value.navbar?.cart || {};
 
@@ -25,13 +29,12 @@ const {
   region = 'us',
   promo_code: promoCode = '',
   shopify_host: shopifyHost = 'order.vibe.us',
-  number_format: numberFormat = 'en-US'
+  number_format: numberFormat = 'en-US',
 } = cart;
 const renderOffers = !!cart.render_offers;
 
 function parseBoolean(value) {
-  if (!value)
-    return false;
+  if (!value) return false;
   return value === '1' || value === 'true';
 }
 
@@ -66,7 +69,7 @@ function loadSidebar() {
   if (!sidebarPromise) {
     sidebarPromise = new Promise((resolve, reject) => {
       const loader = async () => {
-        scriptsArr.forEach(async src => await loadScript(src));
+        scriptsArr.forEach(async (src) => await loadScript(src));
       };
 
       loader()
@@ -76,9 +79,7 @@ function loadSidebar() {
         })
         .then((sidebar) => {
           const products = JSON.parse(
-            new TextDecoder().decode(
-              base64js.toByteArray('{{ $products }}')
-            )
+            new TextDecoder().decode(base64js.toByteArray('{{ $products }}'))
           );
 
           return sidebar.initialize(products, {
