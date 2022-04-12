@@ -448,8 +448,6 @@ hr
       top: 76%
       background: #fff
       transform: rotate(45deg)
-      +mobile
-        left: 8%
 @keyframes tipBox
   from
     opacity: 0
