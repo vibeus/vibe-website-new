@@ -11,3 +11,29 @@
   font-weight: 400
   font-family: $vibe-family-body
   line-height: 1.5
+  h1, h2, h3, h4, h5, h6
+    font-family: $vibe-family-head
+    font-weight: $vibe-bold
+  strong
+    font-weight: $vibe-bold
+
+.purple-link
+  a
+    font-family: $vibe-family-body 
+    line-height: 144%
+    font-weight: $vibe-bold
+    color: $vibe-purple
+    &:hover
+      text-decoration: underline
+th
+  font-weight: $vibe-bold
+
+.title.is-section-title
+  font-size: 48px
+  +mobile
+    font-size: 32px
+
+.subtitle.is-section-title
+  font-size: 24px
+  +mobile
+    font-size: 18px

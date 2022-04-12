@@ -9,9 +9,9 @@
         <div class="form-container">
           <div class="title">{{hero.title}}</div>
           <VForm
-        :formData="hero.form"
-        @msgSuccess="elMsgSuccess"
-         />
+            :formData="hero.form"
+            @msgSuccess="elMsgSuccess"
+          />
           <div class="error-message">The information you provided does not match our records.</div>
         </div>
       </div>

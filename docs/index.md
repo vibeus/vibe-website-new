@@ -5,12 +5,19 @@ actionText: Get Started
 
 altActionText: Learn More
 
-nav:
-  - cartSvg: global-cart
-  - userSvg: global-user
+navbar:
+  cart:
+    shopify_host: vibe.toyond.de
+    region: eu
+    number_format: de-DE
+    currency: EUR
+
   
 features:
-  - title: 💡 Instant Server Start
+  - title: |
+      💡 Instant Server
+      <br>
+      Start
     details: On demand file serving over native ESM, no bundling required!
   - title: ⚡️ Lightning Fast HMR
     details: Hot Module Replacement (HMR) that stays fast regardless of app size.
