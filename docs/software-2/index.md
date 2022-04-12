@@ -130,9 +130,11 @@ video:
   id: Ccd4cVrtHTk
   placeholder: software/video.png
   alt: vibe whietboard video show
+  title: Vibe is more than software
+  content: Vibe is a complete collaboration solution, with hardware and software that work together to uplevel your meetings and presentations.
   cta:
     title: Check out the vibe board →
-    url: /hardware/
+    url: https://vibe.us/products/vibe-smartboard-55/
 bottom_cta:
   title: Experience Vibe for yourself
   cta:

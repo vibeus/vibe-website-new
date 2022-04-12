@@ -70,4 +70,6 @@ const props = defineProps({
       font-weight: $vibe-bold
     a:not(:hover)
       color: $vibe-purple
+    a:hover
+      color: $vibe-purple
 </style>
