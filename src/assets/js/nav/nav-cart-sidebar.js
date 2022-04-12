@@ -87,23 +87,23 @@ const LineItemControl = ({
     readOnly
       ? null
       : e(
-          'span',
-          {
-            className: 'icon is-small is-left',
-            onClick: () => debounceSetCount(localCount - 1),
-          },
-          e('img', { src: minusIconSrc })
-        ),
+        'span',
+        {
+          className: 'icon is-small is-left',
+          onClick: () => debounceSetCount(localCount - 1),
+        },
+        e('img', { src: minusIconSrc })
+      ),
     readOnly
       ? null
       : e(
-          'span',
-          {
-            className: 'icon is-small is-right',
-            onClick: () => debounceSetCount(localCount + 1),
-          },
-          e('img', { src: plusIconSrc })
-        )
+        'span',
+        {
+          className: 'icon is-small is-right',
+          onClick: () => debounceSetCount(localCount + 1),
+        },
+        e('img', { src: plusIconSrc })
+      )
   );
 };
 
@@ -194,18 +194,18 @@ const LineItem = ({
     tipicon = e(
       'span', 
       { className: 'icon tip-icon'},
-        e(
-          'img',
-          { 
-            src: product.tipIcon 
-          }
+      e(
+        'img',
+        { 
+          src: product.tipIcon 
+        }
       ), 
     );
     tipText = e(
       'span', 
       { className: 'tip-box' },
       product.tip
-    )
+    );
   }
 
   let notice = null;
@@ -390,33 +390,33 @@ const FeaturedProduct = ({ product, addToCart }) => {
   }, [addToCart]);
   /** 产品链接跳转 */
   const viewDetails = (ProductTitle)=>{
-    let url=''
-    ProductTitle=='Vibe Smartboard 55″'?url='/products/vibe-smartboard-55/':url='/products/vibe-smartboard-pro-75'
+    let url='';
+    ProductTitle === 'Vibe Smartboard 55″' ? url='/products/vibe-smartboard-55/':url='/products/vibe-smartboard-pro-75';
     return ()=>{
-      window.location.href=url
-    }
-  }
+      window.location.href=url;
+    };
+  };
   return e(
     'div',
     { className: 'featured-product' },
-      e(
-        'figure',
-        { className: 'image is-item' ,
+    e(
+      'figure',
+      { className: 'image is-item' ,
         onClick:viewDetails(product.title)
       },
-        e('img', { src: product.imgSrc })
-      ),
-      e(
-        'div',
-        { className: 'product-desc' ,
+      e('img', { src: product.imgSrc })
+    ),
+    e(
+      'div',
+      { className: 'product-desc' ,
         onClick:viewDetails(product.title)
       },
-        e('p', { className: 'title' }, product.title),
-        e(
-          'p',
-          { className: 'title is-price' },
-          moneyFmt.format(product.price || product.discount_price)
-        )
+      e('p', { className: 'title' }, product.title),
+      e(
+        'p',
+        { className: 'title is-price' },
+        moneyFmt.format(product.price || product.discount_price)
+      )
     ),
     e('div', { className: 'separator' }),
     e(
@@ -525,7 +525,7 @@ const ModalFoot = ({ checkout, setCheckout }) => {
   const subtotal = parseFloat(checkout.lineItemsSubtotalPrice.amount);
   const count = countTotalItems(checkout);
   const { moneyFmt, region } = cartOptions;
-  let referralShareCode= getQueryString('discount_code');
+  const referralShareCode= getQueryString('discount_code');
   const onCheckoutClick = useCallback(() => {
     if(referralShareCode) {
       shopifyClient.checkout.addDiscount(checkout.id, referralShareCode).then(co => {
@@ -535,19 +535,19 @@ const ModalFoot = ({ checkout, setCheckout }) => {
     } else {
       window.location = checkout.webUrl;
     }
-    let productInfo = {
+    const productInfo = {
       currentUrl: `${window.location.href}`,
       clickTarget: 'checkout button'
-    }
+    };
     if(checkout.lineItems.length) {  
       checkout.lineItems.forEach( item => {
-        if(productInfo.hasOwnProperty('stand55V1') && item.title === 'Vibe Portable Stand') { 
+        if(Object.prototype.hasOwnProperty.call(productInfo, 'stand55V1') && item.title === 'Vibe Portable Stand') { 
           // sum up the total quantily of both red stand and white stand 
-          productInfo[stand55V1] = productInfo[stand55V1] + item.quantity
+          productInfo[stand55V1] = productInfo[stand55V1] + item.quantity;
         } else {
           productInfo[snowplowProductProperty[item.title]] = item.quantity;
         }
-      })
+      });
       const dataLayer = window.dataLayer;
       dataLayer && dataLayer.push({
         event: 'cart_product_event',
@@ -583,7 +583,7 @@ const ModalFoot = ({ checkout, setCheckout }) => {
             'Use code to save $150 off at checkout!'
           )
         )
-      : null),
+        : null),
     e(
       'div',
       {
@@ -618,10 +618,10 @@ const ModalFoot = ({ checkout, setCheckout }) => {
     ),
     region === 'us' && subtotal >= 500
       ? e(
-          'p',
-          { className: 'content' },
-          'We provide complimentary shipping in the contiguous U.S.'
-        )
+        'p',
+        { className: 'content' },
+        'We provide complimentary shipping in the contiguous U.S.'
+      )
       : null,
     e(
       'div',
@@ -653,19 +653,19 @@ const Modal = ({ checkout, setCheckout, addToCart }) => {
 
   const onCloseCart = useCallback(() => {
     // Close event tracking
-    let productInfo = {
+    const productInfo = {
       currentUrl: `${window.location.href}`,
       clickTarget: 'close button'
-    }
+    };
     if(checkout.lineItems.length) {  
       checkout.lineItems.forEach( item => {
-        if(productInfo.hasOwnProperty('stand55V1') && item.title === 'Vibe Portable Stand') { 
+        if(Object.prototype.hasOwnProperty.call(productInfo, 'stand55V1') && item.title === 'Vibe Portable Stand') { 
           // sum up the total quantily of both red stand and white stand 
-          productInfo[stand55V1] = productInfo[stand55V1] + item.quantity
+          productInfo[stand55V1] = productInfo[stand55V1] + item.quantity;
         } else {
           productInfo[snowplowProductProperty[item.title]] = item.quantity;
         }
-      })
+      });
       const dataLayer = window.dataLayer;
       dataLayer && dataLayer.push({
         event: 'cart_product_event',
@@ -890,13 +890,13 @@ function initShopifySdk() {
   const clientConfig =
     cartOptions.shopifyHost === 'order.vibe.us'
       ? {
-          domain: 'order.vibe.us',
-          storefrontAccessToken: '353c0f962f13d59441ebe8f392c22745',
-        }
+        domain: 'order.vibe.us',
+        storefrontAccessToken: '353c0f962f13d59441ebe8f392c22745',
+      }
       : {
-          domain: 'vibe.toyond.de',
-          storefrontAccessToken: '59ed50ec21cff74d3a509f4ad142bffb',
-        };
+        domain: 'vibe.toyond.de',
+        storefrontAccessToken: '59ed50ec21cff74d3a509f4ad142bffb',
+      };
 
   shopifyClient = ShopifyBuy.buildClient(clientConfig);
 }

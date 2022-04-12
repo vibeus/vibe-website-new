@@ -16,11 +16,9 @@
 
 <script setup>
 import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink } from './components';
-import '/@js/nav';
-
 const { frontmatter: fm } = useData();
-const cart = fm.value.navbar.cart;
-console.log('cart: ', cart);
+
+const cart = fm.value.navbar?.cart || {};
 
 const {
   currency = 'USD',
@@ -114,6 +112,7 @@ document.querySelectorAll('.formatted-price').forEach((priceEl) => {
 
 // Delay load sidebar after page load. If user clicks cart within the timeout period, this will be a no-op.
 onMounted(() => {
+  import('/@js/nav');
   setTimeout(loadSidebar, 500);
 });
 </script>

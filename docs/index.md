@@ -14,7 +14,10 @@ navbar:
 
   
 features:
-  - title: 💡 Instant Server Start
+  - title: |
+      💡 Instant Server
+      <br>
+      Start
     details: On demand file serving over native ESM, no bundling required!
   - title: ⚡️ Lightning Fast HMR
     details: Hot Module Replacement (HMR) that stays fast regardless of app size.
