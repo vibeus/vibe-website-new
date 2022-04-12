@@ -1,30 +1,21 @@
-(function () {
-  function URLSearchParams(searchString) {
-    if (window.URLSearchParams) {
-      return new window.URLSearchParams(window.location.search).get(
-        searchString
-      );
+function URLSearchParams(searchString) {
+  const self = this;
+  self.searchString = searchString;
+  self.get = function (name) {
+    var results = new RegExp('[?&]' + name + '=([^&#]*)').exec(
+      self.searchString
+    );
+    if (results === null) {
+      return null;
     } else {
-      var self = this;
-      self.searchString = searchString;
-      self.get = function (name) {
-        var results = new RegExp('[?&]' + name + '=([^&#]*)').exec(
-          self.searchString
-        );
-        if (results === null) {
-          return null;
-        } else {
-          return decodeURI(results[1]) || 0;
-        }
-      };
+      return decodeURI(results[1]) || 0;
     }
-  }
-  window.Extend.URLSearchParams = URLSearchParams;
-})();
+  };
+}
 
 function initAfterInt(addToCart) {
   const cart = localStorage.getItem('order/cart');
-  var leadToken = window.Extend.URLSearchParams('leadToken');
+  var leadToken = URLSearchParams('leadToken');
   if (
     leadToken &&
     !ExtendShopifyBuy.leadTokenAlreadyInCheckout(leadToken, cart)

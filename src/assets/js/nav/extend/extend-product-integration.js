@@ -1,42 +1,42 @@
-function renderProductOffer() {
-  //if an instance is found, do not re-render the offer
-  if (window.Extend.buttons.instance('#extend-offer')) {
-    return;
-  }
+// function renderProductOffer() {
+//   //if an instance is found, do not re-render the offer
+//   if (window.Extend.buttons.instance('#extend-offer')) {
+//     return;
+//   }
 
-  if (!document.getElementById('extend-offer')) {
-    return;
-  }
+//   if (!document.getElementById('extend-offer')) {
+//     return;
+//   }
 
-  const el = document.querySelector('[data-product-id]');
-  const variant = el ? el.getAttribute('data-product-id') : null;
-  if (variant) {
-    var referenceId = variant;
-    window.Extend.buttons.render(
-      '#extend-offer',
-      {
-        referenceId: referenceId,
-      },
-      function () {
-        const iframe = document.querySelector('#extend-offer iframe');
-        if (!iframe) {
-          return;
-        }
+//   const el = document.querySelector('[data-product-id]');
+//   const variant = el ? el.getAttribute('data-product-id') : null;
+//   if (variant) {
+//     var referenceId = variant;
+//     window.Extend.buttons.render(
+//       '#extend-offer',
+//       {
+//         referenceId: referenceId,
+//       },
+//       function () {
+//         const iframe = document.querySelector('#extend-offer iframe');
+//         if (!iframe) {
+//           return;
+//         }
 
-        setTimeout(function () {
-          const doc = iframe.contentWindow.document;
-          doc.querySelectorAll('.btn-offer').forEach((btn) => {
-            btn.style = 'border-radius:200px;font-size:12px';
-          });
-        }, 0);
-      }
-    );
-  }
-}
+//         setTimeout(function () {
+//           const doc = iframe.contentWindow.document;
+//           doc.querySelectorAll('.btn-offer').forEach((btn) => {
+//             btn.style = 'border-radius:200px;font-size:12px';
+//           });
+//         }, 0);
+//       }
+//     );
+//   }
+// }
 
-window.addEventListener('load', function () {
-  renderProductOffer();
-});
+// window.addEventListener('load', function () {
+//   renderProductOffer();
+// });
 
 function handleAddToCart(
   productId,

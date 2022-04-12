@@ -1,14 +1,12 @@
 <script setup>
-import { computed } from 'vue';
-
-const { frontmatter } = useData();
+const { frontmatter: fm } = useData();
 
 const hasFeatures = computed(() => {
-  return frontmatter.value.features && frontmatter.value.features.length > 0;
+  return fm.value.features && fm.value.features.length > 0;
 });
 
 const features = computed(() => {
-  return frontmatter.value.features ? frontmatter.value.features : [];
+  return fm.value.features ? fm.value.features : [];
 });
 </script>
 
@@ -22,7 +20,7 @@ const features = computed(() => {
             :key="index"
             class="feature"
           >
-            <h2 class="title" v-if="feature.title">{{ feature.title }}</h2>
+            <h2 class="title" v-html="feature.title"></h2>
             <p class="details" v-if="feature.details">{{ feature.details }}</p>
           </section>
         </div>
