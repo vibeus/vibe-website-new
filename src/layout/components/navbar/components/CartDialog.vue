@@ -36,10 +36,12 @@
             </div>
             <div class="price-count">
               <div class="discount-price-item">
-                <p class="title original-price">${{ product.price }}</p>
+                <p class="title original-price">
+                  ${{ product.discount_price ? product.discount_price : product.price }}
+                </p>
                 <!-- v-if -->
                 <p v-if="product.discount_price" class="title discount-price">
-                  ${{ product.discount_price }}
+                  ${{ product.price }}
                 </p>
               </div>
               <CartCount :cartCount="cartCount" />
