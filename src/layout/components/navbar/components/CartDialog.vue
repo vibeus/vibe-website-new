@@ -144,12 +144,12 @@
   </div>
 </template>
 <script setup>
-import CartCount from "/@/components/cartCount.vue";
-import { products } from "/@/data/products";
-const isCartDialog = inject("isCartDialog");
+import CartCount from '/@/components/cartCount.vue';
+import { products } from '/@/data/products';
+const isCartDialog = inject('isCartDialog');
 const isEmpty = ref(false);
 const isLoading = ref(false);
-const cartCount = ref({ class: "is-medium is-rounded is-black", count: 1 });
+const cartCount = ref({ class: 'is-medium is-rounded is-black', count: 1 });
 const productsFeatured = computed(() => products.filter((i) => i.featured));
 </script>
 <style lang="sass" scoped>
