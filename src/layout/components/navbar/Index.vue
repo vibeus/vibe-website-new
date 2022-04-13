@@ -57,7 +57,13 @@ function loadScript(src, integrity) {
     document.getElementsByTagName('head')[0].appendChild(script);
   });
 }
-
+watchEffect(() => {
+  if (isCartDialog.value) {
+    document.documentElement.classList.add('is-clipped');
+  } else {
+    document.documentElement.classList.remove('is-clipped');
+  }
+});
 function loadSidebar() {
   const scriptsArr = [
     'https://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js',
