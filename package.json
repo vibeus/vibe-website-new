@@ -13,7 +13,8 @@
     "@vue/composition-api": "^1.4.9",
     "element-plus": "^1.1.0-beta.1",
     "pinia": "^2.0.12",
-    "rollup": "^2.70.1"
+    "rollup": "^2.70.1",
+    "swiper": "^8.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",

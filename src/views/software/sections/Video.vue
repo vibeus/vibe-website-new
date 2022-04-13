@@ -10,7 +10,7 @@
           :style="{ visibility: isPlay ? 'hidden' : '' }"
         />
         <iframe
-          v-show="isPlay"
+          v-if="isPlay"
           id="video-section-iframe"
           frameborder="0"
           allowfullscreen="1"
@@ -34,8 +34,6 @@
   </section>
 </template>
 <script setup>
-
-
 const props = defineProps({
   video: {
     type: Object,
