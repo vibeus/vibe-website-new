@@ -4,7 +4,7 @@
       <span>See a Demo</span>
     </a>
     <div class="nav-divider is-hidden-mobile" data-v-00cdf7b5=""></div>
-    <button class="nav-btn nav-cart-icon mgl-8">
+    <button class="nav-btn nav-cart-icon mgl-8" @click="isCartDialog = true">
       <svg-icon class="nav-icon" icon-name="global-cart-cart" alt="cart icon" />
     </button>
     <button class="nav-btn nav-user-icon is-hidden-mobile">
@@ -19,6 +19,7 @@
 </template>
 <script setup>
 const { frontmatter: fm } = useData();
+const isCartDialog = inject('isCartDialog');
 
 const toggleMenuActive = () => {
   const menu = document.getElementById('nav-menu');
@@ -35,6 +36,7 @@ const toggleMenuActive = () => {
     padding: 0
     border: none
     background: 0 0
+    cursor: pointer
   .nav-icon
     width: 45px
     height: 45px
@@ -58,7 +60,7 @@ const toggleMenuActive = () => {
     transition-property: background-color,opacity,transform
     transition-timing-function: ease-out
     width: 16px
-  span:nth-child(1) 
+  span:nth-child(1)
     top: calc(50% - 6px)
   span:nth-child(2)
     top: calc(50% - 1px)
