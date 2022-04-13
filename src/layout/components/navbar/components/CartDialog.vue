@@ -5,47 +5,52 @@
       <div class="cart-head cart-level">
         <div class="cart-level-left">
           <span class="icon" @click="isCartDialog = false">
-            <img
-              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWNoZXZyb24tcmlnaHQiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNOC41OSwxNi41OEwxMy4xNywxMkw4LjU5LDcuNDFMMTAsNkwxNiwxMkwxMCwxOEw4LjU5LDE2LjU4WiIgLz48L3N2Zz4="
-          /></span>
+            <svg-icon icon-name="global-cart-chevron-right" />
+          </span>
           <p class="cart-title">My Cart</p>
         </div>
         <div class="cart-level-right">
-          <p class="item-count">2 items</p>
+          <p class="item-count">{{ products.length }} items</p>
         </div>
       </div>
       <div v-if="!isEmpty" class="cart-items">
         <!-- v-for item -->
-        <div class="cart-line-item">
-          <lazy-img
-            class="line-item-image"
-            src="global-cart/vibe_stylus_55.png"
-            alt="vibe_stylus_55.png"
-          />
+        <div v-for="product in products" :key="product.name" class="cart-line-item">
+          <lazy-img class="line-item-image" :src="product.figure" :alt="product.name" />
           <div class="line-item-desc">
             <div class="product-title">
-              Additional 55″ Board Styluses (2)
+              {{ product.title }}
               <!-- v-if -->
-              <div class="tip-box">
+              <div v-if="product.tip" class="tip-box tip-box-product">
                 <lazy-img
                   class="icon"
                   src="global-cart/tip_icon.png"
                   alt="tip_icon.png"
                 />
-                <div class="is-product tip-box-content">For Vibe Smartboard 55″ only</div>
+                <div class="is-product tip-box-content">{{ product.tip }}</div>
               </div>
+            </div>
+            <!-- v-if -->
+            <div v-if="product.enable_extend" class="button simple-offer">
+              Add accident protection for $249
             </div>
             <div class="price-count">
               <div class="discount-price-item">
-                <p class="title original-price">$15.00</p>
+                <p class="title original-price">${{ product.price }}</p>
+                <!-- v-if -->
+                <p v-if="product.discount_price" class="title discount-price">
+                  ${{ product.discount_price }}
+                </p>
               </div>
               <CartCount :cartCount="cartCount" />
             </div>
           </div>
-          <span class="icon is-delete"
-            ><img
-              src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWNsb3NlIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTE5LDYuNDFMMTcuNTksNUwxMiwxMC41OUw2LjQxLDVMNSw2LjQxTDEwLjU5LDEyTDUsMTcuNTlMNi40MSwxOUwxMiwxMy40MUwxNy41OSwxOUwxOSwxNy41OUwxMy40MSwxMkwxOSw2LjQxWiIgLz48L3N2Zz4="
-          /></span>
+          <svg-icon
+            v-if="isLoading"
+            class="icon is-loading"
+            icon-name="global-cart-loading"
+          />
+          <svg-icon v-else class="icon is-delete" icon-name="shared-close" />
         </div>
       </div>
       <div v-if="!isEmpty" class="cart-bottom">
@@ -116,43 +121,19 @@
         <div class="featured">
           <div class="title">You may want to add</div>
           <div class="products">
-            <div class="featured-product">
-              <lazy-img
-                class="image"
-                src="global-cart/vibe_board_55.png"
-                alt="vibe_board_55.png"
-              />
+            <div
+              v-for="featured in productsFeatured"
+              :key="featured.name"
+              class="featured-product"
+            >
+              <lazy-img class="image" :src="featured.figure" :alt="featured.name" />
               <div class="product-desc">
-                <p class="title">Vibe Smartboard 55″</p>
-                <p class="title is-price">$2,999.00</p>
+                <p class="title">{{ featured.title }}</p>
+                <p class="title is-price">${{ featured.price }}</p>
               </div>
               <div class="separator"></div>
               <div class="product-add">
-                <div class="icon is-add">
-                  <img
-                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTggMEw4IDE2IiBzdHJva2U9IiM2NjY2Q0MiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJNMTYgOEwtMi45ODAyM2UtMDcgOCIgc3Ryb2tlPSIjNjY2NkNDIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+Cg=="
-                  />
-                </div>
-                <div class="title">ADD</div>
-              </div>
-            </div>
-            <div class="featured-product">
-              <lazy-img
-                class="image"
-                src="global-cart/vibe_board_75.png"
-                alt="vibe_board_75.png"
-              />
-              <div class="product-desc">
-                <p class="title">Vibe Smartboard Pro 75″</p>
-                <p class="title is-price">$6,999.00</p>
-              </div>
-              <div class="separator"></div>
-              <div class="product-add">
-                <div class="icon is-add">
-                  <img
-                    src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTggMEw4IDE2IiBzdHJva2U9IiM2NjY2Q0MiIHN0cm9rZS13aWR0aD0iMiIvPgo8cGF0aCBkPSJNMTYgOEwtMi45ODAyM2UtMDcgOCIgc3Ryb2tlPSIjNjY2NkNDIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+Cg=="
-                  />
-                </div>
+                <svg-icon class="icon is-add" icon-name="global-cart-cart-add-featured" />
                 <div class="title">ADD</div>
               </div>
             </div>
@@ -164,9 +145,12 @@
 </template>
 <script setup>
 import CartCount from "/@/components/cartCount.vue";
+import { products } from "/@/data/products";
 const isCartDialog = inject("isCartDialog");
-const isEmpty = ref(true);
+const isEmpty = ref(false);
+const isLoading = ref(false);
 const cartCount = ref({ class: "is-medium is-rounded is-black", count: 1 });
+const productsFeatured = computed(() => products.filter((i) => i.featured));
 </script>
 <style lang="sass" scoped>
 @import '/@css/base'
@@ -211,6 +195,9 @@ const cartCount = ref({ class: "is-medium is-rounded is-black", count: 1 });
         cursor: pointer
         &:hover
           border-color: $vibe-pink
+        .svg-icon
+          width: 24px
+          height: 24px
     .cart-items
       background-color: $vibe-white
       flex: 1
@@ -222,9 +209,13 @@ const cartCount = ref({ class: "is-medium is-rounded is-black", count: 1 });
         padding: 16px 32px
         &:not(:last-child)
           border-bottom: 1px solid #dbdbdb
+        +mobile
+          padding: 16px
         .line-item-image
           margin-right: 16px
           max-width: 180px
+          +mobile
+            max-width: 96px
         .line-item-desc
           flex: 1
           font-family: $vibe-family-head
@@ -234,6 +225,22 @@ const cartCount = ref({ class: "is-medium is-rounded is-black", count: 1 });
             align-items: center
             text-align: left
             margin-bottom: 24px
+          .simple-offer
+            padding: 5px 6px
+            margin-bottom: 10px
+            width: fit-content
+            border: 1px solid $vibe-purple
+            color: $vibe-purple
+            font-size: 11px
+            border-radius: 4px
+            font-weight: bold
+            cursor: pointer
+            font-family: 'Nunito Sans', Helvetica, sans-serif
+            &:hover
+              border-color: $vibe-purple
+              box-shadow: 0 0 0 1px inset $vibe-purple
+              background-color: $vibe-purple
+              color: #fff
           .price-count
             display: flex
             align-items: center
@@ -243,6 +250,14 @@ const cartCount = ref({ class: "is-medium is-rounded is-black", count: 1 });
               .original-price
                 font-size: 18px
                 color: $vibe-purple
+              .discount-price
+                color: $vibe-purple
+                font-size: 14px
+                font-weight: 400
+                text-decoration-line: line-through
+                opacity: .6
+        .icon.is-delete
+          cursor: pointer
     .cart-bottom
       box-shadow: 0 1px 10px rgb(55 55 55 / 10%)
       padding: 31px 32px 24px
@@ -334,6 +349,14 @@ const cartCount = ref({ class: "is-medium is-rounded is-black", count: 1 });
             cursor: auto
             .title
               display: none
+.svg-icon.icon
+  &.is-add
+    width:16px
+    height:16px
+    color: $vibe-purple
+  &.is-loading,&.is-delete
+    width: 24px
+    height: 24px
 hr
   display: block
   height:2px
@@ -359,6 +382,9 @@ hr
     height: 15px
     margin-left: 8px
     cursor: pointer
+  &.tip-box-product
+    +mobile
+      display: none
 .tip-box-content
   display: none
   position: absolute

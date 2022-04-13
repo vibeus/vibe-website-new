@@ -7,10 +7,9 @@
       <div id="nav-menu" class="nav-menu">
         <NavDropdown />
         <NavEndBtn />
-        <CartDialog v-if="isCartDialog" />
       </div>
     </div>
-
+    <CartDialog v-if="isCartDialog" />
     <slot name="search" />
   </nav>
 </template>
@@ -18,7 +17,7 @@
 <script setup>
 import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink, CartDialog } from './components';
 const { frontmatter: fm } = useData();
-//cart dialog 
+//cart dialog
 const isCartDialog = ref(false);
 provide('isCartDialog', isCartDialog); //NavEndBtn CartDialog
 

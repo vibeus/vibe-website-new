@@ -92,16 +92,16 @@
   </section>
 </template>
 <script setup>
-import VForm from "/@/components/Form.vue";
-import CartCount from "/@/components/cartCount.vue";
+import VForm from '/@/components/Form.vue';
+import CartCount from '/@/components/cartCount.vue';
 const props = defineProps({
   contactSection: {
     type: Object,
     required: true,
   },
 });
-console.log("contactSection: ", props.contactSection);
-const cartCount = ref({ class: "is-medium is-rounded is-gray", count: 0 });
+console.log('contactSection: ', props.contactSection);
+const cartCount = ref({ class: 'is-medium is-rounded is-gray', count: 0 });
 </script>
 <style lang="sass" scoped>
 @import '/@css/base'
