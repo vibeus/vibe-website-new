@@ -133,7 +133,6 @@ onMounted(() => {
     justify-content: space-between
     align-items: center
     height: $navbar-height
-    width: 100%
     padding: 0 40px
     +until($navbar-breakpoint)
       padding: 0
