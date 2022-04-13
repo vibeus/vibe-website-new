@@ -39,19 +39,24 @@ const { title, body, cta } = fm._value.bottom_cta;
       justify-content: space-between
     +mobile
       display: block
-  .bottom-bg
-    position: absolute
-    top: -60px
-    right: -330px
-    svg 
-      width: 528px
-      height: 477px
-  .title
-    max-width: 800px
-    margin-top: 0
-    margin-bottom: 28px
-  .content
-    font-size: 20px
-    +mobile
-      margin-bottom: 32px
+    .bottom-bg
+      position: absolute
+      top: -60px
+      right: -330px
+      svg 
+        width: 528px
+        height: 477px
+    .title
+      max-width: 800px
+      margin-top: 0
+      margin-bottom: 28px
+    .content
+      font-size: 20px
+      +mobile
+        margin-bottom: 32px
+    .button
+      &:hover 
+        color: $vibe-white
+        background-color: $vibe-black
+
 </style>
