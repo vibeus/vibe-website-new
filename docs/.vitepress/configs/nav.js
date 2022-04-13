@@ -7,7 +7,7 @@ export default [ // menu
       { text: 'Vibe Smartboard Pro 75″', link: 'https://vibe.us/products/vibe-smartboard-pro-75/' },
       { text: 'Vibe Software', link: '/software-2/' },
       { text: 'App Integrations', link: '/android-app-store-2/' },
-      { text: 'Security', link: 'https://vibe.us/security/' },
+      { text: 'Security', link: '/security-beta/' },
       { text: 'Product Comparison', link: 'https://vibe.us/comparison/' },
       { text: 'Customer Testimonials', link: 'https://vibe.us/customer/' },
     ]

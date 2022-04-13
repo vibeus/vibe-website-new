@@ -4,7 +4,7 @@
       <span>See a Demo</span>
     </a>
     <div class="nav-divider"></div>
-    <button class="mgr-8">
+    <button class="mgr-8" @click="isCartDialog = true">
       <svg-icon class="nav-icon" icon-name="global-cart-cart" alt="cart icon" />
     </button>
     <button>
@@ -15,6 +15,7 @@
 
 <script setup>
 const { frontmatter: fm } = useData();
+const isCartDialog = inject('isCartDialog');
 </script>
 
 <style lang="sass" scoped>

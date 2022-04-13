@@ -50,9 +50,9 @@ const toggleActive = el => el.classList.toggle('is-active');
     position: absolute
     top: 50%
     display: block
-    width: 0.625em
-    height: 0.625em
-    margin-top: -0.375em
+    width: 0.425em
+    height: 0.425em
+    margin-top: -0.4em
     right: 18px
     transform: rotate(-45deg)
     transform-origin: center
