@@ -33,8 +33,9 @@ const { title, featuresItem = [] } = fm._value.features;
 .features
   background-color: #fff
   padding: 120px 24px
+  overflow: hidden
   +touch
-    padding: 60px 0px
+    padding: 120px 24px
   .container
     max-width: 1000px
     margin: 0 auto
@@ -48,13 +49,16 @@ const { title, featuresItem = [] } = fm._value.features;
         margin-botto: 12px
     .columns
       justify-content: space-between
+      margin: -12px
       +mobile
         display: block
         margin-top: 72px
       .column
         margin-top: 60px
-        max-width: 412px
+        max-width: 424px
         padding: 12px
+        +touch
+          max-width: 360px
         +mobile
           margin: 48px auto auto
           text-align: center

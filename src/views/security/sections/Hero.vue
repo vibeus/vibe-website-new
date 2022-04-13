@@ -6,10 +6,7 @@
           <svg-icon class="image" icon-name="security-hero-bg" alt="hero bg icon"></svg-icon>
         </div>
         <h1 class="title">{{ title }}</h1>
-        <div class="content">
-          <!-- Font issue ? font-weight seems is little bit large -->
-          <p v-html="body"></p>
-        </div>
+        <div class="content" v-html="body"></div>
       </div>
     </div>
   </section>
