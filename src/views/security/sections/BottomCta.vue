@@ -18,8 +18,8 @@
 </template>
 
 <script setup>
-const { frontmatter: fm } = useData()
-const { title, body, cta } = fm._value.bottom_cta
+const { frontmatter: fm } = useData();
+const { title, body, cta } = fm._value.bottom_cta;
 </script>
 
 <style lang="sass" scoped>
@@ -46,8 +46,9 @@ const { title, body, cta } = fm._value.bottom_cta
     svg 
       width: 528px
       height: 477px
-  .title, .content
+  .title
     max-width: 800px
+    margin-top: 0
     margin-bottom: 28px
   .content
     font-size: 20px
