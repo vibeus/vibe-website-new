@@ -130,13 +130,15 @@ onMounted(() => {
   // -o-transition: top .8s cubic-bezier(.215,.61,.355,1)
   .container
     display: flex
-    justify-content: space-between
+    justify-content: center
     align-items: center
+    max-width: 1520px
     height: $navbar-height
     padding: 0 40px
+    margin: 0 auto
     +until($navbar-breakpoint)
       padding: 0
-
+      justify-content: space-between
 .nav-menu
   display: flex
   align-items: center
