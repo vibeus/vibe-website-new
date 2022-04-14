@@ -9,14 +9,17 @@
         <NavEndBtn />
       </div>
     </div>
-
+    <CartDialog v-if="isCartDialog" />
     <slot name="search" />
   </nav>
 </template>
 
 <script setup>
-import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink } from './components';
+import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink, CartDialog } from './components';
 const { frontmatter: fm } = useData();
+//cart dialog
+const isCartDialog = ref(false);
+provide('isCartDialog', isCartDialog); //NavEndBtn CartDialog
 
 const cart = fm.value.navbar?.cart || {};
 
@@ -25,13 +28,12 @@ const {
   region = 'us',
   promo_code: promoCode = '',
   shopify_host: shopifyHost = 'order.vibe.us',
-  number_format: numberFormat = 'en-US'
+  number_format: numberFormat = 'en-US',
 } = cart;
 const renderOffers = !!cart.render_offers;
 
 function parseBoolean(value) {
-  if (!value)
-    return false;
+  if (!value) return false;
   return value === '1' || value === 'true';
 }
 
@@ -55,7 +57,13 @@ function loadScript(src, integrity) {
     document.getElementsByTagName('head')[0].appendChild(script);
   });
 }
-
+watchEffect(() => {
+  if (isCartDialog.value) {
+    document.documentElement.classList.add('is-clipped');
+  } else {
+    document.documentElement.classList.remove('is-clipped');
+  }
+});
 function loadSidebar() {
   const scriptsArr = [
     'https://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js',
@@ -66,7 +74,7 @@ function loadSidebar() {
   if (!sidebarPromise) {
     sidebarPromise = new Promise((resolve, reject) => {
       const loader = async () => {
-        scriptsArr.forEach(async src => await loadScript(src));
+        scriptsArr.forEach(async (src) => await loadScript(src));
       };
 
       loader()
@@ -76,9 +84,7 @@ function loadSidebar() {
         })
         .then((sidebar) => {
           const products = JSON.parse(
-            new TextDecoder().decode(
-              base64js.toByteArray('{{ $products }}')
-            )
+            new TextDecoder().decode(base64js.toByteArray('{{ $products }}'))
           );
 
           return sidebar.initialize(products, {
@@ -135,13 +141,15 @@ onMounted(() => {
     z-index: 9999
   .container
     display: flex
-    justify-content: space-between
+    justify-content: center
     align-items: center
+    max-width: 1520px
     height: $navbar-height
     padding: 0 40px
+    margin: 0 auto
     +until($navbar-breakpoint)
       padding: 0
-
+      justify-content: space-between
 .nav-menu
   display: flex
   align-items: center
