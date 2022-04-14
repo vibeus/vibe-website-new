@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar">
+  <nav class="navbar is-fixed-top">
     <div class="container">
       <NavBarLogo />
       <NavShrink />
@@ -121,6 +121,7 @@ onMounted(() => {
 @import '/@css/base'
 .navbar
   position: relative
+  background-color: $vibe-white
   font-family: $family-head
   font-size: 16px
   box-shadow: 0px -1px 10px rgba(55, 55, 55, 0.1)
@@ -128,6 +129,10 @@ onMounted(() => {
   // -moz-transition: top .8s cubic-bezier(.215,.61,.355,1)
   // -webkit-transition: top .8s cubic-bezier(.215,.61,.355,1)
   // -o-transition: top .8s cubic-bezier(.215,.61,.355,1)
+  &.is-fixed-top
+    position: sticky
+    top: 0
+    z-index: 9999
   .container
     display: flex
     justify-content: space-between
