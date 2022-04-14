@@ -72,56 +72,37 @@ security:
   cta:
     title: Learn more →
     url: /security/
-# testimonial_section:
-#   testimonials:
-#     - author:
-#         name: Shelly Starks
-
-#         Associate Partner at RC Howard & Associates, LLC., a certified Sandler Training Center
-#       body: The Vibe team has been incredibly open to new ideas to improve the product and even implemented a few suggestions into the most recent software update. This type of co-collaboration makes working with Vibe a premier experience. Absolutely would recommend it to anyone in the market for a digital white-board!
-#     - author:
-#         name: Karen L. Brady
-
-#         Estate Planning Attorney, Arvada, Colorado
-#       body: The Vibe board has been a game changer in how we communicate with clients, both in-person and virtually.
-#       I am a long-time user of electronic whiteboards, but the interactive and digital features of the Vibe board
-#       have exponentially increased both efficiency and the \"wow\" factor in client meetings.
-#     - author:
-#         logo: common/testimonials/kenmore.png
-#         name: Rob Karlinsey
-
-#         City Manager at City of Kenmore, Washington
-#       body: With Vibe, I can now just hit “send” after a meeting and share that board with whoever I want.
-#       Vibe will save each board automatically, so I can always pull a board back up during any meeting to show
-#       people what we’ve discussed. Even better, we like how you can invite remote coworkers in to collaborate
-#       on the board in real time from other devices. Vibe is a gamechanger.
-#     - author:
-#         logo: common/testimonials/azularc.png
-#         name: Kate Womick
-
-#         Product Manager at Azul Arc
-#       body: Vibe’s collaboration factor has been huge. When juggling multiple clients, it’s incredibly helpful to have
-#       everything saved in one place so you can easily pick up where you left off.
-#       As a UX designer, I like how easy Vibe is to pick up a stylus and sketch on. And for big projects we can
-#       even have several people working on a single canvas at once - even from remote locations.
-#     - author:
-#         logo: common/testimonials/capgemini.png
-#         name: Peter T. Maloof
-
-# Vice President at Capgemini America
-#       body: We love using the Vibe board for meetings and brainstorming sessions. It has enhanced productivity, creativity
-# and communication amongst our team. It also feels very seamless using the Vibe board and app across various
-# devices.
-#     - author:
-#         logo: common/testimonials/csi.png
-#         name: Henry Sal, Jr.
-
-# President of Computing System Innovations
-#         alt: CSI favored
-#       body: Best collaboration device we have at our office for memorializing any and all types of
-# meetings – administrative tasks to software design sessions.
-# Incredible device, saves us time and money and allows us to build our AI software products faster!
-# Great job VIBE team, congratulations on a game changer!
+testimonial_section:
+  testimonials:
+    - author: 
+        name: Shelly Starks
+        desc: Associate Partner at RC Howard & Associates, LLC., a certified Sandler Training Center
+      body: The Vibe team has been incredibly open to new ideas to improve the product and even implemented a few suggestions into the most recent software update. This type of co-collaboration makes working with Vibe a premier experience. Absolutely would recommend it to anyone in the market for a digital white-board!
+    - author: 
+        name: Karen L. Brady
+        desc: Estate Planning Attorney, Arvada, Colorado
+      body: The Vibe board has been a game changer in how we communicate with clients, both in-person and virtually. I am a long-time user of electronic whiteboards, but the interactive and digital features of the Vibe board have exponentially increased both efficiency and the “wow” factor in client meetings.
+    - author:
+        name: Rob Karlinsey
+        desc: City Manager at City of Kenmore, Washington
+        logo: testimonials/kenmore.png
+      body: With Vibe, I can now just hit “send” after a meeting and share that board with whoever I want. Vibe will save each board automatically, so I can always pull a board back up during any meeting to show people what we’ve discussed. Even better, we like how you can invite remote coworkers in to collaborate on the board in real time from other devices. Vibe is a gamechanger.
+    - author:
+        name: Kate Womick
+        desc: Product Manager at Azul Arc
+        logo: testimonials/azularc.png
+      body: Vibe’s collaboration factor has been huge. When juggling multiple clients, it’s incredibly helpful to have everything saved in one place so you can easily pick up where you left off. As a UX designer, I like how easy Vibe is to pick up a stylus and sketch on. And for big projects we can even have several people working on a single canvas at once - even from remote locations.
+    - author:
+        name: Peter T. Maloof
+        desc: Vice President at Capgemini America
+        logo: testimonials/capgemini.png
+      body: We love using the Vibe board for meetings and brainstorming sessions. It has enhanced productivity, creativity and communication amongst our team. It also feels very seamless using the Vibe board and app across various devices.
+    - author:
+        name: Henry Sal, Jr.
+        desc: President of Computing System Innovations
+        logo: testimonials/csi.png
+        alt: CSI favored
+      body: Best collaboration device we have at our office for memorializing any and all types of meetings – administrative tasks to software design sessions. Incredible device, saves us time and money and allows us to build our AI software products faster! Great job VIBE team, congratulations on a game changer!
 # video_section:
 #   title: Vibe is more than software
 #   body: Vibe is a complete collaboration solution, with hardware and software that work together to uplevel

@@ -77,26 +77,26 @@ function loadSidebar() {
         scriptsArr.forEach(async (src) => await loadScript(src));
       };
 
-      loader()
-        .then(() => {
-          // Extend.config({ storeId: '91426846-4d2c-482d-a9e9-1031f0ffb6b0' });
-          // return import('/@js/nav-cart-sidebar.js');
-        })
-        .then((sidebar) => {
-          const products = JSON.parse(
-            new TextDecoder().decode(base64js.toByteArray('{{ $products }}'))
-          );
+      // loader()
+      //   .then(() => {
+      //     // Extend.config({ storeId: '91426846-4d2c-482d-a9e9-1031f0ffb6b0' });
+      //     // return import('/@js/nav-cart-sidebar.js');
+      //   })
+      //   .then((sidebar) => {
+      //     const products = JSON.parse(
+      //       new TextDecoder().decode(base64js.toByteArray('{{ $products }}'))
+      //     );
 
-          return sidebar.initialize(products, {
-            moneyFmt,
-            promoCode,
-            region,
-            shopifyHost,
-            renderOffers,
-          });
-        })
-        .then(resolve)
-        .catch(reject);
+      //     return sidebar.initialize(products, {
+      //       moneyFmt,
+      //       promoCode,
+      //       region,
+      //       shopifyHost,
+      //       renderOffers,
+      //     });
+      //   })
+      //   .then(resolve)
+      //   .catch(reject);
     });
   }
 

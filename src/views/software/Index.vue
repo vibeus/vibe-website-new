@@ -7,7 +7,7 @@
     <Presentation :presentation="fm.feature_presentation" />
     <Overall class="is-app" :overall="fm.feature_apps"/>
     <Security :security="fm.security" />
-    <Testimonial />
+    <Testimonial :testimonialSection="fm.testimonial_section" />
     <Video :video="fm.video" />
     <BottomCta :bottomCta="fm.bottom_cta" />
   </main>

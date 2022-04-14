@@ -9,7 +9,7 @@
           @click="videoPlay"
           :style="{ visibility: isPlay ? 'hidden' : '' }"
         />
-        <iframe
+        <!-- <iframe
           v-if="isPlay"
           id="video-section-iframe"
           frameborder="0"
@@ -19,7 +19,8 @@
           width="100%"
           height="100%"
           :src="`https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0&modestbranding=1&widgetid=1`"
-        ></iframe>
+        ></iframe> -->
+        <div id="video-section-iframe"></div>
       </div>
       <div class="is-text">
         <h1 class="title">{{ video.title }}</h1>
@@ -40,12 +41,77 @@ const props = defineProps({
     required: true,
   },
 });
+console.log('video: ', props.video);
 const isPlay = ref(false);
+let videoPlayer = null;
+const loadingPlayer = ref(false);
+function setupYTApi() {
+  if (window.YTApiReady) {
+    return Promise.resolve();
+  }
+
+  let loadApi = false;
+  if (!window.YTCallback) {
+    window.YTCallback = [];
+    loadApi = true;
+  }
+
+  return new Promise((resolve) => {
+    window.YTCallback.push(resolve);
+    if (loadApi) {
+      const tag = document.createElement('script');
+
+      tag.src = 'https://www.youtube.com/iframe_api';
+      const firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      window.onYouTubeIframeAPIReady = () => {
+        window.YTApiReady = true;
+        window.YTCallback.forEach(resolve);
+      };
+    }
+  });
+}
 const videoPlay = () => {
-  isPlay.value = true;
-  const videoFrame = document.querySelector('#video-section-iframe');
-  console.log('videoFrame: ', videoFrame);
-  videoFrame.play();
+  // isPlay.value = true;
+  if (videoPlayer) {
+    videoPlayer.loadVideoById(props.video.id);
+    videoPlayer.playVideo();
+  } else if (!loadingPlayer.value) {
+    const playerId = 'video-section-iframe';
+    let firstTime = true;
+    setTimeout(() => {
+      setupYTApi().then(() => {
+        const player = new window.YT.Player(playerId, {
+          height: '100%',
+          width: '100%',
+          videoId: props.video.id,
+          playerVars: {
+            enablejsapi: 1,
+            start: 0,
+            loop: 1,
+          },
+          events: {
+            onReady: () => {
+              player.mute();
+              videoPlayer = player;
+              player.playVideo();
+              setInterval(() => {
+                player.getCurrentTime() > 10 && player.seekTo(0);
+              }, 1000);
+            },
+            onStateChange: (event) => {
+              if (event.data === 3 && firstTime) {
+                isPlay.value = true;
+                
+                firstTime = false;
+              }
+            },
+          },
+        });
+      });
+    }, 10);
+  }
 };
 </script>
 <style lang="sass" scoped>
@@ -64,8 +130,6 @@ const videoPlay = () => {
     .image
       width: 100%
       z-index: 10
-    .hiddenImg
-      visibility: hidden
     iframe
       position: absolute
       left: 0
