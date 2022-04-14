@@ -43,8 +43,8 @@
 </template>
 
 <script setup>
-import { ref, watchEffect } from 'vue'
-import FaqItem from './FaqItem.vue'
+import { ref, watchEffect } from 'vue';
+import FaqItem from './FaqItem.vue';
 const props = defineProps({
   faqs: {
     type: Object,
@@ -53,14 +53,14 @@ const props = defineProps({
 });
 
 // set the first tab as default 
-const currentTabIndex = ref(0)
+const currentTabIndex = ref(0);
 const handleTabClick = (index) => {
-  currentTabIndex.value = index
-}
+  currentTabIndex.value = index;
+};
 
 const handleOpenItem = () => {
 
-}
+};
 
 
 </script>
@@ -98,10 +98,6 @@ const handleOpenItem = () => {
       cursor: pointer
       +mobile
         font-size: 16px
-      // &.is-active
-      //   color: $vibe-black
-      //   margin-bottom: 0
-      //   border-bottom: 2px solid #000
     .more
       height: 38px
       +mobile

@@ -7,7 +7,7 @@
 
 <script setup>
 import WhatsInBox from './sections/WhatsInBox.vue';
-import Faq from '/@/components/faq/Faq.vue'
+import Faq from '/@/components/faq/Faq.vue';
 const { frontmatter: fm } = useData();
 const { faqs } = fm._value;
 </script>

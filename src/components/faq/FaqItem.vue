@@ -15,18 +15,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 const props = defineProps({
   content: {
     type: Object,
     required: true
   }
-})
+});
 
-const showItem = ref(false)
+const showItem = ref(false);
 const handleItemShow = () => {
-  showItem.value = !showItem.value 
-}
+  showItem.value = !showItem.value; 
+};
 
 </script>
 
