@@ -53,7 +53,7 @@ const { what_in_box } = fm._value;
       +mobile 
         flex-wrap: wrap
     .accessory-box
-      height: 235px
+      // height: 235px
       margin-bottom: 1rem
       &:first-child
         max-width: 280px
@@ -73,26 +73,28 @@ const { what_in_box } = fm._value;
           margin-left: 0
       &:nth-child(2)
         img
-          width: 134px 
-          height: 134px     
+          max-width: 134px 
+          max-height: 134px     
       &:nth-child(3)
         img
-          width: 125px 
-          height: 125px     
+          max-width: 125px 
+          max-height: 125px     
       &:nth-child(4)
         img
           +desktop
-            width: 112px 
-            height: 112px
+            max-width: 112px 
+            max-height: 112px
       &:nth-child(5)
         img
-          width: 72px 
-          height: 100px      
+          max-width: 72px 
+          max-height: 100px      
       .image
         height: 196px
         padding: 1rem
         background: #fff
         display: flex
+        +tablet-only
+          height: 150px
         &:first-child
           +mobile 
             height: 177px

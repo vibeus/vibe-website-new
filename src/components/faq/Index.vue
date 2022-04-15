@@ -29,11 +29,9 @@
         :content="item"
       />
     </ul>
-    <!-- {{ end }} -->
-    <!-- {{ with .cta }}
-      {{ partial "common/section-cta" . }}
-    {{ end }}
-    {{ with .disclaimer_info }}
+
+    <SectionCta :cta="faqs.cta"/>
+    <!-- {{ with .disclaimer_info }}
       <div id="disclaimer" class="disclaimer-content">
         <p> {{ . | markdownify }} </p>
       </div>
@@ -44,7 +42,8 @@
 
 <script setup>
 import { ref, watchEffect } from 'vue';
-import FaqItem from './FaqItem.vue';
+import FaqItem from './components/FaqItem.vue';
+import SectionCta from '../SectionCta.vue';
 const props = defineProps({
   faqs: {
     type: Object,
@@ -114,5 +113,9 @@ const handleOpenItem = () => {
   .faq-item:not(:last-child)
     border-bottom: 1px solid $vibe-black
   
-
+  .cta.is-section
+    .button
+      &:hover 
+        color: $vibe-white
+        background-color: $vibe-black
 </style>

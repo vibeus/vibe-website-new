@@ -1,4 +1,40 @@
 ---
+closer_look: 
+  title: A closer look at Vibe Smartboard 55″
+  itemList: 
+    - id: 1
+      title: |  
+        Intuitive 
+        
+        4K touchscreen 
+      content: Let your creativity flow with Vibe’s interactive whiteboard and fluid writing experience. 
+      figure: order/us-sales/order-uhd.png
+    - id: 2
+      title: Real-time collaboration across the globe
+      content: Join the fun from anywhere in the world by connecting your device to Vibe’s secure cloud-based platform.
+      figure: order/us-sales/order-device.png
+      bg_figure: /order/us-sales/grey-circle.png"
+      bg_color: '#FAFAFA'
+    - id: 3
+      title: Your ultimate presentation tool
+      content: Engage your audience on a new level with in-presentation annotations and transferable meeting notes.
+      figure: order/us-sales/order-meeting.png
+      bg_figure: "/order/us-sales/chat-bubble.png"
+      bg_color: '#FAFAFA'
+    - id: 4
+      title: Enhanced communication 
+      content: Supplement your existing video conferencing meetings with enhanced remote whiteboarding capabilities.
+      figure: order/us-sales/order-monitor.png
+      figure_mobile: order/us-sales/order-monitor-mobile.png
+    - id: 5
+      title: Open ecosystem
+      content: Vibe supports however you work with a robust ecosystem, from Microsoft to Google and beyond.  
+      figure: order/us-sales/order-eco.png   
+    - id: 6
+      title: Easily shareable
+      content: Exporting files and ideas is a breeze with Vibe’s supported cloud drives, and pick up right where you left off.
+      figure: order/us-sales/order-share.png
+      bg_color: '#FAFAFA'
 what_in_box:
   title: What’s in the box
   items:
@@ -77,6 +113,13 @@ faqs:
           Shipping costs will be dependent on which product(s) and your location, so please use our [**Request a Quote form**](/contact/request-a-quote/) to get the most update information on shipping costs for your province.    
           
           You can also arrange your own shipping from your preferred carrier, with pick up from our warehouse in Southern California.
+  cta:
+    buttons: 
+      - class:  is-black is-outlined is-rounded
+        link: /buyer-faq/
+        target: _blank
+        title: Learn More  
+      
 ---
 
 <Page />

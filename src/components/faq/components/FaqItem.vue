@@ -45,7 +45,7 @@ const handleItemShow = () => {
         text-decoration: none
         border-bottom: 1.5px solid #000000
         &:hover
-          border-bottom: 1.5px solid #f66
+          border-bottom: 1.5px solid $vibe-purple
   .faq-title
     font-size: 21px
     display: flex
@@ -64,4 +64,7 @@ const handleItemShow = () => {
       margin-top: 1em
     li 
       list-style: inside
+    a
+      &:hover
+        color: $vibe-purple
 </style>
