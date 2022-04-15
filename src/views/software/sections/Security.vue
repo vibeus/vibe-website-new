@@ -1,14 +1,14 @@
 <template>
   <section class="section security">
-    <div class="columns is-vcentered">
-      <div class="column">
+    <div class="content-wrap">
+      <div class="is-content">
         <h1 class="title">{{ security.title }}</h1>
         <div class="content">{{ security.body }}</div>
         <div class="cta">
           <a :href="security.cta.url">{{ security.cta.title }}</a>
         </div>
       </div>
-      <div class="column is-image">
+      <div class="is-image">
         <lazy-img class="image" :src="security.figure" :alt="security.alt" />
       </div>
     </div>
@@ -28,12 +28,32 @@ const props = defineProps({
   position: relative
   padding: 120px 24px 48px
   background-color: $vibe-black
+  +mobile
+    padding-top: 60px
+  .content-wrap
+    +tablet
+      display: flex
+      justify-content: flex-end
+    .is-image
+      display: block
+      flex-basis: 0
+      flex-grow: 1
+      flex-shrink: 1
+      align-self: flex-end
+    .is-content
+      display: block
+      flex-basis: 0
+      flex-grow: 1
+      flex-shrink: 1
+
   .title,.content
     color: #fff
   .title
     text-align: left
     font-size: 48px
     margin-bottom: 1.5rem
+    +mobile
+      font-size: 32px
   .title, .content, .cta
     +tablet
       max-width: 500px

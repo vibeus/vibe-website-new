@@ -8,7 +8,7 @@
     <Overall class="is-app" :overall="fm.feature_apps"/>
     <Security :security="fm.security" />
     <Testimonial :testimonialSection="fm.testimonial_section" />
-    <Video :video="fm.video" />
+    <VideoSection :video="fm.video" />
     <BottomCta :bottomCta="fm.bottom_cta" />
   </main>
 </template>
@@ -20,7 +20,7 @@ import Collaboration from './sections/Collaboration.vue';
 import Presentation from './sections/Presentation.vue';
 import Security from './sections/Security.vue';
 import Testimonial from './sections/Testimonial.vue';
-import Video from './sections/Video.vue';
+import VideoSection from './sections/VideoSection.vue';
 import BottomCta from '/@vcomp/BottomCta.vue';
 const { frontmatter: fm } = useData();
 console.log('fm: ', fm.value);

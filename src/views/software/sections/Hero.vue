@@ -61,6 +61,7 @@ const props = defineProps({
   .cta
     text-align: center
     .button
+      width: unset
       display: block
       margin: 0 auto
       +tablet

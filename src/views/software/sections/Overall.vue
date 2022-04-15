@@ -32,6 +32,9 @@ const props = defineProps({
   padding: 76px 24px 120px
   text-align: center
   background-color: #fff
+  +mobile
+    padding-top: 90px
+    padding-bottom: 60px
   .container
     flex-direction: column
     align-items: center
@@ -40,12 +43,16 @@ const props = defineProps({
     margin-bottom: 30px
     font-weight: $vibe-bold
     font-family: $vibe-family-head
+    +mobile
+      font-size: 32px
+      margin-bottom: 0
   .overall-wrapper
-    margin-top: 60px
-    display: flex
-    justify-content: space-between
-    width: 100%
+    +tablet
+      width: 100%
+      display: flex
+      justify-content: space-between
     .overall-item
+      margin-top: 60px
       display: flex
       flex-direction: column
       align-items: center
@@ -58,10 +65,14 @@ const props = defineProps({
         text-align: center
         margin-top: 23px
         margin-bottom: 30px
+        +mobile
+          margin-top: 16px
       .content
         max-width: 300px
       .image
         max-width: 210px
+        +mobile
+          max-width:160px
   .cta
     margin-top: 32px
     text-align: center

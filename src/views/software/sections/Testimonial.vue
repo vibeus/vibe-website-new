@@ -10,11 +10,11 @@
           clickable: true,
         }"
         :autoplay="{
-          delay: 5000,
+          delay: 3000,
           disableOnInteraction: false,
         }"
         :modules="[Autoplay, Pagination]"
-        class="mySwiper"
+        class="swiper"
       >
         <swiper-slide
           v-for="testimonial in testimonialSection.testimonials"
@@ -64,19 +64,22 @@ const props = defineProps({
 @import '/@css/base'
 .is-testimonial
   background-color: #fff
-  padding: 120px 24px
+  padding: 120px 24px 70px
   .testimonial
     .content
       position: relative
-      padding: 40px 80px 60px 120px
-      display: flex
+      padding: 32px 0
       font-family: $vibe-family-head
       +tablet
+        padding: 40px 80px 60px 120px
         font-size: 22px
       .quote-mark
         position: absolute
         width: 62px
         height: 62px
+        +mobile
+          width:23px
+          height:23px
         &.is-left
           left: 0
           top: 0
@@ -85,18 +88,38 @@ const props = defineProps({
           bottom: 0
     .author
       display: flex
-      justify-content: center
+      margin-top: 46px
+      +tablet
+        justify-content: center
       .name-warp
         display: flex
-        align-items: center
-        text-align: center
         font-family: $vibe-family-head
+        +tablet
+          align-items: center
+          text-align: center
+        +mobile
+          flex-direction: column-reverse  
         .logo
           height: 64px
           margin-right: 55px
+          +mobile
+            width: 120px
+            height: 36px
+            margin-top: 32px
           img
             height: 100%
         .name
           margin-bottom: 8px
           font-weight: $vibe-bold
+.swiper
+  height: 420px
+
+:deep(.swiper-pagination-bullet)
+  margin:0 7px !important
+  text-align: center
+
+:deep(.swiper-pagination-bullet-active)
+    background-color: $vibe-black
+    opacity: .7
+
 </style>
