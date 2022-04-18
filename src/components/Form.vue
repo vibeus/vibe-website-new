@@ -69,9 +69,44 @@ const onFormControlChange = el => {
 /* End Data */
 
 const submitForm = () => {
-  proxy.$refs.form.validate(valid => {
+  proxy.$refs.form.validate(async valid => {
     if (valid) {
-      emit('msgSuccess', 'Submitted successfully');
+      let fields = [];
+      console.log('formItem.value: ', formItem.value);
+      for (const pair of new FormData(formItem.value).entries()) {
+        if (pair[0] === 'consent-to-communicate-checkbox') continue;
+        fields.push({
+          name: pair[0],
+          value: pair[1],
+        });
+      }
+      console.log('fields: ', fields);
+      fields = [];
+      // 特定表单逻辑处理
+      // fields = (await dealSpecificForm(action, fields, form)) || fields;
+
+      // const body = getHubspotBody(form, fields);
+
+      // return fetch(form.action, {
+      //   method: form.method,
+      //   body: JSON.stringify(body),
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      // })
+      //   .then((r) => {
+      //     if (r.ok) {
+      //       form.parentElement.classList.add('is-submitted');
+      //     } else {
+      //       form.parentElement.classList.add('is-failed');
+      //     }
+
+      //     return r;
+      //   })
+      //   .catch((ex) => {
+      //     form.parentElement.classList.add('is-failed');
+      //     throw ex;
+      //   });
     } else console.log('invalid');
   });
 };

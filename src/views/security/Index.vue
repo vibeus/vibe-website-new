@@ -1,14 +1,14 @@
 
 <template>
-<main class="software">
-  <Hero/>
-  <TrustIndustry/>
-  <Features/>
-  <Specs/>
-  <!--  -->
-  <FigureContentSection :contentData="privacy"/> 
-  <BottomCta/>
-</main>
+  <main class="software">
+    <Hero />
+    <TrustIndustry />
+    <Features />
+    <Specs />
+    <!--  -->
+    <FigureContentSection :contentData="privacy" /> 
+    <BottomCta />
+  </main>
 </template>
 
 <script setup>

@@ -13,17 +13,12 @@
   </main>
 </template>
 <script setup>
-import Hero from './sections/Hero.vue';
-import HeroVideo from './sections/HeroVideo.vue';
-import Overall from './sections/Overall.vue';
-import Collaboration from './sections/Collaboration.vue';
-import Presentation from './sections/Presentation.vue';
-import Security from './sections/Security.vue';
-import Testimonial from './sections/Testimonial.vue';
-import VideoSection from './sections/VideoSection.vue';
+import {
+  Hero, HeroVideo, Overall, Collaboration, Presentation,
+  Security, Testimonial, VideoSection
+} from './sections';
 import BottomCta from '/@vcomp/BottomCta.vue';
 const { frontmatter: fm } = useData();
-console.log('fm: ', fm.value);
 </script>
 <style lang="sass" scoped>
 .is-app

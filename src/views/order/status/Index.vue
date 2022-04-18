@@ -1,14 +1,8 @@
 <template>
   <main class="order-status">
-    <Hero
-      :hero="fm.hero"
-    />
-    <Resources
-     :resources="fm.resources"
-    />
-    <BottomCta
-     :bottomCta="fm.bottom_cta"
-    />
+    <Hero :hero="fm.hero" />
+    <Resources :resources="fm.resources" />
+    <BottomCta :bottomCta="fm.bottom_cta" />
   </main>
 </template>
 

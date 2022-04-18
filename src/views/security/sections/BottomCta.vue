@@ -1,5 +1,5 @@
 <template>
-   <section class="section is-bottom-cta">
+  <section class="section is-bottom-cta">
     <div class="container">
       <div class="bottom-bg">
         <svg-icon class="image" icon-name="common-what-bg" alt=""></svg-icon>

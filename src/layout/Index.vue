@@ -1,30 +1,29 @@
 <template>
-  <div class="theme" :class="pageClasses">
-    <NavBar v-if="showNavbar">
-      <template #search>
-        <slot name="navbar-search">
-          <AlgoliaSearchBox
-            v-if="theme.algolia"
-            :options="theme.algolia"
-            :multilang="isMultiLang"
-          />
-        </slot>
-      </template>
-    </NavBar>
+  <NavBar v-if="showNavbar">
+    <template #search>
+      <slot name="navbar-search">
+        <AlgoliaSearchBox
+          v-if="theme.algolia"
+          :options="theme.algolia"
+          :multilang="isMultiLang"
+        />
+      </slot>
+    </template>
+  </NavBar>
 
-    <Blog v-if="isBlog">
-      <template #top>
-        <slot name="page-top" />
-      </template>
-      <template #bottom>
-        <slot name="page-bottom" />
-      </template>
-    </Blog>
+  <Blog v-if="isBlog">
+    <template #top>
+      <slot name="page-top" />
+    </template>
+    <template #bottom>
+      <slot name="page-bottom" />
+    </template>
+  </Blog>
 
-    <Content v-else />
+  <!-- Vitepress's own component -->
+  <Content v-else />
 
-    <VFooter />
-  </div>
+  <VFooter />
 
   <Debug />
 </template>
@@ -94,16 +93,6 @@ const showNavbar = computed(() => {
 // TODO: route only changes when the pathname changes
 // listening to hashchange does nothing because it's prevented in router
 
-// page classes
-const pageClasses = computed(() => {
-  return [
-    {
-      'no-navbar': !showNavbar.value,
-      // 'sidebar-open': openSideBar.value,
-      // 'no-sidebar': !showSidebar.value
-    }
-  ];
-});
 </script>
 
 <style lang="sass">
