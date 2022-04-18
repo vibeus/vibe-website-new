@@ -62,7 +62,8 @@ export const products = [
       style2: true,
       hidden: false
     },
-  }, {
+  },
+  {
     product_name: 'white_stand',
     title: 'White Portable Stand',
     product_id: '31815731576883',
@@ -72,14 +73,16 @@ export const products = [
     sold_out: false,
     backorder: false,
 
-  }, {
+  },
+  {
     product_name: 'red_stand',
     title: 'Red Portable Stand',
     product_id: '31815731609651',
     enable_extend: true,
     price: 500,
     figure: 'global-cart/vibe_stand_55r.png',
-  }, {
+  },
+  {
     product_name: 'white_stand_S1',
     title: 'S1 White Portable Stand',
     product_id: '40452322099251',
@@ -92,7 +95,8 @@ export const products = [
     backorder:
         false,
 
-  }, {
+  },
+  {
     product_name: 'red_stand_S1',
     title: 'S1 Red Portable Stand',
     product_id: '40452322132019',
@@ -102,7 +106,8 @@ export const products = [
     discount_price: 300,
     figure: 'global-cart/vibe_stand_55r.png'
 
-  }, {
+  },
+  {
     product_name: 'green_stand_S1',
     title: 'S1 Green Portable Stand',
     product_id: '40452322164787',
@@ -111,7 +116,8 @@ export const products = [
     price: 500,
     discount_price: 300,
     figure: 'global-cart/vibe_stand_55g.png'
-  }, {
+  },
+  {
     product_name: 'stylus',
     title: 'Additional 55″ Board Styluses (2)',
     product_id: '31815737016371',
@@ -122,7 +128,8 @@ export const products = [
     sold_out: false,
     backorder: false,
 
-  }, {
+  },
+  {
     product_name: 'vibe_stand_75',
     title: 'Portable Stand for Vibe Smartboard Pro 75″',
     body: 'Compatible with Vibe Smartboard Pro 75″.All metal design, simple and durable.Easy to move.Make any room a dynamic teamwork space.',

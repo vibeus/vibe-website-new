@@ -90,5 +90,5 @@ bottom_cta:
 <Page />
 
 <script setup>
-import Page from '/@/views/security/Index.vue'
+import Page from '/@/views/Security/Index.vue'
 </script>

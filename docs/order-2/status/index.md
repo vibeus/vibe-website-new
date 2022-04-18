@@ -47,5 +47,5 @@ bottom_cta:
 <Page />
 
 <script setup>
-import Page from '/@/views/order/status/Index.vue'
+import Page from '/@/views/order/Status/Index.vue'
 </script>

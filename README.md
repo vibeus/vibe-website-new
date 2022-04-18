@@ -3,22 +3,22 @@ Produce pages for the new official website.
 
 ## Project setup
 ```
-yarn
+pnpm i
 ```
 
 ### Compiles and hot-reloads for development
 ```
-yarn dev 
+pnpm dev 
 ```
 
 ### Compiles and minifies for production
 ```
-yarn build
+pnpm build
 ```
 
 ### Lints and fixes files
 ```
-yarn lint
+pnpm lint
 ```
 
 _____
@@ -51,7 +51,9 @@ _____
 #### File name
 * js: `keba-case` (In addition to some special cases)
 * vue: `upper-camel-case`
-* directory: `camel-case`
+* directory:
+  * component folder with `Index.vue` : `upper-camel-case`
+  * other `camel-case`
 
 #### Import order
 1. node-modules `dependency`
@@ -66,7 +68,5 @@ _____
 * use simple expression in vue template
 * use multi-words for components name
 * component style declarations are scoped like `.unit-page .button`
-* Content in element components
-  * <el-dialog>: <table>, <form>   
-  * <el-drawer>: <description>(item info)
+
 

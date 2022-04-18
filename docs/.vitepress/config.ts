@@ -21,6 +21,9 @@ async function config() {
       // optimizeDeps: {
       //   include: ['element-plus'],
       // },
+      ssr: {
+        noExternal: ['swiper'],
+      },
       plugins: createVitePlugins(),
       css: {
         preprocessorOptions: { scss: { charset: false } }

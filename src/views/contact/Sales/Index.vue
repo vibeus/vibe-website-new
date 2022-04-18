@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import ContactHero from '../components/contactHero.vue';
+import ContactHero from '../components/ContactHero.vue';
 import Contact from './sections/Contact.vue';
 console.log('Contact: ', Contact);
 import BottomCta from '/@vcomp/BottomCta.vue';
