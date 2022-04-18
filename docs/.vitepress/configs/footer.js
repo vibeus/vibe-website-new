@@ -59,12 +59,12 @@ export default {
         },
         {
           "title": "Privacy",
-          "url": "https://vibe.us/privacy/",
+          "url": "/documents-2/privacy/",
           "nofollow": true
         },
         {
           "title": "Warranty",
-          "url": "/warranty/",
+          "url": "/documents-2/warranty/",
           "nofollow": true
         },
         {
