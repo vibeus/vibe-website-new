@@ -4,7 +4,7 @@
       <span>See a Demo</span>
     </a>
     <div class="nav-divider is-hidden-mobile" data-v-00cdf7b5=""></div>
-    <button class="nav-btn nav-cart-icon mgl-8" @click="isCartDialog = true">
+    <button class="nav-btn nav-cart-icon mgl-8" @click="showCartModal = true">
       <svg-icon class="nav-icon" icon-name="global-cart-cart" alt="cart icon" />
     </button>
     <button class="nav-btn nav-user-icon is-hidden-mobile">
@@ -19,7 +19,7 @@
 </template>
 <script setup>
 const { frontmatter: fm } = useData();
-const isCartDialog = inject('isCartDialog');
+const showCartModal = inject('showCartModal');
 
 const toggleMenuActive = () => {
   const menu = document.getElementById('nav-menu');
