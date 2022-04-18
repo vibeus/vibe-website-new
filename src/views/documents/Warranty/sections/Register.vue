@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import VForm from "/@/components/Form.vue";
+import VForm from '/@/components/Form.vue';
 const props = defineProps({
   register: {
     type: Object,

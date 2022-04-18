@@ -162,5 +162,5 @@ content: |
 <Page />
 
 <script setup>
-import Page from '/@/views/documents/warranty/Index.vue'
+import Page from '/@/views/documents/Warranty/Index.vue'
 </script>

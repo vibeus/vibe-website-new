@@ -153,5 +153,5 @@ content: |
 <Page />
 
 <script setup>
-import Page from '/@/views/documents/privacy/Index.vue'
+import Page from '/@/views/documents/Privacy/Index.vue'
 </script>
