@@ -30,5 +30,5 @@ disclaimer_info:
 <Page />
 
 <script setup>
-import Page from '/@/views/AndroidAppSREFACTOR: rename component folder to uppercaseREFACTOR: rename component folder to uppercasetore/Index.vue'
+import Page from '/@/views/AndroidAppStore/Index.vue'
 </script>
