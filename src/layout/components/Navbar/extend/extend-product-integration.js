@@ -1,0 +1,121 @@
+// function renderProductOffer() {
+//   //if an instance is found, do not re-render the offer
+//   if (window.Extend.buttons.instance('#extend-offer')) {
+//     return;
+//   }
+
+//   if (!document.getElementById('extend-offer')) {
+//     return;
+//   }
+
+//   const el = document.querySelector('[data-product-id]');
+//   const variant = el ? el.getAttribute('data-product-id') : null;
+//   if (variant) {
+//     var referenceId = variant;
+//     window.Extend.buttons.render(
+//       '#extend-offer',
+//       {
+//         referenceId: referenceId,
+//       },
+//       function () {
+//         const iframe = document.querySelector('#extend-offer iframe');
+//         if (!iframe) {
+//           return;
+//         }
+
+//         setTimeout(function () {
+//           const doc = iframe.contentWindow.document;
+//           doc.querySelectorAll('.btn-offer').forEach((btn) => {
+//             btn.style = 'border-radius:200px;font-size:12px';
+//           });
+//         }, 0);
+//       }
+//     );
+//   }
+// }
+
+// window.addEventListener('load', function () {
+//   renderProductOffer();
+// });
+
+function handleAddToCart(
+  productId,
+  productTitle,
+  quantity,
+  addToCart,
+  addInitial
+) {
+  //Extend - Handle AddToCart functions
+  const component = Extend.buttons.instance('#extend-offer');
+
+  /** get the users plan selection */
+  const plan = component.getPlanSelection();
+  const product = component.getActiveProduct();
+
+  if (plan) {
+    //call back to add initial product to cart, then grab Shopify variant ID for warranty and add that to cart with attributes set
+    addInitial(false);
+    ExtendShopify.getPlanVariant(plan, function (err, planVariant) {
+      var term = ExtendShopifyBuy.getTerm(plan);
+      addToCart(
+        planVariant.variantId,
+        quantity,
+        [
+          { key: 'Ref', value: productId },
+          { key: 'Product', value: productTitle },
+          { key: 'Term', value: term },
+          { key: 'Price', value: ExtendShopifyBuy.insertDecimal(plan.price) },
+          { key: 'Vendor', value: 'Extend' },
+        ],
+        true
+      );
+    });
+  } else {
+    // handle form submission
+    var offers = Extend.getOffer(productId);
+    if (offers) {
+      offers.then(function (res) {
+        var count = 0;
+        count += res.plans.adh.length || 0;
+        count += res.plans.base.length || 0;
+        count += res.plans.roadhazard.length || 0;
+        if (count > 0) {
+          Extend.modal.open({
+            referenceId: productId,
+            onClose: function (plan, product) {
+              // a user has selected a plan.  Add it to their cart.
+              if (plan && product) {
+                //call back to add initial product to cart, then grab Shopify variant ID for warranty and add that to cart with attributes set
+                addInitial(false);
+                ExtendShopify.getPlanVariant(plan, function (err, planVariant) {
+                  var term = ExtendShopifyBuy.getTerm(plan);
+                  addToCart(
+                    planVariant.variantId,
+                    quantity,
+                    [
+                      { key: 'Ref', value: productId },
+                      { key: 'Product', value: productTitle },
+                      { key: 'Term', value: term },
+                      {
+                        key: 'Price',
+                        value: ExtendShopifyBuy.insertDecimal(plan.price),
+                      },
+                      { key: 'Vendor', value: 'Extend' },
+                    ],
+                    true
+                  );
+                });
+              } else {
+                //call back to add initial product to cart
+                addInitial(true);
+              }
+            },
+          });
+        } else {
+          //call back to add initial product to cart
+          addInitial(true);
+        }
+      });
+    }
+  }
+}

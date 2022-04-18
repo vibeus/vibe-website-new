@@ -5,7 +5,7 @@ export default [ // menu
     submenu: [
       { text: 'Vibe Smartboard 55″', link: 'https://vibe.us/products/vibe-smartboard-55/' },
       { text: 'Vibe Smartboard Pro 75″', link: 'https://vibe.us/products/vibe-smartboard-pro-75/' },
-      { text: 'Vibe Software', link: 'https://vibe.us/software/' },
+      { text: 'Vibe Software', link: '/software-2/' },
       { text: 'App Integrations', link: '/android-app-store-2/' },
       { text: 'Security', link: '/security-beta/' },
       { text: 'Product Comparison', link: 'https://vibe.us/comparison/' },
@@ -48,7 +48,7 @@ export default [ // menu
       { text: 'Blogs', link: 'https://vibe.us/blog/', nofollow: true },
       { text: 'Product Videos', link: 'https://vibe.us/video-tutorial/', nofollow: true },
       { text: 'Help Center', link: 'https://knowledge.vibe.us', target: '_blank', nofollow: true },
-      { text: 'Contact Sales', link: 'https://vibe.us/contact/', nofollow: true },
+      { text: 'Contact Sales', link: '/contact-2/sales/', nofollow: true },
       { text: 'Contact Support', link: 'https://knowledge.vibe.us/kb-tickets/new', target: '_blank', nofollow: true },
       { text: 'Request a Quote', link: '/contact-2/request-a-quote/', nofollow: true },
       { text: 'Track Your Order', link: '/order-2/status/', nofollow: true },
