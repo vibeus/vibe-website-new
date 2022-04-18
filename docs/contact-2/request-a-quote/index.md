@@ -436,5 +436,5 @@ bottom_cta:
 <Page />
 
 <script setup>
-import Page from '/@/views/contact/request-a-quote/Index.vue'
+import Page from '/@/views/contact/RequestAQuote/Index.vue'
 </script>
