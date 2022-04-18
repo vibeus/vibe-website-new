@@ -1,6 +1,6 @@
 <template>
   <NavBar v-if="showNavbar">
-    <template #search>
+    <!-- <template #search>
       <slot name="navbar-search">
         <AlgoliaSearchBox
           v-if="theme.algolia"
@@ -8,7 +8,7 @@
           :multilang="isMultiLang"
         />
       </slot>
-    </template>
+    </template> -->
   </NavBar>
 
   <Blog v-if="isBlog">
@@ -45,9 +45,9 @@ import { NavBar, VFooter, Blog } from './components';
 
 const NoopComponent = () => null;
 
-const AlgoliaSearchBox = __ALGOLIA__
-  ? defineAsyncComponent(() => import('./components/AlgoliaSearchBox.vue'))
-  : NoopComponent;
+// const AlgoliaSearchBox = __ALGOLIA__
+//   ? defineAsyncComponent(() => import('./components/AlgoliaSearchBox.vue'))
+//   : NoopComponent;
 
 // generic state
 const route = useRoute();

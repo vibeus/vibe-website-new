@@ -1,7 +1,7 @@
 import { createPinia } from 'pinia';
 import DefaultTheme from "/@/layout";
-import SvgIcon from '/@/components/SvgIcon.vue';
-import LazyImg from '/@/components/LazyImg.vue';
+import SvgIcon from '/@vcomp/SvgIcon.vue';
+import LazyImg from '/@vcomp/LazyImg.vue';
 import 'virtual:svg-icons-register'; // Important
 import '/@css/vibe.sass';
 

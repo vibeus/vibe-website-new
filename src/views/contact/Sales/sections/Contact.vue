@@ -12,8 +12,8 @@
   </section>
 </template>
 <script setup>
-import VForm from '/@/components/Form.vue';
-import GetInTouch from '/@/components/GetInTouch.vue';
+import VForm from '/@vcomp/Form.vue';
+import GetInTouch from '/@vcomp/GetInTouch.vue';
 const props = defineProps({
   contactSection: {
     type: Object,

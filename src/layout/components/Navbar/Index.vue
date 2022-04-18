@@ -9,18 +9,18 @@
         <NavEndBtn />
       </div>
     </div>
-    <CartDialog v-if="isCartDialog" />
+    <CartModal v-if="showCartModal" />
     <slot name="search" />
   </nav>
 </template>
 
 <script setup>
-import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink, CartDialog } from './components';
+import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink, CartModal } from './components';
+
+/* Start Data */
 const { frontmatter: fm } = useData();
 //cart dialog
-const isCartDialog = ref(false);
-provide('isCartDialog', isCartDialog); //NavEndBtn CartDialog
-
+const showCartModal = ref(false);
 const cart = fm.value.navbar?.cart || {};
 
 const {
@@ -31,6 +31,9 @@ const {
   number_format: numberFormat = 'en-US',
 } = cart;
 const renderOffers = !!cart.render_offers;
+
+provide('showCartModal', showCartModal);
+/* End Data */
 
 function parseBoolean(value) {
   if (!value) return false;
@@ -58,7 +61,7 @@ function loadScript(src, integrity) {
   });
 }
 watchEffect(() => {
-  if (isCartDialog.value) {
+  if (showCartModal.value) {
     document.documentElement.classList.add('is-clipped');
   } else {
     document.documentElement.classList.remove('is-clipped');

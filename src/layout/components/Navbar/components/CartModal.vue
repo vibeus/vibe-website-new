@@ -1,10 +1,10 @@
-<template v-if="isCartDialog">
+<template>
   <div class="is-cart-dialog">
-    <div class="dialog-background" @click="isCartDialog = false"></div>
+    <div class="dialog-background" @click="showCartModal = false"></div>
     <div class="dialog-content">
       <div class="cart-head cart-level">
         <div class="cart-level-left">
-          <span class="icon" @click="isCartDialog = false">
+          <span class="icon" @click="showCartModal = false">
             <svg-icon icon-name="global-cart-chevron-right" />
           </span>
           <p class="cart-title">My Cart</p>
@@ -145,15 +145,20 @@
     </div>
   </div>
 </template>
+
 <script setup>
-import CartCount from '/@/components/cartCount.vue';
+import CartCount from '/@vcomp/cartCount.vue';
 import { products } from '/@/data/products';
-const isCartDialog = inject('isCartDialog');
+
+const showCartModal = inject('showCartModal');
+
 const isEmpty = ref(false);
 const isLoading = ref(false);
 const cartCount = ref({ class: 'is-medium is-rounded is-black', count: 1 });
 const productsFeatured = computed(() => products.filter((i) => i.featured));
+
 </script>
+
 <style lang="sass" scoped>
 @import '/@css/base'
 .is-cart-dialog

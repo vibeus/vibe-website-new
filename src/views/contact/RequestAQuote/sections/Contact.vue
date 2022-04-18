@@ -92,8 +92,8 @@
   </section>
 </template>
 <script setup>
-import VForm from '/@/components/Form.vue';
-import CartCount from '/@/components/cartCount.vue';
+import VForm from '/@vcomp/Form.vue';
+import CartCount from '/@vcomp/cartCount.vue';
 const props = defineProps({
   contactSection: {
     type: Object,
