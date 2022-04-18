@@ -132,6 +132,7 @@ const clearFilter = () => {
     margin-right: -0.75rem
     margin-top: -0.75rem
     li
+      box-sizing: border-box
       padding:12px
       list-style: none
     .app-item
