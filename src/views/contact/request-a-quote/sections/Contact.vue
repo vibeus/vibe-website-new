@@ -281,6 +281,7 @@ p
       border-radius: 8px
       margin-bottom: -0.5rem
       .accessory
+        box-sizing: border-box
         justify-content: center
         width: 50%
         .image
@@ -321,6 +322,7 @@ p
       flex-direction: column
       margin: 2rem -1.5rem 0
       .accessory
+        box-sizing: border-box
         justify-content: space-between
         width: 100%
         padding: 1.5rem 1rem
