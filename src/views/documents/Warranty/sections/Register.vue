@@ -20,6 +20,7 @@ const props = defineProps({
 @import "/@css/base"
 .is-register
   padding: 3rem 1.5rem 0
+  background-color: #fff
   .container
     max-width: 1100px
   .form

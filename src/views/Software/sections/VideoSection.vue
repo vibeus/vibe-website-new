@@ -26,6 +26,7 @@ const props = defineProps({
 <style lang="sass" scoped>
 @import '/@css/base'
 .is-video
+  background-color: $vibe-white
   +tablet
     padding: 120px 24px
   .video-wrap

@@ -20,6 +20,7 @@ const props = defineProps({
 .documents
   padding: 3rem 1.5rem
   font-size: 18px
+  background-color: #fff
   +mobile
     font-size:16px
 .container

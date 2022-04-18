@@ -24,6 +24,7 @@ import { category, apps55, apps75 } from '/@/data/app';
 .is-app-store
   padding-top: 16px
   padding-bottom: 64px
+  background-color: #fff
   .container
     display: block
     max-width: 1200px
