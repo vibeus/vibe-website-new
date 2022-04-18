@@ -66,6 +66,7 @@ a
         +tablet
           margin-right: 58px
         a
+          box-sizing: border-box
           font-family: $vibe-family-head
           +tablet
             padding: 1rem
