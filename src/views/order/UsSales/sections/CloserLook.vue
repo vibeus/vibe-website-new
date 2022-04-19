@@ -48,14 +48,14 @@
 </template>
 
 <script setup>
-import SectionCta from "/@vcomp/SectionCta.vue";
+import SectionCta from '/@vcomp/SectionCta.vue';
 // Import Swiper Vue.js components
-import { Swiper, SwiperSlide } from "swiper/vue";
+import { Swiper, SwiperSlide } from 'swiper/vue';
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
+import 'swiper/css';
+import 'swiper/css/pagination';
 // import required modules
-import { Pagination } from "swiper";
+import { Pagination } from 'swiper';
 const props = defineProps({
   closerLook: {
     type: Object,

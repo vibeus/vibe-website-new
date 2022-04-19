@@ -53,7 +53,7 @@
   </section>
 </template>
 <script setup>
-import SectionCta from "/@vcomp/SectionCta.vue";
+import SectionCta from '/@vcomp/SectionCta.vue';
 /* Start Data */
 const props = defineProps({
   compare: {
