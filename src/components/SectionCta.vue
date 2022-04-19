@@ -23,4 +23,7 @@ const props = defineProps({
   padding-top: 60px
   .button
     line-height: 52px
+  .is-outlined:hover 
+    color: #F4F4F4
+    background-color: #111111
 </style>
