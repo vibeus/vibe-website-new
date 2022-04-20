@@ -1,8 +1,8 @@
 <template>
   <main class="us-sales">
     <CloserLook :closerLook="fm.closer_look"  />
-    <CompareInBrief :compare="fm.compare" />
     <WhatsInBox />
+    <CompareInBrief :compare="fm.compare" />
     <Faq :faqs="faqs" />
     <Reviews :reviews="fm.reviews" />
     <BottomCta :bottomCta="fm.bottom_cta" />

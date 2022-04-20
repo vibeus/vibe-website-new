@@ -8,38 +8,46 @@ closer_look:
         
         4K touchscreen 
       content: Let your creativity flow with Vibe’s interactive whiteboard and fluid writing experience. 
-      figure: order/us-sales/order-uhd.png
+      figure: order/us-sales/order-uhd.png  
+      multiple_img: false
     - id: 2
       title: Real-time collaboration across the globe
       content: Join the fun from anywhere in the world by connecting your device to Vibe’s secure cloud-based platform.
-      figure: order/us-sales/order-device.png
-      bg_figure: /order/us-sales/grey-circle.png"
-      bg_color: '#FAFAFA'
+      figure: order/us-sales/order-device.png   
+      bg_figure: order/us-sales/grey-circle.png
+      multiple_img: false
+      bg_color: true
     - id: 3
       title: Your ultimate presentation tool
       content: Engage your audience on a new level with in-presentation annotations and transferable meeting notes.
-      figure: order/us-sales/order-meeting.png
-      bg_figure: "/order/us-sales/chat-bubble.png"
-      bg_color: '#FAFAFA'
+      figure: order/us-sales/order-meeting.png 
+      bg_figure: order/us-sales/chat-bubble.png
+      multiple_img: false
+      bg_color: true
     - id: 4
       title: Enhanced communication 
       content: Supplement your existing video conferencing meetings with enhanced remote whiteboarding capabilities.
       figure: order/us-sales/order-monitor.png
       figure_mobile: order/us-sales/order-monitor-mobile.png
+      multiple_img: false
     - id: 5
       title: Open ecosystem
-      content: Vibe supports however you work with a robust ecosystem, from Microsoft to Google and beyond.  
+      content: Vibe supports however you work with a robust ecosystem, from Microsoft to Google and beyond.   
       figure: order/us-sales/order-eco.png   
+      multiple_img: false
     - id: 6
       title: Easily shareable
       content: Exporting files and ideas is a breeze with Vibe’s supported cloud drives, and pick up right where you left off.
       figure: order/us-sales/order-share.png
-      bg_color: '#FAFAFA'
+      multiple_img: false
+      bg_color: true
     - id: 7
       title: Upscale your office
       content: Transform your office into a flexible space with Vibe's portable base.
+      figure: order/us-sales/order-vibe-55.png
       left_figure: order/us-sales/order-vibe-stand.png
-      right_figure: order/us-sales/order-vibe-55.png
+      multiple_img: true
+      bg_color: true
   cta:
     buttons: 
      - title: Learn More
@@ -67,32 +75,32 @@ compare:
       features: [1, 1, 1, 1, 1, 1]
       price: '$2,999'
       campaign_price: '$2,699'
-      icon: 'img/common/compare/brand-vibe.png'
+      icon: 'compare/brand-vibe.png'
     - name: 'Microsoft Surface Hub 2S 50″'
       features: [1, 1, 1, 1, 1, 0]
       price: '$8,999'
-      icon: 'img/common/compare/brand-surfacehub.png'
+      icon: 'compare/brand-surfacehub.png'
       hide_icon: true
     - name: 'Google Jamboard 55″'
       features: [1, 1, 1, 1, 0, 0]
       price: '$4,999'
-      icon: 'img/common/compare/brand-jamboard.png'
+      icon: 'compare/brand-jamboard.png'
       hide_icon: true
     - name: 'Samsung Flip 55″'
       features: [1, 0, 0, 1, 0, 0]
       price: '$2,699'
-      icon: 'img/common/compare/brand-flip.png'
+      icon: 'compare/brand-flip.png'
       hide_icon: true
     - name: 'Cisco Webex 55″'
       features: [1, 1, 0, 0, 0, 0]
       price: '$4,990'
-      icon: 'img/common/compare/brand-webex.png'
+      icon: 'compare/brand-webex.png'
       hide_icon: true
       hideMobile: true
     - name: 'SMART 6000 Series 65″'
       features: [1, 1, 1, 1, 0, 0]
       price: '$4,999'
-      icon: 'img/common/compare/brand-smart.png'
+      icon: 'compare/brand-smart.png'
       hide_icon: true
       hideMobile: true
   
