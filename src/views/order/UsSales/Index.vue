@@ -1,6 +1,6 @@
 <template>
   <main class="us-sales">
-    <CloserLook :closerLook="fm.closer_look"  />
+    <CloserLook :closerLook="fm.closer_look" />
     <WhatsInBox />
     <CompareInBrief :compare="fm.compare" />
     <Faq :faqs="faqs" />
@@ -10,10 +10,7 @@
 </template>
 
 <script setup>
-import CloserLook from './sections/CloserLook.vue';
-import CompareInBrief from './sections/CompareInBrief.vue';
-import WhatsInBox from './sections/WhatsInBox.vue';
-import Reviews from './sections/Reviews.vue';
+import { CloserLook, CompareInBrief, WhatsInBox, Reviews } from './sections';
 import BottomCta from '/@vcomp/BottomCta.vue';
 import Faq from '/@vcomp/faq/Index.vue';
 const { frontmatter: fm } = useData();
