@@ -283,7 +283,6 @@ const isBgFigure = (item) => {
       max-width: 250px
       position: absolute
       width: 60%
-      height: 65%
       top: 0
       right: 0
   &.item-2
@@ -336,7 +335,6 @@ const isBgFigure = (item) => {
       max-width: 300px
       position: absolute
       width: 54%
-      height: 65%
       top: 4%
       right: 4%
   &.item-5

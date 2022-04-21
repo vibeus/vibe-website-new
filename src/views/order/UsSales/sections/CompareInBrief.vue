@@ -10,7 +10,7 @@
                 <p>Brands</p>
                 <p>55″</p>
               </th>
-              <td v-for="brand in compare.brands" :key="brand.name">
+              <td v-for="brand in compare.brands" :key="brand.name" :class="{'is-hidden-mobile': brand.hideMobile}">
                 <lazy-img
                   v-if="!brand.hide_icon"
                   class="image"
@@ -24,7 +24,7 @@
           <tbody>
             <tr v-for="(brand, brandIndex) in compare.brands" :key="brand.name">
               <td>{{ compare.features[brandIndex] }}</td>
-              <td v-for="check,checkIndex in brand.features" :key="check">
+              <td v-for="(check, checkIndex) in brand.features" :key="check" :class="{'is-hidden-mobile': compare.brands[checkIndex].hideMobile}">
                 <div class="feature-checkmark">
                   <svg
                     v-if="compare.brands[checkIndex].features[brandIndex]"
@@ -43,7 +43,7 @@
           <tfoot>
             <tr>
               <th>Price</th>
-              <td v-for="brand in compare.brands" :key="brand.name">
+              <td v-for="brand in compare.brands" :key="brand.name" :class="{'is-hidden-mobile': brand.hideMobile}">
                 <p :class="{ 'campaign-price': !brand.campaign_price }">
                   {{ brand.campaign_price ? brand.campaign_price : brand.price }}
                 </p>
@@ -78,6 +78,9 @@ const props = defineProps({
   .container
     flex-direction: column
     max-width: 978px
+    +mobile
+      max-width: unset
+      width: unset
   .title
     font-size: 48px
     text-align: center
@@ -103,7 +106,7 @@ const props = defineProps({
         width: 100px
         margin: auto
         +mobile
-          width: 60px
+          width: 100%
     td:not([align]),th:not([align])
       text-align: left
     td:first-child, th:first-child

@@ -83,10 +83,11 @@ const currentPage = ref(1);
 const review = ref(null);
 /* End Data */
 watch(currentPage, () => {
-  review.value.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  scrollToTop();
 });
 const changePage = (index) => {
   currentPage.value = index + 1;
+  scrollToTop();
 };
 const prePage = () => {
   currentPage.value--;
@@ -94,18 +95,24 @@ const prePage = () => {
 const nextPage = () => {
   currentPage.value++;
 };
+const scrollToTop = () => {
+  review.value.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
 </script>
 
 <style lang="sass" scoped>
 @import '/@css/base'
 .is-reviews
-  padding-top: 120px
-  padding-bottom: 90px
+  padding:120px 24px 90px
   font-family: $vibe-family-body
   line-height:1.5
   background-color: #fff
+  +mobile
+    padding-top: 60px
+    padding-bottom: 48px
   .container
     display: block
+    max-width: 1120px
     .title.is-section-title
       font-size: 24px
       margin-bottom: 24px
