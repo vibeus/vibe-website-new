@@ -9,7 +9,7 @@ export default [ // menu
       { text: 'App Integrations', link: '/android-app-store-2/' },
       { text: 'Security', link: '/security-beta/' },
       { text: 'Product Comparison', link: 'https://vibe.us/comparison/' },
-      { text: 'Customer Testimonials', link: 'https://vibe.us/customer/' },
+      { text: 'Customer Testimonials', link: '/customer-2/' },
     ]
   },
   {

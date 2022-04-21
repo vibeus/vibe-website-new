@@ -31,7 +31,7 @@ export default {
         },
         {
           "title": "Customer Testimonials",
-          "url": "https://vibe.us/customer/"
+          "url": "/customer-2/"
         },
         {
           "title": "Vibe Demo",
