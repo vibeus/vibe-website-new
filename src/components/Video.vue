@@ -1,5 +1,5 @@
 <template>
-  <div class="video-player" id="video-player">
+  <div class="c" id="video-player">
     <lazy-img
       class="image"
       :src="video.placeholder"
@@ -92,7 +92,7 @@ const videoPlay = () => {
 </script>
 <style lang="sass" scoped>
 @import '@css/base'
-.video-section
+.video-player
   cursor: pointer
   max-width: 628px
   flex-basis: 0

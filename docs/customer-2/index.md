@@ -14,6 +14,23 @@ hero:
 
 trust:
   title: The digital whiteboard trusted by 500+ companies all over the world.
+  figure:
+    - name: duke
+      url: customer-logo/logo-duke.png
+    - name: maryland
+      url:  customer-logo/logo-maryland.png
+    - name: redapt
+      url:  customer-logo/logo-redapt.png
+    - name: camino
+      url:  customer-logo/logo-camino.png
+    - name: capgemini
+      url:  customer-logo/logo-capgemini.png
+    - name: digipen
+      url:  customer-logo/logo-digipen.png
+    - name: igg
+      url:  customer-logo/logo-igg.png
+    - name: kenmore
+      url:  customer-logo/logo-kenmore.png
 
 testimonials:
   - item: &id09
@@ -22,6 +39,7 @@ testimonials:
       content: Founder of Essential Tenniscon
       content_for_mobile: Founder of Essential Tenniscon
       blog_testimonial: Investing in a Vibe board is worthwhile.
+      blog_url: https://vibe.us/pdf/vibe-supercharged-tennis-coach-business/
       figure:
         mobile_url: customer-story/mobile-img9.png
         tablet_url: customer-story/img9.png
@@ -37,6 +55,7 @@ testimonials:
       content: Smith Bros. & Wilson, Ltd.
       content_for_mobile: Smith Bros. & Wilson, Ltd.
       blog_testimonial: The Vibe board makes sure everyone's on the same page.
+      blog_url: https://vibe.us/pdf/vibe-helps-modernize-construction-project-management/
       figure:
         mobile_url: customer-story/mobile-img10.png
         tablet_url: customer-story/img10.png
@@ -52,6 +71,7 @@ testimonials:
       content: Endless Events
       content_for_mobile: Endless Events
       blog_testimonial: To enhance collaboration, you gotta get Vibe.
+      blog_url: https://vibe.us/pdf/how-a-vibe-smartboard-elevated-this-hybrid-event-company/
       figure:
         mobile_url: customer-story/mobile-img11.png
         tablet_url: customer-story/img11.png
@@ -67,6 +87,7 @@ testimonials:
       content: director of innovation at Fluxspace
       content_for_mobile: Fluxspace
       blog_testimonial: I’m most excited about having Vibe be used around the whole learning environment.
+      blog_url: https://vibe.us/pdf/learning-consultant-builds-spaces-with-vibe/
       figure:
         mobile_url: customer-story/mobile-img12.png
         tablet_url: customer-story/img12.png
@@ -82,6 +103,7 @@ testimonials:
         content: CEO, 730 Eddy Studios
         content_for_mobile: 730 Eddy Studios
         blog_testimonial: Vibe is the combination of remote, on-site, digital spaces and cool tech, that allow our distributed teams on the same page
+        blog_url: https://vibe.us/pdf/pdf/learning-consultant-builds-spaces-with-vibe/
         figure:
           mobile_url: customer-story/mobile-img13.png
           tablet_url: customer-story/img13.png
@@ -379,5 +401,5 @@ bottom_cta:
 <Page />
 
 <script setup>
-import Page from '/@/views/Customer/Index.vue'
+import Page from '@/views/Customer/Index.vue'
 </script>

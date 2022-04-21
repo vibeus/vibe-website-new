@@ -23,7 +23,13 @@ const props = defineProps({
 const showVideoModal = inject('showVideoModal');
 let videoPlayer = null;
 const loadingPlayer = ref(false);
-
+watchEffect(() => {
+  if (showVideoModal.value) {
+    document.documentElement.classList.add('is-clipped');
+  } else {
+    document.documentElement.classList.remove('is-clipped');
+  }
+});
 onMounted(() => {
   videoPlay();
 });
@@ -95,7 +101,7 @@ const videoPlay = () => {
 };
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .video-popup-player
   display: flex
   align-items: center

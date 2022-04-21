@@ -1,118 +1,83 @@
 <template>
-  <section class="section is-customer-story-section">
+  <section class="section is-testimonial">
     <div class="container">
-      <swiper
-        :speed="1000"
-        :slidesPerView="1"
-        :spaceBetween="30"
-        :loop="true"
-        :pagination="{
-          clickable: true,
-        }"
-        :modules="[Autoplay, Pagination]"
-        class="swiper"
-      >
-        <swiper-slide
-          v-for="testimonial in testimonials"
-          :key="testimonial.item.name"
-          class="testimonial"
-        >
-          <div class="video-content">
-            <lazy-img
-              class="image is-hidden-mobile"
-              :src="testimonial.item.figure.tablet_url"
-              @click="playVideo(testimonial.item.video.id)"
-            />
-            <lazy-img
-              class="image is-hidden-tablet"
-              :src="testimonial.item.figure.mobile_url"
-              @click="playVideo(testimonial.item.video.id)"
-            />
+      <div class="testimonial">
+        <div class="content">
+          <svg-icon class="quote-mark is-left" icon-name="testimonials-quote-white" />
+          The Vibe board has been a game changer in how we communicate with clients, both
+          in-person and virtually.
+          <svg-icon class="quote-mark is-right" icon-name="testimonials-quote-white" />
+        </div>
+        <div class="author">
+          <div class="name-warp">
+            <p class="name">Karen L. Brady</p>
+            <p>Estate Planning Attorney, Arvada, Colorado</p>
           </div>
-          <div class="blog-content">
-            <div class="is-blog-testimonial">
-              <svg-icon class="quote-mark is-left" icon-name="testimonials-quote" />
-              {{ testimonial.item.blog_testimonial }}
-              <svg-icon class="quote-mark is-right" icon-name="testimonials-quote" />
-            </div>
-          </div>
-        </swiper-slide>
-      </swiper>
+        </div>
+      </div>
     </div>
-    <VideoPopup v-if="showVideoModal" :videoId="videoId" />
   </section>
 </template>
 <script setup>
-//  :autoplay="{
-//         delay: 3000,
-//         disableOnInteraction: false,
-//       }"
-import VideoPopup from "/@vcomp/VideoPopup.vue";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Autoplay, Pagination } from "swiper";
-import { useAppStore } from "/@/store/app";
 const props = defineProps({
-  testimonials: {
+  testimonialSection: {
     type: Object,
     required: true,
   },
 });
-console.log("testimonials: ", props.testimonials);
-const showVideoModal = ref(false);
-const videoId = ref(undefined);
-provide("showVideoModal", showVideoModal);
-
-const playVideo = (_videoId) => {
-  videoId.value = _videoId;
-  showVideoModal.value = true;
-};
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
-.container
-  width: calc(1100px + 2 * 0.75rem)
-  max-width: 1440px
-.swiper
-  height: 420px
-  .testimonial
-    display: flex
-    
-.video-content
-  cursor: pointer
-  .image
-    +widescreen
-      width: 756px
-      height: 470px
-.blog-content
-  background-color: #fff
-  cursor: pointer
-  +widescreen
-    width: 352px
-    height: 470px
-    padding: 50px 36px 32px 39px
-  .is-blog-testimonial
-    position: relative
-    font-family: $vibe-family-head
-    padding: 40px 0
-    font-weight: $vibe-bold
-    .quote-mark
-      position: absolute
-      width: 24px
-      &.is-left
-        left: 0
-        top: 0
-      &.is-right
-        right: 0
-        bottom: 0
-
-
-:deep(.swiper-pagination-bullet)
-  margin:0 7px
-  text-align: center
-
-:deep(.swiper-pagination-bullet-active)
-    background-color: $vibe-black
-    opacity: .7
+@import '@css/base'
+.is-testimonial
+  background-color: $vibe-yellow
+  padding: 100px 24px
+  +mobile
+     padding: 45px 24px 75px
+  .container
+    max-width: 1110px
+    .content
+      position: relative
+      padding: 32px 0
+      font-family: $vibe-family-head
+      font-weight: $vibe-bold
+      font-size: 20px
+      +tablet
+        padding: 40px 80px 60px 120px
+        font-size: 35px
+      .quote-mark
+        position: absolute
+        width: 62px
+        height: 62px
+        +mobile
+          width:30px
+          height:30px
+        &.is-left
+          left: 0
+          top: 0
+        &.is-right
+          right: 0
+          bottom: 0
+    .author
+      display: flex
+      margin-top: 46px
+      +tablet
+        justify-content: center
+      .name-warp
+        font-family: $vibe-family-head
+        +tablet
+          text-align: center
+        +mobile
+          flex-direction: column-reverse  
+        .logo
+          height: 64px
+          margin-right: 55px
+          +mobile
+            width: 120px
+            height: 36px
+            margin-top: 32px
+          img
+            height: 100%
+        .name
+          margin-bottom: 8px
+          font-weight: $vibe-bold
 </style>
