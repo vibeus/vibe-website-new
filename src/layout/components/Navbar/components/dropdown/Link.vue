@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import { useNavLink } from '/@/composables/navLink';
+import { useNavLink } from '@/composables/navLink';
 
 const props = defineProps({
   menu: {

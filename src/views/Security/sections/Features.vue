@@ -28,7 +28,7 @@ const { title, featuresItem = [] } = fm._value.features;
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .features
   background-color: #fff
   padding: 120px 24px

@@ -60,7 +60,7 @@
   </section>
 </template>
 <script setup>
-import SectionCta from '/@vcomp/SectionCta.vue';
+import SectionCta from '@vcomp/SectionCta.vue';
 /* Start Data */
 const props = defineProps({
   compare: {
@@ -70,7 +70,7 @@ const props = defineProps({
 });
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .is-compare
   padding-top: 120px
   padding-bottom: 120px

@@ -31,7 +31,7 @@
 <script setup>
 import { createPinia } from 'pinia';
 import { isSideBarEmpty, getSideBarConfig } from './support/sideBar';
-import { useAppStore } from '/@/store/app';
+import { useAppStore } from '@/store/app';
 const { changeDevice } = useAppStore();
 onMounted(() => changeDevice());
 
@@ -53,7 +53,7 @@ const route = useRoute();
 const { site, page, theme, frontmatter: fm } = useData();
 
 // TODO: err router Maximum call stack size exceeded
-// CustomLayout = import('/@/views/' + fm.value.layout + '/Index.vue');
+// CustomLayout = import('@/views/' + fm.value.layout + '/Index.vue');
 // ? 
 // : defineAsyncComponent(() => import('../pageWebsite/' + fm.value.layout + '/Index.vue'));
 

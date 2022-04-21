@@ -30,5 +30,5 @@ disclaimer_info:
 <Page />
 
 <script setup>
-import Page from '/@/views/AndroidAppStore/Index.vue'
+import Page from '@/views/AndroidAppStore/Index.vue'
 </script>

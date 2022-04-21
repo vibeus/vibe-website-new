@@ -35,7 +35,7 @@
 </template>
 
 <script setup>
-import { validEmail } from '/@/utils/validate';
+import { validEmail } from '@/utils/validate';
 
 const props = defineProps({
   formData: {
@@ -120,7 +120,7 @@ onMounted(() => {
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .form
   input::-webkit-outer-spin-button, input::-webkit-inner-spin-button
     -webkit-appearance: none

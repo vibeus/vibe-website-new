@@ -1,5 +1,5 @@
 import { computed } from 'vue';
-import { useActiveSidebarLinks } from '/@/composables/activeSidebarLink';
+import { useActiveSidebarLinks } from '@/composables/activeSidebarLink';
 import { getSideBarConfig } from '../layout/support/sideBar';
 export function useSideBar() {
   const route = useRoute();

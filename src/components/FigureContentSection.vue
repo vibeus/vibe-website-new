@@ -60,7 +60,7 @@ const props = defineProps({
 </script>
 
 <style lang="sass">
-@import '/@css/base'
+@import '@css/base'
 .section.is-figure-content-section
   padding: 100px 24px
   background-color: $vibe-white

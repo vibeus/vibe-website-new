@@ -22,7 +22,7 @@
   </section>
 </template>
 <script setup>
-import heroVideo from '/@/assets/video/software/hero-preview.mp4';
+import heroVideo from '@/assets/video/software/hero-preview.mp4';
 const isPlay = ref(false);
 let videoPlayer = null;
 const loadingPlayer = ref(false);
@@ -94,7 +94,7 @@ const videoPlay = () => {
 };
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .is-hero-video
   padding-top: 64px
   padding-bottom: 64px

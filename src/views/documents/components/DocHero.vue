@@ -29,7 +29,7 @@ const props = defineProps({
 });
 </script>
 <style lang="sass" scoped>
-@import "/@css/base"
+@import "@css/base"
 .doc-hero
   position: relative
   background-color: $vibe-teal

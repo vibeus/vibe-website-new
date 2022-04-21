@@ -23,7 +23,7 @@ const props = defineProps({
 });
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .security
   position: relative
   padding: 120px 24px 48px

@@ -16,11 +16,11 @@
 import Disclaimer from './Disclaimer.vue';
 import SideBar from './SideBar.vue';
 import App from './App.vue';
-import { category, apps55, apps75 } from '/@/data/app';
+import { category, apps55, apps75 } from '@/data/app';
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .is-app-store
   padding-top: 16px
   padding-bottom: 64px

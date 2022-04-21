@@ -10,7 +10,7 @@
 import ContactHero from '../components/ContactHero.vue';
 import Contact from './sections/Contact.vue';
 console.log('Contact: ', Contact);
-import BottomCta from '/@vcomp/BottomCta.vue';
+import BottomCta from '@vcomp/BottomCta.vue';
 
 /* Start Data */
 const { frontmatter: fm } = useData();

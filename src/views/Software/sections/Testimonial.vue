@@ -61,7 +61,7 @@ const props = defineProps({
 });
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .is-testimonial
   background-color: #fff
   padding: 120px 24px 70px

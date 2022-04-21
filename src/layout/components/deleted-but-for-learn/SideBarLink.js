@@ -1,5 +1,5 @@
 import { h } from 'vue';
-import { joinUrl, isActive } from '/@/utils/layout';
+import { joinUrl, isActive } from '@/utils/layout';
 export const SideBarLink = (props) => {
   const route = useRoute();
   const { site, frontmatter } = useData();

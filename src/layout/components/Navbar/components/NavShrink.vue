@@ -27,7 +27,7 @@ const toggleMenuActive = () => {
 };
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .nav-shrink.buttons
   display: none
   .nav-btn

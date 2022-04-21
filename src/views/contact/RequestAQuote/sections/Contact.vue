@@ -92,8 +92,8 @@
   </section>
 </template>
 <script setup>
-import VForm from '/@vcomp/Form.vue';
-import CartCount from '/@vcomp/cartCount.vue';
+import VForm from '@vcomp/Form.vue';
+import CartCount from '@vcomp/cartCount.vue';
 const props = defineProps({
   contactSection: {
     type: Object,
@@ -104,7 +104,7 @@ console.log('contactSection: ', props.contactSection);
 const cartCount = ref({ class: 'is-medium is-rounded is-gray', count: 0 });
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 *
   margin: 0
   padding: 0

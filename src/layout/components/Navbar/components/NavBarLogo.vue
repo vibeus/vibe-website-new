@@ -18,7 +18,7 @@ const { site, theme, localePath } = useData();
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .nav-bar-logo
   margin-right: 16px
   padding: 0.5rem 0.75rem

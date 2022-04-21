@@ -101,7 +101,7 @@ const scrollToTop = () => {
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .is-reviews
   padding:120px 24px 90px
   font-family: $vibe-family-body

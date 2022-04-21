@@ -807,5 +807,5 @@ bottom_cta:
 <Page />
 
 <script setup>
-import Page from '/@/views/order/UsSales/Index.vue'
+import Page from '@/views/order/UsSales/Index.vue'
 </script>

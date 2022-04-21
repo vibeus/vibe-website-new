@@ -1,5 +1,5 @@
 import { computed } from 'vue';
-import { isExternal as isExternalCheck } from '/@/utils/layout';
+import { isExternal as isExternalCheck } from '@/utils/layout';
 export function useNavLink(item) {
   const route = useRoute();
   const isExternal = isExternalCheck(item.value.link);

@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { imageModule } from '/@/utils/global';
+import { imageModule } from '@/utils/global';
 const props = defineProps({
   src: {
     type: String,

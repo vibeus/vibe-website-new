@@ -34,7 +34,7 @@ const props = defineProps({
 });
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .collaboration
   padding: 120px 24px 100px
   background-color: $vibe-yellow
