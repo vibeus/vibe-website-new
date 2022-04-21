@@ -12,7 +12,7 @@ const { frontmatter: fm } = useData();
 
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
 @import '/@css/base'
 
 .section.is-feature-columns
@@ -24,7 +24,7 @@ const { frontmatter: fm } = useData();
     padding: 1.25rem
   .is-feature
     border-radius: 20px
-    height: 551px
+    height: 391px
     .title, .body
       margin-left: auto
       margin-right: auto
@@ -51,7 +51,7 @@ const { frontmatter: fm } = useData();
     +tablet
       +until-widescreen
         padding: 40px 40px
-        height: 460px
+        height: 380px
         &:hover
           margin: -0.75rem
           margin-top: -1.5rem

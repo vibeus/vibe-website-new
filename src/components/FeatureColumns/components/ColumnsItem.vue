@@ -6,27 +6,18 @@
       :href="itemContent.url"
       :target="itemContent.target"
     >
-      <!-- is-feature-{{ $idx }} -->
       <div class="is-feature"
           :style="{ 'background-color': itemContent.background_color }"
       >
         <div>
           <figure class="image">
-            <!-- {{ $bgColor := "#f4f4f4" }}
-            {{ if .background_color }}
-            {{ $bgColor = .background_color }}
-            {{ else if $.card_background_color }}
-            {{ $bgColor = $.card_background_color }}
-            {{ end }}
-            {{ partial "common/srcset" (dict "resource" (resources.Get .figure) "desktop" "540x" "mobile" "420x" "options" "png ") }} -->
             <lazy-img :src="itemContent.figure"></lazy-img>
           </figure>
           <h2 class="title">
             <md-format :content="itemContent.title"/>
           </h2>
-          <div class="body"
+          <div class="content"
                :class="{ 'is-hidden-mobile': itemContent.body_mobile }">
-               <!-- <MdFormat :content="itemContent.body"/> -->
                {{ itemContent.body }}
           </div>
           <div v-if="itemContent.body_mobile" class="body is-hidden-tablet">
@@ -37,7 +28,6 @@
           <span class="button"
                 :class="itemContent.cta.class"
           >
-            <!-- <MdFormat :content="itemContent.cta.title"/> -->
             {{ itemContent.cta.title }}
           </span>
         </div>
@@ -93,7 +83,7 @@ const props = defineProps({
         font-size: 22px
       +mobile
         font-size: 20px
-    .body
+    .content
       margin: auto
       max-width: 340px
       text-align: center
@@ -104,4 +94,7 @@ const props = defineProps({
         font-size: 16px
     .cta
       font-weight: $vibe-bold
+      .button
+        display: inline-block
+        text-align: center
 </style>

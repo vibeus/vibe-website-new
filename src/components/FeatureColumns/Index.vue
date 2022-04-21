@@ -58,4 +58,7 @@ const props = defineProps({
       margin-top: 16px
       +mobile
         font-size: 16px
+  .columns
+    +mobile
+      flex-direction: column
 </style>
