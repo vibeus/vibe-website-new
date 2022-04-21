@@ -1,10 +1,10 @@
 import { createPinia } from 'pinia';
-import DefaultTheme from "/@/layout";
-import SvgIcon from '/@vcomp/SvgIcon.vue';
-import LazyImg from '/@vcomp/LazyImg.vue';
-import MdFormat from '/@vcomp/MdFormat.vue';
+import DefaultTheme from "@/layout";
+import SvgIcon from '@vcomp/SvgIcon.vue';
+import LazyImg from '@vcomp/LazyImg.vue';
+import MdFormat from '@vcomp/MdFormat.vue';
 import 'virtual:svg-icons-register'; // Important
-import '/@css/vibe.sass';
+import '@css/vibe.sass';
 
 
 

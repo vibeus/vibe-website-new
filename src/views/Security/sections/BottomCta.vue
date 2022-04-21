@@ -23,7 +23,7 @@ const { title, body, cta } = fm._value.bottom_cta;
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .section.is-bottom-cta
   padding: 120px 24px
   text-align: center

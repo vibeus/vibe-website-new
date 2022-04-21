@@ -13,7 +13,7 @@
 
 <script setup>
 import { Hero, TrustIndustry, Features, Specs, BottomCta} from './sections';
-import FigureContentSection from '/@vcomp/FigureContentSection.vue';
+import FigureContentSection from '@vcomp/FigureContentSection.vue';
 
 const { frontmatter: fm } = useData();
 const privacy = fm._value.privacy;

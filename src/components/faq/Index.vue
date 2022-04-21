@@ -65,7 +65,7 @@ const handleOpenItem = () => {
 </script>
 
 <style lang="sass">
-@import '/@css/base'
+@import '@css/base'
 .section.is-three-faqs
   padding: 104px 24px
   background-color: $vibe-white

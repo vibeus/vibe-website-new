@@ -33,7 +33,7 @@ const { title, body, cta, texts } = fm._value.specs;
 </script>
 
 <style lang="sass" scoped>
-@import "/@css/base"
+@import "@css/base"
 .section.specs
   padding: 120px 24px
   background-color: $vibe-black

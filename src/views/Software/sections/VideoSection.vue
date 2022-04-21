@@ -15,7 +15,7 @@
   </section>
 </template>
 <script setup>
-import Video from '/@vcomp/Video.vue';
+import Video from '@vcomp/Video.vue';
 const props = defineProps({
   video: {
     type: Object,
@@ -24,7 +24,7 @@ const props = defineProps({
 });
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .is-video
   background-color: $vibe-white
   +tablet

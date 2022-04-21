@@ -1,5 +1,5 @@
 import { computed } from 'vue';
-import { isArray, ensureStartingSlash, removeExtention } from '/@/utils/layout';
+import { isArray, ensureStartingSlash, removeExtention } from '@/utils/layout';
 import { getSideBarConfig, getFlatSideBarLinks } from '../layout/support/sideBar';
 export function useNextAndPrevLinks() {
   const { page, theme } = useData();

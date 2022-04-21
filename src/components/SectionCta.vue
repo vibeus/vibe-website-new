@@ -18,7 +18,7 @@ const props = defineProps({
 </script>
 
 <style lang="sass">
-@import '/@css/base'
+@import '@css/base'
 .cta.is-section
   text-align: center
   padding-top: 60px

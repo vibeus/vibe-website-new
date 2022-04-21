@@ -8,13 +8,13 @@
 </template>
 
 <script setup>
-import Customer from '/@vcomp/Customer.vue';
+import Customer from '@vcomp/Customer.vue';
 const { frontmatter: fm } = useData();
 const { title, customers = [] } = fm._value.trust;
 
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .is-trusted-inductry
   padding: 120px 103px
   background-color: $vibe-white

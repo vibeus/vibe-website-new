@@ -19,7 +19,7 @@ const showCartModal = inject('showCartModal');
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .nav-end-btn
    display: flex
    align-items: center

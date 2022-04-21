@@ -27,7 +27,7 @@ const props = defineProps({
 });
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .overall
   padding: 76px 24px 120px
   text-align: center

@@ -87,7 +87,7 @@ function loadSidebar() {
         .then(() => {
           Extend.config({ storeId: '91426846-4d2c-482d-a9e9-1031f0ffb6b0' });
           console.log('Extend: ', Extend);
-          // return import('/@js/nav-cart-sidebar.js');
+          // return import('@js/nav-cart-sidebar.js');
         })
         .then(resolve)
         .catch(reject);
@@ -112,13 +112,13 @@ document.querySelectorAll('.button.is-nav-cart').forEach((el) => {
 
 // Delay load sidebar after page load. If user clicks cart within the timeout period, this will be a no-op.
 onMounted(() => {
-  import('/@js/nav');
+  import('@js/nav');
   // setTimeout(loadSidebar, 500);
 });
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .navbar
   position: relative
   background-color: $vibe-white

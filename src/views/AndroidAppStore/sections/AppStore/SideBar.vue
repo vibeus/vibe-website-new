@@ -21,7 +21,7 @@
   </div>
 </template>
 <script setup>
-import { category, apps55, apps75 } from '/@/data/app';
+import { category, apps55, apps75 } from '@/data/app';
 
 // const currentTab = inject('currentTab');
 // const apps55Filter = inject('apps55Filter');
@@ -35,7 +35,7 @@ const chooseCate = inject('chooseCate');
 
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 a
   text-decoration: none
 .is-side-bar

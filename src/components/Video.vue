@@ -91,7 +91,7 @@ const videoPlay = () => {
 };
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .video-section
   cursor: pointer
   max-width: 628px

@@ -17,7 +17,7 @@ import {
   Hero, HeroVideo, Overall, Collaboration, Presentation,
   Security, Testimonial, VideoSection
 } from './sections';
-import BottomCta from '/@vcomp/BottomCta.vue';
+import BottomCta from '@vcomp/BottomCta.vue';
 const { frontmatter: fm } = useData();
 </script>
 <style lang="sass" scoped>

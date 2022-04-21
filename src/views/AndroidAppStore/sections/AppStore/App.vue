@@ -83,7 +83,7 @@
   </div>
 </template>
 <script setup>
-import { category, apps55, apps75 } from '/@/data/app';
+import { category, apps55, apps75 } from '@/data/app';
 import SearchBox from './SearchBox.vue';
 import BottomCta from './BottomCta.vue';
 
@@ -108,7 +108,7 @@ const clearFilter = () => {
 };
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .is-app-root
   color: $vibe-black
   max-width: 868px
