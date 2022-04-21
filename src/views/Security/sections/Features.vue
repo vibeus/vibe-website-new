@@ -13,7 +13,6 @@
             </figure>
             <div class="content">
               <h2 class="title" v-html="item.title"></h2>
-              <!-- Markdown issue: bold text not showing -->
               <p v-html="item.body"></p>
             </div>
           </div>

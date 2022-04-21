@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import Customer from '../../../components/Customer.vue';
+import Customer from '/@vcomp/Customer.vue';
 const { frontmatter: fm } = useData();
 const { title, customers = [] } = fm._value.trust;
 

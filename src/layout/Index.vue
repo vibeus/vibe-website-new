@@ -33,7 +33,6 @@ import { createPinia } from 'pinia';
 import { isSideBarEmpty, getSideBarConfig } from './support/sideBar';
 import { useAppStore } from '/@/store/app';
 const { changeDevice } = useAppStore();
-
 onMounted(() => changeDevice());
 
 window.addEventListener('resize', function() {

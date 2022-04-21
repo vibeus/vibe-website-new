@@ -115,7 +115,7 @@ const props = defineProps({
   height: 420px
 
 :deep(.swiper-pagination-bullet)
-  margin:0 7px !important
+  margin:0 7px 
   text-align: center
 
 :deep(.swiper-pagination-bullet-active)

@@ -6,6 +6,8 @@ import MdFormat from '/@vcomp/MdFormat.vue';
 import 'virtual:svg-icons-register'; // Important
 import '/@css/vibe.sass';
 
+
+
 export default {
   ...DefaultTheme,
   enhanceApp({ app, router, siteData }) {
@@ -15,7 +17,6 @@ export default {
     app.component('svg-icon', SvgIcon);
     app.component('lazy-img', LazyImg);
     app.component('md-format', MdFormat);
-
     // register website and lp page components
 
     // app is the Vue 3 app instance from createApp()
