@@ -147,7 +147,7 @@
 </template>
 
 <script setup>
-import CartCount from '@vcomp/cartCount.vue';
+import CartCount from '@vcomp/CartCount.vue';
 import { products } from '@/data/products';
 
 const showCartModal = inject('showCartModal');
