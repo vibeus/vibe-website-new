@@ -77,14 +77,16 @@ const playVideo = (_videoId) => {
 </script>
 <style lang="sass" scoped>
 @import '@css/base'
+.is-customer-story-section
+  padding-top: 0
+  padding-bottom: 0
+  background-image: linear-gradient(180deg,#F4F4F4 33%,#fff 0,#fff 100px)
 .container
   width: calc(1100px + 2 * 0.75rem)
   max-width: 1440px
 .swiper
-  height: 600px
-  .testimonial
-    display: flex
-
+  height: 535px
+  margin: 0 auto
 .video-content
   cursor: pointer
   .image
@@ -102,6 +104,7 @@ const playVideo = (_videoId) => {
   background-color: #fff
   cursor: pointer
   box-sizing: border-box
+  box-shadow: 4px 3px 8px rgb(0 0 0 / 10%)
   +tablet
     height: 383px
     width: 287px
@@ -151,9 +154,10 @@ const playVideo = (_videoId) => {
   .content-for-mobile
     color: black
     font-weight: 400
-
+:deep(.swiper-slide )
+  display: flex
 :deep(.swiper-pagination-bullet)
-  margin:0 7px
+  margin:0 7px !important
   text-align: center
 
 :deep(.swiper-pagination-bullet-active)

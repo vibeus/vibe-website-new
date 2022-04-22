@@ -18,14 +18,7 @@
     </div>
   </section>
 </template>
-<script setup>
-const props = defineProps({
-  testimonialSection: {
-    type: Object,
-    required: true,
-  },
-});
-</script>
+
 <style lang="sass" scoped>
 @import '@css/base'
 .is-testimonial

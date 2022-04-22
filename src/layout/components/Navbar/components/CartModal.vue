@@ -16,7 +16,7 @@
       <div v-if="!isEmpty" class="cart-items">
         <!-- v-for item -->
         <div v-for="product in products" :key="product.name" class="cart-line-item">
-          <lazy-img class="line-item-image" :src="product.figure" :alt="product.name" />
+          <lazy-img class="line-item-image" :src="product.cover" :alt="product.name" />
           <div class="line-item-desc">
             <div class="product-title">
               {{ product.title }}
