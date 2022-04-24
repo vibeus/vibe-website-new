@@ -4,7 +4,6 @@
       <div @click="prev" class="navigation prev">
         <svg-icon icon-name="shared-nav-icon"></svg-icon>
       </div>
-
       <swiper
         :navigation="true"
         :modules="[Navigation]"
@@ -124,8 +123,6 @@ const next = () => {
     .cta
       font-size: 14px
       text-decoration-line: underline
-
-
 :deep(.swiper-button-prev),:deep(.swiper-button-next)
   display: none
 </style>

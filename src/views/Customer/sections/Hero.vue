@@ -1,6 +1,5 @@
 <template>
   <section class="section hero">
-    <div class="hero-inner-wrapper">
       <div class="hero-body">
         <div class="container">
           <h1 class="title">
@@ -15,7 +14,6 @@
             <svg-icon icon-name="shared-what-bg" />
           </div>
         </div>
-      </div>
     </div>
   </section>
 </template>
@@ -34,7 +32,6 @@ const props = defineProps({
   background-color: $vibe-white
   .container
     flex-direction: column
-    align-items: center
     text-align: center
     max-width: 890px
   .hero-body
@@ -45,13 +42,14 @@ const props = defineProps({
     font-weight: $vibe-bold
     max-width: 890px
     margin-bottom: 1.5rem
+    +mobile
+      font-size: 32px
     span
       display: inline-block
       position: relative
       z-index: 5
       &::after
         content: ""
-        display: inline-block
         position: absolute
         left: 0
         bottom: 3px
@@ -63,7 +61,6 @@ const props = defineProps({
     width: 633px
     height: 571px
     position: absolute
-    z-index: 5
     right: -538px
     top: -200px
 </style>

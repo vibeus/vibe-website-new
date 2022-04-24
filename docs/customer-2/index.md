@@ -12,26 +12,6 @@ hero:
   title2: companies all over the world.
   body: Teams collaborate better with Vibe. Read customer reviews of Vibe digital whiteboard and see how customers unleashed creativity and maximized their organizations’ productivity and effectiveness.
 
-trust:
-  title: The digital whiteboard trusted by 500+ companies all over the world.
-  figure:
-    - name: duke
-      url: customer/logo/logo-duke.png
-    - name: maryland
-      url:  customer/logo/logo-maryland.png
-    - name: redapt
-      url:  customer/logo/logo-redapt.png
-    - name: camino
-      url:  customer/logo/logo-camino.png
-    - name: capgemini
-      url:  customer/logo/logo-capgemini.png
-    - name: digipen
-      url:  customer/logo/logo-digipen.png
-    - name: igg
-      url:  customer/logo/logo-igg.png
-    - name: kenmore
-      url:  customer/logo/logo-kenmore.png
-
 testimonials:
   - item: &id09
       title: Sports Training
@@ -114,6 +94,27 @@ testimonials:
         video:
           id: CRn1J0618Jc
         partial: "common/customer/story-card"
+
+trust:
+  title: The digital whiteboard trusted by 500+ companies all over the world.
+  figure:
+    - name: duke
+      url: customer/logo/logo-duke.png
+    - name: maryland
+      url:  customer/logo/logo-maryland.png
+    - name: redapt
+      url:  customer/logo/logo-redapt.png
+    - name: camino
+      url:  customer/logo/logo-camino.png
+    - name: capgemini
+      url:  customer/logo/logo-capgemini.png
+    - name: digipen
+      url:  customer/logo/logo-digipen.png
+    - name: igg
+      url:  customer/logo/logo-igg.png
+    - name: kenmore
+      url:  customer/logo/logo-kenmore.png
+
 # customer_story:
 #   testimonials_for_desktop: &customer_video_testimonials
 #     - - - item: *id09
@@ -136,59 +137,59 @@ collaborate:
     - figure: customer/collaborate/collaborate-bg1.png
       title: Blog   |   How I Vibe
       body: Engaging your audience using the Vibe board.
-      logo: img/customer/collaborate-logo1.png
-      url: /blog/how-i-vibe-henry-silverman-professor-of-medicine/
-      avatar: img/customer/collaborate-Avatar1.png
+      logo: customer/collaborate/collaborate-logo1.png
+      url: https://vibe.us/blog/how-i-vibe-henry-silverman-professor-of-medicine/
       work: Education
       name: Dr. Henry Silverman
+      avator: customer/collaborate/collaborate-Avatar1.png
     - figure: customer/collaborate/collaborate-bg2.png
       title: Blog   |   How I Vibe
       body: You need tools that will keep pace with your ideas.
-      logo: img/customer/collaborate-logo2.png
-      url: /blog/how-i-vibe-adam-elbendary/
-      avatar: img/customer/collaborate-Avatar2.png
+      logo: customer/collaborate/collaborate-logo2.png
+      url: https://vibe.us/blog/how-i-vibe-adam-elbendary/
       work: Marketing Agency
       name: Adam Elbendary
+      avator: customer/collaborate/collaborate-Avatar2.png
     - figure: customer/collaborate/collaborate-bg3.png
       title: Blog   |   How I Vibe
       body: New technology in a changing academic climate.
       logo: customer/collaborate/collaborate-logo3.png
-      url: /blog/how-i-vibe-arek-puzia-professor-and-cpa/
-      avatar: customer/collaborate/collaborate-Avatar3.png
+      url: https://vibe.us/blog/how-i-vibe-arek-puzia-professor-and-cpa/
       work: Education
       name: Arek Puzia
+      avator: customer/collaborate/collaborate-Avatar3.png
     - figure: customer/collaborate/collaborate-bg4.png
       title: Blog   |   How I Vibe
       body: Remote collaboration empowers our team to be more productive.
       logo: customer/collaborate/collaborate-logo4.png
-      url: /blog/how-i-vibe-peter-parker-advanced-analytics-practice-director/
-      avatar: customer/collaborate/collaborate-Avatar4.png
+      url: https://vibe.us/blog/how-i-vibe-peter-parker-advanced-analytics-practice-director/
       work: Consulting
       name: Peter Parker
+      avator: customer/collaborate/collaborate-Avatar4.png
     - figure: customer/collaborate/collaborate-bg5.png
       title: Blog   |   How I Vibe
       body: The integration to apps was open and go.
       logo: customer/collaborate/collaborate-logo1.png
-      url: /blog/how-i-vibe-robyn-mother-of-four-and-homeschool-expert/
-      avatar: customer/collaborate/collaborate-Avatar5.png
+      url: https://vibe.us/blog/how-i-vibe-robyn-mother-of-four-and-homeschool-expert/
       work: Home Schooling
       name: Robyn C.
+      avator: customer/collaborate/collaborate-Avatar5.png
     - figure: customer/collaborate/collaborate-bg6.png
       title: Blog   |   How I Vibe
       body: Leading large meetings and group collaborations.
       logo: customer/collaborate/collaborate-logo6.png
-      url: /blog/how-i-vibe-mark-smith-ceo-of-leadership-resource-institute/
-      avatar: customer/collaborate/collaborate-Avatar6.png
+      url: https://vibe.us/blog/how-i-vibe-mark-smith-ceo-of-leadership-resource-institute/
       work: Business Coaching
       name: Mark Smith
+      avator: customer/collaborate/collaborate-Avatar6.png
     - figure: customer/collaborate/collaborate-bg7.png
       title: Blog   |   How I Vibe
       body: Vibe is a great tool to make sure everyone's on the same page.
       logo: customer/collaborate/collaborate-logo7.png
-      url: /blog/how-i-vibe-jonathan-wong-project-manager/
-      avatar: customer/collaborate/collaborate-Avatar7.png
+      url: https://vibe.us/blog/how-i-vibe-jonathan-wong-project-manager/
       work: Construction
       name: Jonathan Wong
+      avator: customer/collaborate/collaborate-Avatar7.png
 
   gallerysides:
     - figure: customer/collaborate/collaborate-Avatar1.png
@@ -374,6 +375,7 @@ comments:
         date: Aug 22, 2020
         avatar: customer/comment/ins-avatar2.png
         url: https://www.instagram.com/tv/CEKMJInA90M/?utm_source=ig_web_copy_link
+
       - type: twitter
         name: God-is Rivera
         email:
@@ -403,7 +405,7 @@ comments:
           - text: Replying to
           - text: ' @rothgar'
             class: is-at
-        content:
+        content: 
           I picked up a <span class="text is-at"> @thevibeboard </span> on Black Friday. Went with a Monoprice mount for it. I am in love with it. I have been heavily using the web app with the whiteboard. I usually create a canvas, share it with my coworkers and then go stand at the whiteboard and do the work.
         date: Jan 29, 2021
         avatar: customer/comment/twitter-avatar2.png
@@ -414,6 +416,7 @@ comments:
         content: ...brilliant screen, is the interface that allows for easily adding popular tools like Miro or Jira- tools a creative director or product manager needs to work with multiple teams...
         date: Jan 17, 2020
         avatar: customer/comment/amazon-stars.png
+        cover: customer/comment/amazon-cover1.png
         url: https://www.amazon.com/gp/customer-reviews/R24TBM6GLRVDRL/ref=cm_cr_dp_d_rvw_ttl?ie=UTF8&ASIN=B081LPL772
       - type: ins
         name: nazarethacademygradeschool

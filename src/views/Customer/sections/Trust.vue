@@ -25,6 +25,7 @@ const props = defineProps({
 @import '@css/base'
 .is-trust
   background-color: #fff
+  padding: 25px 24px
   .logo-wrap
     display: flex
     flex-wrap: wrap
