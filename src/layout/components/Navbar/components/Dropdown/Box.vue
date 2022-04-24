@@ -43,7 +43,7 @@ const toggleActive = el => el.classList.toggle('is-active');
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .nav-link
   &::after
     content: " "

@@ -12,8 +12,8 @@
   </section>
 </template>
 <script setup>
-import VForm from '/@vcomp/Form.vue';
-import GetInTouch from '/@vcomp/GetInTouch.vue';
+import VForm from '@vcomp/Form.vue';
+import GetInTouch from '@vcomp/GetInTouch.vue';
 const props = defineProps({
   contactSection: {
     type: Object,
@@ -23,7 +23,7 @@ const props = defineProps({
 console.log('contactSection: ', props.contactSection);
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 *
   margin: 0
   padding: 0

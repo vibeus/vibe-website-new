@@ -26,7 +26,7 @@ console.log('resources: ', props.resources);
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 a
   color: $vibe-black
   cursor: pointer

@@ -34,5 +34,5 @@ footer: © Copyright 2022 Vibe, Inc. All rights reserved.
 <Page />
 
 <script setup>
-import Page from '/@/views/Home/Index.vue'
+import Page from '@/views/Home/Index.vue'
 </script>

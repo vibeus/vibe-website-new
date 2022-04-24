@@ -17,7 +17,7 @@ const nav = computed(() => theme.value.nav);
 
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .nav-dropdown-box
   display: flex
   justify-content: flex-start

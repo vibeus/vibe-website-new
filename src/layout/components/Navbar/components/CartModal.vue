@@ -147,8 +147,8 @@
 </template>
 
 <script setup>
-import CartCount from '/@vcomp/cartCount.vue';
-import { products } from '/@/data/products';
+import CartCount from '@vcomp/CartCount.vue';
+import { products } from '@/data/products';
 
 const showCartModal = inject('showCartModal');
 
@@ -160,7 +160,7 @@ const productsFeatured = computed(() => products.filter((i) => i.featured));
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .is-cart-dialog
   position: fixed
   bottom: 0

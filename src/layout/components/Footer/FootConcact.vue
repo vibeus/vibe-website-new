@@ -52,7 +52,7 @@ const props = defineProps({
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .section.is-vibe-foot-contact
   border-top: 1px solid #F2F2F2
   padding: 19px 3rem

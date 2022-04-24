@@ -31,7 +31,7 @@ const handleItemShow = () => {
 </script>
 
 <style lang="sass">
-@import '/@css/base'
+@import '@css/base'
 .faq-item
   overflow: hidden
   padding: 32px 0

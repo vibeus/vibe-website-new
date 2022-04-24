@@ -11,15 +11,15 @@
 
 <script setup>
 import { CloserLook, CompareInBrief, WhatsInBox, Reviews } from './sections';
-import BottomCta from '/@vcomp/BottomCta.vue';
-import Faq from '/@vcomp/faq/Index.vue';
+import BottomCta from '@vcomp/BottomCta.vue';
+import Faq from '@vcomp/faq/Index.vue';
 const { frontmatter: fm } = useData();
 console.log('fm: ', fm);
 const { faqs } = fm._value;
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .section.is-three-faqs
   background-color: $vibe-yellow
 </style>

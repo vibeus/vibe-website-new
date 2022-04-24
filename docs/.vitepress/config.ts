@@ -48,11 +48,11 @@ async function config() {
       },
       resolve: {
         alias: [
-          { find: '/@', replacement: pathResolve('../../src') },
-          { find: '/@vcomp', replacement: pathResolve('../../src/components') },
-          { find: '/@img', replacement: pathResolve('../../src/assets/img') },
-          { find: '/@css', replacement: pathResolve('../../src/assets/css') },
-          { find: '/@js', replacement: pathResolve('../../src/assets/js') }
+          { find: '@', replacement: pathResolve('../../src') },
+          { find: '@vcomp', replacement: pathResolve('../../src/components') },
+          { find: '@img', replacement: pathResolve('../../src/assets/img') },
+          { find: '@css', replacement: pathResolve('../../src/assets/css') },
+          { find: '@js', replacement: pathResolve('../../src/assets/js') }
         ]
       },
       hot: true,

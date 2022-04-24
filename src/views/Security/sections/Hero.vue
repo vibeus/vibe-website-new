@@ -19,7 +19,7 @@ const { title, body } = fm._value.hero;
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .hero
   background-color: $vibe-teal
   overflow: hidden

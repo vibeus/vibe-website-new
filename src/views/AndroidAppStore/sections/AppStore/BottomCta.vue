@@ -52,7 +52,7 @@
 const currentTab = inject('currentTab');
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 a
   text-decoration: none
   &:hover

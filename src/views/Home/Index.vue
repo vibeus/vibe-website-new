@@ -14,7 +14,7 @@
 import HomeHero from './components/HomeHero.vue';
 import HomeFeatures from './components/HomeFeatures.vue';
 import HomeFooter from './components/HomeFooter.vue';
-import { useAppStore } from '/@/store/app';
+import { useAppStore } from '@/store/app';
 
 const app = useAppStore();
 const device = computed(() => app.device);
@@ -30,7 +30,7 @@ const consoleT = () => {
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .home
   padding-top: var(--header-height)
 

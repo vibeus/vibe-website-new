@@ -16,7 +16,7 @@ const props = defineProps({
 });
 </script>
 <style lang="sass" scoped>
-@import "/@css/base"
+@import "@css/base"
 .documents
   padding: 3rem 1.5rem
   font-size: 18px

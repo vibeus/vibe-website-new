@@ -126,5 +126,5 @@ bottom_cta:
 <Page />
 
 <script setup>
-import Page from '/@/views/contact/Sales/Index.vue'
+import Page from '@/views/contact/Sales/Index.vue'
 </script>

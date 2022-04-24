@@ -36,7 +36,7 @@ const city = {
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .get-in-touch
   margin: 48px auto 0
   max-width: 680px

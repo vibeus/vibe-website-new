@@ -10,7 +10,7 @@
 import Hero from './sections/Hero.vue';
 import TabBar from './sections/TabBar.vue';
 import AppStore from './sections/AppStore/Index.vue';
-import { apps55, apps75 } from '/@/data/app';
+import { apps55, apps75 } from '@/data/app';
 /* Start Data */
 const currentTab = ref('is-55');
 const state = ref({ useCase: undefined, type: undefined });

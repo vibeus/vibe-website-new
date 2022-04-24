@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-import VForm from '/@vcomp/Form.vue';
+import VForm from '@vcomp/Form.vue';
 const props = defineProps({
   hero: {
     type: Object,

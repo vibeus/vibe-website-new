@@ -1,4 +1,4 @@
-import { endingSlashRE, isExternal } from '/@/utils/layout';
+import { endingSlashRE, isExternal } from '@/utils/layout';
 const bitbucketRE = /bitbucket.org/;
 export function useEditLink() {
   const { page, theme, frontmatter } = useData();

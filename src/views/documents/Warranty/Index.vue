@@ -7,9 +7,9 @@
 </template>
 
 <script setup>
-import DocHero from '/@/views/documents/components/DocHero.vue';
+import DocHero from '@/views/documents/components/DocHero.vue';
 import Register from './sections/Register.vue';
-import Documents from '/@/views/documents/components/Documents.vue';
+import Documents from '@/views/documents/components/Documents.vue';
 /* Start Data */
 const { frontmatter: fm } = useData();
 /* End Data */

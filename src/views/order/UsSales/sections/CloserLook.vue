@@ -54,7 +54,7 @@
 </template>
 
 <script setup>
-import SectionCta from '/@vcomp/SectionCta.vue';
+import SectionCta from '@vcomp/SectionCta.vue';
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
 // Import Swiper styles
@@ -77,7 +77,7 @@ const isBgFigure = (item) => {
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .section.is-closer-look
   background-color: #fff
   padding: 64px 24px

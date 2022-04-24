@@ -26,7 +26,7 @@ const { what_in_box } = fm._value;
 </script>
 
 <style lang="sass" scoped>
-@import "/@css/base"
+@import "@css/base"
 .section.is-what-in-box
   padding: 120px 24px
   background: rgba(244, 244, 244, .5)

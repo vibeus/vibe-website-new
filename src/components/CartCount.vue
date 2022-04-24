@@ -29,7 +29,7 @@ function plus() {
 </script>
 
 <style lang="sass">
-@import '/@css/base'
+@import '@css/base'
 .cart-count
   display: flex
   align-items: center

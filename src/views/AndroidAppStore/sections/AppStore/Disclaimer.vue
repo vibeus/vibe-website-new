@@ -30,7 +30,7 @@ const currentTab = inject('currentTab');
 const isDisclaimer = ref('true');
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 a
   text-decoration: none
 .disclaimer-container

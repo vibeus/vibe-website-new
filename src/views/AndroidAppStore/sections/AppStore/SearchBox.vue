@@ -52,7 +52,7 @@
   </div>
 </template>
 <script setup>
-import { category, apps55, apps75 } from '/@/data/app';
+import { category, apps55, apps75 } from '@/data/app';
 const searchTerm = inject('searchTerm');
 const apps55Filter = inject('apps55Filter');
 const apps75Filter = inject('apps75Filter');
@@ -93,7 +93,7 @@ const changeCurrentCateName = (data) => {
 };
 </script>
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .input-box
   position: relative
   display: flex

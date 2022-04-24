@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import VForm from '/@/components/Form.vue';
+import VForm from '@/components/Form.vue';
 const props = defineProps({
   register: {
     type: Object,
@@ -17,7 +17,7 @@ const props = defineProps({
 </script>
 
 <style lang="sass">
-@import "/@css/base"
+@import "@css/base"
 .is-register
   padding: 3rem 1.5rem 0
   background-color: #fff
