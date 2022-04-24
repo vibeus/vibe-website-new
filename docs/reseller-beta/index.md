@@ -7,7 +7,7 @@ hero:
     buttons:
       - title: Become a partner today
         class: is-black is-rounded is-medium
-        url: /contact/become-a-reseller-partner/
+        link: /contact/become-a-reseller-partner/
         target: _blank
 
 feature_columns:
@@ -51,9 +51,54 @@ feature_columns:
       cta:
         title: Learn more
         class: is-black is-rounded is-outlined is-medium
+
+benefits:
+  title: Reseller program benefits
+  features:
+    - title: Develop new solutions
+      body: Deliver a complete solution to your customers combining Vibe products with your unique capabilities.
+      figure: reseller/benefit-1.png
+    - title: Priority support
+      body: Get priority partner support at Vibe through dedicated support channel.
+      figure: reseller/benefit-2.png
+    - title: Competitive pricing
+      body: We’ll provide reseller pricing to partners for finding and developing opportunities to sell our products and solutions.
+      figure: reseller/benefit-3.png
+    - title: Differentiate your offerings
+      body: Introduce new products and services to your market place.
+      figure: reseller/benefit-4.png
+    - title: Rich media content
+      body: Exclusive access to e-marketing resources and co-marketing opportunities.
+      figure: reseller/benefit-5.png
+  cta:
+    buttons: 
+      - title: Apply now
+        class: is-black is-rounded is-outlined
+        target: _blank
+        url: /contact/become-a-reseller-partner/
+
+faq:
+  title: FAQ
+  faqList:
+    - itemList:
+      - title: How to qualify as a Vibe Reseller?
+        body: First, review the program qualification criteria below against your business needs and capabilities. Next, fill out the [partner application form](/contact/become-a-reseller-partner/), which will be reviewed by our Business Dev team, who will then reach out for next steps.
+      - title: What’s the basic qualification?
+        body: You must be a US based formal business entity. You must be able to provide Vibe with your Reseller Permit. You must agree to our Reseller Agreement terms.
+      - title: Where can I learn more about the program?
+        body: You can reach out to our Business Dev team at [resellers@vibe.us](mailto:resellers@vibe.us).
+
+bottom_cta:
+  title: Still have questions?
+  cta:
+   buttons:
+    - class: is-black is-rounded is-outlined is-contact-sales
+      title: Contact Sales
+      mail: | 
+        mailto:resellers@vibe.us
 ---
 <Page />
 
 <script setup>
-import Page from '/@/views/Reseller/Index.vue'
+import Page from '@/views/Reseller/Index.vue'
 </script>

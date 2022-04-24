@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import SectionCta from '/@vcomp/SectionCta.vue';
+import SectionCta from '@vcomp/SectionCta.vue';
 const props = defineProps({
   hero: {
     type: Object,
@@ -27,7 +27,7 @@ const props = defineProps({
 </script>
 
 <style lang="sass" scoped>
-@import '/@css/base'
+@import '@css/base'
 .hero
   overflow: hidden
   .hero-body

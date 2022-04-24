@@ -28,12 +28,18 @@ const props = defineProps({
 });
 </script>
 
-<style lang="sass">
-@import '/@css/base'
+<style lang="sass" scoped>
+@import '@css/base'
 .section.is-feature-columns
+  background-color: $vibe-white
   padding: 120px 24px
+  +mobile
+    padding: 60px 24px
   .container
     display: block
+    width: unset
+    +fullhd
+      max-width: 1200px
   .header
     line-height: 1.25
     margin-bottom: 60px
@@ -59,6 +65,7 @@ const props = defineProps({
       +mobile
         font-size: 16px
   .columns
+    margin: -.75rem
     +mobile
       flex-direction: column
 </style>
