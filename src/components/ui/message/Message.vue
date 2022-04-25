@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import SvgIcon from '@vcomp/SvgIcon.vue';
+import SvgIcon from '@vcomp/common/SvgIcon.vue';
 console.log('SvgIcon: ', SvgIcon);
 const props = defineProps({
   text: {
