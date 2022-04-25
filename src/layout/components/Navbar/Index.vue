@@ -121,7 +121,7 @@ onMounted(() => {
 @import '@css/base'
 .navbar
   position: relative
-  background-color: $vibe-white
+  background-color: #FFF
   font-family: $family-head
   font-size: 16px
   box-shadow: 0px -1px 10px rgba(55, 55, 55, 0.1)

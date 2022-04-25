@@ -1,5 +1,5 @@
 <template>
-  <section class="bottom-cta" id="bottom-cta">
+  <section class="section bottom-cta" id="bottom-cta">
     <div class="container">
     <div class="bottom-bg">
       <svg-icon icon-name="shared-what-bg" />
@@ -38,6 +38,7 @@ section.bottom-cta
   overflow: hidden
   .container
     position: relative
+    flex-direction: column
   .bottom-bg
     position: absolute
     top: -60px

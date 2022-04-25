@@ -12,7 +12,7 @@
 <script setup>
 import { CloserLook, CompareInBrief, WhatsInBox, Reviews } from './sections';
 import BottomCta from '@vcomp/BottomCta.vue';
-import Faq from '@vcomp/faq/Index.vue';
+import Faq from '@vcomp/Faq/Index.vue';
 const { frontmatter: fm } = useData();
 console.log('fm: ', fm);
 const { faqs } = fm._value;

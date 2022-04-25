@@ -1,5 +1,5 @@
 <template>
-  <section class="is-trusted-inductry">
+  <section class="section is-trusted-inductry">
     <div class="container">
       <div class="title">{{ title }}</div>
       <Customer :customers="customers"/>
@@ -20,6 +20,8 @@ const { title, customers = [] } = fm._value.trust;
   background-color: $vibe-white
   +mobile
     padding: 60px 24px
+  .container
+    flex-direction: column
   .title
     text-align: center
     margin-bottom: 72px

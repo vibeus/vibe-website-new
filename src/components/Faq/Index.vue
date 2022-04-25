@@ -5,11 +5,11 @@
     <div class="faq-section-title">
       <ul class="faq-section-title-row">
           <li 
-            v-for="(sectionTitle, sectionIndex) in faqs.sections" :key="sectionIndex"
             class="title faq-section"
             :class="{ 'is-active': sectionIndex === currentTabIndex }" 
+            v-for="(sectionTitle, sectionIndex) in faqs.sections" :key="sectionIndex"
             @click="handleTabClick(sectionIndex)"
-            >
+          >
             {{ sectionTitle }}
           </li>
       </ul>
@@ -30,12 +30,8 @@
       />
     </ul>
 
-    <SectionCta :cta="faqs.cta"/>
-    <!-- {{ with .disclaimer_info }}
-      <div id="disclaimer" class="disclaimer-content">
-        <p> {{ . | markdownify }} </p>
-      </div>
-    {{ end }} -->
+    <SectionCta :cta="faqs.cta ? faqs.cta : {}"/>
+
   </div>
 </section>
 </template>
