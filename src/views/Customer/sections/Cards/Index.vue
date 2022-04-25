@@ -1,19 +1,22 @@
 <template>
   <section class="section customer-cards">
     <div class="container">
-      <div @click="prev" class="navigation prev">
+      <div @click="prev" class="navigation prev is-hidden-mobile">
         <svg-icon icon-name="shared-nav-icon"></svg-icon>
       </div>
       <swiper
         :navigation="true"
-        :modules="[Navigation]"
-        :slidesPerView="3"
-        :spaceBetween="50"
+        :modules="[Navigation, Pagination]"
+        :slidesPerView="slidesPerView"
+        :spaceBetween="10"
+        :pagination="{
+          clickable: true,
+        }"
         :loop="true"
-        class="mySwiper"
+        class="card-swiper"
       >
-        <swiper-slide v-for="story in stories" :key="story.title">
-          <div class="card customer-card">
+        <swiper-slide v-for="(story, index) in stories" :key="story.title">
+          <div class="card customer-card" @click="showCardsModal(index)">
             <div class="card-image">
               <lazy-img class="image" :src="story.cover" :alt="story.cover" />
               <div class="logo">
@@ -32,36 +35,65 @@
           </div>
         </swiper-slide>
       </swiper>
-      <div @click="next" class="navigation">
+      <div @click="next" class="navigation is-hidden-mobile">
         <svg-icon icon-name="shared-nav-icon"></svg-icon>
       </div>
     </div>
   </section>
+  <CardsModal :stories="stories" v-if="isCardsModal === true" />
 </template>
 <script setup>
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Navigation, Pagination } from 'swiper';
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Navigation, Pagination } from "swiper";
+import CardsModal from "./CardsModal.vue";
+import { useAppStore } from "@/store/app";
+
 const props = defineProps({
   stories: {
     type: Object,
     required: true,
   },
 });
+const initialSlide = ref(0);
+const isCardsModal = ref(false);
+const slidesPerView = ref(3);
+const app = useAppStore();
+const device = computed(() => app.device);
+//CardsModal
+provide("initialSlide", initialSlide);
+provide("isCardsModal", isCardsModal);
+watchEffect(() => {
+  if (device.value === "desktop" || device.value === "touch") {
+    slidesPerView.value = 2;
+  } else if (device.value === "mobile") {
+    slidesPerView.value = 1;
+  } else {
+    slidesPerView.value = 3;
+  }
+});
 const prev = () => {
-  const prevBtn = document.querySelector('.swiper-button-prev');
+  const prevBtn = document.querySelector(".card-swiper .swiper-button-prev");
   console.log(prevBtn);
   prevBtn.click();
 };
 const next = () => {
-  const nextBtn = document.querySelector('.swiper-button-next');
+  const nextBtn = document.querySelector(".card-swiper .swiper-button-next");
   console.log(nextBtn);
   nextBtn.click();
+};
+const showCardsModal = (index) => {
+  initialSlide.value = index;
+  isCardsModal.value = true;
 };
 </script>
 <style lang="sass" scoped>
 @import '@css/base'
+.customer-cards
+  padding: 90px 24px 60px
+  max-height: 684px
+  background-color: #fff
 .container
   position: relative
   margin: auto
@@ -85,6 +117,7 @@ const next = () => {
     width: 42px
     height: 42px
 .customer-card
+  box-sizing: border-box
   height: 100%
   cursor: pointer
   font-family:$vibe-family-body
@@ -125,4 +158,13 @@ const next = () => {
       text-decoration-line: underline
 :deep(.swiper-button-prev),:deep(.swiper-button-next)
   display: none
+:deep(.swiper-pagination-bullet)
+  margin:0 7px !important
+  +tablet
+    display: none
+:deep(.swiper-pagination-bullet-active)
+    background-color: $vibe-black
+    opacity: .7
+    +tablet
+      display: none
 </style>

@@ -317,51 +317,7 @@ stories:
           Rob Karlinsey
 
           City Manager at City of Kenmore, Washington
-  - title: Sandler Training unites its training course with Vibe
-    content: Professional Training
-    industry: Professional Training
-    employees: 500-1000
-    region: Baltimore, MD
-    cover: testimonials/cover-sandler.jpg
-    cta: Learn more
-    logo:
-      figure: testimonials/sandler.png
-      width: 112
-      modal_width: 260
-    key_factors:
-      - Consistent Product Training
-      - Reducing Operating Costs
-      - Local and Remote Collaboration
-    testimonials:
-      - body: The Vibe team has been incredibly open to new ideas to improve the product and even implemented a few suggestions into the most recent software update. This type of co-collaboration makes working with Vibe a premier experience. Absolutely would recommend to anyone in the market for a digital white-board!
-        author:
-          name: |
-            Shelly Starks
 
-            Associate Partner at RC Howard & Associates, LLC., a certified Sandler Training Center
-      - body: |
-          We selected Vibe for use in our public training center with individuals, small companies and
-          corporate clients. Our selection criteria were based on four requirements:
-
-          **Range of capabilities**
-          We “draw” training notes and exercises, save/email docs and collaborate between local and remote
-          participants – all through Vibe
-
-          **Product support/training**
-          Vibe team provides premier client support and training
-
-          **Simple/intuitive operation**
-          We received, unwrapped, assembled and began using Vibe in less than 40 minutes...absolutely intuitive!
-
-          **Low total operating costs/cost of ownership**
-          Vibe provides greatest range of capabilities, highest value and NO ongoing licensing and annual costs.
-
-          Vibe is “Best of Breed” in the real-time digital whiteboard market space!
-        author:
-          name: |
-            Robert Howard
-
-            President of Sandler Training, Greater Tampa, FL
 
 comments:
   title: Customers love Vibe digital whiteboard
