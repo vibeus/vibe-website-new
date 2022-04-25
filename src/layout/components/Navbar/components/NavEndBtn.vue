@@ -4,8 +4,11 @@
       <span>See a Demo</span>
     </a>
     <div class="nav-divider"></div>
-    <button class="mgr-8" @click="showCartModal = true">
-      <svg-icon class="nav-icon" icon-name="global-cart-cart" alt="cart icon" />
+    <button class="mgr-8">
+      <svg-icon
+         class="nav-icon" icon-name="global-cart-cart" alt="cart icon"
+         @click="onCartClick"
+      />
     </button>
     <button>
       <svg-icon class="nav-icon" icon-name="global-cart-user" alt="user icon" />
@@ -14,8 +17,15 @@
 </template>
 
 <script setup>
+import { onCartLauncherClick } from '../util';
+
 const { frontmatter: fm } = useData();
 const showCartModal = inject('showCartModal');
+
+const onCartClick = () => {
+  Extend.config({ storeId: '91426846-4d2c-482d-a9e9-1031f0ffb6b0' });
+  showCartModal.value = true;
+};
 </script>
 
 <style lang="sass" scoped>

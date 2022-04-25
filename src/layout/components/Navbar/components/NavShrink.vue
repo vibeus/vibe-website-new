@@ -4,8 +4,11 @@
       <span>See a Demo</span>
     </a>
     <div class="nav-divider is-hidden-mobile" data-v-00cdf7b5=""></div>
-    <button class="nav-btn nav-cart-icon mgl-8" @click="showCartModal = true">
-      <svg-icon class="nav-icon" icon-name="global-cart-cart" alt="cart icon" />
+    <button class="nav-btn nav-cart-icon mgl-8">
+      <svg-icon
+        class="nav-icon" icon-name="global-cart-cart" alt="cart icon"
+        @click="onCartClick"
+      />
     </button>
     <button class="nav-btn nav-user-icon is-hidden-mobile">
       <svg-icon class="nav-icon" icon-name="global-cart-user" alt="user icon" />
@@ -17,13 +20,25 @@
     </a>
   </div>
 </template>
+
 <script setup>
+import { onCartLauncherClick } from '../util';
+
 const { frontmatter: fm } = useData();
 const showCartModal = inject('showCartModal');
 
 const toggleMenuActive = () => {
   const menu = document.getElementById('nav-menu');
   menu.classList.toggle('is-active');
+};
+
+const onCartClick = () => {
+  console.log(123);
+  console.log(Extend);
+  // onCartLauncherClick()
+  //   .then(() => {
+  //     showCartModal.value = true;
+  //   });
 };
 </script>
 <style lang="sass" scoped>
