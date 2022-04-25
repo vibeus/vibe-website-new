@@ -18,16 +18,18 @@
         <swiper-slide v-for="(story, index) in stories" :key="story.title">
           <div class="card customer-card" @click="showCardsModal(index)">
             <div class="card-image">
-              <lazy-img class="image" :src="story.cover" :alt="story.cover" />
+              <figure class="image">
+                <lazy-img :src="story.cover" :alt="story.cover" />
+              </figure>
               <div class="logo">
-                <div class="image"></div>
+                 <lazy-img :src="story.logo.figure" :alt="story.logo.alt" />
               </div>
             </div>
             <div class="card-content">
               <div class="content">{{ story.industry }}</div>
               <div class="card-container">
                 <h2 class="title">{{ story.title }}</h2>
-                <div class="cta">
+                <div class="cta is-hidden-mobile">
                   <span>Learn more</span>
                 </div>
               </div>
@@ -116,46 +118,98 @@ const showCardsModal = (index) => {
   .svg-icon
     width: 42px
     height: 42px
-.customer-card
-  box-sizing: border-box
+=card-hovered
+  z-index: 1
+  padding: 0 0 30px 0
+  .card-image
+    margin-top: -10px
+  .card-content
+    padding: 0 30px 0 30px
+    +mobile
+      padding-left: 29px
+.card.customer-card
+  padding: 30px
   height: 100%
   cursor: pointer
-  font-family:$vibe-family-body
-  &:hover
-    background-color: #fff
-    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%)
-    .card-image
-      padding: 0
+  background-color: #fff
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%)
+  color: #111
+  max-width: 100%
+  position: relative
   .card-image
-    padding: 30px 30px 0
+    padding-top: 66.6%
     position: relative
+    height: 0
     .image
-      width:100%
-      height: 100%
-      display: block
-      object-fit: cover
+      width: 100%
+      position: absolute
+      top: 0
+      bottom: 0  
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
   .card-content
-    padding: 16px 30px 30px
-    max-width: 100%
-    position: relative
+    padding: 0
+    .card-container
+      padding: 0px
+      height: 190px
+      +tablet
+        height: 150px
+        position: static
+      +mobile
+        height: 85px   
     .content
+      padding-top: 16px
       padding-bottom: 8px
       font-family: $vibe-family-head
       font-size: 14px
       font-weight: $vibe-bold
       line-height: 18px
       color: #828282
-      letter-spacing: 0
       text-align: left
-    .title
-      line-height: 30px
-      margin: 0
-      max-width: 348px
-      padding: 0
-      padding-bottom: 36px
+  .logo
+    position: absolute
+    height: 40px
+    right: 5%
+    bottom: 5%
+    background: #fff
+    border-radius: 4px
+    padding: 6px
+    text-align: center
+    box-sizing: border-box
+    img
+      height: 100%
+      object-fit: cover
+  .title
+    font-size: 24px
+    padding-bottom: 82px
+    +tablet
+      font-size: 20px
+    +mobile
+      font-size: 18px
+  .cta
+    position: absolute
+    bottom: 40px
+    font-weight: $vibe-bold
+    font-size: 14px
+    text-decoration-line: underline
+    font-family: $vibe-family-body
+  +mobile
+    +card-hovered
+    max-width: 400px
+    margin: 0 auto 30px
+    padding: 10px
+
     .cta
-      font-size: 14px
-      text-decoration-line: underline
+      bottom: 16px
+  +tablet
+    &:not(:hover)
+      box-shadow: none
+    &:hover
+      +card-hovered
+.card-swiper
+  padding: 10px
 :deep(.swiper-button-prev),:deep(.swiper-button-next)
   display: none
 :deep(.swiper-pagination-bullet)
