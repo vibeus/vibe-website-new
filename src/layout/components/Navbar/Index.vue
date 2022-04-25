@@ -10,6 +10,7 @@
       </div>
     </div>
     <CartModal/>
+    <div id="extend-offer"></div>
     <slot name="search" />
   </nav>
 </template>
@@ -21,6 +22,11 @@ const { frontmatter: fm } = useData();
 //cart dialog
 const showCartModal = ref(false);
 const cart = fm.value.navbar?.cart || {};
+const checkoutIdKey = `shopify-checkout-id-us`;
+
+watchEffect(() => {
+  
+})
 
 const {
   currency = 'USD',
@@ -64,6 +70,7 @@ watchEffect(() => {
   } else {
     document.documentElement.classList.remove('is-clipped');
   }
+
 });
 function loadSidebar() {
   const scriptsArr = [
@@ -76,15 +83,15 @@ function loadSidebar() {
     sidebarPromise = new Promise((resolve, reject) => {
       const loader = async () => {
         scriptsArr.forEach(async (src) => await loadScript(src));
-        await import('./extend/extend-aftermarket-integration.js');
-        await import('./extend/extend-product-integration.js');
-        await import('./extend/extend-utils.js');
+        // await import('./extend/extend-aftermarket-integration.js');
+        // await import('./extend/extend-product-integration.js');
+        // await import('./extend/extend-utils.js');
       };
 
       loader()
         .then(() => {
-          Extend.config({ storeId: '91426846-4d2c-482d-a9e9-1031f0ffb6b0' });
-          console.log('Extend: ', Extend);
+          // Extend.config({ storeId: '91426846-4d2c-482d-a9e9-1031f0ffb6b0' });
+          // console.log('Extend: ', Extend);
           // return import('@js/nav-cart-sidebar.js');
         })
         .then(resolve)
@@ -111,7 +118,7 @@ document.querySelectorAll('.button.is-nav-cart').forEach((el) => {
 // Delay load sidebar after page load. If user clicks cart within the timeout period, this will be a no-op.
 onMounted(() => {
   import('@js/nav');
-  // setTimeout(loadSidebar, 500);
+  setTimeout(loadSidebar, 500);
 });
 </script>
 

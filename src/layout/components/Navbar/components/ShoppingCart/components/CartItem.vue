@@ -24,7 +24,7 @@
       class="icon is-loading"
       icon-name="global-cart-loading"
     />
-    <svg-icon v-else class="icon is-delete" icon-name="shared-close" />
+    <svg-icon v-else class="icon is-delete" icon-name="shared-close" @click="handleItemDelete"/>
   </div>
 </template>
 
@@ -33,7 +33,14 @@ import CartCount from '@vcomp/CartCount.vue';
 import CartItemTip from './CartItemTip.vue';
 import CartItemExtend from './CartItemExtend.vue';
 const cartCount = ref({ class: 'is-medium is-rounded is-black', count: 1 });
-const isLoading = ref(false)
+const isLoading = ref(false);
+const handleItemDelete = () => {
+  isLoading.value = true;
+  // Test 
+  setTimeout(() =>{ 
+    isLoading.value = false;
+  }, 2000)
+}
 const props = defineProps({
   item: {
     type: Object,
@@ -74,7 +81,7 @@ const props = defineProps({
         margin-bottom: 24px
       .simple-offer
         padding: 5px 6px
-        margin-bottom: 10px
+        margin-bottom: 24px
         width: fit-content
         border: 1px solid $vibe-purple
         color: $vibe-purple

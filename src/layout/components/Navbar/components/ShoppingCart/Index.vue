@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 import CartContent from './components/CartContent.vue';
 import { useCartEffect } from '@/store/cart';
 const { handleOpenCartModal } = useCartEffect();

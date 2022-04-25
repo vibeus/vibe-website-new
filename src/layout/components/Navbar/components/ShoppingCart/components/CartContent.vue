@@ -9,7 +9,7 @@
 <script setup>
 import CartHeader from './CartHeader.vue';
 import CartBody from './CartBody.vue';
-import CartBottom from './CartBottom.vue'
+import CartBottom from './CartBottom.vue';
 </script>
 
 <style lang="sass" scoped>
