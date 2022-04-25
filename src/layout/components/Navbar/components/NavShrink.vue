@@ -33,12 +33,8 @@ const toggleMenuActive = () => {
 };
 
 const onCartClick = () => {
-  console.log(123);
-  console.log(Extend);
-  // onCartLauncherClick()
-  //   .then(() => {
-  //     showCartModal.value = true;
-  //   });
+  Extend.config({ storeId: '91426846-4d2c-482d-a9e9-1031f0ffb6b0' });
+  showCartModal.value = true;
 };
 </script>
 <style lang="sass" scoped>

@@ -1,5 +1,5 @@
 <template>
-  <form class="form" ref="form" :model="formItem" :action="action" :method="method">
+  <form class="form" ref="form" :model="formItem">
     <template v-for="(row, idx) in controls" :key="idx">
       <div class="f-row">
         <template v-for="item in row" :key="item.name">
@@ -35,8 +35,8 @@
 </template>
 
 <script setup>
-import { Loading, Message } from '@vcomp/ui';
-import { validEmail, getHubspotBody } from '@/utils';
+
+import { validEmail } from '@/utils/validate';
 
 const props = defineProps({
   formData: {
@@ -47,7 +47,7 @@ const props = defineProps({
 
 const emit = defineEmits(['msgSuccess']);
 
-const { action, method = 'POST', buttons, controls } = Object.assign({}, props.formData);
+const { action, buttons, controls } = Object.assign({}, props.formData);
 
 /* Start Data */
 const { proxy } = getCurrentInstance();
@@ -70,10 +70,8 @@ const onFormControlChange = el => {
 /* End Data */
 
 const submitForm = async () => {
-  Loading.show();
-  Message({ type: 'warn', text: 'Test' });
   const form = proxy.$refs.form;
-  const fields = [];
+  let fields = [];
   for (const pair of new FormData(form).entries()) {
     if (pair[0] === 'consent-to-communicate-checkbox') continue;
     fields.push({
@@ -82,34 +80,32 @@ const submitForm = async () => {
     });
   }
   console.log('fields: ', fields);
+  fields = [];
   // 特定表单逻辑处理
   // fields = (await dealSpecificForm(action, fields, form)) || fields;
 
   const body = getHubspotBody(form, fields);
 
-  setTimeout(() => Loading.close(), 3000);
+  return fetch(form.action, {
+    method: form.method,
+    body: JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((r) => {
+      if (r.ok) {
+        form.parentElement.classList.add('is-submitted');
+      } else {
+        form.parentElement.classList.add('is-failed');
+      }
 
-  // return fetch(form.action, {
-  //   method: form.method,
-  //   body: JSON.stringify(body),
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  // })
-  //   .then((r) => {
-  //     if (r.ok) {
-  //       Loading.hide();
-  //       form.parentElement.classList.add('is-submitted');
-  //     } else {
-  //       form.parentElement.classList.add('is-failed');
-  //     }
-
-  //     return r;
-  //   })
-  //   .catch((ex) => {
-  //     form.parentElement.classList.add('is-failed');
-  //     throw ex;
-  //   });
+      return r;
+    })
+    .catch((ex) => {
+      form.parentElement.classList.add('is-failed');
+      throw ex;
+    });
 
 };
 

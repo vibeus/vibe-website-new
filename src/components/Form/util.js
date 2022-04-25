@@ -83,7 +83,6 @@ export async function dealSpecificForm(action, fields, form) {
       await res3.then(async (r) => {
         if (r.ok) {
           const onboard75WebinarDateObj = await submitWebinarDate(fields);
-          console.log(onboard75WebinarDateObj);
           if (onboard75WebinarDateObj) {
             fields.push({
               name: 'onboarding_webinar_date___time__text_',
@@ -150,12 +149,12 @@ export function getHubspotUtk() {
 }
 
 export function getHubspotBody(form, fields) {
-  console.log('fields: ', fields);
   const hutk = getHubspotUtk();
   const body = { fields };
 
-  if (hutk)
+  if (hutk) {
     body.context = { hutk };
+  }
 
   // add legalConsentOptions for gdpr
   const consentToProcessElt = form.querySelector('.consent-to-process');

@@ -7,7 +7,6 @@ import 'virtual:svg-icons-register'; // Important
 import '@css/vibe.sass';
 
 
-
 export default {
   ...DefaultTheme,
   enhanceApp({ app, router, siteData }) {
