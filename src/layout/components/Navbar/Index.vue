@@ -9,14 +9,13 @@
         <NavEndBtn />
       </div>
     </div>
-    <CartModal v-if="showCartModal" />
+    <CartModal/>
     <slot name="search" />
   </nav>
 </template>
 
 <script setup>
 import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink, CartModal } from './components';
-
 /* Start Data */
 const { frontmatter: fm } = useData();
 //cart dialog
@@ -32,7 +31,6 @@ const {
 } = cart;
 const renderOffers = !!cart.render_offers;
 
-provide('showCartModal', showCartModal);
 /* End Data */
 
 function parseBoolean(value) {
