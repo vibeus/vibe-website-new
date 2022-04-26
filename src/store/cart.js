@@ -21,7 +21,9 @@ export const useCartEffect = defineStore({
 
   actions: {
     handleOpenCartModal() {
-      this.isCartModalOpen = !this.isCartModalOpen;
+      if(this.checkout) {
+        this.isCartModalOpen = !this.isCartModalOpen;
+      }
     },
     handleSetShopifyClient(payload) {
       if(!this.shopifyClient) {
@@ -47,7 +49,6 @@ export const useCartEffect = defineStore({
             this.checkout = co;
           });
       } else {
-        console.log('bottom');
         this.shopifyClient.checkout.create().then((co) => {
           this.checkout = co;
           this.checkoutIdValue = co.id;

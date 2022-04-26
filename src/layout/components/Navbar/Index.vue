@@ -65,7 +65,6 @@ function initShopifySdk() {
         domain: 'vibe.toyond.de',
         storefrontAccessToken: '59ed50ec21cff74d3a509f4ad142bffb',
       };
-
   handleSetShopifyClient(ShopifyBuy.buildClient(clientConfig));
 }
 
@@ -128,7 +127,7 @@ function loadSidebar() {
 // Delay load sidebar after page load. If user clicks cart within the timeout period, this will be a no-op.
 onMounted(() => {
   import('@js/nav');
-  setTimeout(loadSidebar, 500);
+  loadSidebar()
 });
 </script>
 

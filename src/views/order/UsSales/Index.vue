@@ -13,8 +13,12 @@
 import { CloserLook, CompareInBrief, WhatsInBox, Reviews } from './sections';
 import BottomCta from '@vcomp/BottomCta.vue';
 import Faq from '@vcomp/Faq/Index.vue';
+import { useCartEffect } from '@/store/cart';
 const { frontmatter: fm } = useData();
-console.log('fm: ', fm);
+
+const checkout = computed(() => useCartEffect.checkout );
+
+
 const { faqs } = fm._value;
 </script>
 
