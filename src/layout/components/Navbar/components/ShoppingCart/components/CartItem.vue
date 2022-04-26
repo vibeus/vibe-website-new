@@ -39,8 +39,8 @@ const handleItemDelete = () => {
   // Test 
   setTimeout(() =>{ 
     isLoading.value = false;
-  }, 2000)
-}
+  }, 2000);
+};
 const props = defineProps({
   item: {
     type: Object,

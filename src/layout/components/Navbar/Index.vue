@@ -17,25 +17,34 @@
 
 <script setup>
 import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink, CartModal } from './components';
+import { products } from '@/data/products';
+import { useCartEffect } from '@/store/cart';
+
 /* Start Data */
 const { frontmatter: fm } = useData();
-//cart dialog
-const showCartModal = ref(false);
+const { 
+  handleSetShopifyClient, 
+  initialShopifyCheckout 
+} = useCartEffect();
+
+const shopifyClient = computed(() => { return useCartEffect().shopifyClient });
+
+let sidebarPromise = null;
 const cart = fm.value.navbar?.cart || {};
-const checkoutIdKey = `shopify-checkout-id-us`;
-
-watchEffect(() => {
-  
-})
-
-const {
-  currency = 'USD',
-  region = 'us',
-  promo_code: promoCode = '',
-  shopify_host: shopifyHost = 'order.vibe.us',
-  number_format: numberFormat = 'en-US',
-} = cart;
 const renderOffers = !!cart.render_offers;
+
+const cartOptions = {
+  currency: 'USD',
+  region: 'us',
+  promo_code: '',
+  shopifyHost: 'order.vibe.us',
+  numberFormat: 'en-US',
+};
+
+const moneyFmt = new Intl.NumberFormat(cartOptions.numberFormat, {
+  style: 'currency',
+  currency: cartOptions.currency,
+});
 
 /* End Data */
 
@@ -44,12 +53,22 @@ function parseBoolean(value) {
   return value === '1' || value === 'true';
 }
 
-const moneyFmt = new Intl.NumberFormat(numberFormat, {
-  style: 'currency',
-  currency,
-});
 
-let sidebarPromise = null;
+function initShopifySdk() {
+  const clientConfig =
+    cartOptions.shopifyHost === 'order.vibe.us'
+      ? {
+        domain: 'order.vibe.us',
+        storefrontAccessToken: '353c0f962f13d59441ebe8f392c22745',
+      }
+      : {
+        domain: 'vibe.toyond.de',
+        storefrontAccessToken: '59ed50ec21cff74d3a509f4ad142bffb',
+      };
+
+  handleSetShopifyClient(ShopifyBuy.buildClient(clientConfig));
+}
+
 function loadScript(src, integrity) {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script');
@@ -64,14 +83,7 @@ function loadScript(src, integrity) {
     document.getElementsByTagName('head')[0].appendChild(script);
   });
 }
-watchEffect(() => {
-  if (showCartModal.value) {
-    document.documentElement.classList.add('is-clipped');
-  } else {
-    document.documentElement.classList.remove('is-clipped');
-  }
 
-});
 function loadSidebar() {
   const scriptsArr = [
     'https://sdks.shopifycdn.com/js-buy-sdk/v2/latest/index.umd.min.js',
@@ -81,35 +93,33 @@ function loadSidebar() {
 
   if (!sidebarPromise) {
     sidebarPromise = new Promise((resolve, reject) => {
-      const loader = async () => {
-        scriptsArr.forEach(async (src) => await loadScript(src));
-        // await import('./extend/extend-aftermarket-integration.js');
-        // await import('./extend/extend-product-integration.js');
-        // await import('./extend/extend-utils.js');
-      };
 
-      loader()
+      const promiseArray = [];
+      for(let i = 0; i < scriptsArr.length; i++ )
+        promiseArray.push(loadScript(scriptsArr[i]));
+
+      Promise.all(promiseArray)
         .then(() => {
-          // Extend.config({ storeId: '91426846-4d2c-482d-a9e9-1031f0ffb6b0' });
-          // console.log('Extend: ', Extend);
-          // return import('@js/nav-cart-sidebar.js');
+          Extend.config({ storeId: '91426846-4d2c-482d-a9e9-1031f0ffb6b0' });
+        })
+        .then(() => {
+          initShopifySdk();
         })
         .then(resolve)
         .catch(reject);
     });
   }
-
   return sidebarPromise;
 }
 
-async function onLauncherClick(el) {
-  const sidebar = await loadSidebar();
-  sidebar.show();
-}
+// async function onLauncherClick(el) {
+//   const sidebar = await loadSidebar();
+//   sidebar.show();
+// }
 
-document.querySelectorAll('.button.is-nav-cart').forEach((el) => {
-  el.addEventListener('click', () => onLauncherClick(el));
-});
+// document.querySelectorAll('.button.is-nav-cart').forEach((el) => {
+//   el.addEventListener('click', () => onLauncherClick(el));
+// });
 
 // document.querySelectorAll('.formatted-price').forEach((priceEl) => {
 //   priceEl.textContent = moneyFmt.format(parseFloat(priceEl.textContent));
