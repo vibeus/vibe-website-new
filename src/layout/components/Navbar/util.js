@@ -1,6 +1,6 @@
 let sidebarPromise = null;
 
-function loadScript(src, integrity) {
+export function loadScript(src, integrity) {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script');
     script.type = 'text/javascript';
@@ -40,8 +40,4 @@ export function loadCartScripts() {
   }
 
   return sidebarPromise;
-}
-
-export async function onCartLauncherClick() {
-  await loadCartScripts();
 }
