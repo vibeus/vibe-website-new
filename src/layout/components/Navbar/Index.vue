@@ -16,9 +16,9 @@
 </template>
 
 <script setup>
-import { loadCartScripts } from './util';
 import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink, CartModal } from './components';
 import { products } from '@/data/products';
+import { loadScript } from './util';
 import { useCartEffect } from '@/store/cart';
 
 /* Start Data */
@@ -54,7 +54,6 @@ function parseBoolean(value) {
   return value === '1' || value === 'true';
 }
 
-
 function initShopifySdk() {
   const clientConfig =
     cartOptions.shopifyHost === 'order.vibe.us'
@@ -69,20 +68,7 @@ function initShopifySdk() {
   handleSetShopifyClient(ShopifyBuy.buildClient(clientConfig));
 }
 
-function loadScript(src, integrity) {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.onload = resolve;
-    script.onerror = reject;
-    script.src = src;
-    if (integrity) {
-      script.integrity = integrity;
-    }
-    document.getElementsByTagName('head')[0].appendChild(script);
-  });
-}
+
 
 function loadSidebar() {
   const scriptsArr = [

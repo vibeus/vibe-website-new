@@ -14,8 +14,6 @@
 </template>
 
 <script setup>
-import { onCartLauncherClick } from '../util';
-
 const { frontmatter: fm } = useData();
 import { useCartEffect } from '@/store/cart';
 const { handleOpenCartModal } = useCartEffect();
