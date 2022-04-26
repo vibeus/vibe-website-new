@@ -14,14 +14,12 @@ const { handleOpenCartModal } = useCartEffect();
 // Data start
 const cartData = useCartEffect();
 const isCartModalOpen = computed(() => { return cartData.isCartModalOpen });
-const checkout = computed(() => { return cartData.checkout })
+const checkout = computed(() => { return cartData.checkout });
 // Get Data end 
 
 watchEffect(() => {
-  
   // Wait until checkout returned from Shopify
-  if(!checkout.value) return 
-  console.log('checkout.value: ', checkout.value);
+  if(!checkout.value) return; 
   if (isCartModalOpen.value) {
     document.documentElement.classList.add('is-clipped');
   } else {

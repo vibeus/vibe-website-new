@@ -17,7 +17,10 @@
     </a>
   </div>
 </template>
+
 <script setup>
+import { onCartLauncherClick } from '../util';
+
 const { frontmatter: fm } = useData();
 import { useCartEffect } from '@/store/cart';
 const { handleOpenCartModal } = useCartEffect();
@@ -25,6 +28,11 @@ const { handleOpenCartModal } = useCartEffect();
 const toggleMenuActive = () => {
   const menu = document.getElementById('nav-menu');
   menu.classList.toggle('is-active');
+};
+
+const onCartClick = () => {
+  Extend.config({ storeId: '91426846-4d2c-482d-a9e9-1031f0ffb6b0' });
+  showCartModal.value = true;
 };
 </script>
 <style lang="sass" scoped>

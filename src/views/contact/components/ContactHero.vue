@@ -29,7 +29,7 @@ const props = defineProps({
 });
 </script>
 <style lang="sass" scoped>
-@import '@css/ase'
+@import '@css/base'
 
 .hero
   color: $vibe-black

@@ -150,12 +150,12 @@ export function getHubspotUtk() {
 }
 
 export function getHubspotBody(form, fields) {
+  console.log('fields: ', fields);
   const hutk = getHubspotUtk();
   const body = { fields };
 
-  if (hutk) {
+  if (hutk)
     body.context = { hutk };
-  }
 
   // add legalConsentOptions for gdpr
   const consentToProcessElt = form.querySelector('.consent-to-process');

@@ -1,7 +1,7 @@
 <template>
   <section class="contact">
     <div class="container is-form">
-      <VForm :formData="contactSection.form" @msgSuccess="elMsgSuccess" />
+      <VForm :formData="contactSection.form" />
     </div>
     <div class="container is-support">
       <h2 class="title">{{contactSection.support.title}}</h2>

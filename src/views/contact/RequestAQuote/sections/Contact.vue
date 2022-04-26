@@ -65,7 +65,7 @@
           {{ contactSection.tax_exempt.title }}
         </label>
       </div>
-      <VForm :formData="contactSection.form" @msgSuccess="elMsgSuccess" />
+      <VForm :formData="contactSection.form" />
     </div>
     <div class="official-quote-check" id="official-quote">
       <div class="check-container">

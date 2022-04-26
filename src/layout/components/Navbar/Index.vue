@@ -16,6 +16,7 @@
 </template>
 
 <script setup>
+import { loadCartScripts } from './util';
 import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink, CartModal } from './components';
 import { products } from '@/data/products';
 import { useCartEffect } from '@/store/cart';
@@ -127,7 +128,7 @@ function loadSidebar() {
 // Delay load sidebar after page load. If user clicks cart within the timeout period, this will be a no-op.
 onMounted(() => {
   import('@js/nav');
-  loadSidebar()
+  loadSidebar();
 });
 </script>
 
