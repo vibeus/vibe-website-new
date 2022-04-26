@@ -1,16 +1,19 @@
 <template>
   <div class="cart-count">
-    <input id="" name="" :class="`input ${cartCount.class}`" :value="count" />
-    <span class="icon is-small is-left" @click="minus">
+    <input type="number" id="" name="" :class="`input ${cartCount.class}`" :value="count" />
+    <span class="icon is-small is-left" @click="adjustInput(1)">
       <svg-icon icon-name="cart-count-minus" />
     </span>
-    <span class="icon is-small is-right" @click="plus">
+    <span class="icon is-small is-right" @click="adjustInput(-1)">
       <svg-icon icon-name="cart-count-plus" />
     </span>
   </div>
 </template>
 
 <script setup>
+const MIN_ITEM_COUNT = 1;
+const MAX_ITEM_COUNT = 99;
+
 const props = defineProps({
   cartCount: {
     type: Object,
@@ -18,14 +21,23 @@ const props = defineProps({
   },
 });
 const count = ref(props.cartCount.count);
-function minus() {
-  if (count.value > 0) {
-    count.value--;
-  }
-}
-function plus() {
-  count.value++;
-}
+
+const adjustInput = (value) => {
+  const current = parseInt(count.value + value) || 0;
+  const newValue = Math.min(
+    Math.max(MIN_ITEM_COUNT, current + value),
+    MAX_ITEM_COUNT
+  );
+  count.value = newValue.toString();
+};
+// function minus() {
+//   if (count.value > 0) {
+//     count.value--;
+//   }
+// }
+// function plus() {
+//   count.value++;
+// }
 </script>
 
 <style lang="sass">
@@ -36,6 +48,11 @@ function plus() {
   position: relative
   width: 128px
   height: 37px
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button
+    -webkit-appearance: none
+  input[type=number]
+    -moz-appearance: textfield
   .input
     width: 100%
     height: 100%

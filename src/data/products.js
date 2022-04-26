@@ -142,5 +142,13 @@ export const products = [
       style2: true,
       hidden: false
     }
+  },
+  {
+    product_name: 'extend-protection-plan',
+    title: 'Extend Protection Plan',
+    product_id: 'extend-protection-plan',
+    figure: 'img/common/global-cart/extend_icon.png',
+    sold_out: false,
+    backorder: false,
   }
 ];
