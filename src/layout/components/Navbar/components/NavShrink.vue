@@ -4,11 +4,8 @@
       <span>See a Demo</span>
     </a>
     <div class="nav-divider is-hidden-mobile" data-v-00cdf7b5=""></div>
-    <button class="nav-btn nav-cart-icon mgl-8">
-      <svg-icon
-        class="nav-icon" icon-name="global-cart-cart" alt="cart icon"
-        @click="onCartClick"
-      />
+    <button class="nav-btn nav-cart-icon mgl-8" @click="handleOpenCartModal">
+      <svg-icon class="nav-icon" icon-name="global-cart-cart" alt="cart icon" />
     </button>
     <button class="nav-btn nav-user-icon is-hidden-mobile">
       <svg-icon class="nav-icon" icon-name="global-cart-user" alt="user icon" />
@@ -25,7 +22,8 @@
 import { onCartLauncherClick } from '../util';
 
 const { frontmatter: fm } = useData();
-const showCartModal = inject('showCartModal');
+import { useCartEffect } from '@/store/cart';
+const { handleOpenCartModal } = useCartEffect();
 
 const toggleMenuActive = () => {
   const menu = document.getElementById('nav-menu');
@@ -33,12 +31,8 @@ const toggleMenuActive = () => {
 };
 
 const onCartClick = () => {
-  console.log(123);
-  console.log(Extend);
-  // onCartLauncherClick()
-  //   .then(() => {
-  //     showCartModal.value = true;
-  //   });
+  Extend.config({ storeId: '91426846-4d2c-482d-a9e9-1031f0ffb6b0' });
+  showCartModal.value = true;
 };
 </script>
 <style lang="sass" scoped>

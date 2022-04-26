@@ -1,5 +1,5 @@
 <template>
-  <form class="form" ref="form" :model="formItem">
+  <form class="form" ref="form" :model="formItem" :action="action" :method="method">
     <template v-for="(row, idx) in controls" :key="idx">
       <div class="f-row">
         <template v-for="item in row" :key="item.name">
@@ -35,7 +35,8 @@
 </template>
 
 <script setup>
-import { validEmail } from '@/utils/validate';
+import { Loading, Message } from '@vcomp/ui';
+import { validEmail, getHubspotBody } from '@/utils';
 
 const props = defineProps({
   formData: {
@@ -46,7 +47,7 @@ const props = defineProps({
 
 const emit = defineEmits(['msgSuccess']);
 
-const { action, buttons, controls } = Object.assign({}, props.formData);
+const { action, method = 'POST', buttons, controls } = Object.assign({}, props.formData);
 
 /* Start Data */
 const { proxy } = getCurrentInstance();
@@ -68,47 +69,48 @@ const onFormControlChange = el => {
 
 /* End Data */
 
-const submitForm = () => {
-  proxy.$refs.form.validate(async valid => {
-    if (valid) {
-      let fields = [];
-      console.log('formItem.value: ', formItem.value);
-      for (const pair of new FormData(formItem.value).entries()) {
-        if (pair[0] === 'consent-to-communicate-checkbox') continue;
-        fields.push({
-          name: pair[0],
-          value: pair[1],
-        });
-      }
-      console.log('fields: ', fields);
-      fields = [];
-      // 特定表单逻辑处理
-      // fields = (await dealSpecificForm(action, fields, form)) || fields;
+const submitForm = async () => {
+  Loading.show();
+  Message({ type: 'warn', text: 'Test' });
+  const form = proxy.$refs.form;
+  const fields = [];
+  for (const pair of new FormData(form).entries()) {
+    if (pair[0] === 'consent-to-communicate-checkbox') continue;
+    fields.push({
+      name: pair[0],
+      value: pair[1],
+    });
+  }
+  console.log('fields: ', fields);
+  // 特定表单逻辑处理
+  // fields = (await dealSpecificForm(action, fields, form)) || fields;
 
-      // const body = getHubspotBody(form, fields);
+  const body = getHubspotBody(form, fields);
 
-      // return fetch(form.action, {
-      //   method: form.method,
-      //   body: JSON.stringify(body),
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      // })
-      //   .then((r) => {
-      //     if (r.ok) {
-      //       form.parentElement.classList.add('is-submitted');
-      //     } else {
-      //       form.parentElement.classList.add('is-failed');
-      //     }
+  setTimeout(() => Loading.close(), 3000);
 
-      //     return r;
-      //   })
-      //   .catch((ex) => {
-      //     form.parentElement.classList.add('is-failed');
-      //     throw ex;
-      //   });
-    } else console.log('invalid');
-  });
+  // return fetch(form.action, {
+  //   method: form.method,
+  //   body: JSON.stringify(body),
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  // })
+  //   .then((r) => {
+  //     if (r.ok) {
+  //       Loading.hide();
+  //       form.parentElement.classList.add('is-submitted');
+  //     } else {
+  //       form.parentElement.classList.add('is-failed');
+  //     }
+
+  //     return r;
+  //   })
+  //   .catch((ex) => {
+  //     form.parentElement.classList.add('is-failed');
+  //     throw ex;
+  //   });
+
 };
 
 onMounted(() => {

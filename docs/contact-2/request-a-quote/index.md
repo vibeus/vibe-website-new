@@ -63,7 +63,8 @@ contact_section:
     title: Tax Exempt
   form:
     class: draft-form
-    action: https://api.hsforms.com/submissions/v3/integration/submit/5698963/ef181a88-e583-4509-a8ad-1a6085c7c5ab
+    action2: https://api.hsforms.com/submissions/v3/integration/submit/5698963/ef181a88-e583-4509-a8ad-1a6085c7c5ab
+    action: https://api.hsforms.com/submissions/v3/integration/submit/5698963/d90b2065-4f06-43e4-99d1-39406755a4d1
     controls:
       - - form_title: Contact Information
           name: firstname

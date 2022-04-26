@@ -11,7 +11,7 @@
   "dependencies": {
     "@vue/compiler-sfc": "^3.2.31",
     "@vue/composition-api": "^1.4.9",
-    "element-plus": "^1.1.0-beta.1",
+    "element-plus": "2.1.9",
     "marked": "^4.0.14",
     "pinia": "^2.0.12",
     "rollup": "^2.70.1",
