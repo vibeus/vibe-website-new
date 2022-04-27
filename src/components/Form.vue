@@ -71,19 +71,18 @@ const onFormControlChange = el => {
 /* End Data */
 
 const submitForm = async () => {
+  Message.error('Submit Failed!');
+  Message.success('Submit Success!');
   Loading.show();
-  Message({ type: 'warn', text: 'Test' });
   const form = proxy.$refs.form;
   const fields = [];
   for (const pair of new FormData(form).entries()) {
-    console.log('pair: ', pair);
     if (pair[0] === 'consent-to-communicate-checkbox') continue;
     fields.push({
       name: pair[0],
       value: pair[1],
     });
   }
-  console.log('fields: ', fields);
   // 特定表单逻辑处理
   // fields = (await dealSpecificForm(action, fields, form)) || fields;
 
@@ -99,17 +98,19 @@ const submitForm = async () => {
     },
   })
     .then((r) => {
+      console.log('r: ', r);
       if (r.ok) {
         Loading.hide();
         form.parentElement.classList.add('is-submitted');
       } else {
         form.parentElement.classList.add('is-failed');
+        Message.error('Submit Failed!');
       }
-
       return r;
     })
     .catch((ex) => {
       form.parentElement.classList.add('is-failed');
+      Message.error('Submit Failed!');
       throw ex;
     });
 
