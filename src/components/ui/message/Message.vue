@@ -1,10 +1,6 @@
 <template>
-  <!-- vue动画：从上滑入且淡出 -->
   <Transition name="down">
-    <!-- style 绑定的是样式 -->
     <div class="message" :style="style[type]" v-show="visible">
-      <!-- 不同提示图标会变 -->
-      <i class="iconfont" :class="[style[type].icon]"></i>
       <svg-icon :icon-name="style[type].icon" />
       <span class="text">{{text}}</span>
     </div>
@@ -13,7 +9,6 @@
 
 <script setup>
 import SvgIcon from '@vcomp/common/SvgIcon.vue';
-console.log('SvgIcon: ', SvgIcon);
 const props = defineProps({
   text: {
     type: String,
@@ -47,9 +42,9 @@ const style = {
     borderColor: 'rgb(225, 243, 216)'
   }
 };
-// 定义一个数据控制显示隐藏，默认是隐藏，组件挂载完毕显示
+
 const visible = ref(false);
-onMounted(() => { // 需调用钩子函数，等dom渲染完成后，再进行赋值，如果在setup中直接赋值，则会被直接渲染成true
+onMounted(() => {
   visible.value = true;
 });
 </script>

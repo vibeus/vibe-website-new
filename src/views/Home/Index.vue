@@ -18,10 +18,10 @@ import HomeHero from './components/HomeHero.vue';
 import HomeFeatures from './components/HomeFeatures.vue';
 import HomeFooter from './components/HomeFooter.vue';
 import { useAppStore } from '@/store/app';
-import { useCartEffect } from '@/store/cart'
-import { toRaw } from 'vue'
+import { useCartEffect } from '@/store/cart';
+import { toRaw } from 'vue';
 const cartCheckout = useCartEffect();
-const checkout = computed(() => cartCheckout.checkout)
+const checkout = computed(() => cartCheckout.checkout);
 const { handleAddtoCart } = useCartEffect();
 const app = useAppStore();
 const device = computed(() => app.device);
@@ -33,10 +33,10 @@ provide('testInfo', testInfo);
 
 const handleCheckout = () => {
   if(checkout) {
-    const checkoutList = toRaw(checkout.value)
-    window.location = checkoutList.webUrl
+    const checkoutList = toRaw(checkout.value);
+    window.location = checkoutList.webUrl;
   }
-}
+};
 
 const consoleT = () => {
   console.log(123);

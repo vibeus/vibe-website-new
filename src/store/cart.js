@@ -34,8 +34,8 @@ export const useCartEffect = defineStore({
               customAttributes: [],
             },
           ]).then(co => {
-          this.checkout = co
-        })
+            this.checkout = co;
+          });
       }
     },
     handleSetShopifyClient(payload) {

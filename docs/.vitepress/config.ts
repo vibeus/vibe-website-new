@@ -31,7 +31,7 @@ async function config() {
       // css: {
       //   preprocessorOptions: {
       //     scss: {
-      //       additionalData: '@import "/@css/base/index.sass";'
+      //       additionalData: '@import "@css/base/index.sass";'
       //     }
       //   }
       // },
