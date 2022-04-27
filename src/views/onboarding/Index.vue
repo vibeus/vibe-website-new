@@ -79,11 +79,11 @@ const onboardingChoices = fm.value.onboarding_choices;
         border-radius: 5px
       &:hover
         box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.07)
-      &:first-child
+      &:not(:first-child)
         +tablet
-          margin-right: 40px
+          margin-left: 40px
         +mobile
-          margin-right: .5rem
+          margin-left: .5rem
       .title
         text-align: center
         +tablet
