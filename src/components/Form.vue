@@ -1,13 +1,14 @@
 <template>
-  <form class="form" ref="form" :model="formItem" :action="action" :method="method">
+  <form class="form" ref="form" :action="action" :method="method">
     <template v-for="(row, idx) in controls" :key="idx">
       <div class="f-row">
         <template v-for="item in row" :key="item.name">
-          <div class="form-outline">
+          <div class="form-outline" :class="item.column_class">
             <select
               v-if="item.dropdown"
               class="form-control select-input"
               placeholder="Please select"
+              :name="item.name"
               :required="item.required"
               @change="onFormControlChange($event.target)"
             >
@@ -51,13 +52,13 @@ const { action, method = 'POST', buttons, controls } = Object.assign({}, props.f
 
 /* Start Data */
 const { proxy } = getCurrentInstance();
-const formItem = ref({});
+// const formItem = ref({});
 
-(function initFormData() {
-  controls.forEach(item => {
-    formItem.value[item.name] = null;
-  });
-})();
+// (function initFormData() {
+//   controls.forEach(item => {
+//     formItem.value[item.name] = null;
+//   });
+// })();
 
 const rules = {
   // email: [{ required: true, trigger: 'blur', validator: validEmail }],
@@ -70,8 +71,9 @@ const onFormControlChange = el => {
 /* End Data */
 
 const submitForm = async () => {
+  Message.error('Submit Failed!');
+  Message.success('Submit Success!');
   Loading.show();
-  Message({ type: 'warn', text: 'Test' });
   const form = proxy.$refs.form;
   const fields = [];
   for (const pair of new FormData(form).entries()) {
@@ -81,7 +83,6 @@ const submitForm = async () => {
       value: pair[1],
     });
   }
-  console.log('fields: ', fields);
   // 特定表单逻辑处理
   // fields = (await dealSpecificForm(action, fields, form)) || fields;
 
@@ -89,27 +90,29 @@ const submitForm = async () => {
 
   setTimeout(() => Loading.close(), 3000);
 
-  // return fetch(form.action, {
-  //   method: form.method,
-  //   body: JSON.stringify(body),
-  //   headers: {
-  //     'Content-Type': 'application/json',
-  //   },
-  // })
-  //   .then((r) => {
-  //     if (r.ok) {
-  //       Loading.hide();
-  //       form.parentElement.classList.add('is-submitted');
-  //     } else {
-  //       form.parentElement.classList.add('is-failed');
-  //     }
-
-  //     return r;
-  //   })
-  //   .catch((ex) => {
-  //     form.parentElement.classList.add('is-failed');
-  //     throw ex;
-  //   });
+  return fetch(form.action, {
+    method: form.method,
+    body: JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((r) => {
+      console.log('r: ', r);
+      if (r.ok) {
+        Loading.hide();
+        form.parentElement.classList.add('is-submitted');
+      } else {
+        form.parentElement.classList.add('is-failed');
+        Message.error('Submit Failed!');
+      }
+      return r;
+    })
+    .catch((ex) => {
+      form.parentElement.classList.add('is-failed');
+      Message.error('Submit Failed!');
+      throw ex;
+    });
 
 };
 

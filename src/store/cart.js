@@ -18,11 +18,24 @@ export const useCartEffect = defineStore({
     checkout: null,
     cartList: getLocalCartList()
   }),
-
   actions: {
     handleOpenCartModal() {
       if(this.checkout) {
         this.isCartModalOpen = !this.isCartModalOpen;
+      }
+    },
+    handleAddtoCart(productId, quantity = 1) {
+      if(this.checkoutIdValue) {
+        return this.shopifyClient.checkout
+          .addLineItems(this.checkoutIdValue, [
+            {
+              variantId: btoa(`gid://shopify/ProductVariant/${productId}`),
+              quantity,
+              customAttributes: [],
+            },
+          ]).then(co => {
+            this.checkout = co;
+          });
       }
     },
     handleSetShopifyClient(payload) {

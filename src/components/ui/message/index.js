@@ -1,33 +1,75 @@
-// 实现使用函数调用xtx-message组件的逻辑
-import { createVNode, render } from 'vue';
-import Message from './Message.vue';
-
-// 准备dom容器
-let msgDom = document.getElementById('message-container');
-if (!msgDom) {
-  msgDom = document.createElement('div');
-  msgDom.setAttribute('class', 'message-container');
-  msgDom.id = 'message-container';
-  document.body.appendChild(msgDom);
-}
-
-// 定时器标识
-let timer = null;
+import createInstance from './instance.js';
 
 /**
- * type: ['warn', 'error', 'success]
+ * 读取配置并渲染 Message
+ * @param {Object} typeCfg 类型配置
+ * @param {Object/String} cfg 自定义配置
  */
-export default ({ type, text, duration = 3000 }) => {
-  // 实现：根据xtx-message.vue渲染消息提示
-  // 1. 导入组件
-  // 2. 根据组件创建虚拟节点
-  const vnode = createVNode(Message, { type, text });
-  // 3. 准备一个DOM容器
-  // 4. 把虚拟节点渲染挂载到DOM容器中
-  render(vnode, msgDom);
-  // 5. 开启定时，移出DOM容器内容
-  clearTimeout(timer);
-  timer = setTimeout(() => {
-    render(null, msgDom);  // 3秒后将组件从msgDom上移出
-  }, duration);
+function renderMsg(typeCfg = {}, cfg = '') {
+  // 允许直接传入消息内容，因此要判断传入的 cfg 类型
+  const isContent = typeof cfg === 'string';
+
+  // 整合自定义配置
+  cfg = isContent
+    ? { content: cfg }
+    : cfg;
+
+  const config = Object.assign({}, typeCfg, cfg); // 合并配置
+
+  const {
+    icon,
+    type = 'info',
+    content = '',
+    duration = 3000,
+    close = false
+  } = config;
+
+  // 创建实例
+  return createInstance({
+    icon,
+    type,
+    content,
+    duration,
+    close
+  });
+}
+
+
+export default {
+  // 文本消息
+  info(cfg = '') {
+    const textCfg = {
+      type: 'info',
+      icon: 'shared-info'
+    };
+
+    return renderMsg(textCfg, cfg);
+  },
+  // 警告消息
+  warn(cfg = '') {
+    const textCfg = {
+      type: 'warn',
+      icon: 'shared-warn'
+    };
+
+    return renderMsg(textCfg, cfg);
+  },
+  // 成功提示
+  success(cfg = '') {
+    const successCfg = {
+      type: 'success',
+      icon: 'shared-success'
+    };
+
+    return renderMsg(successCfg, cfg);
+  },
+  // 错误提示
+  error(cfg = '') {
+    const errorCfg = {
+      type: 'error',
+      icon: 'shared-error'
+    };
+
+    return renderMsg(errorCfg, cfg);
+  },
 };
