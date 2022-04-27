@@ -14,22 +14,17 @@ navbar:
       url: https://knowledge.vibe.us/kb-tickets/new
 
 hero:
+  bg_figure: onboarding/hero-tablet.png
+  bg_figure_mobile: onboarding/hero-mobile.png
   title: 'Welcome to Vibe!'
   body: "You're the newest member of the growing Vibe community, and we are so glad that you're here."
-  cta:
-    - class: is-hidden-mobile
-      link:
-        class: scroll-down-link
-        text: 'Scroll down to get started ↓'
-        scroll_to_id: &setup_id setup
-    - class: is-hidden-tablet
-      title: 'Scroll down to get started'
-      link:
-        class: scroll-down-link
-        scroll_to_id: &setup_id setup
-        icon:
-          class: scroll-down
-          url: img/onboarding/scroll-down-icon.svg
+  link:
+    class: scroll-down-link
+    text: 'Scroll down to get started'
+    scroll_to_id: &setup_id setup
+    icon:
+      class: scroll-down
+      url: img/onboarding/scroll-down-icon.svg
 setup:
   id: *setup_id
   progress:

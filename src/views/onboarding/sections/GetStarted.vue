@@ -51,6 +51,7 @@ const props = defineProps({
             margin-bottom: 32px
     .links-wrap
         display: flex
+        justify-content: space-between
         +mobile
             flex-direction: column
             align-items: center
@@ -63,9 +64,9 @@ const props = defineProps({
             display: flex
             flex-direction: column
             justify-content: space-between
+            font-family: $vibe-family-body
             +mobile
                 max-width: 300px
-                padding: 31px 0 29px
                 font-size: 16px
                 text-align: center
             .link
