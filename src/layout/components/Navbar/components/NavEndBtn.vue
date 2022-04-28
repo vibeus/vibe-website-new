@@ -15,8 +15,8 @@
 
 <script setup>
 const { frontmatter: fm } = useData();
-import { useCartEffect } from '@/store/cart';
-const { handleOpenCartModal } = useCartEffect();
+import { useCartStore } from '@/store/cart';
+const { handleOpenCartModal } = useCartStore();
 
 </script>
 

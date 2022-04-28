@@ -8,8 +8,8 @@
 
 <script setup>
 import CartItem from './CartItem.vue';
-import { useCartEffect } from '@/store/cart';
-const cartData = useCartEffect();
+import { useCartStore } from '@/store/cart';
+const cartData = useCartStore();
 const cartList = computed(() => cartData.cartList);
 
 

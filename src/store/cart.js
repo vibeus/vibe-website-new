@@ -1,46 +1,84 @@
-import { defineStore } from 'pinia';
 import { products } from '@/data/products';
 
-const getLocalCartList = () => {
-  return JSON.parse(localStorage.cartList || '{}');
+const getVariantId = (lineItem) => {
+  // Shopify used to encode line item id to base64, but changed without any notice.
+  // Keep base64 decoding logic just in case it changes back...
+  const maybeEncoded = lineItem.variant.id;
+  if (maybeEncoded.startsWith('gid://')) {
+    return maybeEncoded;
+  } else {
+    return atob(maybeEncoded);
+  }
 };
 
-const setLocalCartList = () => {
+const getLocalCartList = () => JSON.parse(localStorage.cartList || '{}');
 
-};
-export const useCartEffect = defineStore({
+const getCheckoutIdValue = () => localStorage.getItem('shopify-checkout-id-us') || null;
+
+const setLocalCartList = (cartList) => localStorage.setItem('cartList', JSON.stringify(cartList));
+
+export const useCartStore = defineStore({
   id: 'cart',
   state: () => ({
     isCartModalOpen: false, //default setting
     shopifyClient: null,
     checkoutIdKey: 'shopify-checkout-id-us',
-    checkoutIdValue: null,
-    checkout: null,
-    cartList: getLocalCartList()
+    checkoutIdValue: getCheckoutIdValue(),
+    checkout: null,   //return from shopify
+    cartList: getLocalCartList(),  // Cart list
+    // cartListCount: getTotalItemCount()
   }),
-  actions: {
-    handleOpenCartModal() {
-      if(this.checkout) {
-        this.isCartModalOpen = !this.isCartModalOpen;
-      }
+  getters: {
+    getCartList(state) {
+      return state.cartList;
     },
-    handleAddtoCart(productId, quantity = 1) {
-      if(this.checkoutIdValue) {
-        return this.shopifyClient.checkout
-          .addLineItems(this.checkoutIdValue, [
-            {
-              variantId: btoa(`gid://shopify/ProductVariant/${productId}`),
-              quantity,
-              customAttributes: [],
-            },
-          ]).then(co => {
-            this.checkout = co;
-          });
+    getTotalItemCount(state) {
+      const cartList = state.cartList;
+      let count = 0;
+      for (const [key, value] of Object.entries(cartList)) {
+        count+= value.quantity;
       }
+      return count;
+    },
+    getTotalPrice(state) {
+      const cartList = state.cartList;
+    }
+  },
+  actions: {
+    handleDeleteItem(productId) {
+      this.$patch(state => { 
+        const { [productId]: removedProduct, ...restProduct } = state.cartList;
+        state.cartList = restProduct;
+        setLocalCartList(state.cartList);
+      });
+    },
+    handleUpdateCartItem(productId, quantity) {
+      if(!quantity) return; 
+
+      const cartList = toRaw(this.cartList);
+      cartList[productId].quantity += quantity;   //can be +1 or -1
+    },  
+    handleAddtoCart(productId, quantity = 0, customAttributes = []) {
+      if(!this.checkoutIdValue || !quantity) return;
+      const product = products.find((x) => x.product_id === productId);
+      
+
+      this.$patch(state => {
+        const cartList = state.cartList;
+        if(!cartList[productId]) {
+          cartList[productId] = product;
+          cartList[productId].quantity = 0; //initial quantity
+        }
+        const count = cartList[productId].quantity + quantity;
+        if(count > 0)
+          cartList[productId].quantity += quantity;
+
+        setLocalCartList(cartList);
+      });
     },
     handleSetShopifyClient(payload) {
       if(!this.shopifyClient) {
-        this.shopifyClient = payload;
+        this.$patch(state => state.shopifyClient = payload);
       }
       this.initialShopifyCheckout();
     },
@@ -59,15 +97,27 @@ export const useCartEffect = defineStore({
             }
           })
           .then((co) => {
-            this.checkout = co;
+            this.handleSetCheckout(co);
           });
       } else {
         this.shopifyClient.checkout.create().then((co) => {
-          this.checkout = co;
-          this.checkoutIdValue = co.id;
+          this.handleSetCheckout(co);
+          this.handleSetCheckoutValue(co.id);
+          localStorage.setItem(this.checkoutIdKey, this.checkoutIdValue);
         });
       }
-    }
+    },
+    handleSetCheckout(checkout) {
+      this.$patch(state => state.checkout = checkout);
+    },
+    handleSetCheckoutValue(value) {
+      this.$patch(state => state.checkoutIdValue = value);
+    },
+    handleOpenCartModal() {
+      if(this.checkout) { 
+        this.$patch(state => state.isCartModalOpen = !state.isCartModalOpen);
+      }
+    },
   }
 });
 

@@ -8,11 +8,11 @@
 <script setup>
 import { ref } from 'vue';
 import CartContent from './components/CartContent.vue';
-import { useCartEffect } from '@/store/cart';
-const { handleOpenCartModal } = useCartEffect();
+import { useCartStore } from '@/store/cart';
+const { handleOpenCartModal } = useCartStore();
 
 // Data start
-const cartData = useCartEffect();
+const cartData = useCartStore();
 const isCartModalOpen = computed(() => { return cartData.isCartModalOpen });
 const checkout = computed(() => { return cartData.checkout });
 // Get Data end 

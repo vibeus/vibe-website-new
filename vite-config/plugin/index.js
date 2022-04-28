@@ -13,7 +13,7 @@ export function createVitePlugins() {
     }),
     AutoImport({ // 自动按需引入依赖
       // resolvers: [ElementPlusResolver()],
-      imports: ['vue', 'vitepress'],
+      imports: ['vue', 'vitepress', 'pinia'],
       dts: '../src/auto-imports.d.ts',
     }),
     // Components({

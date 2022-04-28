@@ -19,16 +19,12 @@
 import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink, CartModal } from './components';
 import { products } from '@/data/products';
 import { loadScript } from './util';
-import { useCartEffect } from '@/store/cart';
+import { useCartStore } from '@/store/cart';
 
 /* Start Data */
 const { frontmatter: fm } = useData();
-const { 
-  handleSetShopifyClient, 
-  initialShopifyCheckout 
-} = useCartEffect();
+const { handleSetShopifyClient } = useCartStore();
 
-const shopifyClient = computed(() => { return useCartEffect().shopifyClient });
 
 let sidebarPromise = null;
 const cart = fm.value.navbar?.cart || {};
