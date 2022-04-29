@@ -18,7 +18,7 @@
               <div class="count-title board-title is-hidden-tablet">
                 {{ item.title_mobile }}
               </div>
-              <CartCount :cartCount="cartCount" />
+              <InputCount :cartCount="cartCount" />
             </div>
             <div class="image">
               <lazy-img class="hero-image is-hidden-tablet" :src="item.figure" alt="" />
@@ -46,7 +46,7 @@
             </div>
             <div class="f-col">
               <div class="count-title is-hidden-mobile">{{ i.title }}</div>
-              <CartCount :cartCount="cartCount" />
+              <InputCount :cartCount="cartCount" />
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@
 </template>
 <script setup>
 import VForm from '@vcomp/Form.vue';
-import CartCount from '@vcomp/CartCount.vue';
+import InputCount from '@vcomp/InputCount.vue';
 const props = defineProps({
   contactSection: {
     type: Object,

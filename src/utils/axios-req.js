@@ -1,6 +1,7 @@
 import axios from 'axios';
-import router from '@/router';
 import { Loading, Message } from '@vcomp/ui';
+
+let reqConfig;
 
 const service = axios.create();
 
@@ -9,16 +10,8 @@ service.interceptors.request.use(
   (request) => {
     reqConfig = request;
     if (request.bfLoading) {
-      loadingE = ElLoading.service({
-        lock: true,
-        text: '数据载入中',
-        // spinner: 'el-icon-ElLoading',
-        background: 'rgba(0, 0, 0, 0.1)'
-      });
+      Loading.show();
     }
-    /*
-     *params会拼接到url上
-     * */
     if (request.isParams) {
       request.params = request.data;
       request.data = {};
@@ -44,10 +37,10 @@ service.interceptors.response.use(
           cancelButtonText: '取消',
           type: 'warning'
         }).then(() => {
-          const userStore = useUserStore();
-          userStore.resetState().then(() => {
-            router.push({ path: '/login' });
-          });
+          // const userStore = useUserStore();
+          // userStore.resetState().then(() => {
+          //   router.push({ path: '/login' });
+          // });
         });
       }
       //返回错误信息
@@ -58,12 +51,9 @@ service.interceptors.response.use(
   },
   (err) => {
     /*http错误处理，处理跨域，404，401，500*/
-    if (loadingE) loadingE.close();
-    Message({
-      message: err,
-      type: 'error',
-      duration: 2 * 1000
-    });
+    if (Loading)
+      Loading.close();
+    Message.error(err);
     //如果是跨域
     //Network Error,cross origin
     const errObj = {
@@ -81,18 +71,13 @@ export function axiosReq({
   method,
   baseURL,
   timeout,
-  isAlertErrorMsg = true
+  isParams
 }) {
   return service({
     url: url,
     method: method ?? 'get',
     data: data ?? {},
     isParams: isParams ?? false,
-    bfLoading: bfLoading ?? false,
-    afHLoading: afHLoading ?? true,
-    isUploadFile: isUploadFile ?? false,
-    isDownLoadFile: isDownLoadFile ?? false,
-    isAlertErrorMsg: isAlertErrorMsg,
     baseURL: baseURL ?? import.meta.env.VITE_APP_BASE_URL,
     timeout: timeout ?? 15000
   });

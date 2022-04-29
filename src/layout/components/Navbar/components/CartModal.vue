@@ -44,7 +44,7 @@
                   ${{ product.price }}
                 </p>
               </div>
-              <CartCount :cartCount="cartCount" />
+              <InputCount :cartCount="cartCount" />
             </div>
           </div>
           <svg-icon
@@ -147,7 +147,7 @@
 </template>
 
 <script setup>
-import CartCount from '@vcomp/CartCount.vue';
+import InputCount from '@vcomp/InputCount.vue';
 import { products } from '@/data/products';
 
 const showCartModal = inject('showCartModal');

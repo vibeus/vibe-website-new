@@ -37,7 +37,8 @@
 
 <script setup>
 import { Loading, Message } from '@vcomp/ui';
-import { validEmail, getHubspotBody } from '@/utils';
+import { axiosReq, validEmail, getHubspotBody } from '@/utils';
+
 
 const props = defineProps({
   formData: {
@@ -90,29 +91,38 @@ const submitForm = async () => {
 
   setTimeout(() => Loading.close(), 3000);
 
-  return fetch(form.action, {
-    method: form.method,
-    body: JSON.stringify(body),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((r) => {
-      console.log('r: ', r);
-      if (r.ok) {
-        Loading.hide();
-        form.parentElement.classList.add('is-submitted');
-      } else {
-        form.parentElement.classList.add('is-failed');
-        Message.error('Submit Failed!');
-      }
-      return r;
-    })
-    .catch((ex) => {
-      form.parentElement.classList.add('is-failed');
-      Message.error('Submit Failed!');
-      throw ex;
-    });
+  axiosReq({
+    url: action,
+    method,
+    data: body,
+  }).then(data => {
+    console.log('data: ', data);
+
+  });
+
+  // return fetch(form.action, {
+  //   method: form.method,
+  //   body: JSON.stringify(body),
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  // })
+  //   .then((r) => {
+  //     console.log('r: ', r);
+  //     if (r.ok) {
+  //       Loading.hide();
+  //       form.parentElement.classList.add('is-submitted');
+  //     } else {
+  //       form.parentElement.classList.add('is-failed');
+  //       Message.error('Submit Failed!');
+  //     }
+  //     return r;
+  //   })
+  //   .catch((ex) => {
+  //     form.parentElement.classList.add('is-failed');
+  //     Message.error('Submit Failed!');
+  //     throw ex;
+  //   });
 
 };
 
