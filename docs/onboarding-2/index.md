@@ -29,6 +29,13 @@ onboarding_choices:
         Smartboard Pro 75″
       figure: onboarding/onboarding-75.png
       url: /onboarding-2/vibe-smartboard-pro-75/
+    - title: Vibe Smartboard S1 55″
+      title_mobile: |
+        Vibe
+
+        Smartboard S1 55″
+      figure: onboarding/onboarding-s1.png
+      url: /onboarding-2/vibe-smartboard-s1-55/
 
 ---
 
