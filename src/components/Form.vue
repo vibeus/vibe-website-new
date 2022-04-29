@@ -71,10 +71,17 @@ const onFormControlChange = el => {
 
 /* End Data */
 
+function addSubmittedClass(form, isSubmitted) {
+  if (isSubmitted) {
+    form.parentElement.classList.add('is-submitted');
+    form.parentElement.classList.remove('is-failed');
+  } else {
+    form.parentElement.classList.remove('is-submitted');
+    form.parentElement.classList.add('is-failed');
+  }
+}
+
 const submitForm = async () => {
-  Message.error('Submit Failed!');
-  Message.success('Submit Success!');
-  Loading.show();
   const form = proxy.$refs.form;
   const fields = [];
   for (const pair of new FormData(form).entries()) {
@@ -89,15 +96,18 @@ const submitForm = async () => {
 
   const body = getHubspotBody(form, fields);
 
-  setTimeout(() => Loading.close(), 3000);
-
   axiosReq({
     url: action,
     method,
+    bfLoading: true,
     data: body,
   }).then(data => {
     console.log('data: ', data);
-
+    addSubmittedClass(form, true);
+    Message.success('Submit Success!');
+  }).catch(err => {
+    addSubmittedClass(form, false);
+    Message.error('Submit Failed!');
   });
 
   // return fetch(form.action, {
