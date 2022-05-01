@@ -1,11 +1,11 @@
 <template>
   <main class="us-sales">
-    <CloserLook :closerLook="fm.closer_look" />
+    <CloserLook :closer-look="fm.closer_look" />
     <WhatsInBox />
     <CompareInBrief :compare="fm.compare" />
     <Faq :faqs="faqs" />
     <Reviews :reviews="fm.reviews" />
-    <BottomCta :bottomCta="fm.bottom_cta" />
+    <BottomCta :bottom-cta="fm.bottom_cta" />
   </main>
 </template>
 

@@ -1,7 +1,10 @@
 <template>
   <div class="cart-items">
-    <template v-for="(cartItem) in cartList" :key="cartItem.product_id">
-      <CartItem :item="cartItem"/>
+    <template
+      v-for="(cartItem) in cartList"
+      :key="cartItem.product_id"
+    >
+      <CartItem :item="cartItem" />
     </template>
   </div>
 </template>

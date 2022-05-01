@@ -1,5 +1,8 @@
 <template>
-  <aside class="sidebar" :class="{ open }">
+  <aside
+    class="sidebar"
+    :class="{ open }"
+  >
     <NavLinks class="nav" />
 
     <slot name="sidebar-top" />

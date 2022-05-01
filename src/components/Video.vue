@@ -1,11 +1,14 @@
 <template>
-  <div class="video-section" id="video-section">
+  <div
+    id="video-section"
+    class="video-section"
+  >
     <lazy-img
       class="image"
       :src="video.placeholder"
       :alt="video.alt"
-      @click="videoPlay"
       :style="{ visibility: isPlay ? 'hidden' : '' }"
+      @click="videoPlay"
     />
     <div class="video-section-wrap">
       <div :id="`${video.id}-iframe`"></div>

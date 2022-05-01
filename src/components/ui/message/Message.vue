@@ -1,9 +1,24 @@
 <template>
   <Transition name="down">
-    <div class="message" :class="`message-${config.type}`" v-show="visible">
-      <svg-icon v-if="config.icon" :icon-name="config.icon" />
-      <span class="content" v-text="config.content"></span>
-      <svg-icon class="close" v-if="config.close" icon-name="shared-close" @click="close" />
+    <div
+      v-show="visible"
+      class="message"
+      :class="`message-${config.type}`"
+    >
+      <svg-icon
+        v-if="config.icon"
+        :icon-name="config.icon"
+      />
+      <span
+        class="content"
+        v-text="config.content"
+      ></span>
+      <svg-icon
+        v-if="config.close"
+        class="close"
+        icon-name="shared-close"
+        @click="close"
+      />
     </div>
   </Transition>
 </template>

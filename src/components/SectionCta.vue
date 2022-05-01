@@ -1,7 +1,15 @@
 <template>
   <div class="cta is-section">
-    <template v-for="(button, index) in cta.buttons" :key="index">
-      <a class="button" :class="button.class" :href="button.link" :target="button.target">
+    <template
+      v-for="(button, index) in cta.buttons"
+      :key="index"
+    >
+      <a
+        class="button"
+        :class="button.class"
+        :href="button.link"
+        :target="button.target"
+      >
         {{ button.title }}
       </a>
     </template>

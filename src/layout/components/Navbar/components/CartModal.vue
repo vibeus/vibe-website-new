@@ -1,37 +1,66 @@
 <template>
   <div class="is-cart-dialog">
-    <div class="dialog-background" @click="showCartModal = false"></div>
+    <div
+      class="dialog-background"
+      @click="showCartModal = false"
+    ></div>
     <div class="dialog-content">
       <div class="cart-head cart-level">
         <div class="cart-level-left">
-          <span class="icon" @click="showCartModal = false">
+          <span
+            class="icon"
+            @click="showCartModal = false"
+          >
             <svg-icon icon-name="global-cart-chevron-right" />
           </span>
-          <p class="cart-title">My Cart</p>
+          <p class="cart-title">
+            My Cart
+          </p>
         </div>
         <div class="cart-level-right">
-          <p class="item-count">{{ products.length }} items</p>
+          <p class="item-count">
+            {{ products.length }} items
+          </p>
         </div>
       </div>
-      <div v-if="!isEmpty" class="cart-items">
+      <div
+        v-if="!isEmpty"
+        class="cart-items"
+      >
         <!-- v-for item -->
-        <div v-for="product in products" :key="product.name" class="cart-line-item">
-          <lazy-img class="line-item-image" :src="product.figure" :alt="product.name" />
+        <div
+          v-for="product in products"
+          :key="product.name"
+          class="cart-line-item"
+        >
+          <lazy-img
+            class="line-item-image"
+            :src="product.figure"
+            :alt="product.name"
+          />
           <div class="line-item-desc">
             <div class="product-title">
               {{ product.title }}
               <!-- v-if -->
-              <div v-if="product.tip" class="tip-box tip-box-product">
+              <div
+                v-if="product.tip"
+                class="tip-box tip-box-product"
+              >
                 <lazy-img
                   class="icon"
                   src="global-cart/tip_icon.png"
                   alt="tip_icon.png"
                 />
-                <div class="is-product tip-box-content">{{ product.tip }}</div>
+                <div class="is-product tip-box-content">
+                  {{ product.tip }}
+                </div>
               </div>
             </div>
             <!-- v-if -->
-            <div v-if="product.enable_extend" class="button simple-offer">
+            <div
+              v-if="product.enable_extend"
+              class="button simple-offer"
+            >
               Add accident protection for $249
             </div>
             <div class="price-count">
@@ -40,11 +69,14 @@
                   ${{ product.discount_price ? product.discount_price : product.price }}
                 </p>
                 <!-- v-if -->
-                <p v-if="product.discount_price" class="title discount-price">
+                <p
+                  v-if="product.discount_price"
+                  class="title discount-price"
+                >
                   ${{ product.price }}
                 </p>
               </div>
-              <InputCount :cartCount="cartCount" />
+              <InputCount :cart-count="cartCount" />
             </div>
           </div>
           <svg-icon
@@ -52,91 +84,145 @@
             class="icon is-loading"
             icon-name="global-cart-loading"
           />
-          <svg-icon v-else class="icon is-delete" icon-name="shared-close" />
+          <svg-icon
+            v-else
+            class="icon is-delete"
+            icon-name="shared-close"
+          />
         </div>
       </div>
-      <div v-if="!isEmpty" class="cart-bottom">
+      <div
+        v-if="!isEmpty"
+        class="cart-bottom"
+      >
         <div class="cart-level cart-bottom-item">
           <div class="cart-level-left">
-            <p class="title">Subtotal</p>
+            <p class="title">
+              Subtotal
+            </p>
           </div>
           <div class="cart-level-right">
-            <p class="is-subtotal-amount">$515.00</p>
+            <p class="is-subtotal-amount">
+              $515.00
+            </p>
           </div>
         </div>
         <div class="cart-level cart-bottom-item">
           <div class="cart-level-left">
-            <p class="title">Shipping</p>
+            <p class="title">
+              Shipping
+            </p>
             <div class="tip-box">
-              <lazy-img class="icon" src="global-cart/tip_icon.png" alt="tip_icon.png" />
+              <lazy-img
+                class="icon"
+                src="global-cart/tip_icon.png"
+                alt="tip_icon.png"
+              />
               <div class="is-shipping tip-box-content">
                 We provide free shipping in the continental U.S.
               </div>
             </div>
           </div>
           <div class="cart-level-right">
-            <p class="is-subtotal-amount">-</p>
+            <p class="is-subtotal-amount">
+              -
+            </p>
           </div>
         </div>
         <div class="cart-level cart-bottom-item">
           <div class="cart-level-left">
-            <p class="title">Tax</p>
+            <p class="title">
+              Tax
+            </p>
             <div class="tip-box">
-              <lazy-img class="icon" src="global-cart/tip_icon.png" alt="tip_icon.png" />
+              <lazy-img
+                class="icon"
+                src="global-cart/tip_icon.png"
+                alt="tip_icon.png"
+              />
               <div class="tip-box-content is-tax">
-                <h6 class="tip-title">Tax Notice</h6>
-                <span class="tip-info"
-                  >Tax is calculated based on the shipping address (not the billing
+                <h6 class="tip-title">
+                  Tax Notice
+                </h6>
+                <span class="tip-info">Tax is calculated based on the shipping address (not the billing
                   address) and is calculated as a percentage of the order total, including
                   extra warranty costs.<br />If you hold a valid resale certificate or are
-                  ordering on behalf of a tax exempt institution, please </span
-                ><a class="tip-url" href="/contact-2">contact us.</a>
+                  ordering on behalf of a tax exempt institution, please </span><a
+                  class="tip-url"
+                  href="/contact-2"
+                >contact us.</a>
                 <div class="mask"></div>
               </div>
             </div>
           </div>
           <div class="cart-level-right">
-            <p class="is-calculated">Calculated at checkout</p>
+            <p class="is-calculated">
+              Calculated at checkout
+            </p>
           </div>
         </div>
         <hr />
         <div class="cart-level cart-bottom-item">
           <div class="cart-level-left">
-            <p class="title">Total</p>
+            <p class="title">
+              Total
+            </p>
           </div>
           <div class="cart-level-right">
-            <p class="title is-amount">$515.00</p>
+            <p class="title is-amount">
+              $515.00
+            </p>
           </div>
         </div>
 
         <a class="button is-primary is-rounded"> Checkout </a>
       </div>
-      <div v-if="isEmpty" class="cart-items is-empty">
+      <div
+        v-if="isEmpty"
+        class="cart-items is-empty"
+      >
         <div class="empty-notice">
-          <div class="title">Shopping cart is empty.</div>
-          <span
-            >Check out <a class="redir-product" href="/products-overview">this page</a
-            ><span> to select the right Vibe board for your team.</span></span
-          >
+          <div class="title">
+            Shopping cart is empty.
+          </div>
+          <span>Check out <a
+            class="redir-product"
+            href="/products-overview"
+          >this page</a><span> to select the right Vibe board for your team.</span></span>
         </div>
         <hr />
         <div class="featured">
-          <div class="title">You may want to add</div>
+          <div class="title">
+            You may want to add
+          </div>
           <div class="products">
             <div
               v-for="featured in productsFeatured"
               :key="featured.name"
               class="featured-product"
             >
-              <lazy-img class="image" :src="featured.figure" :alt="featured.name" />
+              <lazy-img
+                class="image"
+                :src="featured.figure"
+                :alt="featured.name"
+              />
               <div class="product-desc">
-                <p class="title">{{ featured.title }}</p>
-                <p class="title is-price">${{ featured.price }}</p>
+                <p class="title">
+                  {{ featured.title }}
+                </p>
+                <p class="title is-price">
+                  ${{ featured.price }}
+                </p>
               </div>
               <div class="separator"></div>
               <div class="product-add">
-                <svg-icon class="icon is-add" icon-name="global-cart-cart-add-featured" />
-                <div class="title">ADD</div>
+                <svg-icon
+                  class="icon is-add"
+                  icon-name="global-cart-cart-add-featured"
+                />
+                <div class="title">
+                  ADD
+                </div>
               </div>
             </div>
           </div>

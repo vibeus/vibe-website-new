@@ -1,47 +1,85 @@
 <template>
-  <section class="section is-reviews" id="full-review-section" ref="review">
+  <section
+    id="full-review-section"
+    ref="review"
+    class="section is-reviews"
+  >
     <div class="container">
       <div>
-        <h1 class="title is-section-title">{{ reviews.title }}</h1>
+        <h1 class="title is-section-title">
+          {{ reviews.title }}
+        </h1>
         <div class="review-score-wrap">
           <span class="review-score">4.8</span>
           <div>
-            <lazy-img class="image" src="order/us-sales/stars-5.png" />
-            <div class="content">Based on 61 reviews</div>
+            <lazy-img
+              class="image"
+              src="order/us-sales/stars-5.png"
+            />
+            <div class="content">
+              Based on 61 reviews
+            </div>
           </div>
         </div>
 
         <ul class="reviews-wrap">
           <li
-            class="reviews-li"
             v-for="rev in reviews.pages[currentPage - 1]"
             :key="rev.author"
+            class="reviews-li"
           >
             <div class="review-head is-hidden-tablet">
               <div class="is-start">
-                <div class="author">{{ rev.author }}</div>
-                <div class="channel">{{ rev.channel }}</div>
+                <div class="author">
+                  {{ rev.author }}
+                </div>
+                <div class="channel">
+                  {{ rev.channel }}
+                </div>
               </div>
-              <div class="date">{{ rev.date }}</div>
+              <div class="date">
+                {{ rev.date }}
+              </div>
             </div>
             <div class="author-wrap is-hidden-mobile">
-              <div class="author">{{ rev.author }}</div>
-              <div class="channel">{{ rev.channel }}</div>
+              <div class="author">
+                {{ rev.author }}
+              </div>
+              <div class="channel">
+                {{ rev.channel }}
+              </div>
             </div>
             <div class="content-wrap">
               <ul class="review-stars">
-                <li v-for="index of 5" :key="index">
-                  <svg-icon v-if="index <= rev.stars" icon-name="star-star" />
-                  <svg-icon v-else icon-name="star-star-outline" />
+                <li
+                  v-for="index of 5"
+                  :key="index"
+                >
+                  <svg-icon
+                    v-if="index <= rev.stars"
+                    icon-name="star-star"
+                  />
+                  <svg-icon
+                    v-else
+                    icon-name="star-star-outline"
+                  />
                 </li>
               </ul>
-              <md-format class="content" :content="rev.body" />
+              <md-format
+                class="content"
+                :content="rev.body"
+              />
             </div>
-            <div class="date is-hidden-mobile">{{ rev.date }}</div>
+            <div class="date is-hidden-mobile">
+              {{ rev.date }}
+            </div>
           </li>
         </ul>
       </div>
-      <nav id="nav-pagination" aria-label="review-navigation">
+      <nav
+        id="nav-pagination"
+        aria-label="review-navigation"
+      >
         <ul class="pagination">
           <li
             :class="`page-item active ${currentPage === 1 ? 'is-disabled' : ''}`"

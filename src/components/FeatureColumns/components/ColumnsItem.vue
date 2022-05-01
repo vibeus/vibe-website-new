@@ -1,32 +1,41 @@
 <template>
-  <div class="column"
-       :class="itemContent.class"
+  <div
+    class="column"
+    :class="itemContent.class"
   >
-    <a class="is-feature-card" 
+    <a
+      class="is-feature-card" 
       :href="itemContent.url"
       :target="itemContent.target"
     >
-      <div class="is-feature"
-          :style="{ 'background-color': itemContent.background_color }"
+      <div
+        class="is-feature"
+        :style="{ 'background-color': itemContent.background_color }"
       >
         <div>
           <figure class="image">
             <lazy-img :src="itemContent.figure"></lazy-img>
           </figure>
           <h2 class="title">
-            <md-format :content="itemContent.title"/>
+            <md-format :content="itemContent.title" />
           </h2>
-          <div class="content"
-               :class="{ 'is-hidden-mobile': itemContent.body_mobile }">
-               {{ itemContent.body }}
+          <div
+            class="content"
+            :class="{ 'is-hidden-mobile': itemContent.body_mobile }"
+          >
+            {{ itemContent.body }}
           </div>
-          <div v-if="itemContent.body_mobile" class="body is-hidden-tablet">
-            <md-format :content="itemContent.body_mobile"/>
+          <div
+            v-if="itemContent.body_mobile"
+            class="body is-hidden-tablet"
+          >
+            <md-format :content="itemContent.body_mobile" />
           </div> 
         </div>
         <div class="cta">
-          <span class="button"
-                :class="itemContent.cta.class"
+          <span
+            class="button"
+            :class="itemContent.cta.class"
           >
             {{ itemContent.cta.title }}
           </span>

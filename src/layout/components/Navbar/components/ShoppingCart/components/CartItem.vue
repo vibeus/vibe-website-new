@@ -1,22 +1,32 @@
 <template>
   <div class="cart-line-item">
-    <lazy-img class="line-item-image" :src="item.figure" :alt="item.name" />
+    <lazy-img
+      class="line-item-image"
+      :src="item.figure"
+      :alt="item.name"
+    />
     <div class="line-item-desc">
       <div class="product-title">
         {{ item.title }}
-        <CartItemTip v-if="item.tip" :tip="item.tip"/>
+        <CartItemTip
+          v-if="item.tip"
+          :tip="item.tip"
+        />
       </div>
-      <CartItemExtend v-if="item.enable_extend"/>
+      <CartItemExtend v-if="item.enable_extend" />
       <div class="price-count">
         <div class="discount-price-item">
           <p class="title original-price">
             ${{ item.discount_price ? item.discount_price : item.price }}
           </p>
-          <p v-if="item.discount_price" class="title discount-price">
+          <p
+            v-if="item.discount_price"
+            class="title discount-price"
+          >
             ${{ item.price }}
           </p>
         </div>
-        <CartCount :cartItem="item"/>
+        <CartCount :cart-item="item" />
       </div>
     </div>
     <svg-icon
@@ -24,7 +34,12 @@
       class="icon is-loading"
       icon-name="global-cart-loading"
     />
-    <svg-icon v-else class="icon is-delete" icon-name="shared-close" @click="cart.handleDeleteItem(item.product_id)"/>
+    <svg-icon
+      v-else
+      class="icon is-delete"
+      icon-name="shared-close"
+      @click="cart.handleDeleteItem(item.product_id)"
+    />
   </div>
 </template>
 

@@ -3,7 +3,9 @@
     <div class="video-wrap">
       <Video :video="video" />
       <div class="is-text">
-        <h1 class="title">{{ video.title }}</h1>
+        <h1 class="title">
+          {{ video.title }}
+        </h1>
         <div class="content">
           {{ video.content }}
         </div>

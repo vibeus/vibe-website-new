@@ -1,13 +1,22 @@
 <template>
   <div class="cart-count">
-    <input type="number" id="" name="" 
-           class="input is-medium is-rounded is-black" 
-           :value="cartItem.quantity" 
+    <input
+      id=""
+      type="number"
+      name="" 
+      class="input is-medium is-rounded is-black" 
+      :value="cartItem.quantity" 
     />
-    <span class="icon is-small is-left" @click="cart.handleAddtoCart(cartItem.product_id, -1)">
+    <span
+      class="icon is-small is-left"
+      @click="cart.handleAddtoCart(cartItem.product_id, -1)"
+    >
       <svg-icon icon-name="cart-count-minus" />
     </span>
-    <span class="icon is-small is-right" @click="cart.handleAddtoCart(cartItem.product_id, 1)">
+    <span
+      class="icon is-small is-right"
+      @click="cart.handleAddtoCart(cartItem.product_id, 1)"
+    >
       <svg-icon icon-name="cart-count-plus" />
     </span>
   </div>

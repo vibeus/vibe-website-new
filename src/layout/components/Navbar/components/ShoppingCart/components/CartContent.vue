@@ -1,12 +1,12 @@
 <template>
   <div class="dialog-content">
-    <CartHeader/>
+    <CartHeader />
     <template v-if="cart.getTotalItemCount > 0">
-      <CartBody/>
-      <CartBottom/>
+      <CartBody />
+      <CartBottom />
     </template>
     <template v-else>
-      <EmptyCart/>
+      <EmptyCart />
     </template>
   </div>
 </template>

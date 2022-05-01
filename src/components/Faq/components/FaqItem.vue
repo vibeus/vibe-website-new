@@ -1,15 +1,28 @@
 <template>
-   <li class="faq-item" :class="{ 'is-active' : showItem }">
-    <h2 class="content faq-title" @click="handleItemShow">
+  <li
+    class="faq-item"
+    :class="{ 'is-active' : showItem }"
+  >
+    <h2
+      class="content faq-title"
+      @click="handleItemShow"
+    >
       <span>
         {{ content.title }}
       </span>
       <span class="icon is-chevron">
-        <svg-icon class="image" icon-name="common-arrow" alt=""></svg-icon>
+        <svg-icon
+          class="image"
+          icon-name="common-arrow"
+          alt=""
+        ></svg-icon>
       </span>
     </h2>
-    <div class="content faq-content" v-show="showItem">
-      <md-format :content="content.body"/>
+    <div
+      v-show="showItem"
+      class="content faq-content"
+    >
+      <md-format :content="content.body" />
     </div>
   </li>
 </template>

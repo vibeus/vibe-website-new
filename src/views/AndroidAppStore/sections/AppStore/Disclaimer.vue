@@ -1,26 +1,34 @@
 <template>
-  <div v-if="isDisclaimer" class="disclaimer-container">
-    <div v-if="currentTab == 'is-55'" class="info-box left-info-55">
+  <div
+    v-if="isDisclaimer"
+    class="disclaimer-container"
+  >
+    <div
+      v-if="currentTab == 'is-55'"
+      class="info-box left-info-55"
+    >
       <div class="support-icons is-hidden-mobile">
         <svg-icon icon-name="android-app-store-vibe-store" />
         <svg-icon icon-name="android-app-store-google-store" />
       </div>
-      <span class="content"
-        >Vibe may not support third-party apps that require Android 7.1 or later. You can
-        also add apps through the Google Play store on Vibe.</span
-      >
+      <span class="content">Vibe may not support third-party apps that require Android 7.1 or later. You can
+        also add apps through the Google Play store on Vibe.</span>
     </div>
-    <div v-else class="info-box left-info-75">
+    <div
+      v-else
+      class="info-box left-info-75"
+    >
       <div class="support-icons is-hidden-mobile">
         <svg-icon icon-name="android-app-store-vibe-store" />
         <svg-icon icon-name="android-app-store-google-store-75" />
       </div>
-      <span class="content"
-        >You can also download apps from the Chrome web store on the Vibe Smartboard Pro
-        75″.</span
-      >
+      <span class="content">You can also download apps from the Chrome web store on the Vibe Smartboard Pro
+        75″.</span>
     </div>
-    <div class="disclaimer-close-button" @click="isDisclaimer=false">
+    <div
+      class="disclaimer-close-button"
+      @click="isDisclaimer=false"
+    >
       <svg-icon icon-name="android-app-store-close-button" />
     </div>
   </div>

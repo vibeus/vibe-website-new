@@ -1,22 +1,42 @@
 <template>
   <div class="nav-item">
-    <span class="nav-link" :aria-label="menu.ariaLabel" @click="toggleActive($event.target)">
+    <span
+      class="nav-link"
+      :aria-label="menu.ariaLabel"
+      @click="toggleActive($event.target)"
+    >
       {{ menu.title }}
     </span>
     <div class="nav-dropdown is-boxed">
       <template v-if="menu.submenu">
-        <template v-for="item in menu.submenu" :key="item.title">
-          <a class="nav-dropdown-item" :href="item.link">
+        <template
+          v-for="item in menu.submenu"
+          :key="item.title"
+        >
+          <a
+            class="nav-dropdown-item"
+            :href="item.link"
+          >
             {{ item.text }}
           </a>
         </template>
       </template>
       <template v-else>
         <div class="f-row">
-          <div class="f-col" v-for="submenu in menu.columnSubmenu" :key="submenu.title">
-            <span class="nav-dropdown-item is-column-title">{{submenu.title}}</span>
-            <template v-for="item in submenu.items" :key="item.text">
-              <a class="nav-dropdown-item" :href="item.link">
+          <div
+            v-for="submenu in menu.columnSubmenu"
+            :key="submenu.title"
+            class="f-col"
+          >
+            <span class="nav-dropdown-item is-column-title">{{ submenu.title }}</span>
+            <template
+              v-for="item in submenu.items"
+              :key="item.text"
+            >
+              <a
+                class="nav-dropdown-item"
+                :href="item.link"
+              >
                 {{ item.text }}
               </a>
             </template>

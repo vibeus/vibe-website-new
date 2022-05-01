@@ -1,18 +1,27 @@
 <template>
   <section class="features">
     <div class="container">
-      <h1 class="title is-section-title">{{ title }}</h1>
+      <h1 class="title is-section-title">
+        {{ title }}
+      </h1>
       <div class="columns is-multiline">
-        <template v-for="(item, index) in featuresItem" :key="index">
+        <template
+          v-for="(item, index) in featuresItem"
+          :key="index"
+        >
           <div class="column is-half-tablet">
             <figure class="image">
-              <lazy-img class="image"
-                        :src="`security/${item.img}`"
-                        :alt="`${item.img}-${index}`"
-                        />
+              <lazy-img
+                class="image"
+                :src="`security/${item.img}`"
+                :alt="`${item.img}-${index}`"
+              />
             </figure>
             <div class="content">
-              <h2 class="title" v-html="item.title"></h2>
+              <h2
+                class="title"
+                v-html="item.title"
+              ></h2>
               <p v-html="item.body"></p>
             </div>
           </div>

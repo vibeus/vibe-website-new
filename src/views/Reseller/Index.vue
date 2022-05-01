@@ -1,10 +1,10 @@
 <template>
   <main class="reseller">
-    <Hero :hero="fm.hero"/>
+    <Hero :hero="fm.hero" />
     <FeatureColumns :features="fm.feature_columns" />
-    <Benefits :benefits="fm.benefits"/>
-    <Faq :faqs="fm.faq"/>
-    <BottomCta :bottomCta="fm.bottom_cta"/>
+    <Benefits :benefits="fm.benefits" />
+    <Faq :faqs="fm.faq" />
+    <BottomCta :bottom-cta="fm.bottom_cta" />
   </main>
 </template>
 

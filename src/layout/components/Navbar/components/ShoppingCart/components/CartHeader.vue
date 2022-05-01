@@ -1,13 +1,20 @@
 <template>
   <div class="cart-head cart-level">
     <div class="cart-level">
-      <span class="icon" @click="cart.handleOpenCartModal">
+      <span
+        class="icon"
+        @click="cart.handleOpenCartModal"
+      >
         <svg-icon icon-name="global-cart-chevron-right" />
       </span>
-      <p class="cart-title">My Cart</p>
+      <p class="cart-title">
+        My Cart
+      </p>
     </div>
     <div class="cart-level">
-      <p class="item-count">{{ cart.getTotalItemCount }} items</p>
+      <p class="item-count">
+        {{ cart.getTotalItemCount }} items
+      </p>
     </div>
   </div>
 </template>

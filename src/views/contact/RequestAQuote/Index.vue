@@ -1,8 +1,8 @@
 <template>
   <main class="request-quote">
-    <ContactHero :contactHero="fm.hero" />
-    <Contact :contactSection="fm.contact_section" />
-    <BottomCta :bottomCta="fm.bottom_cta" />
+    <ContactHero :contact-hero="fm.hero" />
+    <Contact :contact-section="fm.contact_section" />
+    <BottomCta :bottom-cta="fm.bottom_cta" />
   </main>
 </template>
 

@@ -1,39 +1,47 @@
 <template>
-<section class="section is-three-faqs" :id="faqs.id">
-  <h1 class="title is-section-title">{{ faqs.title }}</h1>
-  <div class="container faq-sections">
-    <div class="faq-section-title">
-      <ul class="faq-section-title-row">
+  <section
+    :id="faqs.id"
+    class="section is-three-faqs"
+  >
+    <h1 class="title is-section-title">
+      {{ faqs.title }}
+    </h1>
+    <div class="container faq-sections">
+      <div class="faq-section-title">
+        <ul class="faq-section-title-row">
           <li 
+            v-for="(sectionTitle, sectionIndex) in faqs.sections"
+            :key="sectionIndex" 
             class="title faq-section"
-            :class="{ 'is-active': sectionIndex === currentTabIndex }" 
-            v-for="(sectionTitle, sectionIndex) in faqs.sections" :key="sectionIndex"
+            :class="{ 'is-active': sectionIndex === currentTabIndex }"
             @click="handleTabClick(sectionIndex)"
           >
             {{ sectionTitle }}
           </li>
-      </ul>
+        </ul>
       <!-- TODO -->
       <!-- <div class="more"> -->
         <!-- {{ with .see_all }} -->
-          <!-- <a href="{{ .url }}" target="_blank">{{ default .title ( T .title ) }}</a> -->
+        <!-- <a href="{{ .url }}" target="_blank">{{ default .title ( T .title ) }}</a> -->
         <!-- {{ end }} -->
       <!-- </div> -->
+      </div>
+      <ul 
+        v-for="(list, faqIndex) in faqs.faqList"
+        v-show="faqIndex === currentTabIndex"
+        :key="faqIndex"
+        class="faq-items"
+      >
+        <FaqItem
+          v-for="(item, index) in list.itemList"
+          :key="index"
+          :content="item"
+        />
+      </ul>
+
+      <SectionCta :cta="faqs.cta ? faqs.cta : {}" />
     </div>
-    <ul 
-      v-for="(list, faqIndex) in faqs.faqList" :key="faqIndex"
-      class="faq-items"
-      v-show="faqIndex === currentTabIndex"
-    >
-      <FaqItem v-for="(item, index) in list.itemList" :key="index"
-        :content="item"
-      />
-    </ul>
-
-    <SectionCta :cta="faqs.cta ? faqs.cta : {}"/>
-
-  </div>
-</section>
+  </section>
 </template>
 
 <script setup>

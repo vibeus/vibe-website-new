@@ -1,7 +1,7 @@
 
 <template>
   <main class="privacy">
-    <DocHero :docHero="fm.hero" />
+    <DocHero :doc-hero="fm.hero" />
     <Documents :content="fm.content" />
   </main>
 </template>

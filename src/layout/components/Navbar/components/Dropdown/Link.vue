@@ -1,6 +1,9 @@
 <template>
   <div class="nav-item">
-    <a class="nav-link" v-bind="linkProps">
+    <a
+      class="nav-link"
+      v-bind="linkProps"
+    >
       {{ menu.title }}
     </a>
   </div>
