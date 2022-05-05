@@ -1,14 +1,19 @@
 <template>
   <div class="column is-app-root">
     <SearchBox />
-    <div v-if="!isFilter && !isSearch" class="default-view">
+    <div
+      v-if="!isFilter && !isSearch"
+      class="default-view"
+    >
       <div class="app-list-with-header">
-        <div class="level is-list-header is-mobile">Featured Apps</div>
+        <div class="level is-list-header is-mobile">
+          Featured Apps
+        </div>
         <ul class="app-wrapper">
           <li
-            class="column is-one-third-desktop is-half-tablet is-half-mobile"
             v-for="tab in currentTab == 'is-55' ? apps55Featured : apps75Featured"
             :key="tab.name"
+            class="column is-one-third-desktop is-half-tablet is-half-mobile"
           >
             <div class="app-item">
               <lazy-img
@@ -17,7 +22,9 @@
                 alt=""
               />
               <div class="app-desc">
-                <p class="app-name">{{ tab.name }}</p>
+                <p class="app-name">
+                  {{ tab.name }}
+                </p>
                 <p class="app-type">
                   {{ getCategoryName(tab.type) }}
                 </p>
@@ -27,12 +34,14 @@
         </ul>
       </div>
       <div class="app-list-with-header">
-        <div class="level is-list-header is-mobile">All Apps</div>
+        <div class="level is-list-header is-mobile">
+          All Apps
+        </div>
         <ul class="app-wrapper">
           <li
-            class="column is-one-third-desktop is-half-tablet is-half-mobile"
             v-for="tab in currentTab == 'is-55' ? apps55 : apps75"
             :key="tab.name"
+            class="column is-one-third-desktop is-half-tablet is-half-mobile"
           >
             <div class="app-item">
               <lazy-img
@@ -41,7 +50,9 @@
                 alt="android-app-store icon"
               />
               <div class="app-desc">
-                <p class="app-name">{{ tab.name }}</p>
+                <p class="app-name">
+                  {{ tab.name }}
+                </p>
                 <p class="app-type">
                   {{ getCategoryName(tab.type) }}
                 </p>
@@ -51,12 +62,15 @@
         </ul>
       </div>
     </div>
-    <div v-else class="app-list">
+    <div
+      v-else
+      class="app-list"
+    >
       <ul class="app-wrapper">
         <li
-          class="column is-one-third-desktop is-half-tablet is-half-mobile"
           v-for="tab in currentTab == 'is-55' ? apps55Filter : apps75Filter"
           :key="tab.name"
+          class="column is-one-third-desktop is-half-tablet is-half-mobile"
         >
           <div class="app-item">
             <lazy-img
@@ -65,7 +79,9 @@
               alt=""
             />
             <div class="app-desc">
-              <p class="app-name">{{ tab.name }}</p>
+              <p class="app-name">
+                {{ tab.name }}
+              </p>
               <p class="app-type">
                 {{ getCategoryName(tab.type) }}
               </p>
@@ -74,8 +90,14 @@
         </li>
       </ul>
     </div>
-    <div class="clear-filter" v-if="isFilter && !isSearch">
-      <button class="button is-rounded is-black is-outlined" @click="clearFilter">
+    <div
+      v-if="isFilter && !isSearch"
+      class="clear-filter"
+    >
+      <button
+        class="button is-rounded is-black is-outlined"
+        @click="clearFilter"
+      >
         Clear Filter
       </button>
     </div>

@@ -11,7 +11,10 @@ const features = computed(() => {
 </script>
 
 <template>
-  <div v-if="hasFeatures" class="home-features">
+  <div
+    v-if="hasFeatures"
+    class="home-features"
+  >
     <div class="wrapper">
       <div class="container">
         <div class="features">
@@ -20,8 +23,16 @@ const features = computed(() => {
             :key="index"
             class="feature"
           >
-            <h2 class="title" v-html="feature.title"></h2>
-            <p class="details" v-if="feature.details">{{ feature.details }}</p>
+            <h2
+              class="title"
+              v-html="feature.title"
+            ></h2>
+            <p
+              v-if="feature.details"
+              class="details"
+            >
+              {{ feature.details }}
+            </p>
           </section>
         </div>
       </div>

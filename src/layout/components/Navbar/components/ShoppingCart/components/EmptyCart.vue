@@ -1,30 +1,50 @@
 <template>
   <div class="cart-items is-empty">
     <div class="empty-notice">
-      <div class="title">Shopping cart is empty.</div>
-      <span
-        >Check out <a class="redir-product" href="/products-overview">this page</a
-        ><span> to select the right Vibe board for your team.</span></span
-      >
+      <div class="title">
+        Shopping cart is empty.
+      </div>
+      <span>Check out <a
+        class="redir-product"
+        href="/products-overview"
+      >this page</a><span> to select the right Vibe board for your team.</span></span>
     </div>
     <hr />
     <div class="featured">
-      <div class="title">You may want to add</div>
+      <div class="title">
+        You may want to add
+      </div>
       <div class="products">
         <div
           v-for="featured in productsFeatured"
           :key="featured.name"
           class="featured-product"
         >
-          <lazy-img class="image" :src="featured.figure" :alt="featured.name" />
+          <lazy-img
+            class="image"
+            :src="featured.figure"
+            :alt="featured.name"
+          />
           <div class="product-desc">
-            <p class="title">{{ featured.title }}</p>
-            <p class="title is-price">${{ featured.price }}</p>
+            <p class="title">
+              {{ featured.title }}
+            </p>
+            <p class="title is-price">
+              ${{ featured.price }}
+            </p>
           </div>
           <div class="separator"></div>
-          <div class="product-add" @click="() => { cart.handleAddtoCart(featured.product_id, 1)}">
-            <svg-icon class="icon is-add" icon-name="global-cart-cart-add-featured" />
-            <div class="title">ADD</div>
+          <div
+            class="product-add"
+            @click="() => { cart.handleAddtoCart(featured.product_id, 1)}"
+          >
+            <svg-icon
+              class="icon is-add"
+              icon-name="global-cart-cart-add-featured"
+            />
+            <div class="title">
+              ADD
+            </div>
           </div>
         </div>
       </div>

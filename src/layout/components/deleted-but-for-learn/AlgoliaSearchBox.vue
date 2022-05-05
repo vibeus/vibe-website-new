@@ -140,7 +140,10 @@ function initialize(userOptions) {
 </script>
 
 <template>
-  <div class="algolia-search-box" id="docsearch" />
+  <div
+    id="docsearch"
+    class="algolia-search-box"
+  />
 </template>
 
 <style>

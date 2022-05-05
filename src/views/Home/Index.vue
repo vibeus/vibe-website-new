@@ -1,14 +1,21 @@
 <template>
-  <main class="home" aria-labelledby="main-title">
-    {{device}}
+  <main
+    class="home"
+    aria-labelledby="main-title"
+  >
+    {{ device }}
     <HomeHero />
     <slot name="hero" />
     <HomeFeatures />
     <slot name="features" />
     <HomeFooter @consoleTest="consoleT" />
     <slot name="footer" />
-    <button @click="cart.handleAddtoCart('31815758250035', 1)">Click to add 1 board 55</button>
-    <button @click="cart.handleAddtoCart('39355861598259', 1)">Click to add 1 board 75</button>
+    <button @click="cart.handleAddtoCart('31815758250035', 1)">
+      Click to add 1 board 55
+    </button>
+    <button @click="cart.handleAddtoCart('39355861598259', 1)">
+      Click to add 1 board 75
+    </button>
   </main>
 </template>
 

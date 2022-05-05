@@ -1,7 +1,13 @@
 <template>
-  <div class="is-cart-dialog" v-show="isCartModalOpen">
-    <div class="dialog-background" @click="handleOpenCartModal"></div>
-    <CartContent/>
+  <div
+    v-show="isCartModalOpen"
+    class="is-cart-dialog"
+  >
+    <div
+      class="dialog-background"
+      @click="handleOpenCartModal"
+    ></div>
+    <CartContent />
   </div>
 </template>
 

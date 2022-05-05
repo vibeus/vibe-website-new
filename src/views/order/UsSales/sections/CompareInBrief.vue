@@ -1,30 +1,51 @@
 <template>
   <section class="section is-compare is-compare-in-brief">
     <div class="container">
-      <h1 class="title is-section-title">{{ compare.title }}</h1>
+      <h1 class="title is-section-title">
+        {{ compare.title }}
+      </h1>
       <div class="compare-table">
-        <table class="table is-fullwidth" cellspacing="0">
+        <table
+          class="table is-fullwidth"
+          cellspacing="0"
+        >
           <thead>
             <tr>
               <th>
                 <p>Brands</p>
                 <p>55″</p>
               </th>
-              <td v-for="brand in compare.brands" :key="brand.name" :class="{'is-hidden-mobile': brand.hideMobile}">
+              <td
+                v-for="brand in compare.brands"
+                :key="brand.name"
+                :class="{'is-hidden-mobile': brand.hideMobile}"
+              >
                 <lazy-img
                   v-if="!brand.hide_icon"
                   class="image"
                   :src="brand.icon"
                   :alt="brand.name"
                 />
-                <p v-else class="brand-name">{{ brand.name }}</p>
+                <p
+                  v-else
+                  class="brand-name"
+                >
+                  {{ brand.name }}
+                </p>
               </td>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(brand, brandIndex) in compare.brands" :key="brand.name">
+            <tr
+              v-for="(brand, brandIndex) in compare.brands"
+              :key="brand.name"
+            >
               <td>{{ compare.features[brandIndex] }}</td>
-              <td v-for="(check, checkIndex) in brand.features" :key="check" :class="{'is-hidden-mobile': compare.brands[checkIndex].hideMobile}">
+              <td
+                v-for="(check, checkIndex) in brand.features"
+                :key="check"
+                :class="{'is-hidden-mobile': compare.brands[checkIndex].hideMobile}"
+              >
                 <div class="feature-checkmark">
                   <svg
                     v-if="compare.brands[checkIndex].features[brandIndex]"
@@ -34,7 +55,10 @@
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path d="M2 8.92754L10.3333 19.0725L26 2" stroke-width="3" />
+                    <path
+                      d="M2 8.92754L10.3333 19.0725L26 2"
+                      stroke-width="3"
+                    />
                   </svg>
                 </div>
               </td>
@@ -43,11 +67,18 @@
           <tfoot>
             <tr>
               <th>Price</th>
-              <td v-for="brand in compare.brands" :key="brand.name" :class="{'is-hidden-mobile': brand.hideMobile}">
+              <td
+                v-for="brand in compare.brands"
+                :key="brand.name"
+                :class="{'is-hidden-mobile': brand.hideMobile}"
+              >
                 <p :class="{ 'campaign-price': !brand.campaign_price }">
                   {{ brand.campaign_price ? brand.campaign_price : brand.price }}
                 </p>
-                <p v-if="brand.campaign_price" class="original-price">
+                <p
+                  v-if="brand.campaign_price"
+                  class="original-price"
+                >
                   {{ brand.price }}
                 </p>
               </td>

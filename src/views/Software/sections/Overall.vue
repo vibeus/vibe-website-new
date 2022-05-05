@@ -1,17 +1,32 @@
 <template>
   <section class="section overall">
     <div class="container">
-      <h1 class="overall-title">{{ overall.title }}</h1>
+      <h1 class="overall-title">
+        {{ overall.title }}
+      </h1>
       <ul class="overall-wrapper">
-        <li v-for="item in overall.items" :key="item.title" class="overall-item">
-          <lazy-img class="image" :src="item.figure" :alt="item.alt_text" />
-          <h2 class="item-title">{{ item.title }}</h2>
+        <li
+          v-for="item in overall.items"
+          :key="item.title"
+          class="overall-item"
+        >
+          <lazy-img
+            class="image"
+            :src="item.figure"
+            :alt="item.alt_text"
+          />
+          <h2 class="item-title">
+            {{ item.title }}
+          </h2>
           <div class="content">
             {{ item.body }}
           </div>
         </li>
       </ul>
-      <div v-if="overall.cta" class="cta">
+      <div
+        v-if="overall.cta"
+        class="cta"
+      >
         <a :href="overall.cta.url">{{ overall.cta.title }}</a>
       </div>
     </div>

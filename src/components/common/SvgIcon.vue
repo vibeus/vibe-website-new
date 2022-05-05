@@ -1,6 +1,14 @@
 <template>
-  <svg :class="svgClass" aria-hidden="true">
-    <use width=100% height=100% :href="symbolId" :fill="color" />
+  <svg
+    :class="svgClass"
+    aria-hidden="true"
+  >
+    <use
+      width="100%"
+      height="100%"
+      :href="symbolId"
+      :fill="color"
+    />
   </svg>
 </template>
 
@@ -17,6 +25,7 @@ const props = defineProps({
   },
   alt: {
     type: String,
+    default: ''
   },
   color: {
     type: String,

@@ -1,10 +1,22 @@
 <template>
   <div class="cart-count">
-    <input type="number" id="" name="" :class="`input ${cartCount.class}`" :value="count" />
-    <span class="icon is-small is-left" @click="adjustInput(1)">
+    <input
+      id=""
+      type="number"
+      name=""
+      :class="`input ${cartCount.class}`"
+      :value="count"
+    />
+    <span
+      class="icon is-small is-left"
+      @click="adjustInput(1)"
+    >
       <svg-icon icon-name="cart-count-minus" />
     </span>
-    <span class="icon is-small is-right" @click="adjustInput(-1)">
+    <span
+      class="icon is-small is-right"
+      @click="adjustInput(-1)"
+    >
       <svg-icon icon-name="cart-count-plus" />
     </span>
   </div>

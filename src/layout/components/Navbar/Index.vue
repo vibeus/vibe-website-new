@@ -4,12 +4,15 @@
       <NavBarLogo />
       <NavShrink />
 
-      <div id="nav-menu" class="nav-menu">
+      <div
+        id="nav-menu"
+        class="nav-menu"
+      >
         <NavDropdown />
         <NavEndBtn />
       </div>
     </div>
-    <CartModal/>
+    <CartModal />
     <div id="extend-offer"></div>
     <slot name="search" />
   </nav>

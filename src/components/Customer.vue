@@ -1,8 +1,10 @@
 <template>
   <div class="columns is-multiline is-customers is-mobile">
-    <template  v-for="(item, index) in customers">
-      <div v-if="index < 8" :key="index"
-          class="column is-one-quarter-tablet is-half-mobile"
+    <template v-for="(item, index) in customers">
+      <div
+        v-if="index < 8"
+        :key="index"
+        class="column is-one-quarter-tablet is-half-mobile"
       >
         <figure class="image is-logo">
           <lazy-img
@@ -20,7 +22,7 @@
 const props = defineProps({
   customers: {
     type: Array,
-    required: false
+    default: () => []
   }
 });
 

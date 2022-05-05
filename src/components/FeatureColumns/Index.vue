@@ -2,12 +2,19 @@
   <section class="section is-feature-columns">
     <div class="container">
       <div class="header">
-        <h1 class="title is-section-title">{{ features.title }}</h1>
-        <div class="content">{{ features.body }}</div>
+        <h1 class="title is-section-title">
+          {{ features.title }}
+        </h1>
+        <div class="content">
+          {{ features.body }}
+        </div>
       </div>
       <div class="columns">
-        <template v-for="(featuresItem, index) in features.featuresList" :key="index">
-          <ColumnsItem :itemContent="featuresItem"/>
+        <template
+          v-for="(featuresItem, index) in features.featuresList"
+          :key="index"
+        >
+          <ColumnsItem :item-content="featuresItem" />
         </template>
       </div>
 

@@ -16,7 +16,7 @@
 const props = defineProps({
   tip: {
     type: String,
-    required: false
+    default: ''
   }
 });
 </script>

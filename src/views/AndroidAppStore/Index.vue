@@ -1,7 +1,7 @@
 <template>
   <main class="android-app-store">
     <Hero :hero="fm.hero" />
-    <TabBar :tabBar="fm.tab_bar" />
+    <TabBar :tab-bar="fm.tab_bar" />
     <AppStore />
   </main>
 </template>
