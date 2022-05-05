@@ -17,7 +17,7 @@
         >
           <a
             :class="'button ' + item.class"
-            :herf="item.url"
+            :href="item.url"
           >
             {{ item.title }}
           </a>
