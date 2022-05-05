@@ -3,8 +3,8 @@
     <div class="container">
       <swiper
         :speed="1000"
-        :slidesPerView="1"
-        :spaceBetween="30"
+        :slides-per-view="1"
+        :space-between="30"
         :loop="true"
         :pagination="{
           clickable: true,
@@ -22,17 +22,31 @@
           class="testimonial"
         >
           <div class="content">
-            <svg-icon class="quote-mark is-left" icon-name="testimonials-quote" />
+            <svg-icon
+              class="quote-mark is-left"
+              icon-name="testimonials-quote"
+            />
             {{ testimonial.body }}
-            <svg-icon class="quote-mark is-right" icon-name="testimonials-quote" />
+            <svg-icon
+              class="quote-mark is-right"
+              icon-name="testimonials-quote"
+            />
           </div>
           <div class="author">
             <div class="name-warp">
-              <div v-if="testimonial.author.logo" class="logo">
-                <lazy-img :src="testimonial.author.logo" alt="" />
+              <div
+                v-if="testimonial.author.logo"
+                class="logo"
+              >
+                <lazy-img
+                  :src="testimonial.author.logo"
+                  alt=""
+                />
               </div>
               <div>
-                <p class="name">{{ testimonial.author.name }}</p>
+                <p class="name">
+                  {{ testimonial.author.name }}
+                </p>
                 <p>{{ testimonial.author.desc }}</p>
               </div>
             </div>

@@ -23,7 +23,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <p v-if="hasLastUpdated" class="last-updated">
+  <p
+    v-if="hasLastUpdated"
+    class="last-updated"
+  >
     <span class="prefix">{{ prefix }}:</span>
     <span class="datetime">{{ datetime }}</span>
   </p>

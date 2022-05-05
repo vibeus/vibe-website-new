@@ -3,20 +3,35 @@
     <div class="container">
       <div class="columns is-vcentered">
         <div class="column is-text is-half">
-          <h1 class="title">{{ title }}</h1>
+          <h1 class="title">
+            {{ title }}
+          </h1>
           <div class="content">
             {{ body }}
           </div>
           <div class="cta">
-            <a class="button" :class="cta.class" :href="cta.url" :target="cta.target">
+            <a
+              class="button"
+              :class="cta.class"
+              :href="cta.url"
+              :target="cta.target"
+            >
               {{ cta.title }}
             </a>
           </div>
         </div>
         <div class="column">
-          <div class="spec-item" v-for="(item, index) in texts" :key="index">
+          <div
+            v-for="(item, index) in texts"
+            :key="index"
+            class="spec-item"
+          >
             <span class="icon">
-              <svg-icon class="image" icon-name="common-check-mark" alt=""></svg-icon>
+              <svg-icon
+                class="image"
+                icon-name="common-check-mark"
+                alt=""
+              ></svg-icon>
             </span>
             <span class="content">{{ item }}</span>
           </div>

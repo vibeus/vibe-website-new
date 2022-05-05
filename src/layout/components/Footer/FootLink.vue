@@ -10,10 +10,18 @@
         </div>
         <div class="column">
           <div class="columns is-links is-mobile is-multiline">
-            <template v-for="(item, idx) in sections" :key="idx">
+            <template
+              v-for="(item, sectionIdx) in sections"
+              :key="sectionIdx"
+            >
               <div :class="'column is-half-touch is-foot-section ' + item.class || ''">
-                <h2 class="is-vibe-heading">{{ item.heading }}</h2>
-                <template v-for="(link, idx) in item.links" :key="idx">
+                <h2 class="is-vibe-heading">
+                  {{ item.heading }}
+                </h2>
+                <template
+                  v-for="(link, linkIdx) in item.links"
+                  :key="linkIdx"
+                >
                   <div class="foot-link">
                     <a
                       :href="link.url + '?from=foot'"
@@ -26,9 +34,15 @@
                   </div>
                 </template>
                 
-                <template v-for="(figure, idx) in item.figures" :key="idx">
+                <template
+                  v-for="(figure, figureIdx) in item.figures"
+                  :key="figureIdx"
+                >
                   <figure class="image is-foot-figure">
-                    <img :src="figure.url" :alt="figure.alt" />
+                    <img
+                      :src="figure.url"
+                      :alt="figure.alt"
+                    />
                   </figure>
                 </template>
               </div>
@@ -44,6 +58,7 @@
 const props = defineProps({
   sections: {
     type: Array,
+    default: () => []
   }
 });
 </script>

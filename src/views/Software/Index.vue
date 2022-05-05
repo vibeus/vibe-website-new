@@ -2,14 +2,20 @@
   <main class="software">
     <Hero :hero="fm.hero" />
     <HeroVideo />
-    <Overall class="is-ideas" :overall="fm.feature_ideas" />
+    <Overall
+      class="is-ideas"
+      :overall="fm.feature_ideas"
+    />
     <Collaboration :collaboration="fm.feature_collaboration" />
     <Presentation :presentation="fm.feature_presentation" />
-    <Overall class="is-app" :overall="fm.feature_apps"/>
+    <Overall
+      class="is-app"
+      :overall="fm.feature_apps"
+    />
     <Security :security="fm.security" />
-    <Testimonial :testimonialSection="fm.testimonial_section" />
+    <Testimonial :testimonial-section="fm.testimonial_section" />
     <VideoSection :video="fm.video" />
-    <BottomCta :bottomCta="fm.bottom_cta" />
+    <BottomCta :bottom-cta="fm.bottom_cta" />
   </main>
 </template>
 <script setup>

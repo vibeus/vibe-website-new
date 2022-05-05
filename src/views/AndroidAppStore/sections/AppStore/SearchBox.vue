@@ -1,26 +1,38 @@
 <template>
   <div class="control is-search-box has-icons-left">
-    <div class="select-item has-dropdown is-hidden-tablet" @click="showCate=!showCate">
+    <div
+      class="select-item has-dropdown is-hidden-tablet"
+      @click="showCate=!showCate"
+    >
       <span class="select-link">{{ currentCateName }}</span>
       <span class="icon select-icon is-small">
         <svg-icon icon-name="android-app-store-dropdown-icon" />
       </span>
-      <div v-show="showCate" class="select-dropdown" id="dropdown-section">
+      <div
+        v-show="showCate"
+        id="dropdown-section"
+        class="select-dropdown"
+      >
         <a
           class="select-link category-link is-all"
           @click="
             chooseCate({});
             changeCurrentCateName();
           "
-          >All Apps</a
+        >All Apps</a>
+        <template
+          v-for="item in category"
+          :key="item.name"
         >
-        <template v-for="item in category" :key="item.name">
-          <template v-for="i in item.items" :key="i.id">
+          <template
+            v-for="i in item.items"
+            :key="i.id"
+          >
             <a
               v-if="!i.hidden"
+              :id="i.id"
               class="select-link category-link"
               :class="`is-${item.id}`"
-              :id="i.id"
               href="#"
               @click="
                 chooseCate({ key: item.id, value: i.id });
@@ -28,7 +40,10 @@
               "
             >
               {{ i.name }}
-              <span v-if="currentItem == `${item.id}=${i.id}`" class="icon is-right">
+              <span
+                v-if="currentItem == `${item.id}=${i.id}`"
+                class="icon is-right"
+              >
                 <svg-icon icon-name="android-app-store-mark-icon" />
               </span>
             </a>
@@ -38,14 +53,15 @@
     </div>
     <div class="input-box">
       <input
-        class="input is-rounded"
         id="search-box"
+        v-model="searchTerm"
+        class="input is-rounded"
         type="text"
         placeholder="Search your favorite apps..."
-        v-model="searchTerm"
-      /><span class="icon is-left"
-        ><svg-icon icon-name="android-app-store-magnify" /></span
-      ><a class="clean-button is-hidden-tablet" @click="searchTerm = ''">
+      /><span class="icon is-left"><svg-icon icon-name="android-app-store-magnify" /></span><a
+        class="clean-button is-hidden-tablet"
+        @click="searchTerm = ''"
+      >
         <svg-icon icon-name="android-app-store-clean-input-icon" />
       </a>
     </div>

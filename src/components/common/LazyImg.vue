@@ -13,6 +13,7 @@ const props = defineProps({
   },
   alt: {
     type: String,
+    default: ''
   },
 });
 

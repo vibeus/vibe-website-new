@@ -1,6 +1,6 @@
 <template>
   <main class="warranty">
-    <DocHero :docHero="fm.hero" />
+    <DocHero :doc-hero="fm.hero" />
     <Register :register="fm.register" />
     <Documents :content="fm.content" />
   </main>

@@ -1,7 +1,10 @@
 <template>
   <section class="section is-register">
     <div class="container is-form">
-      <VForm class="form" :formData="register.form" />
+      <VForm
+        class="form"
+        :form-data="register.form"
+      />
     </div>
   </section>
 </template>

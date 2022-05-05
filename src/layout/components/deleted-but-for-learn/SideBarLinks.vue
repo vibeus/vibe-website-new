@@ -6,7 +6,14 @@ const items = useSideBar();
 </script>
 
 <template>
-  <ul v-if="items.length > 0" class="sidebar-links">
-    <SideBarLink v-for="item of items" :item="item" :key="item" />
+  <ul
+    v-if="items.length > 0"
+    class="sidebar-links"
+  >
+    <SideBarLink
+      v-for="item of items"
+      :key="item"
+      :item="item"
+    />
   </ul>
 </template>

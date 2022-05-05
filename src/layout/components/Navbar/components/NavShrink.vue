@@ -1,16 +1,37 @@
 <template>
   <div class="nav-shrink buttons">
-    <a class="button is-primary is-rounded" href="/demo/">
+    <a
+      class="button is-primary is-rounded"
+      href="/demo/"
+    >
       <span>See a Demo</span>
     </a>
-    <div class="nav-divider is-hidden-mobile" data-v-00cdf7b5=""></div>
-    <button class="nav-btn nav-cart-icon mgl-8" @click="handleOpenCartModal">
-      <svg-icon class="nav-icon" icon-name="global-cart-cart" alt="cart icon" />
+    <div
+      class="nav-divider is-hidden-mobile"
+      data-v-00cdf7b5=""
+    ></div>
+    <button
+      class="nav-btn nav-cart-icon mgl-8"
+      @click="handleOpenCartModal"
+    >
+      <svg-icon
+        class="nav-icon"
+        icon-name="global-cart-cart"
+        alt="cart icon"
+      />
     </button>
     <button class="nav-btn nav-user-icon is-hidden-mobile">
-      <svg-icon class="nav-icon" icon-name="global-cart-user" alt="user icon" />
+      <svg-icon
+        class="nav-icon"
+        icon-name="global-cart-user"
+        alt="user icon"
+      />
     </button>
-    <a href="" class="nav-burger" @click="toggleMenuActive">
+    <a
+      href=""
+      class="nav-burger"
+      @click="toggleMenuActive"
+    >
       <span></span>
       <span></span>
       <span></span>
@@ -20,8 +41,8 @@
 
 <script setup>
 const { frontmatter: fm } = useData();
-import { useCartEffect } from '@/store/cart';
-const { handleOpenCartModal } = useCartEffect();
+import { useCartStore } from '@/store/cart';
+const { handleOpenCartModal } = useCartStore();
 
 const toggleMenuActive = () => {
   const menu = document.getElementById('nav-menu');

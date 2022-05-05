@@ -1,18 +1,33 @@
 <template>
-  <section class="hero" id="hero">
+  <section
+    id="hero"
+    class="hero"
+  >
     <div class="hero-bg">
-      <lazy-img class="hero-image is-hidden-mobile" :src="hero.background" alt="" />
-      <lazy-img class="hero-image is-hidden-tablet" :src="hero.background_mobile" alt="" />
+      <lazy-img
+        class="hero-image is-hidden-mobile"
+        :src="hero.background"
+        alt=""
+      />
+      <lazy-img
+        class="hero-image is-hidden-tablet"
+        :src="hero.background_mobile"
+        alt=""
+      />
     </div>    
     <div class="hero-body">
       <div class="container">
         <div class="form-container">
-          <div class="title">{{hero.title}}</div>
+          <div class="title">
+            {{ hero.title }}
+          </div>
           <VForm
-            :formData="hero.form"
+            :form-data="hero.form"
             @msgSuccess="elMsgSuccess"
           />
-          <div class="error-message">The information you provided does not match our records.</div>
+          <div class="error-message">
+            The information you provided does not match our records.
+          </div>
         </div>
       </div>
     </div>

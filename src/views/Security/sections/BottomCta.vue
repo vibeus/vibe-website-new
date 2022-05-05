@@ -2,15 +2,29 @@
   <section class="section is-bottom-cta">
     <div class="container">
       <div class="bottom-bg">
-        <svg-icon class="image" icon-name="common-what-bg" alt=""></svg-icon>
+        <svg-icon
+          class="image"
+          icon-name="common-what-bg"
+          alt=""
+        ></svg-icon>
       </div>
       <div>
-        <h1 class="title is-section-title">{{ title }}</h1>
-        <div class="content">{{ body }}</div>
+        <h1 class="title is-section-title">
+          {{ title }}
+        </h1>
+        <div class="content">
+          {{ body }}
+        </div>
       </div>
-      <div class="cta cta-contact" data-target="contact">
-        <a class="button is-rounded is-black is-outlined" :href="cta.url">
-         {{ cta.title }}
+      <div
+        class="cta cta-contact"
+        data-target="contact"
+      >
+        <a
+          class="button is-rounded is-black is-outlined"
+          :href="cta.url"
+        >
+          {{ cta.title }}
         </a>
       </div>
     </div>

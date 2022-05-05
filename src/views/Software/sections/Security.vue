@@ -2,14 +2,22 @@
   <section class="section security">
     <div class="content-wrap">
       <div class="is-content">
-        <h1 class="title">{{ security.title }}</h1>
-        <div class="content">{{ security.body }}</div>
+        <h1 class="title">
+          {{ security.title }}
+        </h1>
+        <div class="content">
+          {{ security.body }}
+        </div>
         <div class="cta">
           <a :href="security.cta.url">{{ security.cta.title }}</a>
         </div>
       </div>
       <div class="is-image">
-        <lazy-img class="image" :src="security.figure" :alt="security.alt" />
+        <lazy-img
+          class="image"
+          :src="security.figure"
+          :alt="security.alt"
+        />
       </div>
     </div>
   </section>

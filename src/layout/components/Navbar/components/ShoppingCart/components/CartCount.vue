@@ -1,35 +1,53 @@
 <template>
   <div class="cart-count">
-    <input type="number" id="" name="" :class="`input ${cartCount.class}`" :value="count" />
-    <span class="icon is-small is-left" @click="adjustInput(1)">
+    <input
+      id=""
+      type="number"
+      name="" 
+      class="input is-medium is-rounded is-black" 
+      :value="cartItem.quantity" 
+    />
+    <span
+      class="icon is-small is-left"
+      @click="cart.handleAddtoCart(cartItem.product_id, -1)"
+    >
       <svg-icon icon-name="cart-count-minus" />
     </span>
-    <span class="icon is-small is-right" @click="adjustInput(-1)">
+    <span
+      class="icon is-small is-right"
+      @click="cart.handleAddtoCart(cartItem.product_id, 1)"
+    >
       <svg-icon icon-name="cart-count-plus" />
     </span>
   </div>
 </template>
 
+
 <script setup>
+import { useCartStore } from '@/store/cart';
+const cart = useCartStore();
+
 const MIN_ITEM_COUNT = 1;
 const MAX_ITEM_COUNT = 99;
 
+
 const props = defineProps({
-  cartCount: {
+  cartItem: {
     type: Object,
     required: true,
   },
 });
-const count = ref(props.cartCount.count);
 
-const adjustInput = (value) => {
-  const current = parseInt(count.value + value) || 0;
-  const newValue = Math.min(
-    Math.max(MIN_ITEM_COUNT, current + value),
-    MAX_ITEM_COUNT
-  );
-  count.value = newValue.toString();
-};
+// const count = ref(props.cartCount.count);
+
+// const adjustInput = (value) => {
+//   const current = parseInt(count.value + value) || 0;
+//   const newValue = Math.min(
+//     Math.max(MIN_ITEM_COUNT, current + value),
+//     MAX_ITEM_COUNT
+//   );
+//   count.value = newValue.toString();
+// };
 // function minus() {
 //   if (count.value > 0) {
 //     count.value--;

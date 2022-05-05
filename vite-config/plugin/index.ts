@@ -13,8 +13,8 @@ export function createVitePlugins() {
     }),
     AutoImport({ // 自动按需引入依赖
       // resolvers: [ElementPlusResolver()],
-      imports: ['vue', 'vitepress'],
-      dts: '../src/auto-imports.d.ts',
+      imports: ['vue', 'vitepress', 'pinia'],
+      dts: '../typings/auto-imports.d.ts',
     }),
     // Components({
     //   resolvers: [ElementPlusResolver({sass: true})],

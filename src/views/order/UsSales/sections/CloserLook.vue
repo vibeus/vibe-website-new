@@ -1,16 +1,21 @@
 <template>
   <section class="section is-closer-look">
     <div class="container">
-      <div class="title is-section-title">{{ closerLook.title }}</div>
+      <div class="title is-section-title">
+        {{ closerLook.title }}
+      </div>
       <div class="grid-container is-hidden-mobile">
         <div
-          class="grid-item item"
-          :class="[`item-${gridItem.id}`, { 'is-white': gridItem.bg_color }]"
           v-for="gridItem in closerLook.itemList"
           :key="gridItem.id"
+          class="grid-item item"
+          :class="[`item-${gridItem.id}`, { 'is-white': gridItem.bg_color }]"
         >
           <figure v-if="isBgFigure(gridItem)">
-            <lazy-img class="bg-figure" :src="gridItem.bg_figure" />
+            <lazy-img
+              class="bg-figure"
+              :src="gridItem.bg_figure"
+            />
           </figure>
           <lazy-img
             v-if="gridItem.multiple_img"
@@ -18,34 +23,53 @@
             :src="gridItem.left_figure"
           />
           <div class="text-box">
-            <md-format class="item-title" :content="gridItem.title"></md-format>
-            <p class="item-content">{{ gridItem.content }}</p>
+            <md-format
+              class="item-title"
+              :content="gridItem.title"
+            ></md-format>
+            <p class="item-content">
+              {{ gridItem.content }}
+            </p>
           </div>
-          <lazy-img class="image" :src="gridItem.figure" />
+          <lazy-img
+            class="image"
+            :src="gridItem.figure"
+          />
         </div>
       </div>
     </div>
     <swiper
       :speed="1000"
-      :slidesPerView="1"
-      :spaceBetween="30"
+      :slides-per-view="1"
+      :space-between="30"
       :pagination="{
         clickable: true,
       }"
       :modules="[Pagination]"
       class="swiper is-hidden-tablet"
     >
-      <swiper-slide v-for="index in 4" :key="index">
+      <swiper-slide
+        v-for="index in 4"
+        :key="index"
+      >
         <div
-          :class="`swiper-item item item-${gridItem.id}`"
           v-for="gridItem in closerLook.itemList.slice((index - 1) * 2, index * 2)"
           :key="gridItem.id"
+          :class="`swiper-item item item-${gridItem.id}`"
         >
           <div class="text-box">
-            <md-format class="item-title" :content="gridItem.title"></md-format>
-            <p class="item-content">{{ gridItem.content }}</p>
+            <md-format
+              class="item-title"
+              :content="gridItem.title"
+            ></md-format>
+            <p class="item-content">
+              {{ gridItem.content }}
+            </p>
           </div>
-          <lazy-img class="image" :src="imgMobilePath(gridItem)" />
+          <lazy-img
+            class="image"
+            :src="imgMobilePath(gridItem)"
+          />
         </div>
       </swiper-slide>
     </swiper>

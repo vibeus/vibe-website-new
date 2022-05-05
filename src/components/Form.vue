@@ -1,9 +1,23 @@
 <template>
-  <form class="form" ref="form" :action="action" :method="method">
-    <template v-for="(row, idx) in controls" :key="idx">
+  <form
+    ref="form"
+    class="form"
+    :action="action"
+    :method="method"
+  >
+    <template
+      v-for="(row, idx) in controls"
+      :key="idx"
+    >
       <div class="f-row">
-        <template v-for="item in row" :key="item.name">
-          <div class="form-outline" :class="item.column_class">
+        <template
+          v-for="item in row"
+          :key="item.name"
+        >
+          <div
+            class="form-outline"
+            :class="item.column_class"
+          >
             <select
               v-if="item.dropdown"
               class="form-control select-input"
@@ -12,7 +26,12 @@
               :required="item.required"
               @change="onFormControlChange($event.target)"
             >
-              <option v-for="option in item.dropdown" :label="option" :value="option" :key="option" />
+              <option
+                v-for="option in item.dropdown"
+                :key="option"
+                :label="option"
+                :value="option"
+              />
             </select>
             <input
               v-else
@@ -22,14 +41,24 @@
               :required="item.required"
               @change="onFormControlChange($event.target)"
             >
-            <label class="form-label" style="margin-left: 0px;">{{item.placeholder}}</label>
+            <label
+              class="form-label"
+              style="margin-left: 0px;"
+            >{{ item.placeholder }}</label>
           </div>
         </template>
       </div>
     </template>
     <div class="is-buttons">
-      <template v-for="item in buttons" :key="item.title">
-        <a href="" :class="item.class" @click="submitForm">{{item.title}}</a>
+      <template
+        v-for="item in buttons"
+        :key="item.title"
+      >
+        <a
+          href=""
+          :class="item.class"
+          @click="submitForm"
+        >{{ item.title }}</a>
       </template>
     </div>
   </form>
@@ -37,7 +66,8 @@
 
 <script setup>
 import { Loading, Message } from '@vcomp/ui';
-import { validEmail, getHubspotBody } from '@/utils';
+import { axiosReq, validEmail, getHubspotBody } from '@/utils';
+
 
 const props = defineProps({
   formData: {
@@ -70,10 +100,17 @@ const onFormControlChange = el => {
 
 /* End Data */
 
+function addSubmittedClass(form, isSubmitted) {
+  if (isSubmitted) {
+    form.parentElement.classList.add('is-submitted');
+    form.parentElement.classList.remove('is-failed');
+  } else {
+    form.parentElement.classList.remove('is-submitted');
+    form.parentElement.classList.add('is-failed');
+  }
+}
+
 const submitForm = async () => {
-  Message.error('Submit Failed!');
-  Message.success('Submit Success!');
-  Loading.show();
   const form = proxy.$refs.form;
   const fields = [];
   for (const pair of new FormData(form).entries()) {
@@ -88,31 +125,43 @@ const submitForm = async () => {
 
   const body = getHubspotBody(form, fields);
 
-  setTimeout(() => Loading.close(), 3000);
+  axiosReq({
+    url: action,
+    method,
+    bfLoading: true,
+    data: body,
+  }).then(data => {
+    console.log('data: ', data);
+    addSubmittedClass(form, true);
+    Message.success('Submit Success!');
+  }).catch(err => {
+    addSubmittedClass(form, false);
+    Message.error('Submit Failed!');
+  });
 
-  return fetch(form.action, {
-    method: form.method,
-    body: JSON.stringify(body),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  })
-    .then((r) => {
-      console.log('r: ', r);
-      if (r.ok) {
-        Loading.hide();
-        form.parentElement.classList.add('is-submitted');
-      } else {
-        form.parentElement.classList.add('is-failed');
-        Message.error('Submit Failed!');
-      }
-      return r;
-    })
-    .catch((ex) => {
-      form.parentElement.classList.add('is-failed');
-      Message.error('Submit Failed!');
-      throw ex;
-    });
+  // return fetch(form.action, {
+  //   method: form.method,
+  //   body: JSON.stringify(body),
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  // })
+  //   .then((r) => {
+  //     console.log('r: ', r);
+  //     if (r.ok) {
+  //       Loading.hide();
+  //       form.parentElement.classList.add('is-submitted');
+  //     } else {
+  //       form.parentElement.classList.add('is-failed');
+  //       Message.error('Submit Failed!');
+  //     }
+  //     return r;
+  //   })
+  //   .catch((ex) => {
+  //     form.parentElement.classList.add('is-failed');
+  //     Message.error('Submit Failed!');
+  //     throw ex;
+  //   });
 
 };
 

@@ -1,11 +1,11 @@
 <template>
   <main class="us-sales">
-    <CloserLook :closerLook="fm.closer_look" />
+    <CloserLook :closer-look="fm.closer_look" />
     <WhatsInBox />
     <CompareInBrief :compare="fm.compare" />
     <Faq :faqs="faqs" />
     <Reviews :reviews="fm.reviews" />
-    <BottomCta :bottomCta="fm.bottom_cta" />
+    <BottomCta :bottom-cta="fm.bottom_cta" />
   </main>
 </template>
 
@@ -13,10 +13,10 @@
 import { CloserLook, CompareInBrief, WhatsInBox, Reviews } from './sections';
 import BottomCta from '@vcomp/BottomCta.vue';
 import Faq from '@vcomp/Faq/Index.vue';
-import { useCartEffect } from '@/store/cart';
+import { useCartStore } from '@/store/cart';
 const { frontmatter: fm } = useData();
 
-const checkout = computed(() => useCartEffect.checkout );
+const checkout = computed(() => useCartStore.checkout );
 
 
 const { faqs } = fm._value;

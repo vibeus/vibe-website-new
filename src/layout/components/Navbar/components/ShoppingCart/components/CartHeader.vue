@@ -1,20 +1,28 @@
 <template>
   <div class="cart-head cart-level">
     <div class="cart-level">
-      <span class="icon" @click="handleOpenCartModal">
+      <span
+        class="icon"
+        @click="cart.handleOpenCartModal"
+      >
         <svg-icon icon-name="global-cart-chevron-right" />
       </span>
-      <p class="cart-title">My Cart</p>
+      <p class="cart-title">
+        My Cart
+      </p>
     </div>
     <div class="cart-level">
-      <p class="item-count">67 items</p>
+      <p class="item-count">
+        {{ cart.getTotalItemCount }} items
+      </p>
     </div>
   </div>
 </template>
 
 <script setup>
-import { useCartEffect } from '@/store/cart';
-const { handleOpenCartModal } = useCartEffect();
+import { useCartStore } from '@/store/cart';
+const cart = useCartStore();
+
 </script>
 
 <style lang="sass" scoped>

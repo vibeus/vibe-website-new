@@ -1,17 +1,27 @@
 <template>
-  <section class="section is-what-in-box" id="what-in-box">
+  <section
+    id="what-in-box"
+    class="section is-what-in-box"
+  >
     <div class="vb-container">
-      <div class="title is-section-title">{{ what_in_box.title }}
+      <div class="title is-section-title">
+        {{ what_in_box.title }}
       </div>
       <div class="f-row">
-        <template v-for="(item, index) in what_in_box.items" :key="index">
+        <template
+          v-for="(item, index) in what_in_box.items"
+          :key="index"
+        >
           <div class="accessory-box">
             <figure class="image">
-              <lazy-img :src="`${item.figure}`"
-                        :alt="`${item.figure}-${index}`"
+              <lazy-img
+                :src="`${item.figure}`"
+                :alt="`${item.figure}-${index}`"
               />
             </figure>
-            <h3 class="title">{{ item.title }}</h3>
+            <h3 class="title">
+              {{ item.title }}
+            </h3>
           </div>
         </template>
       </div>

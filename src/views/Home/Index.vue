@@ -1,15 +1,21 @@
 <template>
-  <main class="home" aria-labelledby="main-title">
-    {{device}}
+  <main
+    class="home"
+    aria-labelledby="main-title"
+  >
+    {{ device }}
     <HomeHero />
     <slot name="hero" />
     <HomeFeatures />
     <slot name="features" />
     <HomeFooter @consoleTest="consoleT" />
     <slot name="footer" />
-    <button @click="handleAddtoCart('31815758250035')">Click to add board 55</button>
-    <button @click="handleAddtoCart('39355861598259')">Click to add board 75</button>
-    <button @click="handleCheckout">GO checkout</button>
+    <button @click="cart.handleAddtoCart('31815758250035', 1)">
+      Click to add 1 board 55
+    </button>
+    <button @click="cart.handleAddtoCart('39355861598259', 1)">
+      Click to add 1 board 75
+    </button>
   </main>
 </template>
 
@@ -17,26 +23,27 @@
 import HomeHero from './components/HomeHero.vue';
 import HomeFeatures from './components/HomeFeatures.vue';
 import HomeFooter from './components/HomeFooter.vue';
-import { useAppStore } from '@/store/app';
-import { useCartEffect } from '@/store/cart';
-import { toRaw } from 'vue';
-const cartCheckout = useCartEffect();
-const checkout = computed(() => cartCheckout.checkout);
-const { handleAddtoCart } = useCartEffect();
+import { toRefs } from 'vue';
+import { useAppStore, useCartStore } from '@/store';
+const cartCheckout = useCartStore();
+
+const cart = useCartStore();
 const app = useAppStore();
 const device = computed(() => app.device);
+
+
+
+
 
 const testInfo = ref({user: 'abc'});
 /* Start Data */
 provide('testInfo', testInfo);
 /* End Data */
 
-const handleCheckout = () => {
-  if(checkout) {
-    const checkoutList = toRaw(checkout.value);
-    window.location = checkoutList.webUrl;
-  }
-};
+watchEffect(() => {
+  // console.log(cart.getCheckout?.lineItems);
+});
+
 
 const consoleT = () => {
   console.log(123);

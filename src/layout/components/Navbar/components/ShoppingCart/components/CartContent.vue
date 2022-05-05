@@ -1,8 +1,13 @@
 <template>
   <div class="dialog-content">
-    <CartHeader/>
-    <CartBody/>
-    <CartBottom/>
+    <CartHeader />
+    <template v-if="cart.getTotalItemCount > 0">
+      <CartBody />
+      <CartBottom />
+    </template>
+    <template v-else>
+      <EmptyCart />
+    </template>
   </div>
 </template>
 
@@ -10,6 +15,9 @@
 import CartHeader from './CartHeader.vue';
 import CartBody from './CartBody.vue';
 import CartBottom from './CartBottom.vue';
+import EmptyCart from './EmptyCart.vue';
+import { useCartStore } from '@/store/cart';
+const cart = useCartStore();
 </script>
 
 <style lang="sass" scoped>

@@ -3,11 +3,18 @@
     <div class="hero-body">
       <div class="container">
         <figure class="image is-hero-bg">
-          <lazy-img class="image" :src="hero.figure" />
+          <lazy-img
+            class="image"
+            :src="hero.figure"
+          />
         </figure>
         <div class="title-text">
-          <h1 class="title">{{ hero.title }}</h1>
-          <div class="content">{{ hero.body }}</div>
+          <h1 class="title">
+            {{ hero.title }}
+          </h1>
+          <div class="content">
+            {{ hero.body }}
+          </div>
         </div>
         <SectionCta :cta="hero.cta" />
       </div>
