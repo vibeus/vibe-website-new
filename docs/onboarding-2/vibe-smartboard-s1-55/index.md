@@ -28,92 +28,50 @@ hero:
 setup:
   id: *setup_id
   class: is-setup-product-s1-55
-  progress:
-    class: is-hidden-mobile is-three-steps
-    progress_bars:
-      - class: progress-step-1 is-three-steps
-      - class: progress-step-2 is-three-steps
-      - class: progress-step-3 is-three-steps
-  glide_class: enable-user-select
   steps:
-    - class: step-1
-      step_number_icon:
-        class: is-hidden-tablet
-        url: img/onboarding/step-number-1.svg
-      columns:
-        - class: content-text-column
-          header:
-            title: 'Unbox Your Vibe Smartboard S1 55″'
-          links:
-            - link:
-                text: 'Vibe Smartboard S1 55″ User Manual'
-                icon:
-                  class: download-icon
-                  url: img/common/download-icon.svg
-                url: /resources/Vibe_Smartboard_S1_55″_User_Manual.pdf
-            - link:
-                text: 'Vibe Smartboard S1 55″ Stand Assembly'
-                icon:
-                  class: download-icon
-                  url: img/common/download-icon.svg
-                url: /resources/Vibe_Smartboard_S1_55″_Stand_Assembly_Instruction.pdf
-          body:
-            - figure:
-                class: is-hidden-from-900px
-                url: img/onboarding/setup-1-s1.png
-            - text: '* The Vibe SmartCam C1 is sent in a different package, please make sure you have received everything before you begin setting up your Vibe Smartboard.'
-        - class: figure_column is-hidden-until-900px
-          column_size: is-7
-          body:
-            - figure:
-                class: is-hidden-mobile
-                url: img/onboarding/setup-1-s1.png
-    - class: step-2
-      step_number_icon:
-        class: is-hidden-tablet
-        url: img/onboarding/step-number-2.svg
-      columns:
-        - class: content-text-column
-          header:
-            title: 'Set Up Your Device'
-          body:
-            - figure:
-                class: is-hidden-from-900px
-                url: img/onboarding/setup-2-s1.png
-            - text: "* If you're setting up the Vibe board for the first time, please expect to wait 5-10 minutes for system update."
-          cta:
-            - link:
-                text: 'Learn more'
-                url: https://knowledge.vibe.us/s1-setup-guide
-        - class: figure_column is-hidden-until-900px
-          column_size: is-7
-          body:
-            - figure:
-                class: is-hidden-mobile
-                url: img/onboarding/setup-2-s1.png
-    - class: step-3
-      step_number_icon:
-        class: is-hidden-tablet
-        url: img/onboarding/step-number-3.svg
-      columns:
-        - class: content-text-column
-          header:
-            title: 'You Are All Set!'
-          body:
-            - figure:
-                url: img/onboarding/desktop-screen-s1.png
-          cta:
-            - body: 'Experience Vibe for yourself.'
-            - link:
-                class: scroll-down-link
-                icon:
-                  class: scroll-down-icon
-                  url: img/onboarding/scroll-down-icon.svg
-                scroll_to_id: get-started
+    - order: 1
+      component: StepContent
+      mobile_step_number_icon: onboarding-step-number-1
+      title: 'Unbox Your Vibe Smartboard S1 55″'
+      figure: onboarding/setup-1-s1.png
+      links:
+        - link:
+            text: 'Vibe Smartboard S1 55″ User Manual'
+            icon:
+              class: download-icon
+              url: img/common/download-icon.svg
+            url: /resources/Vibe_Smartboard_S1_55″_User_Manual.pdf
+        - link:
+            text: 'Vibe Smartboard S1 55″ Stand Assembly'
+            icon:
+              class: download-icon
+              url: img/common/download-icon.svg
+            url: /resources/Vibe_Smartboard_S1_55″_Stand_Assembly_Instruction.pdf
+      text: '* The Vibe SmartCam C1 is sent in a different package, please make sure you have received everything before you begin setting up your Vibe Smartboard.'
 
+    - order: 2
+      component: StepContent
+      mobile_step_number_icon: onboarding-step-number-2
+      title: 'Set Up Your Device'
+      figure: onboarding/setup-2-s1.png
+      text: "* If you're setting up the Vibe board for the first time, please expect to wait 5-10 minutes for system update."
+      cta:
+        - link:
+            text: 'Learn more'
+            url: https://knowledge.vibe.us/s1-setup-guide
+    - order: 3
+      component: EndStep
+      mobile_step_number_icon: onboarding-step-number-3
+      title: 'You Are All Set!'
+      figure: onboarding/desktop-screen-s1.png
+      cta:
+        text: 'Experience Vibe for yourself.'
+        link:
+          icon: onboarding-scroll-down-icon
+          scroll_to_id: &get_started_id get-started
 get_started:
   title: Get Started With Vibe
-  id: get-started
+  id: *get_started_id
   items:
     - title: 'Whiteboarding'
       column_size: is-one-third

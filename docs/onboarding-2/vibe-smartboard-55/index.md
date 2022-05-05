@@ -48,178 +48,141 @@ setup:
           url: img/onboarding/step-bar-4.svg
   glide_class: enable-user-select
   steps:
-    - class: step-1
-      step_number_icon:
-        class: is-hidden-tablet
-        url: img/onboarding/step-number-1.svg
-      columns:
-        - class: content-text-column
-          header:
-            title: 'Unbox and install your Vibe board and stand.'
-          cta:
-            - link:
-                text: 'Vibe 55” digital whiteboard user manual'
-                icon:
-                  class: download-icon
-                  url: img/common/download-icon.svg
-                url: https://vibe.us/resources/New_branded_Vibe_user_manual.pdf
-            - link:
-                text: 'Vibe-Tafel für interaktive Zusammenarbeit Bedienungsanleitung'
-                icon:
-                  class: download-icon
-                  url: img/common/download-icon.svg
-                url: https://vibe.us/resources/Germany_user_manual.pdf
-            - link:
-                text: 'Vibe stand assembly'
-                icon:
-                  class: download-icon
-                  url: img/common/download-icon.svg
-                url: https://vibe.us/resources/New_Stand_Assembly-202104.pdf
-            - link:
-                text: 'FAQ – Can we mount Vibe on a wall or use with other stands?'
-                icon:
-                  class: faq-icon
-                  text: '  →'
-                url: https://knowledge.vibe.us/wall-mount-and-stand
-        - class: content-video-column
-          column_size: is-7
-          body:
-            - video:
-                playerId: unbox-tablet
-                triggerClass: unbox-tablet
-                id: 7ZsShHUzqHs
-                placeholder: img/onboarding/installation.png
-    - class: step-2
-      step_number_icon:
-        class: is-hidden-tablet
-        url: img/onboarding/step-number-2.svg
-      columns:
-        - class: content-text-column
-          header:
-            title: 'Set up your device and Vibe account.'
-          body:
-            - figure:
-                class: is-hidden-from-900px
-                url: img/onboarding/setup.png
-            - text: "* If you've already set up a Vibe account, you can use it to sign into the board."
-          cta:
-            - link:
-                text: 'Learn More'
-                url: https://knowledge.vibe.us/quick-start-guide
-        - class: figure_column is-hidden-until-900px
-          column_size: is-7
-          body:
-            - figure:
-                class: is-hidden-mobile
-                url: img/onboarding/setup.png
+    - order: 1
+      component: VideoStep
+      mobile_step_number_icon: onboarding-step-number-1
+      title: 'Unbox and install your Vibe board and stand.'
+      links:
+        - link:
+            text: 'Vibe 55” digital whiteboard user manual'
+            icon:
+              class: download-icon
+              url: img/common/download-icon.svg
+            url: https://vibe.us/resources/New_branded_Vibe_user_manual.pdf
+        - link:
+            text: 'Vibe-Tafel für interaktive Zusammenarbeit Bedienungsanleitung'
+            icon:
+              class: download-icon
+              url: img/common/download-icon.svg
+            url: https://vibe.us/resources/Germany_user_manual.pdf
+        - link:
+            text: 'Vibe stand assembly'
+            icon:
+              class: download-icon
+              url: img/common/download-icon.svg
+            url: https://vibe.us/resources/New_Stand_Assembly-202104.pdf
+        - link:
+            text: 'FAQ – Can we mount Vibe on a wall or use with other stands?'
+            icon:
+              class: faq-icon
+              text: '  →'
+            url: https://knowledge.vibe.us/wall-mount-and-stand
+      video:
+        playerId: unbox-tablet
+        triggerClass: unbox-tablet
+        id: 7ZsShHUzqHs
+        placeholder: onboarding/installation.png
+    - order: 2
+      component: StepContent
+      mobile_step_number_icon: onboarding-step-number-2
+      title: 'Set up your device and Vibe account.'
+      figure: onboarding/setup.png
+      text: "* If you've already set up a Vibe account, you can use it to sign into the board."
+      cta:
+        - link:
+            text: 'Learn more'
+            url: https://knowledge.vibe.us/quick-start-guide
     - class: step-3
-      step_number_icon:
-        class: is-hidden-tablet
-        url: img/onboarding/step-number-3.svg
-      submit_button_column:
-        class: submit-button-column is-hidden-until-900px
-        column_size: is-3
-        button:
-          id: &submit_button_id submit-button
-          class: button is-rounded is-black is-outlined
-          title: 'Submit'
-      columns:
-        - class: content-form-column
-          header:
-            title: 'Register your device.'
-            body: Your Vibe board purchase includes a [1-year warranty](/warranty/).
-          body:
-            - form:
-                action: https://api.hsforms.com/submissions/v3/integration/submit/5698963/3d3eac66-7345-4825-a6e8-df8d0575832e
-                controls:
-                  - - name: firstname
-                      placeholder: 'First Name*'
-                      required: true
-                    - name: lastname
-                      placeholder: 'Last Name*'
-                      required: true
-                  - - name: serial_number
-                      placeholder: 'Serial Number*'
-                      required: true
-                    - name: email
-                      placeholder: 'Email Address*'
-                      type: email
-                      required: true
-                  - - name: industry_category
-                      placeholder: 'Industry*'
-                      required: true
-                      dropdown:
-                        - Agencies (Design, Marketing, Advertising)
-                        - Architecture and Construction
-                        - Consulting
-                        - Coaching and Training
-                        - Education
-                        - Financial Services
-                        - Government and Organizations
-                        - Health Care
-                        - IT Services
-                        - Legal
-                        - Manufacturing and Engineering
-                        - Real Estate
-                        - Retail and Consumer Goods
-                        - Technology
-                        - Others
-                    - name: company_size_classification
-                      placeholder: 'Company Size'
-                      dropdown:
-                        - 1-10
-                        - 11-100
-                        - 101-500
-                        - 501-1000
-                        - 1001-5000
-                        - 5001-10000
-                        - 10001+
-                  - - name: use_case
-                      placeholder: 'What will you be using Vibe for?*'
-                      multiple: true
-                      required: true
-                      dropdown:
-                        - Annotations
-                        - Brainstorming and Ideation
-                        - Entertainment
-                        - Presentations
-                        - Teaching and Learning
-                        - Training and Coaching
-                        - Others
-                    - name: work_scenarios
-                      placeholder: 'Work Scenarios*'
-                      multiple: true
-                      required: true
-                      dropdown:
-                        - In-person
-                        - Hybrid
-                        - Remote
-                buttons:
-                  - type: submit
-                    title: 'Submit'
-                    class: button is-rounded is-black is-outlined is-fullwidth
-                    id: *submit_button_id
-                submitted:
-                  body: 'Thanks for registering your device.'
-    - class: step-4
-      step_number_icon:
-        class: is-hidden-tablet
-        url: img/onboarding/step-number-4.svg
-      columns:
-        - class: content-text-column
-          header:
-            title: 'You are all set!'
-          body:
-            - figure:
-                url: img/onboarding/desktop-screen.png
-          cta:
-            - body: 'Experience Vibe for yourself.'
-            - link:
-                class: scroll-down-link
-                icon:
-                  class: scroll-down-icon
-                  url: img/onboarding/scroll-down-icon.svg
-                scroll_to_id: &get_started_id get-started
+      component: StepForm
+      mobile_step_number_icon: onboarding-step-number-3
+      form_content:
+        title: 'Register Your Device'
+        body: Your Vibe board purchase includes a [1-year warranty](/warranty/).
+        form:
+          # action: https://api.hsforms.com/submissions/v3/integration/submit/5698963/3d3eac66-7345-4825-a6e8-df8d0575832e
+          action: https://api.hsforms.com/submissions/v3/integration/submit/5698963/fea4cc00-f75e-407e-920f-31af171eefce
+          controls:
+            - - name: firstname
+                placeholder: 'First Name*'
+                required: true
+              - name: lastname
+                placeholder: 'Last Name*'
+                required: true
+            - - name: serial_number
+                placeholder: 'Serial Number*'
+                required: true
+              - name: email
+                placeholder: 'Email Address*'
+                type: email
+                required: true
+            - - name: industry_category
+                placeholder: 'Industry*'
+                required: true
+                dropdown:
+                  - Agencies (Design, Marketing, Advertising)
+                  - Architecture and Construction
+                  - Consulting
+                  - Coaching and Training
+                  - Education
+                  - Financial Services
+                  - Government and Organizations
+                  - Health Care
+                  - IT Services
+                  - Legal
+                  - Manufacturing and Engineering
+                  - Real Estate
+                  - Retail and Consumer Goods
+                  - Technology
+                  - Others
+              - name: company_size_classification
+                placeholder: 'Company Size'
+                dropdown:
+                  - 1-10
+                  - 11-100
+                  - 101-500
+                  - 501-1000
+                  - 1001-5000
+                  - 5001-10000
+                  - 10001+
+            - - name: use_case
+                placeholder: 'What will you be using Vibe for?*'
+                multiple: true
+                required: true
+                dropdown:
+                  - Annotations
+                  - Brainstorming and Ideation
+                  - Entertainment
+                  - Presentations
+                  - Teaching and Learning
+                  - Training and Coaching
+                  - Others
+              - name: work_scenarios
+                placeholder: 'Work Scenarios*'
+                multiple: true
+                required: true
+                dropdown:
+                  - In-person
+                  - Hybrid
+                  - Remote
+          buttons:
+            - type: submit
+              title: 'Register Your Vibe'
+              class: button is-rounded is-black is-outlined is-fullwidth
+              id: submit-button
+          submitted:
+            body: 'Thanks for registering your device.'
+
+    - order: 4
+      component: EndStep
+      mobile_step_number_icon: onboarding-step-number-4
+      title: 'You Are All Set!'
+      figure: onboarding/desktop-screen.png
+      cta:
+        text: 'Experience Vibe for yourself.'
+        link:
+          icon: onboarding-scroll-down-icon
+          scroll_to_id: &get_started_id get-started
+
 no_info: false
 webinar_section:
   content_box: 

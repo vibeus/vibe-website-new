@@ -2,18 +2,29 @@
   <main class="onboarding">
     <section class="section is-choices-section">
       <div class="vb-container">
-        <div class="title">{{ onboardingChoices.title }}</div>
-        <div class="content">{{ onboardingChoices.body }}</div>
+        <div class="title">
+          {{ onboardingChoices.title }}
+        </div>
+        <div class="content">
+          {{ onboardingChoices.body }}
+        </div>
         <div class="f-row onboarding-choices">
           <a
-            class="product-box"
             v-for="choice in onboardingChoices.choices"
             :key="choice.title"
+            class="product-box"
             :href="choice.url"
           >
             <div class="title is-hidden-mobile">{{ choice.title }}</div>
-            <lazy-img class="image" :src="choice.figure" :alt="choice.name" />
-            <md-format class="title is-hidden-tablet" :content="choice.title_mobile" />
+            <lazy-img
+              class="image"
+              :src="choice.figure"
+              :alt="choice.name"
+            />
+            <md-format
+              class="title is-hidden-tablet"
+              :content="choice.title_mobile"
+            />
           </a>
         </div>
       </div>

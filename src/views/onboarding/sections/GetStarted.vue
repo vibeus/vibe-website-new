@@ -1,22 +1,28 @@
 <template>
-  <section id="get-started" class="section is-get-started">
+  <section
+    id="get-started"
+    class="section is-get-started"
+  >
     <div class="container">
-      <h1 class="title is-section-title">{{ getStarted.title }}</h1>
+      <h1 class="title is-section-title">
+        {{ getStarted.title }}
+      </h1>
       <div class="links-wrap">
         <div
-          class="links is-one-third"
           v-for="item in getStarted.items"
           :key="item.title"
+          class="links is-one-third"
         >
-          <h2 class="item-title">{{ item.title }}</h2>
+          <h2 class="item-title">
+            {{ item.title }}
+          </h2>
           <a
             v-for="link in item.links"
             :key="link.text"
             class="link"
             :href="link.url"
             target="_blank"
-            >{{ link.text }}</a
-          >
+          >{{ link.text }}</a>
         </div>
       </div>
     </div>

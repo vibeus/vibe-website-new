@@ -2,7 +2,10 @@
   <section class="section onboarding-webinar">
     <div class="webinar-body">
       <div class="content-box">
-        <a :href="webinar.content_box.url" target="_blank">
+        <a
+          :href="webinar.content_box.url"
+          target="_blank"
+        >
           <lazy-img
             class="image"
             :src="webinar.content_box.figure"
@@ -11,11 +14,18 @@
         </a>
       </div>
       <div class="info-box">
-        <p class="content info-cate">{{ webinar.info_detail.info_cate }}</p>
-        <h1 class="info-title">{{ webinar.info_detail.info_title }}</h1>
+        <p class="content info-cate">
+          {{ webinar.info_detail.info_cate }}
+        </p>
+        <h1 class="info-title">
+          {{ webinar.info_detail.info_title }}
+        </h1>
 
         <div class="info-time-wrap">
-          <svg-icon class="link-icon" icon-name="onboarding-time-icon" />
+          <svg-icon
+            class="link-icon"
+            icon-name="onboarding-time-icon"
+          />
           <span class="info-time">{{ webinar.info_detail.info_time.text }}</span>
         </div>
         <md-format

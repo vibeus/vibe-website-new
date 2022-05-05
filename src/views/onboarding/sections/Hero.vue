@@ -3,11 +3,16 @@
     <figure class="is-hero-bg is-hidden-until-900px">
       <lazy-img :src="hero.bg_figure"></lazy-img>
     </figure>
-    <svg-icon class="bg-logo" icon-name="shared-what-bg" />
+    <svg-icon
+      class="bg-logo"
+      icon-name="shared-what-bg"
+    />
     <div class="hero-body">
       <div class="container">
         <div class="title-text">
-          <h1 class="title">{{ hero.title }}</h1>
+          <h1 class="title">
+            {{ hero.title }}
+          </h1>
           <p>{{ hero.body }}</p>
         </div>
         <div class="cta">
@@ -17,11 +22,12 @@
             target="_blank"
             data-scroll-to-id="setup"
           >
-            <span class="title"
-              >{{ hero.link.text }} <span class="text is-hidden-mobile">↓</span></span
-            >
+            <span class="title">{{ hero.link.text }} <span class="text is-hidden-mobile">↓</span></span>
             <span class="link-icon scroll-down is-hidden-tablet">
-              <svg-icon class="scroll-down" icon-name="onboarding-scroll-down-icon" />
+              <svg-icon
+                class="scroll-down"
+                icon-name="onboarding-scroll-down-icon"
+              />
             </span>
           </a>
         </div>
