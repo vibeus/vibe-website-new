@@ -2,10 +2,18 @@
   <section class="hero">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">{{ hero.title }}</h1>
-        <div class="content">{{ hero.body }}</div>
+        <h1 class="title">
+          {{ hero.title }}
+        </h1>
+        <div class="content">
+          {{ hero.body }}
+        </div>
         <div class="cta">
-          <a :class="`button ${hero.cta.class}`" :href="hero.cta.url" target="_blank">
+          <a
+            :class="`button ${hero.cta.class}`"
+            :href="hero.cta.url"
+            target="_blank"
+          >
             {{ hero.cta.title }}
           </a>
         </div>

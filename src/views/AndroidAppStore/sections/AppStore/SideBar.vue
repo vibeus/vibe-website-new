@@ -1,21 +1,33 @@
 <template>
   <div class="is-side-bar is-hidden-mobile">
-    <h2 class="title">Marketplace</h2>
-    <div v-for="item in category" :key="item.name">
+    <h2 class="title">
+      Marketplace
+    </h2>
+    <div
+      v-for="item in category"
+      :key="item.name"
+    >
       <h3 class="subtitle">
-        <a class="side-bar-link is-all" href="#" @click="chooseCate({})">{{
+        <a
+          class="side-bar-link is-all"
+          href="#"
+          @click="chooseCate({})"
+        >{{
           item.name
         }}</a>
       </h3>
-      <div v-for="i in item.items" :key="i.id" class="type-item">
+      <div
+        v-for="i in item.items"
+        :key="i.id"
+        class="type-item"
+      >
         <a
           v-if="!i.hidden"
           class="side-bar-link"
           :class="currentItem == `${item.id}=${i.id}` ? 'is-active' : ''"
           href="#"
           @click="chooseCate({ key: item.id, value: i.id })"
-          >{{ i.name }}</a
-        >
+        >{{ i.name }}</a>
       </div>
     </div>
   </div>

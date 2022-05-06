@@ -1,13 +1,25 @@
 // <!-- style=`background-color: {{ background_color}}` -->
 <template>
-  <section class="section is-figure-content-section" :class="contentData.class">
+  <section
+    class="section is-figure-content-section"
+    :class="contentData.class"
+  >
     <div class="container">
-      <h1 class="title is-section-title">{{ contentData.title }}</h1>
-      <template v-for="(item, index) in contentData.items" :key="index">
-        <div class="columns is-figure-content is-vcentered" 
+      <h1 class="title is-section-title">
+        {{ contentData.title }}
+      </h1>
+      <template
+        v-for="(item, index) in contentData.items"
+        :key="index"
+      >
+        <div
+          class="columns is-figure-content is-vcentered" 
           :class="[item.class, { 'is-reversed': item.reversed ? true : false }]"
         >
-          <div class="column is-image" :class="item.figure.style">
+          <div
+            class="column is-image"
+            :class="item.figure.style"
+          >
             <figure class="image">
               <lazy-img
                 class="image"
@@ -18,19 +30,31 @@
           </div>
 
           <div class="column is-content">
-            <h2 class="title is-content-title">{{ item.title }}</h2>
+            <h2 class="title is-content-title">
+              {{ item.title }}
+            </h2>
             <div class="content">
               <template v-if="item.multiple_text">
-                <div v-for="(bodyItem, bodyItemIndex) in item.body" :key="bodyItemIndex" 
-                    class="is-single-content">
+                <div
+                  v-for="(bodyItem, bodyItemIndex) in item.body"
+                  :key="bodyItemIndex" 
+                  class="is-single-content"
+                >
                   <span class="icon">
-                    <svg-icon class="image" icon-name="common-circle-purple" alt=""></svg-icon>
+                    <svg-icon
+                      class="image"
+                      icon-name="common-circle-purple"
+                      alt=""
+                    ></svg-icon>
                   </span>
-                  <div class="text" v-html="bodyItem.text"></div>
+                  <div
+                    class="text"
+                    v-html="bodyItem.text"
+                  ></div>
                   <!-- TODO mobile text -->
                   <!-- <div class="text {{ if .text_mobile }} is-hidden-mobile {{ end }}">{{ default .text (T .text) }}</div> -->
                   <!-- {{ if .text_mobile }} -->
-                    <!-- <div class="text is-hidden-tablet">{{ default .text_mobile (T .text_mobile) }}</div> -->
+                  <!-- <div class="text is-hidden-tablet">{{ default .text_mobile (T .text_mobile) }}</div> -->
                   <!-- {{ end }} -->
                 </div>
               </template>

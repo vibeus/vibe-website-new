@@ -1,9 +1,16 @@
 <template>
   <div class="get-in-touch">
     <div class="contact">
-      <div class="content" v-for="item in city.items" :key="item.icon">
+      <div
+        v-for="item in city.items"
+        :key="item.icon"
+        class="content"
+      >
         <span class="icon">
-          <svg-icon :icon-name="item.icon" :alt="item.alt"/>
+          <svg-icon
+            :icon-name="item.icon"
+            :alt="item.alt"
+          />
         </span>
         <div v-html="item.text"></div>
       </div>

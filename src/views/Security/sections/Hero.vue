@@ -3,10 +3,19 @@
     <div class="hero-body">
       <div class="container">
         <div class="bg-logo">
-          <svg-icon class="image" icon-name="security-hero-bg" alt="hero bg icon"></svg-icon>
+          <svg-icon
+            class="image"
+            icon-name="security-hero-bg"
+            alt="hero bg icon"
+          ></svg-icon>
         </div>
-        <h1 class="title">{{ title }}</h1>
-        <div class="content" v-html="body"></div>
+        <h1 class="title">
+          {{ title }}
+        </h1>
+        <div
+          class="content"
+          v-html="body"
+        ></div>
       </div>
     </div>
   </section>

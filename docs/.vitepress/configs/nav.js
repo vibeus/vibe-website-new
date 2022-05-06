@@ -56,7 +56,7 @@ export default [ // menu
   },
   {
     title: 'Partners',
-    link: 'https://vibe.us/reseller/',
+    link: '/reseller-beta/',
     nofollow: true
   }
 ]

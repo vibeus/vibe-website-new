@@ -1,12 +1,19 @@
 <template>
   <section class="contact">
     <div class="container is-form">
-      <VForm :formData="contactSection.form" @msgSuccess="elMsgSuccess" />
+      <VForm :form-data="contactSection.form" />
     </div>
     <div class="container is-support">
-      <h2 class="title">{{contactSection.support.title}}</h2>
-      <h2 class="title">{{contactSection.support.subtitle}}</h2>
-      <div class="content" v-html="contactSection.support.body"></div>
+      <h2 class="title">
+        {{ contactSection.support.title }}
+      </h2>
+      <h2 class="title">
+        {{ contactSection.support.subtitle }}
+      </h2>
+      <div
+        class="content"
+        v-html="contactSection.support.body"
+      ></div>
     </div>
     <GetInTouch />
   </section>

@@ -122,7 +122,7 @@ export default {
       "links": [
         {
           "title": "About Us",
-          "url": "https://vibe.us/about/",
+          "url": "/about/",
           "nofollow": true
         },
         {

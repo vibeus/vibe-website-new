@@ -1,17 +1,37 @@
 <template>
-  <form class="form" ref="form" :model="formItem">
-    <template v-for="(row, idx) in controls" :key="idx">
+  <form
+    ref="form"
+    class="form"
+    :action="action"
+    :method="method"
+  >
+    <template
+      v-for="(row, idx) in controls"
+      :key="idx"
+    >
       <div class="f-row">
-        <template v-for="item in row" :key="item.name">
-          <div class="form-outline">
+        <template
+          v-for="item in row"
+          :key="item.name"
+        >
+          <div
+            class="form-outline"
+            :class="item.column_class"
+          >
             <select
               v-if="item.dropdown"
               class="form-control select-input"
               placeholder="Please select"
+              :name="item.name"
               :required="item.required"
               @change="onFormControlChange($event.target)"
             >
-              <option v-for="option in item.dropdown" :label="option" :value="option" :key="option" />
+              <option
+                v-for="option in item.dropdown"
+                :key="option"
+                :label="option"
+                :value="option"
+              />
             </select>
             <input
               v-else
@@ -21,21 +41,33 @@
               :required="item.required"
               @change="onFormControlChange($event.target)"
             >
-            <label class="form-label" style="margin-left: 0px;">{{item.placeholder}}</label>
+            <label
+              class="form-label"
+              style="margin-left: 0px;"
+            >{{ item.placeholder }}</label>
           </div>
         </template>
       </div>
     </template>
     <div class="is-buttons">
-      <template v-for="item in buttons" :key="item.title">
-        <a href="" :class="item.class" @click="submitForm">{{item.title}}</a>
+      <template
+        v-for="item in buttons"
+        :key="item.title"
+      >
+        <a
+          href=""
+          :class="item.class"
+          @click="submitForm"
+        >{{ item.title }}</a>
       </template>
     </div>
   </form>
 </template>
 
 <script setup>
-import { validEmail } from '@/utils/validate';
+import { Loading, Message } from '@vcomp/ui';
+import { axiosReq, validEmail, getHubspotBody } from '@/utils';
+
 
 const props = defineProps({
   formData: {
@@ -46,17 +78,17 @@ const props = defineProps({
 
 const emit = defineEmits(['msgSuccess']);
 
-const { action, buttons, controls } = Object.assign({}, props.formData);
+const { action, method = 'POST', buttons, controls } = Object.assign({}, props.formData);
 
 /* Start Data */
 const { proxy } = getCurrentInstance();
-const formItem = ref({});
+// const formItem = ref({});
 
-(function initFormData() {
-  controls.forEach(item => {
-    formItem.value[item.name] = null;
-  });
-})();
+// (function initFormData() {
+//   controls.forEach(item => {
+//     formItem.value[item.name] = null;
+//   });
+// })();
 
 const rules = {
   // email: [{ required: true, trigger: 'blur', validator: validEmail }],
@@ -68,47 +100,69 @@ const onFormControlChange = el => {
 
 /* End Data */
 
-const submitForm = () => {
-  proxy.$refs.form.validate(async valid => {
-    if (valid) {
-      let fields = [];
-      console.log('formItem.value: ', formItem.value);
-      for (const pair of new FormData(formItem.value).entries()) {
-        if (pair[0] === 'consent-to-communicate-checkbox') continue;
-        fields.push({
-          name: pair[0],
-          value: pair[1],
-        });
-      }
-      console.log('fields: ', fields);
-      fields = [];
-      // 特定表单逻辑处理
-      // fields = (await dealSpecificForm(action, fields, form)) || fields;
+function addSubmittedClass(form, isSubmitted) {
+  if (isSubmitted) {
+    form.parentElement.classList.add('is-submitted');
+    form.parentElement.classList.remove('is-failed');
+  } else {
+    form.parentElement.classList.remove('is-submitted');
+    form.parentElement.classList.add('is-failed');
+  }
+}
 
-      // const body = getHubspotBody(form, fields);
+const submitForm = async () => {
+  const form = proxy.$refs.form;
+  const fields = [];
+  for (const pair of new FormData(form).entries()) {
+    if (pair[0] === 'consent-to-communicate-checkbox') continue;
+    fields.push({
+      name: pair[0],
+      value: pair[1],
+    });
+  }
+  // 特定表单逻辑处理
+  // fields = (await dealSpecificForm(action, fields, form)) || fields;
 
-      // return fetch(form.action, {
-      //   method: form.method,
-      //   body: JSON.stringify(body),
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      // })
-      //   .then((r) => {
-      //     if (r.ok) {
-      //       form.parentElement.classList.add('is-submitted');
-      //     } else {
-      //       form.parentElement.classList.add('is-failed');
-      //     }
+  const body = getHubspotBody(form, fields);
 
-      //     return r;
-      //   })
-      //   .catch((ex) => {
-      //     form.parentElement.classList.add('is-failed');
-      //     throw ex;
-      //   });
-    } else console.log('invalid');
+  axiosReq({
+    url: action,
+    method,
+    bfLoading: true,
+    data: body,
+  }).then(data => {
+    console.log('data: ', data);
+    addSubmittedClass(form, true);
+    Message.success('Submit Success!');
+  }).catch(err => {
+    addSubmittedClass(form, false);
+    Message.error('Submit Failed!');
   });
+
+  // return fetch(form.action, {
+  //   method: form.method,
+  //   body: JSON.stringify(body),
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  // })
+  //   .then((r) => {
+  //     console.log('r: ', r);
+  //     if (r.ok) {
+  //       Loading.hide();
+  //       form.parentElement.classList.add('is-submitted');
+  //     } else {
+  //       form.parentElement.classList.add('is-failed');
+  //       Message.error('Submit Failed!');
+  //     }
+  //     return r;
+  //   })
+  //   .catch((ex) => {
+  //     form.parentElement.classList.add('is-failed');
+  //     Message.error('Submit Failed!');
+  //     throw ex;
+  //   });
+
 };
 
 onMounted(() => {

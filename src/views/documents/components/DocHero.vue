@@ -1,9 +1,17 @@
 <template>
-  <section class="section doc-hero" id="doc-hero">
+  <section
+    id="doc-hero"
+    class="section doc-hero"
+  >
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">{{ docHero.title }}</h1>
-        <md-format class="content" :content="docHero.summary"></md-format>
+        <h1 class="title">
+          {{ docHero.title }}
+        </h1>
+        <md-format
+          class="content"
+          :content="docHero.summary"
+        ></md-format>
         <lazy-img
           v-if="docHero.hero_imgs"
           class="image image-product-tablet"

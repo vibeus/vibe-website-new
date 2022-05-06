@@ -2,15 +2,35 @@
   <section class="hero">
     <div class="hero-body">
       <div class="container">
-        <h1 class="title">{{ contactHero.title }}</h1>
+        <h1 class="title">
+          {{ contactHero.title }}
+        </h1>
         <div class="content">
-          <template v-for="item in contactHero.body" :key="item">
-            <div class="single-content-block" :class="item.class">
-              <svg-icon v-if="item.icon" class="icon" :icon-name="item.icon.class" />
-              <span v-if="item.text" class="text" :class="item.text.class">{{
+          <template
+            v-for="item in contactHero.body"
+            :key="item"
+          >
+            <div
+              class="single-content-block"
+              :class="item.class"
+            >
+              <svg-icon
+                v-if="item.icon"
+                class="icon"
+                :icon-name="item.icon.class"
+              />
+              <span
+                v-if="item.text"
+                class="text"
+                :class="item.text.class"
+              >{{
                 item.text.content
               }}</span>
-              <a v-if="item.link" class="link" :href="item.link.url">{{
+              <a
+                v-if="item.link"
+                class="link"
+                :href="item.link.url"
+              >{{
                 item.link.text
               }}</a>
             </div>
