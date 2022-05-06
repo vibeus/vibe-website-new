@@ -45,12 +45,12 @@
   <CardsModal :stories="stories" v-if="isCardsModal === true" />
 </template>
 <script setup>
-import { Swiper, SwiperSlide } from "swiper/vue";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Navigation, Pagination } from "swiper";
-import CardsModal from "./CardsModal.vue";
-import { useAppStore } from "@/store/app";
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Navigation, Pagination } from 'swiper';
+import CardsModal from './CardsModal.vue';
+import { useAppStore } from '@/store/app';
 
 const props = defineProps({
   stories: {
@@ -64,24 +64,24 @@ const slidesPerView = ref(3);
 const app = useAppStore();
 const device = computed(() => app.device);
 //CardsModal
-provide("initialSlide", initialSlide);
-provide("isCardsModal", isCardsModal);
+provide('initialSlide', initialSlide);
+provide('isCardsModal', isCardsModal);
 watchEffect(() => {
-  if (device.value === "desktop" || device.value === "touch") {
+  if (device.value === 'desktop' || device.value === 'touch') {
     slidesPerView.value = 2;
-  } else if (device.value === "mobile") {
+  } else if (device.value === 'mobile') {
     slidesPerView.value = 1;
   } else {
     slidesPerView.value = 3;
   }
 });
 const prev = () => {
-  const prevBtn = document.querySelector(".card-swiper .swiper-button-prev");
+  const prevBtn = document.querySelector('.card-swiper .swiper-button-prev');
   console.log(prevBtn);
   prevBtn.click();
 };
 const next = () => {
-  const nextBtn = document.querySelector(".card-swiper .swiper-button-next");
+  const nextBtn = document.querySelector('.card-swiper .swiper-button-next');
   console.log(nextBtn);
   nextBtn.click();
 };
