@@ -8,7 +8,7 @@
       </div>
       <div class="cart-level">
         <p class="is-subtotal-amount">
-          $515.00
+          {{ cart.getTotalPrice || 0 }}
         </p>
       </div>
     </div>
@@ -47,7 +47,7 @@
       </div>
       <div class="cart-level">
         <p class="title is-amount">
-          $515.00
+          {{ cart.getTotalPrice || 0 }}
         </p>
       </div>
     </div>
@@ -58,6 +58,8 @@
 
 <script setup>
 import CartItemTip from './CartItemTip.vue';
+import { useCartStore } from '@/store/cart';
+const cart = useCartStore();
 
 </script>
 

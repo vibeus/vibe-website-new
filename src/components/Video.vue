@@ -10,7 +10,7 @@
       :style="{ visibility: isPlay ? 'hidden' : '' }"
       @click="videoPlay"
     />
-    <div class="video-section-wrap">
+    <div class="video-player-wrap">
       <div :id="`${video.id}-iframe`"></div>
     </div>
   </div>
@@ -95,7 +95,7 @@ const videoPlay = () => {
 </script>
 <style lang="sass" scoped>
 @import '@css/base'
-.video-section
+.video-player
   cursor: pointer
   max-width: 628px
   flex-basis: 0
@@ -106,7 +106,7 @@ const videoPlay = () => {
     display: block
     width: 100%
     z-index: 10
-  .video-section-wrap
+  .video-player-wrap
     position: absolute
     left: 0
     right: 0
