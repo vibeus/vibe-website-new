@@ -52,30 +52,26 @@ setup:
       mobile_step_number_icon: onboarding-step-number-1
       title: 'Unbox and install your Vibe board and stand.'
       links:
-        - link:
-            text: 'Vibe 55” digital whiteboard user manual'
-            icon:
-              class: download-icon
-              url: img/common/download-icon.svg
-            url: https://vibe.us/resources/New_branded_Vibe_user_manual.pdf
-        - link:
-            text: 'Vibe-Tafel für interaktive Zusammenarbeit Bedienungsanleitung'
-            icon:
-              class: download-icon
-              url: img/common/download-icon.svg
-            url: https://vibe.us/resources/Germany_user_manual.pdf
-        - link:
-            text: 'Vibe stand assembly'
-            icon:
-              class: download-icon
-              url: img/common/download-icon.svg
-            url: https://vibe.us/resources/New_Stand_Assembly-202104.pdf
-        - link:
-            text: 'FAQ – Can we mount Vibe on a wall or use with other stands?'
-            icon:
-              class: faq-icon
-              text: '  →'
-            url: https://knowledge.vibe.us/wall-mount-and-stand
+        - text: 'Vibe 55” digital whiteboard user manual'
+          icon:
+            class: download-icon
+            url: shared-download-icon
+          url: https://vibe.us/resources/New_branded_Vibe_user_manual.pdf
+        - text: 'Vibe-Tafel für interaktive Zusammenarbeit Bedienungsanleitung'
+          icon:
+            class: download-icon
+            url: shared-download-icon
+          url: https://vibe.us/resources/Germany_user_manual.pdf
+        - text: 'Vibe stand assembly'
+          icon:
+            class: download-icon
+            url: shared-download-icon
+          url: https://vibe.us/resources/New_Stand_Assembly-202104.pdf
+        - text: 'FAQ – Can we mount Vibe on a wall or use with other stands?'
+          icon:
+            class: faq-icon
+            text: '  →'
+          url: https://knowledge.vibe.us/wall-mount-and-stand
       video:
         playerId: unbox-tablet
         triggerClass: unbox-tablet
@@ -92,7 +88,7 @@ setup:
             text: 'Learn more'
             url: https://knowledge.vibe.us/quick-start-guide
     - class: step-3
-      component: StepForm
+      component: FormStep
       mobile_step_number_icon: onboarding-step-number-3
       form_content:
         title: 'Register Your Device'

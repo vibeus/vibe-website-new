@@ -8,7 +8,7 @@
         <div class="content">
           {{ onboardingChoices.body }}
         </div>
-        <div class="f-row onboarding-choices">
+        <div class="onboarding-choices">
           <a
             v-for="choice in onboardingChoices.choices"
             :key="choice.title"
@@ -43,13 +43,12 @@ const onboardingChoices = fm.value.onboarding_choices;
 <style lang="sass">
 @import '@css/base'
 .section.is-choices-section
+  padding-top: 48px
+  padding-bottom: 68px
+  background-color:#F7F7F7
   +tablet
     padding-top: 80px
     padding-bottom: 120px
-    background-color:#F7F7F7
-  +mobile
-    padding-top: 48px
-    padding-bottom: 68px
   .vb-container
     margin: 0 auto
     +mobile
@@ -77,7 +76,11 @@ const onboardingChoices = fm.value.onboarding_choices;
         margin-bottom: 2rem
         font-size: 14px
         text-align: center
-
+    .onboarding-choices
+      display: flex
+      +mobile
+        flex-direction: column
+        align-items: center
     .product-box
       +tablet
         padding: 40px 35px 22px
@@ -85,21 +88,24 @@ const onboardingChoices = fm.value.onboarding_choices;
         border-radius: 8px
         background-color: #fff
       +mobile
+        width: 279px
+        margin: 16px 48px
         padding: 18px 19px 20px
-        border: 1px solid #F4F4F4
+        border: 1px solid #f4f4f4
         border-radius: 5px
+        background-color: #fff
       &:hover
         box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.07)
       &:not(:first-child)
         +tablet
           margin-left: 40px
-        +mobile
-          margin-left: .5rem
+
       .title
         text-align: center
         +tablet
           font-size: 18px
           line-height: 23px
+          margin-bottom: 1.5rem
         +mobile
           font-size: 12px
           line-height: 15px

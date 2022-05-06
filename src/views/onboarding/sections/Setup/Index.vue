@@ -2,11 +2,11 @@
   <section class="section is-setup">
     <div :class="`container progress-${setup.steps.length}-steps`">
       <div
-        @click="prev"
+        @click="changePage('prev')"
       >
         <svg-icon
           class="navigation prev is-hidden-mobile"
-          icon-name="shared-nav-icon"
+          :icon-name="isLast?'shared-nav-icon':'shared-nav-icon-white'"
         ></svg-icon>
       </div>
       <div class="swiper-container">
@@ -50,16 +50,24 @@
               v-if="step.component==='EndStep'"
               :step-content="step"
             />
+            <VideoStep
+              v-if="step.component==='VideoStep'"
+              :step-content="step"
+            />
+            <FormStep
+              v-if="step.component==='FormStep'"
+              :step-content="step"
+            />
           </swiper-slide>
         </swiper>
         <div class="swiper-box"></div>
       </div>
       <div
-        @click="next"
+        @click="changePage('next')"
       >
         <svg-icon
           class="navigation next is-hidden-mobile"
-          icon-name="shared-nav-icon"
+          :icon-name="isFirst?'shared-nav-icon':'shared-nav-icon-white'"
         ></svg-icon>
       </div>
     </div>
@@ -76,6 +84,8 @@ import { Thumbs, Pagination, Navigation } from 'swiper';
 import 'swiper/css';
 import StepContent from './StepContent.vue';
 import EndStep from './EndStep.vue';
+import VideoStep from './VideoStep.vue';
+import FormStep from './FormStep.vue';
 const props = defineProps({
   setup: {
     type: Object,
@@ -83,38 +93,38 @@ const props = defineProps({
   },
 });
 const thumbsSwiper = ref(null);
+const isFirst = ref(true);
+const isLast = ref(false);
 const setThumbsSwiper = (swiper) => {
   thumbsSwiper.value = swiper;
 };
-
-const prev = () => {
+const changePage=(state)=>{
   const prevBtn = document.querySelector('.progress-content-swiper .swiper-button-prev');
-  const prevDom = document.querySelector('.navigation.prev');
-  console.log('prevDom: ', prevDom);
-  prevBtn.click();
-  if(prevBtn.classList.contains('swiper-button-disabled')){
-    prevDom.classList.add('button-disabled');
-  }
-};
-const next = () => {
   const nextBtn = document.querySelector('.progress-content-swiper .swiper-button-next');
-  const nextDom = document.querySelector('.navigation.next');
-  console.log('nextDom: ', nextDom);
-  nextBtn.click();
-  if(nextBtn.classList.contains('swiper-button-disabled')){
-    nextDom.classList.add('button-disabled');
+  if(state==='prev'){
+    prevBtn.click();
+  }else{
+    nextBtn.click();
   }
-
 };
+
 </script>
 <style lang="sass" scoped>
 @import '@css/base'
 .section.is-setup
   .container
     display: flex
+    justify-content: space-between
+    .navigation
+      width: 48px
+      height: 48px
+      color: #fff
+      &.button-disabled
+        color: black
     .swiper-container
       width: 100%
       position: relative
+      max-width: 1060px
     .progress-content-swiper
       height: 600px
       width: 100%

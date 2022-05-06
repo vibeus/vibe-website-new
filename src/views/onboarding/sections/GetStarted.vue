@@ -45,7 +45,7 @@ const props = defineProps({
         padding-top: 60px
         padding-bottom: 60px
     .container
-        flex-direction: column
+        max-width: 1152px
     .title
         font-size: 48px
         line-height: 60px

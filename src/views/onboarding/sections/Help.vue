@@ -73,10 +73,13 @@ const isCollapse=ref(true);
 @import '@css/base'
 .section.is-help
   position: relative
+  padding: 3rem 1.5rem
   .container
     max-width: 1152px
     .help-wrapper
       display: flex
+      +mobile
+        flex-direction: column
       a
         display: flex
         flex-direction: column
@@ -89,6 +92,11 @@ const isCollapse=ref(true);
         align-items: center
         text-align: center
         box-sizing: border-box
+        +mobile
+          width: 300px
+          margin: 12px auto
+          padding: 12px 25px
+          min-height: unset
         &:hover
           box-shadow: 0 2px 10px 5px rgb(0 0 0 / 10%)
           border-radius: 10px

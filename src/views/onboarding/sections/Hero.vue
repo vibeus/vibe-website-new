@@ -127,6 +127,7 @@ const props = defineProps({
       line-height: 33px
       max-width: 500px
       display: inline-block
+      font-family: $vibe-family-body
       +mobile
         font-size: 16px
         line-height: 26px
