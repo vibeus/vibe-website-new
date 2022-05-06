@@ -179,33 +179,6 @@ bottom_cta:
       - title: Contact Support
         url: https://knowledge.vibe.us/kb-tickets/new
 
-help:
-  items:
-    - title: 'Video Tutorials'
-      body: 'Step by step walkthroughs of the newest features and customer favorites.'
-      figure: img/onboarding/help-1.png
-      url: https://www.youtube.com/watch?v=zXMXv03PG5g&list=PLQWTZKzrs8jNIufAhoCqh2Kv1DXfdU7iu&index=1
-      column_size: is-one-third
-    - title: 'Help Center'
-      body: 'See guides on popular features and search for answers to your questions.'
-      figure: img/onboarding/help-2.png
-      url: https://knowledge.vibe.us/vibe-smartboard-pro-75
-    - title: 'Warranty'
-      body: 'Detailed information about your Vibe warranty.'
-      figure: img/onboarding/help-3.png
-      url: /warranty/
-      column_size: is-one-third
-  contact_widget:
-    title: 'Have Questions ?'
-    logo_icon: img/common/outline-logo.svg
-    collapse_icon: img/onboarding/contact-widget-collapse-icon.svg
-    contact:
-      - content: Contact Sales
-        icon: img/onboarding/contact-sales.svg
-        url: /contact/
-      - content: Contact Support
-        icon: img/onboarding/contact-suppprt.svg
-        url: https://knowledge.vibe.us/kb-tickets/new
 ---
 
 <Page />
