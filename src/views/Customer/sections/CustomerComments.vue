@@ -2,7 +2,9 @@
   <div class="section customer-comments">
     <div class="toppart-body">
       <div class="container">
-        <h1 class="title">{{ comments.title }}</h1>
+        <h1 class="title">
+          {{ comments.title }}
+        </h1>
         <div class="content">
           {{ comments.body }}
         </div>
@@ -11,9 +13,9 @@
     <div class="comments-wrap">
       <div class="left-comments-wrap is-hidden-mobile">
         <a
-          class="comment-card"
           v-for="comment in comments.left_column.items"
           :key="comment.name"
+          class="comment-card"
           :href="comment.url"
           target="_blank"
         >
@@ -22,21 +24,38 @@
               <lazy-img :src="comment.avatar"></lazy-img>
               <h1 class="name">{{ comment.name }}</h1>
             </div>
-            <lazy-img class="logo" :src="logoPath(comment.type)"></lazy-img>
+            <lazy-img
+              class="logo"
+              :src="logoPath(comment.type)"
+            ></lazy-img>
           </div>
-          <div v-if="comment.type == 'amazon'" class="subtitle">
+          <div
+            v-if="comment.type == 'amazon'"
+            class="subtitle"
+          >
             {{ comment.subtitle }}
           </div>
           <hr />
 
           <div class="email">
-            <span v-for="email in comment.email" :key="email.text" :class="email.class">{{
+            <span
+              v-for="email in comment.email"
+              :key="email.text"
+              :class="email.class"
+            >{{
               email.text
             }}</span>
           </div>
-          <lazy-img class="cover" v-if="comment.name === 'the.vibe.board'" :src="comment.cover"></lazy-img>
+          <lazy-img
+            v-if="comment.name === 'the.vibe.board'"
+            class="cover"
+            :src="comment.cover"
+          ></lazy-img>
           <div class="comment-container">
-            <div class="content" v-html="comment.content"></div>
+            <div
+              class="content"
+              v-html="comment.content"
+            ></div>
             <lazy-img
               v-if="comment.type == 'ins'"
               class="ins-icon"
@@ -50,31 +69,51 @@
       </div>
       <div class="right-comments-wrap">
         <a
-          class="comment-card"
           v-for="comment in comments.right_column.items"
           :key="comment.name"
+          class="comment-card"
           :href="comment.url"
           target="_blank"
         >
-          <div class="avatar-container" :class="comment.type">
+          <div
+            class="avatar-container"
+            :class="comment.type"
+          >
             <div class="avatar">
               <lazy-img :src="comment.avatar"></lazy-img>
               <h1 class="name">{{ comment.name }}</h1>
             </div>
-            <lazy-img class="logo" :src="logoPath(comment.type)"></lazy-img>
+            <lazy-img
+              class="logo"
+              :src="logoPath(comment.type)"
+            ></lazy-img>
           </div>
-          <div v-if="comment.type == 'amazon'" class="subtitle">
+          <div
+            v-if="comment.type == 'amazon'"
+            class="subtitle"
+          >
             {{ comment.subtitle }}
           </div>
           <hr />
           <div class="email">
-            <span v-for="email in comment.email" :key="email.text" :class="email.class">{{
+            <span
+              v-for="email in comment.email"
+              :key="email.text"
+              :class="email.class"
+            >{{
               email.text
             }}</span>
           </div>
-          <lazy-img class="cover" v-if="comment.type === 'amazon'" :src="comment.cover"></lazy-img>
+          <lazy-img
+            v-if="comment.type === 'amazon'"
+            class="cover"
+            :src="comment.cover"
+          ></lazy-img>
           <div class="comment-container">
-            <div class="content" v-html="comment.content"></div>
+            <div
+              class="content"
+              v-html="comment.content"
+            ></div>
             <lazy-img
               v-if="comment.type == 'ins'"
               class="ins-icon"

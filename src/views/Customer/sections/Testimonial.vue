@@ -3,14 +3,22 @@
     <div class="container">
       <div class="testimonial">
         <div class="content">
-          <svg-icon class="quote-mark is-left" icon-name="testimonials-quote-white" />
+          <svg-icon
+            class="quote-mark is-left"
+            icon-name="testimonials-quote-white"
+          />
           The Vibe board has been a game changer in how we communicate with clients, both
           in-person and virtually.
-          <svg-icon class="quote-mark is-right" icon-name="testimonials-quote-white" />
+          <svg-icon
+            class="quote-mark is-right"
+            icon-name="testimonials-quote-white"
+          />
         </div>
         <div class="author">
           <div class="name-warp">
-            <p class="name">Karen L. Brady</p>
+            <p class="name">
+              Karen L. Brady
+            </p>
             <p>Estate Planning Attorney, Arvada, Colorado</p>
           </div>
         </div>

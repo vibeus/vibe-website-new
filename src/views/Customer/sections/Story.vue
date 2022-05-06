@@ -3,8 +3,8 @@
     <div class="container">
       <swiper
         :speed="1000"
-        :slidesPerView="1"
-        :spaceBetween="30"
+        :slides-per-view="1"
+        :space-between="30"
         :loop="true"
         :pagination="{
           clickable: true,
@@ -29,11 +29,21 @@
               @click="playVideo(testimonial.item.video.id)"
             />
           </div>
-          <a :href="testimonial.item.blog_url" target="_blank" class="blog-content">
+          <a
+            :href="testimonial.item.blog_url"
+            target="_blank"
+            class="blog-content"
+          >
             <div class="is-blog-testimonial">
-              <svg-icon class="quote-mark is-left" icon-name="testimonials-quote" />
+              <svg-icon
+                class="quote-mark is-left"
+                icon-name="testimonials-quote"
+              />
               {{ testimonial.item.blog_testimonial }}
-              <svg-icon class="quote-mark is-right" icon-name="testimonials-quote" />
+              <svg-icon
+                class="quote-mark is-right"
+                icon-name="testimonials-quote"
+              />
             </div>
             <div class="is-author">
               <p class="is-blog-title">{{ testimonial.item.title }}</p>
@@ -49,7 +59,10 @@
         </swiper-slide>
       </swiper>
     </div>
-    <VideoPopup v-if="showVideoModal" :videoId="videoId" />
+    <VideoPopup
+      v-if="showVideoModal"
+      :video-id="videoId"
+    />
   </section>
 </template>
 <script setup>

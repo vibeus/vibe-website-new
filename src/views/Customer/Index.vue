@@ -7,7 +7,7 @@
     <Testimonial />
     <CustomerComments :comments="fm.comments" />
     <Cards :stories="fm.stories" />
-    <BottomCta :bottomCta="fm.bottom_cta" />
+    <BottomCta :bottom-cta="fm.bottom_cta" />
   </main>
 </template>
 

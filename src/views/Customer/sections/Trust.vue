@@ -2,7 +2,10 @@
   <section class="section is-trust">
     <div class="container">
       <ul class="logo-wrap">
-        <li v-for="logo in trust.figure" :key="logo.name">
+        <li
+          v-for="logo in trust.figure"
+          :key="logo.name"
+        >
           <lazy-img
             class="image is-logo"
             :src="logo.url"

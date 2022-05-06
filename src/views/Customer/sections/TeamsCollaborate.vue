@@ -2,7 +2,9 @@
   <section class="section teams-collaborate">
     <div class="teams-collaborate-body">
       <div class="container">
-        <h1 class="title">{{ collaborate.title }}</h1>
+        <h1 class="title">
+          {{ collaborate.title }}
+        </h1>
         <div class="content">
           {{ collaborate.body }}
         </div>
@@ -12,30 +14,38 @@
     <div class="glidecontainer">
       <swiper
         :direction="'vertical'"
-        @swiper="setThumbsSwiper"
-        :spaceBetween="30"
-        :slidesPerView="5"
-        :freeMode="true"
-        :watchSlidesProgress="true"
+        :space-between="30"
+        :slides-per-view="5"
+        :free-mode="true"
+        :watch-slides-progress="true"
         :modules="[FreeMode, Thumbs, Pagination]"
         class="thumb-swiper"
+        @swiper="setThumbsSwiper"
       >
         <swiper-slide
-          class="thumb-item"
           v-for="thumb in collaborate.gallerysides"
           :key="thumb.body"
+          class="thumb-item"
         >
-          <lazy-img class="avatar" :src="thumb.figure" :alt="thumb.body"></lazy-img>
+          <lazy-img
+            class="avatar"
+            :src="thumb.figure"
+            :alt="thumb.body"
+          ></lazy-img>
           <div class="container">
-            <h1 class="title">{{ thumb.title }}</h1>
-            <div class="content">{{ thumb.body }}</div>
+            <h1 class="title">
+              {{ thumb.title }}
+            </h1>
+            <div class="content">
+              {{ thumb.body }}
+            </div>
           </div>
         </swiper-slide>
       </swiper>
       <swiper
         :speed="1000"
-        :slidesPerView="1"
-        :spaceBetween="30"
+        :slides-per-view="1"
+        :space-between="30"
         :pagination="{
           clickable: true,
         }"
@@ -43,16 +53,34 @@
         class="blog-cover-swiper image"
         :thumbs="{ swiper: thumbsSwiper }"
       >
-        <swiper-slide v-for="gallery in collaborate.gallery" :key="gallery.body">
-          <a :href="gallery.url" target="_blank">
+        <swiper-slide
+          v-for="gallery in collaborate.gallery"
+          :key="gallery.body"
+        >
+          <a
+            :href="gallery.url"
+            target="_blank"
+          >
             <div class="cardboxmob">
               <div class="author">
-                <lazy-img class="image" :src="gallery.avator" :alt="gallery.body" />
+                <lazy-img
+                  class="image"
+                  :src="gallery.avator"
+                  :alt="gallery.body"
+                />
                 <div class="contentmob">{{ gallery.name }}</div>
               </div>
-              <lazy-img class="logo image" :src="gallery.logo" :alt="gallery.body" />
+              <lazy-img
+                class="logo image"
+                :src="gallery.logo"
+                :alt="gallery.body"
+              />
             </div>
-            <lazy-img class="image" :src="gallery.figure" :alt="gallery.body" />
+            <lazy-img
+              class="image"
+              :src="gallery.figure"
+              :alt="gallery.body"
+            />
             <div class="tip">
               <div class="title-wrap">
                 <h1 class="title">{{ gallery.title }}</h1>
@@ -65,7 +93,11 @@
               <div class="content">
                 {{ gallery.body }}
               </div>
-              <svg-icon class="arrow" icon-name="shared-arrow" alt="arrowdown" />
+              <svg-icon
+                class="arrow"
+                icon-name="shared-arrow"
+                alt="arrowdown"
+              />
             </div>
             <div class="tipmob">
               <h1 class="title">{{ gallery.title }}</h1>

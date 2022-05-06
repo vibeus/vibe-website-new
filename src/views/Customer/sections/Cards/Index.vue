@@ -1,34 +1,53 @@
 <template>
   <section class="section customer-cards">
     <div class="container">
-      <div @click="prev" class="navigation prev is-hidden-mobile">
+      <div
+        class="navigation prev is-hidden-mobile"
+        @click="prev"
+      >
         <svg-icon icon-name="shared-nav-icon"></svg-icon>
       </div>
       <swiper
         :navigation="true"
         :modules="[Navigation, Pagination]"
-        :slidesPerView="slidesPerView"
-        :spaceBetween="10"
+        :slides-per-view="slidesPerView"
+        :space-between="10"
         :pagination="{
           clickable: true,
         }"
         :loop="true"
         class="card-swiper"
       >
-        <swiper-slide v-for="(story, index) in stories" :key="story.title">
-          <div class="card customer-card" @click="showCardsModal(index)">
+        <swiper-slide
+          v-for="(story, index) in stories"
+          :key="story.title"
+        >
+          <div
+            class="card customer-card"
+            @click="showCardsModal(index)"
+          >
             <div class="card-image">
               <figure class="image">
-                <lazy-img :src="story.cover" :alt="story.cover" />
+                <lazy-img
+                  :src="story.cover"
+                  :alt="story.cover"
+                />
               </figure>
               <div class="logo">
-                 <lazy-img :src="story.logo.figure" :alt="story.logo.alt" />
+                <lazy-img
+                  :src="story.logo.figure"
+                  :alt="story.logo.alt"
+                />
               </div>
             </div>
             <div class="card-content">
-              <div class="content">{{ story.industry }}</div>
+              <div class="content">
+                {{ story.industry }}
+              </div>
               <div class="card-container">
-                <h2 class="title">{{ story.title }}</h2>
+                <h2 class="title">
+                  {{ story.title }}
+                </h2>
                 <div class="cta is-hidden-mobile">
                   <span>Learn more</span>
                 </div>
@@ -37,12 +56,18 @@
           </div>
         </swiper-slide>
       </swiper>
-      <div @click="next" class="navigation is-hidden-mobile">
+      <div
+        class="navigation is-hidden-mobile"
+        @click="next"
+      >
         <svg-icon icon-name="shared-nav-icon"></svg-icon>
       </div>
     </div>
   </section>
-  <CardsModal :stories="stories" v-if="isCardsModal === true" />
+  <CardsModal
+    v-if="isCardsModal === true"
+    :stories="stories"
+  />
 </template>
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue';
@@ -97,6 +122,7 @@ const showCardsModal = (index) => {
   max-height: 684px
   background-color: #fff
 .container
+  display: flex
   position: relative
   margin: auto
   width: auto

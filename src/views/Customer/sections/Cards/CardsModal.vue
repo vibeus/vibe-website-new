@@ -1,20 +1,30 @@
 <template>
   <div class="modal customer-card-modal">
-    <div class="modal-background" @click="isCardsModal = false"></div>
+    <div
+      class="modal-background"
+      @click="isCardsModal = false"
+    ></div>
     <div class="swiper-wrap">
-      <div @click="prev" class="navigation prev">
+      <div
+        class="navigation prev"
+        @click="prev"
+      >
         <svg-icon icon-name="shared-nav-icon"></svg-icon>
       </div>
       <div class="modal-content">
         <swiper
           :navigation="true"
           :modules="[Navigation]"
-          :slidesPerView="1"
-          :initialSlide="initialSlide"
+          :slides-per-view="1"
+          :initial-slide="initialSlide"
           :loop="true"
           class="story-swiper"
         >
-          <swiper-slide v-for="story in stories" :key="story.title" class="testimonial">
+          <swiper-slide
+            v-for="story in stories"
+            :key="story.title"
+            class="testimonial"
+          >
             <div class="container">
               <div class="is-header">
                 <lazy-img
@@ -37,14 +47,28 @@
                   </li>
                 </ul>
               </div>
-              <lazy-img class="image cover" :src="story.cover" />
-              <p v-if="story.industry === 'Government'" class="caption">
+              <lazy-img
+                class="image cover"
+                :src="story.cover"
+              />
+              <p
+                v-if="story.industry === 'Government'"
+                class="caption"
+              >
                 Kenmore City Hall
               </p>
-              <h2 class="title">{{ story.title }}</h2>
-              <h3 class="subtitle">Key Factors</h3>
+              <h2 class="title">
+                {{ story.title }}
+              </h2>
+              <h3 class="subtitle">
+                Key Factors
+              </h3>
               <ul class="key-factor-wrap">
-                <li class="key-factor" v-for="factor in story.key_factors" :key="factor">
+                <li
+                  v-for="factor in story.key_factors"
+                  :key="factor"
+                  class="key-factor"
+                >
                   <p>{{ factor }}</p>
                 </li>
               </ul>
@@ -74,7 +98,10 @@
                 </div>
                 <div class="author">
                   <div class="logo-name has-name">
-                    <md-format class="name" :content="story.testimonial.author.name" />
+                    <md-format
+                      class="name"
+                      :content="story.testimonial.author.name"
+                    />
                   </div>
                 </div>
               </div>
@@ -82,12 +109,21 @@
           </swiper-slide>
         </swiper>
       </div>
-      <div @click="next" class="navigation next">
+      <div
+        class="navigation next"
+        @click="next"
+      >
         <svg-icon icon-name="shared-nav-icon"></svg-icon>
       </div>
     </div>
-    <div class="modal-close" @click="isCardsModal = false">
-      <svg-icon class="icon" icon-name="shared-close" />
+    <div
+      class="modal-close"
+      @click="isCardsModal = false"
+    >
+      <svg-icon
+        class="icon"
+        icon-name="shared-close"
+      />
     </div>
   </div>
 </template>

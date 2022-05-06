@@ -1,12 +1,21 @@
 <template>
-  <div class="video-popup-player" id="video-popup-player">
+  <div
+    id="video-popup-player"
+    class="video-popup-player"
+  >
     <div
       class="modal-background"
-      @click="showVideoModal = false"
       data-target="video-popup-player"
+      @click="showVideoModal = false"
     ></div>
-    <div class="modal-close" @click="showVideoModal = false">
-      <svg-icon class="icon" icon-name="shared-close" />
+    <div
+      class="modal-close"
+      @click="showVideoModal = false"
+    >
+      <svg-icon
+        class="icon"
+        icon-name="shared-close"
+      />
     </div>
     <div class="modal-content">
       <div :id="`${videoId}-iframe`"></div>
