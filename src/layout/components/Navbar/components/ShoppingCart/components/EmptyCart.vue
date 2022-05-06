@@ -56,7 +56,6 @@
 import { products } from '@/data/products';
 import { useCartStore } from '@/store/cart';
 const cart = useCartStore();
-console.log('cart: ', cart);
 const productsFeatured = computed(() => products.filter((i) => i.featured));
 </script>
 
