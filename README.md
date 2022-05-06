@@ -69,4 +69,10 @@ _____
 * use multi-words for components name
 * component style declarations are scoped like `.unit-page .button`
 
-
+### Recomand vscode Extensions
+* Vue Language Features (Volar)
+* ESLint
+* Rainbow Brackets
+* Sass
+* Tabnine AI Auto...
+* Vue
