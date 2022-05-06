@@ -1,48 +1,67 @@
 <template>
   <section class="section is-setup">
     <div :class="`container progress-${setup.steps.length}-steps`">
-      <swiper
-        class="progress-step-swiper"
-        :space-between="30"
-        :slides-per-view="5"
-        :watch-slides-progress="true"
-        :modules="[Thumbs, Pagination]"
-        @swiper="setThumbsSwiper"
+      <div
+        @click="prev"
       >
-        <swiper-slide
-          v-for="step in setup.steps"
-          :key="step.order"
-          :class="`progress-step-${step.order}`"
-        ></swiper-slide>
-      </swiper>
-      <swiper
-        :speed="1000"
-        :slides-per-view="1"
-        :space-between="30"
-        :pagination="{
-          clickable: true,
-          type: 'progressbar',
-        }"
-        :navigation="true"
-        :modules="[Thumbs, Pagination, Navigation]"
-        class="progress-content-swiper"
-        :thumbs="{ swiper: thumbsSwiper }"
-      >
-        <swiper-slide
-          v-for="step in setup.steps"
-          :key="step.order"
+        <svg-icon
+          class="navigation prev is-hidden-mobile"
+          icon-name="shared-nav-icon"
+        ></svg-icon>
+      </div>
+      <div class="swiper-container">
+        <swiper
+          class="progress-step-swiper"
+          :space-between="30"
+          :slides-per-view="5"
+          :watch-slides-progress="true"
+          :modules="[Thumbs, Pagination]"
+          @swiper="setThumbsSwiper"
         >
-          <StepContent
-            v-if="step.component==='StepContent'"
-            :step-content="step"
-          />
-          <EndStep
-            v-if="step.component==='EndStep'"
-            :step-content="step"
-          />
-        </swiper-slide>
-      </swiper>
-      <div class="swiper-box"></div>
+          <swiper-slide
+            v-for="step in setup.steps"
+            :key="step.order"
+            :class="`progress-step-${step.order}`"
+          ></swiper-slide>
+        </swiper>
+
+        <swiper
+          :speed="1000"
+          :slides-per-view="1"
+          :space-between="30"
+          :pagination="{
+            clickable: true,
+            type: 'progressbar',
+          }"
+          :navigation="true"
+          :modules="[Thumbs, Pagination, Navigation]"
+          class="progress-content-swiper"
+          :thumbs="{ swiper: thumbsSwiper }"
+        >
+          <swiper-slide
+            v-for="step in setup.steps"
+            :key="step.order"
+          >
+            <StepContent
+              v-if="step.component==='StepContent'"
+              :step-content="step"
+            />
+            <EndStep
+              v-if="step.component==='EndStep'"
+              :step-content="step"
+            />
+          </swiper-slide>
+        </swiper>
+        <div class="swiper-box"></div>
+      </div>
+      <div
+        @click="next"
+      >
+        <svg-icon
+          class="navigation next is-hidden-mobile"
+          icon-name="shared-nav-icon"
+        ></svg-icon>
+      </div>
     </div>
   </section>
 </template>
@@ -67,12 +86,35 @@ const thumbsSwiper = ref(null);
 const setThumbsSwiper = (swiper) => {
   thumbsSwiper.value = swiper;
 };
+
+const prev = () => {
+  const prevBtn = document.querySelector('.progress-content-swiper .swiper-button-prev');
+  const prevDom = document.querySelector('.navigation.prev');
+  console.log('prevDom: ', prevDom);
+  prevBtn.click();
+  if(prevBtn.classList.contains('swiper-button-disabled')){
+    prevDom.classList.add('button-disabled');
+  }
+};
+const next = () => {
+  const nextBtn = document.querySelector('.progress-content-swiper .swiper-button-next');
+  const nextDom = document.querySelector('.navigation.next');
+  console.log('nextDom: ', nextDom);
+  nextBtn.click();
+  if(nextBtn.classList.contains('swiper-button-disabled')){
+    nextDom.classList.add('button-disabled');
+  }
+
+};
 </script>
 <style lang="sass" scoped>
 @import '@css/base'
 .section.is-setup
   .container
-    flex-direction: column
+    display: flex
+    .swiper-container
+      width: 100%
+      position: relative
     .progress-content-swiper
       height: 600px
       width: 100%
