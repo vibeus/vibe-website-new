@@ -11,6 +11,11 @@ const getVariantId = (lineItem) => {
   }
 };
 
+const moneyFmt = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+});
+
 const getLocalCartList = () => JSON.parse(localStorage.cartList || '{}');
 
 const getCheckoutIdValue = () => localStorage.getItem('shopify-checkout-id-us') || null;
@@ -26,7 +31,6 @@ export const useCartStore = defineStore({
     checkoutIdValue: getCheckoutIdValue(),
     checkout: null,   //return from shopify
     cartList: getLocalCartList(),  // Cart list
-    // cartListCount: getTotalItemCount()
   }),
   getters: {
     getCartList(state) {
@@ -35,13 +39,18 @@ export const useCartStore = defineStore({
     getTotalItemCount(state) {
       const cartList = state.cartList;
       let count = 0;
-      for (const [key, value] of Object.entries(cartList)) {
+      for (const value of Object.values(cartList)) {
         count+= value.quantity;
       }
       return count;
     },
     getTotalPrice(state) {
       const cartList = state.cartList;
+      let totalPrice = 0;
+      for(const value of Object.values(cartList)) {
+        totalPrice+= value.quantity * value.price; 
+      }
+      return moneyFmt.format(totalPrice);
     }
   },
   actions: {
