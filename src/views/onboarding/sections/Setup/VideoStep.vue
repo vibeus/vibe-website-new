@@ -18,7 +18,10 @@
             :icon-name="link.icon.url"
             :alt="link.icon.class"
           ></svg-icon>
-          <span :class="link.icon.class" v-if="link.icon.class==='faq-icon'">{{ link.icon.text }}</span>
+          <span
+            v-if="link.icon.class==='faq-icon'"
+            :class="link.icon.class"
+          >{{ link.icon.text }}</span>
         </a>
       </div>
     </div>
