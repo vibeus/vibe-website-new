@@ -159,7 +159,7 @@ const logoPath = (type) => {
     max-width: 933px
     text-align: center
     font-size: 48px
-    margin-bottom: 1.5rem
+    margin: 0 auto 1.5rem
     +mobile
       font-size: 32px
   .content

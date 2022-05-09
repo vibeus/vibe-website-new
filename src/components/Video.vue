@@ -1,7 +1,7 @@
 <template>
   <div
-    id="video-section"
-    class="video-section"
+    id="video-player"
+    class="video-player"
   >
     <lazy-img
       class="image"
@@ -106,6 +106,7 @@ const videoPlay = () => {
     display: block
     width: 100%
     z-index: 10
+
   .video-player-wrap
     position: absolute
     left: 0

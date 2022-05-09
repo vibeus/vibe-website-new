@@ -143,7 +143,7 @@ const setThumbsSwiper = (swiper) => {
       align-items: center
       .title
         max-width: 933px
-        margin-bottom: 1.5rem
+        margin: 0 auto 1.5rem
         position: relative
         text-align: center
         font-size: 50px
