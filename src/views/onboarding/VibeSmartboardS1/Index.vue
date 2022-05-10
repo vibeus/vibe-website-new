@@ -6,11 +6,10 @@
     <Form :form-content="fm.form_content" />
   </main>
 </template>
-<script lang="ts" setup>
-import Hero from '../sections/Hero.vue';
-import Setup from '../sections/Setup/Index.vue';
-import GetStarted from '../sections/GetStarted.vue';
-import Form from '../sections/Form.vue';
+<script setup>
+import {
+  Hero, Setup, GetStarted, Form
+} from '../sections';
 const { frontmatter: fm } = useData();
 console.log('fm: ', fm.value);
 </script>
