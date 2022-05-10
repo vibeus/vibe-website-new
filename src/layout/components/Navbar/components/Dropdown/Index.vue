@@ -1,8 +1,20 @@
 <template>
-  <div v-if="nav" class="nav-dropdown-box">
-    <template v-for="menu in theme.nav" :key="menu.title">
-      <Box v-if="menu.submenu || menu.columnSubmenu" :menu="menu" />
-      <Link v-else :menu="menu" />
+  <div
+    v-if="nav"
+    class="nav-dropdown-box"
+  >
+    <template
+      v-for="menu in theme.nav"
+      :key="menu.title"
+    >
+      <Box
+        v-if="menu.submenu || menu.columnSubmenu"
+        :menu="menu"
+      />
+      <Link
+        v-else
+        :menu="menu"
+      />
     </template>
   </div>
 </template>

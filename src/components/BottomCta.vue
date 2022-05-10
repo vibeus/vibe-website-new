@@ -1,15 +1,23 @@
 <template>
-  <section class="section bottom-cta" id="bottom-cta">
+  <section
+    id="bottom-cta"
+    class="section bottom-cta"
+  >
     <div class="container">
-    <div class="bottom-bg">
-      <svg-icon icon-name="shared-what-bg" />
-    </div>
-      <h1 class="title">{{ bottomCta.title }}</h1>
+      <div class="bottom-bg">
+        <svg-icon icon-name="shared-what-bg" />
+      </div>
+      <h1 class="title">
+        {{ bottomCta.title }}
+      </h1>
       <div class="cta">
-        <template v-for="(item, idx) in bottomCta.cta.buttons" :key="idx">
+        <template
+          v-for="(item, idx) in bottomCta.cta.buttons"
+          :key="idx"
+        >
           <a
             :class="'button ' + item.class"
-            :herf="item.url"
+            :href="item.url"
           >
             {{ item.title }}
           </a>

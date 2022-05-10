@@ -1,7 +1,9 @@
 <template>
   <section class="section collaboration">
     <div class="container">
-      <h1 class="title">{{ collaboration.title }}</h1>
+      <h1 class="title">
+        {{ collaboration.title }}
+      </h1>
       <div class="content-wrap">
         <div class="is-image">
           <lazy-img
@@ -16,7 +18,9 @@
           />
         </div>
         <div class="is-content">
-          <h2 class="title is-subtitle">{{ collaboration.items.subtitle }}</h2>
+          <h2 class="title is-subtitle">
+            {{ collaboration.items.subtitle }}
+          </h2>
           <div class="content">
             {{ collaboration.items.body }}
           </div>

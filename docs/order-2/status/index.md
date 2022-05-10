@@ -27,7 +27,7 @@ resources:
   links:
     - title: Get Started
       icon: order-status-get-started
-      url: /onboarding/
+      url: /onboarding-2/
     - title: Video Tutorials
       icon: order-status-video-tutorials
       url: /video-tutorial/

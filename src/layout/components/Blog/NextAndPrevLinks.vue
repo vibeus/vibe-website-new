@@ -5,18 +5,37 @@ const { hasLinks, prev, next } = useNextAndPrevLinks();
 </script>
 
 <template>
-  <div v-if="hasLinks" class="next-and-prev-link">
+  <div
+    v-if="hasLinks"
+    class="next-and-prev-link"
+  >
     <div class="container">
       <div class="prev">
-        <a v-if="prev" class="link" :href="withBase(prev.link)">
-          <svg-icon class="icon icon-prev" icon-name="blog-arrowLeft" alt="arrow-left icon" />
+        <a
+          v-if="prev"
+          class="link"
+          :href="withBase(prev.link)"
+        >
+          <svg-icon
+            class="icon icon-prev"
+            icon-name="blog-arrowLeft"
+            alt="arrow-left icon"
+          />
           <span class="text">{{ prev.text }}</span>
         </a>
       </div>
       <div class="next">
-        <a v-if="next" class="link" :href="withBase(next.link)">
+        <a
+          v-if="next"
+          class="link"
+          :href="withBase(next.link)"
+        >
           <span class="text">{{ next.text }}</span>
-          <svg-icon class="icon icon-next" icon-name="blog-arrowLeft" alt="arrow-left icon" />
+          <svg-icon
+            class="icon icon-next"
+            icon-name="blog-arrowLeft"
+            alt="arrow-left icon"
+          />
         </a>
       </div>
     </div>

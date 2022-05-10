@@ -2,23 +2,34 @@
   <section class="section is-benefits">
     <div class="container">
       <div class="header">
-        <h1 class="title is-section-title">{{ benefits.title }}</h1>
+        <h1 class="title is-section-title">
+          {{ benefits.title }}
+        </h1>
        
-        <div class="body">{{ benefits.body }}</div>
+        <div class="body">
+          {{ benefits.body }}
+        </div>
       </div>
       <div class="benefits-grid">
-        <template v-for="(item, index) in benefits.features" :key="index">
+        <template
+          v-for="(item, index) in benefits.features"
+          :key="index"
+        >
           <div :class="['is-benefit', `is-benefit-${index}`]">
             <figure class="image">
-               <lazy-img :src="item.figure"></lazy-img>
+              <lazy-img :src="item.figure"></lazy-img>
             </figure>
-            <h2 class="title">{{ item.title }}</h2>
-            <div class="content">{{ item.body }}</div>
+            <h2 class="title">
+              {{ item.title }}
+            </h2>
+            <div class="content">
+              {{ item.body }}
+            </div>
           </div>
         </template>
       </div>
     </div>
-    <SectionCta :cta="benefits.cta"/>
+    <SectionCta :cta="benefits.cta" />
   </section>
 </template>
 

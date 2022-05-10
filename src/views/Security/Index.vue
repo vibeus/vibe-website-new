@@ -6,7 +6,7 @@
     <Features />
     <Specs />
     <!--  -->
-    <FigureContentSection :contentData="privacy" /> 
+    <FigureContentSection :content-data="privacy" /> 
     <BottomCta />
   </main>
 </template>

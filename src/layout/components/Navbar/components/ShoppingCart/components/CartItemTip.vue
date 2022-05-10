@@ -16,7 +16,7 @@
 const props = defineProps({
   tip: {
     type: String,
-    required: false
+    default: ''
   }
 });
 </script>
@@ -66,4 +66,45 @@ const props = defineProps({
     color: #828282
     &:hover
       color: $vibe-purple
+  &.is-shipping
+    width: 176px
+    height: 32px
+    padding: 12px 18px
+    line-height: 15px
+    &::after
+      content: ''
+      height: 14px
+      width: 14px
+      position: absolute
+      left: 12.5%
+      top: 81%
+      background: #fff
+      transform: rotate(45deg)
+      +mobile
+        left: 12%
+  &.is-tax
+    width: 385px
+    height: 110px
+    padding: 16px 18px
+    line-height: 18px
+    +mobile
+      width: 359px
+      left: -24px
+    .mask
+      position: absolute
+      width: 80%
+      height: 30%
+      top: 91%
+      left: -5%
+    &::after
+      content: ''
+      height: 14px
+      width: 14px
+      position: absolute
+      left: 6%
+      top: 93%
+      background: #fff
+      transform: rotate(45deg)
+      +mobile
+        left: 8%
 </style>

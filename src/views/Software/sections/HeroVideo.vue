@@ -5,17 +5,39 @@
     </div>
     <div class="container">
       <div class="image video-launcher">
-        <lazy-img src="software/hero.png" alt="" />
+        <lazy-img
+          src="software/hero.png"
+          alt=""
+        />
       </div>
-      <div class="preview" id="hero-video">
-        <video v-if="!isPlay" autoplay loop muted playsinline>
-          <source :src="heroVideo" type="video/mp4" />
+      <div
+        id="hero-video"
+        class="preview"
+      >
+        <video
+          v-if="!isPlay"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          <source
+            :src="heroVideo"
+            type="video/mp4"
+          />
         </video>
         <div class="video-section-wrap">
           <div id="jCbQM95PA9U-iframe"></div>
         </div>
-        <div v-if="!isPlay" @click="videoPlay" class="mask">
-          <svg-icon class="image is-mask-play" icon-name="shared-video-preview-play" />
+        <div
+          v-if="!isPlay"
+          class="mask"
+          @click="videoPlay"
+        >
+          <svg-icon
+            class="image is-mask-play"
+            icon-name="shared-video-preview-play"
+          />
         </div>
       </div>
     </div>

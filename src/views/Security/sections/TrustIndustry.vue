@@ -1,8 +1,10 @@
 <template>
   <section class="section is-trusted-inductry">
     <div class="container">
-      <div class="title">{{ title }}</div>
-      <Customer :customers="customers"/>
+      <div class="title">
+        {{ title }}
+      </div>
+      <Customer :customers="customers" />
     </div>
   </section>
 </template>

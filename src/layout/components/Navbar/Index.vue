@@ -4,31 +4,30 @@
       <NavBarLogo />
       <NavShrink />
 
-      <div id="nav-menu" class="nav-menu">
+      <div
+        id="nav-menu"
+        class="nav-menu"
+      >
         <NavDropdown />
         <NavEndBtn />
       </div>
     </div>
-    <CartModal/>
+    <CartModal />
     <div id="extend-offer"></div>
     <slot name="search" />
   </nav>
 </template>
 
 <script setup>
-import { loadCartScripts } from './util';
 import { NavDropdown, NavBarLogo, NavEndBtn, NavShrink, CartModal } from './components';
 import { products } from '@/data/products';
-import { useCartEffect } from '@/store/cart';
+import { loadScript } from './util';
+import { useCartStore } from '@/store/cart';
 
 /* Start Data */
 const { frontmatter: fm } = useData();
-const { 
-  handleSetShopifyClient, 
-  initialShopifyCheckout 
-} = useCartEffect();
+const { handleSetShopifyClient } = useCartStore();
 
-const shopifyClient = computed(() => { return useCartEffect().shopifyClient });
 
 let sidebarPromise = null;
 const cart = fm.value.navbar?.cart || {};
@@ -54,7 +53,6 @@ function parseBoolean(value) {
   return value === '1' || value === 'true';
 }
 
-
 function initShopifySdk() {
   const clientConfig =
     cartOptions.shopifyHost === 'order.vibe.us'
@@ -69,20 +67,7 @@ function initShopifySdk() {
   handleSetShopifyClient(ShopifyBuy.buildClient(clientConfig));
 }
 
-function loadScript(src, integrity) {
-  return new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    script.onload = resolve;
-    script.onerror = reject;
-    script.src = src;
-    if (integrity) {
-      script.integrity = integrity;
-    }
-    document.getElementsByTagName('head')[0].appendChild(script);
-  });
-}
+
 
 function loadSidebar() {
   const scriptsArr = [

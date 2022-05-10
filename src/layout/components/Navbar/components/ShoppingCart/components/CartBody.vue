@@ -1,15 +1,18 @@
 <template>
   <div class="cart-items">
-    <template v-for="(cartItem) in cartList" :key="cartItem.product_id">
-      <CartItem :item="cartItem"/>
+    <template
+      v-for="(cartItem) in cartList"
+      :key="cartItem.product_id"
+    >
+      <CartItem :item="cartItem" />
     </template>
   </div>
 </template>
 
 <script setup>
 import CartItem from './CartItem.vue';
-import { useCartEffect } from '@/store/cart';
-const cartData = useCartEffect();
+import { useCartStore } from '@/store/cart';
+const cartData = useCartStore();
 const cartList = computed(() => cartData.cartList);
 
 

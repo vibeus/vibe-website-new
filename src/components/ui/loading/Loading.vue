@@ -1,5 +1,8 @@
 <template>
-  <div class="loading" id="vue-loading">
+  <div
+    id="vue-loading"
+    class="loading"
+  >
     <div class="loadEffect">
       <span></span>
       <span></span>

@@ -3,8 +3,12 @@
     <div class="hero-body">
       <div class="container">
         <div>
-          <h1 class="title">{{ hero.title }}</h1>
-          <div class="content">{{ hero.body }}</div>
+          <h1 class="title">
+            {{ hero.title }}
+          </h1>
+          <div class="content">
+            {{ hero.body }}
+          </div>
         </div>
         <lazy-img
           class="image is-hidden-mobile"

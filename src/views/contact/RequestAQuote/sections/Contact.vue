@@ -2,51 +2,83 @@
   <section class="contact">
     <div id="pdf-container"></div>
     <div class="container is-form">
-      <div class="product-title">{{ contactSection.title }}</div>
+      <div class="product-title">
+        {{ contactSection.title }}
+      </div>
       <div
-        v-for="(item, index) in contactSection.choices"
-        :key="index"
+        v-for="(item, choiceIdx) in contactSection.choices"
+        :key="choiceIdx"
         class="f-col product-box"
       >
         <div class="is-product">
-          <div class="is-image is-hidden-mobile" :id="item.id">
-            <lazy-img class="image" :src="item.figure" alt="" />
+          <div
+            :id="item.id"
+            class="is-image is-hidden-mobile"
+          >
+            <lazy-img
+              class="image"
+              :src="item.figure"
+              alt=""
+            />
           </div>
           <div class="is-text">
             <div class="form-check">
-              <div class="count-title is-hidden-mobile">{{ item.title }}</div>
+              <div class="count-title is-hidden-mobile">
+                {{ item.title }}
+              </div>
               <div class="count-title board-title is-hidden-tablet">
                 {{ item.title_mobile }}
               </div>
-              <CartCount :cartCount="cartCount" />
+              <InputCount :cart-count="cartCount" />
             </div>
             <div class="image">
-              <lazy-img class="hero-image is-hidden-tablet" :src="item.figure" alt="" />
+              <lazy-img
+                class="hero-image is-hidden-tablet"
+                :src="item.figure"
+                alt=""
+              />
             </div>
             <div class="divider is-hidden-mobile"></div>
-            <div class="includes" id="includes">
+            <div
+              id="includes"
+              class="includes"
+            >
               <strong>Includes:</strong>
-              <div class="includes-content" id="includes-content">
+              <div
+                id="includes-content"
+                class="includes-content"
+              >
                 {{ item.includes }}
               </div>
             </div>
           </div>
         </div>
-        <div :id="item.accessories.id" class="f-row is-accessories">
+        <div
+          :id="item.accessories.id"
+          class="f-row is-accessories"
+        >
           <div
             v-for="(i, index) in item.accessories.item"
             :key="index"
             class="f-row accessory"
           >
             <div class="f-col">
-              <div class="count-title is-hidden-tablet">{{ i.title }}</div>
+              <div class="count-title is-hidden-tablet">
+                {{ i.title }}
+              </div>
               <div class="image">
-                <lazy-img class="lazy-image" :src="i.figure" alt="" />
+                <lazy-img
+                  class="lazy-image"
+                  :src="i.figure"
+                  alt=""
+                />
               </div>
             </div>
             <div class="f-col">
-              <div class="count-title is-hidden-mobile">{{ i.title }}</div>
-              <CartCount :cartCount="cartCount" />
+              <div class="count-title is-hidden-mobile">
+                {{ i.title }}
+              </div>
+              <InputCount :cart-count="cartCount" />
             </div>
           </div>
         </div>
@@ -56,20 +88,30 @@
       <div class="disable-input-mask"></div>
       <div class="form-check">
         <input
+          :id="contactSection.tax_exempt.id"
           class="form-check-input"
           type="checkbox"
           :name="contactSection.tax_exempt.name"
-          :id="contactSection.tax_exempt.id"
         />
-        <label class="content form-check-label" for="flexCheckDefault">
+        <label
+          class="content form-check-label"
+          for="flexCheckDefault"
+        >
           {{ contactSection.tax_exempt.title }}
         </label>
       </div>
-      <VForm :formData="contactSection.form" />
+      <VForm :form-data="contactSection.form" />
     </div>
-    <div class="official-quote-check" id="official-quote">
+    <div
+      id="official-quote"
+      class="official-quote-check"
+    >
       <div class="check-container">
-        <input id="official-check" type="checkbox" class="quote-check form-check-input" />
+        <input
+          id="official-check"
+          type="checkbox"
+          class="quote-check form-check-input"
+        />
         <label for="official-check"></label>
         <span class="content-check">{{ contactSection.official_quote_check.title }}</span>
       </div>
@@ -93,7 +135,7 @@
 </template>
 <script setup>
 import VForm from '@vcomp/Form.vue';
-import CartCount from '@vcomp/CartCount.vue';
+import InputCount from '@vcomp/InputCount.vue';
 const props = defineProps({
   contactSection: {
     type: Object,

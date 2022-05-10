@@ -1,8 +1,6 @@
 import { resolve } from 'path';
 import { createVitePlugins } from '../../vite-config/plugin';
-import nav from './configs/nav';
-import sidebar from './configs/sidebar';
-import footer from './configs/footer';
+import { nav, sidebar, footer } from './configs';
 
 function pathResolve(dir) {
   return resolve(__dirname, ".", dir);
@@ -26,15 +24,26 @@ async function config() {
       },
       plugins: createVitePlugins(),
       css: {
-        preprocessorOptions: { scss: { charset: false } }
+        postcss: {
+          //remove build charset warning
+          plugins: [
+            {
+              postcssPlugin: 'internal:charset-removal',
+              AtRule: {
+                charset: (atRule) => {
+                  if (atRule.name === 'charset') atRule.remove();
+                }
+              }
+            }
+          ]
+        },
+        // preprocessorOptions: {
+        //   scss: { //define global scss variable
+        //     // eslint-disable-next-line quotes
+        //     additionalData: `import "@css/base/index.sass";`
+        //   }
+        // }
       },
-      // css: {
-      //   preprocessorOptions: {
-      //     scss: {
-      //       additionalData: '@import "/@css/base/index.sass";'
-      //     }
-      //   }
-      // },
       build: {
         target: 'modules',
         assetsDir: 'assets', // 指定生成静态资源的存放路径

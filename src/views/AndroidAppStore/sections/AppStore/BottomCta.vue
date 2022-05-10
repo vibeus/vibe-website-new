@@ -1,7 +1,12 @@
 <template>
   <div class="bottom-cta">
-    <h2 class="title">Want Something Else?</h2>
-    <div v-if="currentTab == 'is-55'" class="content is-55-content">
+    <h2 class="title">
+      Want Something Else?
+    </h2>
+    <div
+      v-if="currentTab == 'is-55'"
+      class="content is-55-content"
+    >
       <p>
         We’re constantly adding new apps, but your favorites may already be compatible.
       </p>
@@ -17,19 +22,20 @@
         To learn more about setting up the Google Play Store,
         <a
           href="https://knowledge.vibe.us/how-to-use-google-services-on-vibe?__hstc=181257784.7886267f24060b885851a5e645cd9516.1647495764483.1648801529695.1648804688957.29&amp;__hssc=181257784.3.1648804688957&amp;__hsfp=1063740896"
-          >please see this article</a
-        >.
+        >please see this article</a>.
       </p>
       <p>
         For more information on using Google Meet,
         <a
           href="https://knowledge.vibe.us/how-to?__hstc=181257784.7886267f24060b885851a5e645cd9516.1647495764483.1648801529695.1648804688957.29&amp;__hssc=181257784.3.1648804688957&amp;__hsfp=1063740896"
-          >please see this article</a
-        >.
+        >please see this article</a>.
       </p>
       <p>Let us know if there are other apps that you need!</p>
     </div>
-    <div v-else class="content is-75-content">
+    <div
+      v-else
+      class="content is-75-content"
+    >
       <p>
         We’re constantly adding new apps, but your favorites may already be compatible.
       </p>
@@ -38,13 +44,17 @@
         shortcut for faster access next time. To learn more about adding app shortcuts,
         <a
           href="https://knowledge.vibe.us/add-app-shortcuts-75?__hstc=181257784.7886267f24060b885851a5e645cd9516.1647495764483.1648801529695.1648804688957.29&amp;__hssc=181257784.3.1648804688957&amp;__hsfp=1063740896"
-          >please see this article</a
-        >.
+        >please see this article</a>.
       </p>
       <p>Let us know if there are other apps that you need!</p>
     </div>
     <div class="cta">
-      <button class="button is-black is-rounded is-large" href="/contact/">Contact Us</button>
+      <button
+        class="button is-black is-rounded is-large"
+        href="/contact/"
+      >
+        Contact Us
+      </button>
     </div>
   </div>
 </template>

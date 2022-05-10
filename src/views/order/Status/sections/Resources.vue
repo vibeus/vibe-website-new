@@ -1,15 +1,28 @@
 <template>
-  <section class="resources" id="resources">
+  <section
+    id="resources"
+    class="resources"
+  >
     <div class="container">
-      <h1 class="title">{{resources.title}}</h1>
+      <h1 class="title">
+        {{ resources.title }}
+      </h1>
       <div class="link-list">
-        <a v-for="item in resources.links" :key="item.title" class="link-item" :herf="item.url">
+        <a
+          v-for="item in resources.links"
+          :key="item.title"
+          class="link-item"
+          :herf="item.url"
+        >
           <span class="item-icon">
-            <svg-icon :icon-name="item.icon" :alt="item.alt" />
+            <svg-icon
+              :icon-name="item.icon"
+              :alt="item.alt"
+            />
           </span>
-          <div class="item-title">{{item.title}}</div>
+          <div class="item-title">{{ item.title }}</div>
           <span class="item-arrow">
-           <svg-icon icon-name="order-status-link-arrow" /></span>
+            <svg-icon icon-name="order-status-link-arrow" /></span>
         </a>
       </div>
     </div>

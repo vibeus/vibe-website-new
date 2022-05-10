@@ -1,18 +1,29 @@
 <template>
   <section class="section presentation">
     <div class="container">
-      <h1 class="title is-section-title">{{ presentation.title }}</h1>
+      <h1 class="title is-section-title">
+        {{ presentation.title }}
+      </h1>
       <div
         v-for="(pre, index) in presentation.items"
         :key="pre.title"
         :class="`content-wrap is-index-${index + 1}`"
       >
         <div class="is-image">
-          <lazy-img class="image" :src="pre.figure" alt="" />
+          <lazy-img
+            class="image"
+            :src="pre.figure"
+            alt=""
+          />
         </div>
         <div class="is-content">
-          <h2 class="title is-subtitle">{{ pre.title }}</h2>
-          <div class="content" v-html="pre.body"></div>
+          <h2 class="title is-subtitle">
+            {{ pre.title }}
+          </h2>
+          <div
+            class="content"
+            v-html="pre.body"
+          ></div>
         </div>
       </div>
     </div>

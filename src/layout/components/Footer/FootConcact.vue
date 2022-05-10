@@ -2,7 +2,10 @@
   <div class="section is-vibe-foot-contact">
     <div class="container">
       <div class="level">
-        <div v-if="contact" class="level-left">
+        <div
+          v-if="contact"
+          class="level-left"
+        >
           <div class="level-item">
             <span class="icon">
               <svg-icon icon-name="footer-email" />
@@ -12,9 +15,15 @@
             </a>
           </div>
         </div>
-        <div v-if="copyright" class="level-item is-copyright">
+        <div
+          v-if="copyright"
+          class="level-item is-copyright"
+        >
           <div>
-            <template v-for="(item, idx) in copyright" :key="idx">
+            <template
+              v-for="(item, idx) in copyright"
+              :key="idx"
+            >
               <span>
                 {{ item }}
               </span>
@@ -23,8 +32,14 @@
         </div>
         <div class="level-right">
           <div class="level-item is-social">
-            <template v-for="(item, idx) in socials" :key="idx">
-              <a :href="item.url" target="_blank">
+            <template
+              v-for="(item, idx) in socials"
+              :key="idx"
+            >
+              <a
+                :href="item.url"
+                target="_blank"
+              >
                 <span class="icon">
                   <svg-icon :icon-name="item.icon" />
                 </span>
@@ -41,12 +56,16 @@
 const props = defineProps({
   contact: {
     type: Object,
+    required: true,
+    default: () => {}
   },
   copyright: {
     type: Array,
+    default: () => []
   },
   socials: {
     type: Array,
+    default: () => []
   },
 });
 </script>

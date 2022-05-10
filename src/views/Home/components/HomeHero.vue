@@ -1,6 +1,12 @@
 <template>
-  <header v-if="showHero" class="home-hero">
-    <figure v-if="frontmatter.heroImage" class="figure">
+  <header
+    v-if="showHero"
+    class="home-hero"
+  >
+    <figure
+      v-if="frontmatter.heroImage"
+      class="figure"
+    >
       <svg-icon
         class="image"
         icon-name="website-logo"
@@ -8,8 +14,19 @@
       />
     </figure>
 
-    <h1 v-if="heroText" id="main-title" class="title">{{ heroText }}</h1>
-    <p v-if="tagline" class="tagline">{{ tagline }}</p>
+    <h1
+      v-if="heroText"
+      id="main-title"
+      class="title"
+    >
+      {{ heroText }}
+    </h1>
+    <p
+      v-if="tagline"
+      class="tagline"
+    >
+      {{ tagline }}
+    </p>
   </header>
 </template>
 
