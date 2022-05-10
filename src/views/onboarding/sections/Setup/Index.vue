@@ -82,10 +82,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Thumbs, Pagination, Navigation } from 'swiper';
 import 'swiper/css';
-import StepContent from './StepContent.vue';
-import EndStep from './EndStep.vue';
-import VideoStep from './VideoStep.vue';
-import FormStep from './FormStep.vue';
+import {
+  StepContent, EndStep, VideoStep, FormStep
+} from './index.js';
 const props = defineProps({
   setup: {
     type: Object,

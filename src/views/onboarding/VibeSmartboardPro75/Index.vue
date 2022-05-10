@@ -9,12 +9,10 @@
   </main>
 </template>
 <script setup>
-import Hero from '../sections/Hero.vue';
-import Setup from '../sections/Setup/Index.vue';
-import Webinar from '../sections/Webinar.vue';
-import GetStarted from '../sections/GetStarted.vue';
-import Help from '../sections/Help.vue';
-import FAQ from '../sections/FAQ.vue';
+
+import {
+  Hero, Setup, Webinar, GetStarted, Help,FAQ
+} from '../sections';
 const { frontmatter: fm } = useData();
 console.log('fm: ', fm.value);
 </script>
