@@ -19,7 +19,7 @@ const tryHideFullScreenLoading = () => {
 
 let reqConfig;
 
-const service = axios.create();
+const service = axios.create() as any;
 
 // 请求拦截
 service.interceptors.request.use(
@@ -87,23 +87,23 @@ service.interceptors.response.use(
 
 export function axiosReq({
   url,
-  data,
-  method,
-  baseURL,
-  timeout,
-  isParams,
-  bfLoading,
+  data = {},
+  method = 'get',
+  baseURL = import.meta.env.VITE_APP_BASE_URL,
+  timeout = 15000,
+  isParams = false,
+  bfLoading = false,
   isAlertErrorMsg = false
 }) {
   return service({
-    url: url,
-    method: method ?? 'get',
-    data: data ?? {},
-    isParams: isParams ?? false,
-    bfLoading: bfLoading ?? false,
-    isAlertErrorMsg : isAlertErrorMsg,
-    baseURL: baseURL ?? import.meta.env.VITE_APP_BASE_URL,
-    timeout: timeout ?? 15000
+    url,
+    method,
+    data,
+    isParams,
+    bfLoading,
+    isAlertErrorMsg,
+    baseURL,
+    timeout,
   });
 }
 

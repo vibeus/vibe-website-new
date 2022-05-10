@@ -1,4 +1,4 @@
-export default {
+export const sidebar = {
   '/blog/': [
     {
       text: 'Essentials',

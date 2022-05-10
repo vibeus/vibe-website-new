@@ -64,7 +64,7 @@
   </form>
 </template>
 
-<script setup>
+<script lang="ts" setup>
 import { Loading, Message } from '@vcomp/ui';
 import { axiosReq, validEmail, getHubspotBody } from '@/utils';
 

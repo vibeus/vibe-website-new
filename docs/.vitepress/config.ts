@@ -1,8 +1,6 @@
 import { resolve } from 'path';
 import { createVitePlugins } from '../../vite-config/plugin';
-import nav from './configs/nav';
-import sidebar from './configs/sidebar';
-import footer from './configs/footer';
+import { nav, sidebar, footer } from './configs';
 
 function pathResolve(dir) {
   return resolve(__dirname, ".", dir);
