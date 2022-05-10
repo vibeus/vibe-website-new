@@ -14,7 +14,6 @@
   </div>
 </template>
 <script setup>
-import Video from '@vcomp/Video.vue';
 const props = defineProps({
   stepContent: {
     type: Object,

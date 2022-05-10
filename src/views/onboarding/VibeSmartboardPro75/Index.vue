@@ -5,6 +5,7 @@
     <Webinar :webinar="fm.webinar_section" />
     <GetStarted :get-started="fm.get_started" />
     <Help :help="fm.help" />
+    <FAQ :faq="fm.faq" />
   </main>
 </template>
 <script setup>
@@ -13,6 +14,7 @@ import Setup from '../sections/Setup/Index.vue';
 import Webinar from '../sections/Webinar.vue';
 import GetStarted from '../sections/GetStarted.vue';
 import Help from '../sections/Help.vue';
+import FAQ from '../sections/FAQ.vue';
 const { frontmatter: fm } = useData();
 console.log('fm: ', fm.value);
 </script>

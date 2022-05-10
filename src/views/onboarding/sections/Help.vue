@@ -197,6 +197,7 @@ const isCollapse=ref(true);
       display: flex
       flex-direction: column
       box-sizing: border-box
+      position: relative
       +widescreen
         width: 370px - 60px
         height: 100%
@@ -204,7 +205,6 @@ const isCollapse=ref(true);
       .content-container
         width: 100%
         height: 100%
-        position: relative
         display: flex
         justify-content: center
         align-items: center
@@ -212,6 +212,7 @@ const isCollapse=ref(true);
           width: 48px
           height: 36px
           margin-bottom: 5px
+          margin-right:20px
         .link
           font-size: 18px
           line-height: 18px

@@ -94,7 +94,7 @@ const props = defineProps({
 });
 const thumbsSwiper = ref(null);
 const isFirst = ref(true);
-const isLast = ref(false);
+const isLast = ref(true);
 const setThumbsSwiper = (swiper) => {
   thumbsSwiper.value = swiper;
 };
@@ -115,12 +115,24 @@ const changePage=(state)=>{
   .container
     display: flex
     justify-content: space-between
+    align-items: center
     .navigation
       width: 48px
       height: 48px
       color: #fff
+      cursor: pointer
       &.button-disabled
         color: black
+      &.prev
+        transform: rotate(180deg)
+        margin-right:42px
+        +mobile
+          left: 20px
+      &.next
+        margin-left: 42px
+        +mobile
+          right: 20px
+        
     .swiper-container
       width: 100%
       position: relative
@@ -215,4 +227,6 @@ const changePage=(state)=>{
   background-color: #dadada !important
 :deep(.swiper-slide-thumb-active)~.swiper-slide::before
   color: #dadada !important
+:deep(.swiper-button-prev),:deep(.swiper-button-next)
+  display: none
 </style>
